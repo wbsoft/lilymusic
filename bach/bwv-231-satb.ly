@@ -823,6 +823,12 @@ basText = \lyricmode {
         \override VerticalAxisGroup #'minimum-Y-extent = #'(0 . 0)
       }
     }
+    \midi {
+      \context {
+        \Score
+        tempoWholesPerMinute = #(ly:make-moment 84 2)
+      }
+    }
   }
 
   \markup {
@@ -861,8 +867,3 @@ basText = \lyricmode {
 %     }
 %   }
 % }
-
-
-
-
-
