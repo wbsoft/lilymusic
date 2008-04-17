@@ -654,7 +654,7 @@ altText = \lyricmode {
   dass wir ihm fest ver -- trau -- en,
   ihm fest __ ver -- trau -- en,
   dass wir ihm fest ver -- trau -- en,
-  ihm fest __ ver -- trau -- en, ver -- trau -- en,
+  ihm fest ver -- trau -- en, ver -- trau -- en,
   gänz -- lich, gänz -- lich ver -- lass’n auf ihn,
   auf ihn,
   von Her -- zen auf ihn bau -- en,
