@@ -629,7 +629,7 @@ sopText = \lyricmode {
   was er aus Gna -- den uns ver -- heißt, __
   dass wir ihm fest ver -- trau -- en, __
   gänz -- lich ver -- lass’n auf ihn, __
-  vom Her -- zen auf ihn bau -- en, __
+  von Her -- zen auf ihn bau -- en, __
   dass uns’r Herz, Mut und Sinn __
   ihm tröst -- lich soll’n an -- han -- gen, __
   drauf sin -- gen wir zur Stund: __
@@ -657,11 +657,11 @@ altText = \lyricmode {
   ihm fest __ ver -- trau -- en, ver -- trau -- en,
   gänz -- lich, gänz -- lich ver -- lass’n auf ihn,
   auf ihn,
-  vom Her -- zen auf ihn bau -- en,
-  vom Her -- zen auf ihn bau -- en,
-  vom Her -- zen auf ihn bau -- en,
-  vom Her -- zen auf ihn bau -- en,
-  vom Her -- zen auf ihm bau -- en,
+  von Her -- zen auf ihn bau -- en,
+  von Her -- zen auf ihn bau -- en,
+  von Her -- zen auf ihn bau -- en,
+  von Her -- zen auf ihn bau -- en,
+  von Her -- zen auf ihn bau -- en,
   dass uns’r Herz, Mut und Sinn
   ihm tröst -- lich soll’n an -- han -- gen,
   dass uns’r Herz, Mut __ und Sinn, __
@@ -708,10 +708,10 @@ tenText = \lyricmode {
   ihm fest ver -- trau -- en,
   gänz -- lich, gänz -- lich ver -- lass’n __ auf ihn,
   auf ihn, __
-  vom Her -- zen auf ihn bau -- en,
-  vom Her -- zen auf ihn bau -- en,
-  vom Her -- zen auf ihn bau -- en, __
-  vom Her -- zen auf __ ihn bau -- en,
+  von Her -- zen auf ihn bau -- en,
+  von Her -- zen auf ihn bau -- en,
+  von Her -- zen auf ihn bau -- en, __
+  von Her -- zen auf __ ihn bau -- en,
   auf __ ihn bau -- en,
   dass uns’r Herz, Mut und Sinn __
   ihm tröst -- lich soll’n __ an -- han -- gen,
@@ -761,12 +761,12 @@ basText = \lyricmode {
   dass wir ihm fest __ ver -- trau -- en,
   gänz -- lich ver -- lass’n auf ihn, auf ihn,
   gänz -- lich ver -- lass’n __ auf ihn,
-  vom Her -- zen auf ihn bau -- en,
-  vom Her -- zen auf ihn bau -- en,
-  vom Her -- zen auf ihn bau -- en,
-  vom Her -- zen auf ihn bau -- en,
-  vom Her -- zen auf ihn bau -- en,
-  vom Her -- zen auf ihn bau -- en,
+  von Her -- zen auf ihn bau -- en,
+  von Her -- zen auf ihn bau -- en,
+  von Her -- zen auf ihn bau -- en,
+  von Her -- zen auf ihn bau -- en,
+  von Her -- zen auf ihn bau -- en,
+  von Her -- zen auf ihn bau -- en,
   dass uns’r Herz, Mut und Sinn
   ihm tröst -- lich soll’n an -- han -- gen,
   tröst -- lich soll’n an -- han -- gen,
