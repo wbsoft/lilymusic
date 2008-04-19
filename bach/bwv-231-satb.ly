@@ -108,10 +108,10 @@ alt = \relative c' {
   a r
   R1
   r4 g d f
-  e e c'2~(
-  c b4 a
-  gis a2) gis4
-  a c g bes
+  e e c'2~
+  c b4( a)
+  gis( a2) gis4
+  a( c) g( bes)
   a2 r
   r4 g d f
   e f g2 ~
@@ -471,10 +471,10 @@ bas = \relative c {
   c2. b4
   a( g a2)
   g2 r4 g,
-  a b c d
-  e2( f4 g)
-  c,4 b c d
-  e4( c') fis,( a)
+  a( b) c( d)
+  e2 f4( g)
+  c,4( b) c d
+  e4 c' fis, a
   gis2 a4 a
   e1
   a,4 a' e g
@@ -495,7 +495,7 @@ bas = \relative c {
   f( g) a2
   g a4( g)
   f2( e)
-  d2. a4
+  d2 r4 a
   bes( a8 g a4) b
   c2( b4 cis
   d dis2 cis8 dis)
@@ -567,7 +567,7 @@ bas = \relative c {
   a( g) f( es)
   d( c) bes( a)
   g2( c)
-  f,2. f'4
+  f,2 r4 f'
   b,2 cis
   d4( a'2) gis4
   a( g2) fis4
