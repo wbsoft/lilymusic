@@ -816,11 +816,11 @@ basText = \lyricmode {
       }
       \context {
         \Staff
-        \override VerticalAxisGroup #'minimum-Y-extent = #'(-3 . 5)
+        \override VerticalAxisGroup #'minimum-Y-extent = #'(-3 . 4.5)
       }
       \context {
         \Lyrics
-        \override VerticalAxisGroup #'minimum-Y-extent = #'(0 . 0)
+        \override VerticalAxisGroup #'minimum-Y-extent = #'(-0.75 . 0)
       }
     }
     \midi {
