@@ -1,6 +1,6 @@
 \version "2.11.43"
 
-#(set-global-staff-size 19)
+#(set-global-staff-size 15) % 15 of 19
 
 \header {
   title = "Sei Lob und Preis mit Ehren"
@@ -792,8 +792,9 @@ basText = \lyricmode {
 
 \book {
   \paper {
-    page-count = 12
+    page-count = 8 % 8 of 12
     ragged-last-bottom = ##f
+    between-system-padding = 0 % dit of uitschakelen
   }
 
   \score {
@@ -808,7 +809,7 @@ basText = \lyricmode {
       \addlyrics { \basText }
     >>
     \layout {
-      system-count = 35
+      system-count = 30 % 30 of 35
       \context {
         \Score
         \override PaperColumn #'keep-inside-line = ##t
@@ -816,7 +817,7 @@ basText = \lyricmode {
       }
       \context {
         \Staff
-        \override VerticalAxisGroup #'minimum-Y-extent = #'(-3 . 4.5)
+        \override VerticalAxisGroup #'minimum-Y-extent = #'(-3 . 5.5) % 5.5 of 4.5
       }
       \context {
         \Lyrics
