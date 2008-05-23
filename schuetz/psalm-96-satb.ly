@@ -30,6 +30,7 @@
       This edition may be freely distributed,
       edited, performed or recorded.
     }
+    \line { " " }%space above tagline
   }
 }
 
