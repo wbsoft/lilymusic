@@ -8,7 +8,7 @@
     \line { SWV 194, from the \concat { \italic { Becker Psalter } , } op. 5, }
     \line { Freiberg, 1628; revised Dresden, 1661}
   }
-  poet = "Statenberijming 1773"
+  poet = "Berijming 1773"
   copyright = \markup \center-align {
     \line {
       Engraved by
