@@ -347,8 +347,8 @@ ten = \relative c' {
   a4 a d2 ~
   d c ~
   c4 b e2 ~
-  e4 c d2 ~
-  d4 d g2~(
+  e4 c f2 ~
+  f4 d g2~(
   g4 f g2 ~
   g4) f bes,2 ~
   bes a4( f')
