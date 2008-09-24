@@ -1,11 +1,12 @@
 \version "2.11.43"
 
-#(set-global-staff-size 15) % 15 of 19
+#(set-global-staff-size 17) % 15 of 19
 
 \header {
   title = "Sei Lob und Preis mit Ehren"
   composer = "Johann Sebastian Bach (1685-1750)"
   subtitle = "Motette BWV 231"
+  instrument = "Rehearsal accompaniment"
   copyright = \markup \center-align {
     \line {
       Engraved by
@@ -790,6 +791,7 @@ basText = \lyricmode {
   gläub’n __ wir __ aus Her -- zens -- grund.
 }
 
+%{
 \book {
   \paper {
     page-count = 8 % 8 of 12
@@ -851,20 +853,29 @@ basText = \lyricmode {
       }
     }
   }
-}
+%}
 
-% \score {
-%   <<
-%     \new PianoStaff <<
-%       \new Staff << \sop \\ \alt >>
-%       \new Staff {\clef "G_8" \ten }
-%     >>
-%     \new Staff { \clef F \bas }
-%   >>
-%   \layout {
-%     \context {
-%       \Voice
-%       \remove "Slur_engraver"
-%     }
-%   }
-% }
+\score {
+  <<
+    \new PianoStaff <<
+      \new Staff = "upper" <<
+        \new Voice = "sop" { \voiceOne \sop }
+        \new Voice = "alt" \with {
+          \remove "Slur_engraver"
+        } { \voiceTwo \alt }
+      >>
+      \new Lyrics \with {
+        alignAboveContext = "upper"
+      } \lyricsto "sop" \sopText
+      \new Staff <<
+        \clef F
+        \new Voice \with {
+          \remove "Slur_engraver"
+        } { \voiceOne \ten }
+        \new Voice \with {
+          \remove "Slur_engraver"
+        } { \voiceTwo \bas }
+      >>
+    >>
+  >>
+}

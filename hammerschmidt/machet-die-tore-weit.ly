@@ -27,7 +27,7 @@
       edited, performed or recorded.
     }
   }
-  meter = \markup \italic \fontsize #1 \override #'(baseline-skip . 2.7) \column {
+  meter = \markup \italic \fontsize #1 \column {
     \line { Hef, o poorten, uw hoofden omhoog, }
     \line { verhef u, aloude ingangen: }
     \line { de koning vol majesteit wil binnengaan. }
