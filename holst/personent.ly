@@ -4,6 +4,26 @@
   title = "Personent Hodie"
   composer = "Gustav Holst (1874-1934)"
   poet = "from Piae Cantiones (1582)"
+  copyright = \markup {
+    \override #'(baseline-skip . 2.5)
+    \center-column {
+      \line { Typeset by
+        \with-url #"http://www.wilbertberendsen.nl/"
+        {Wilbert Berendsen (http://www.wilbertberendsen.nl/)}
+      }
+      \line { Copyright © 2008
+        \with-url #"http://www.cpdl.org/"
+        {The Choral Public Domain Library (http://www.cpdl.org/)}
+      }
+      \line {This edition may be freely distributed, edited, performed or recorded.}
+      \null
+    }
+  }
+}
+
+\paper {
+  between-system-padding = #1
+  ragged-last-bottom = ##f
 }
 
 global = {
@@ -42,7 +62,8 @@ verseOne = \lyricmode {
   % Liedtekst volgt hier.
   \notemode {
     \set stanza = \markup {
-      \normal-text (Tutti) \hspace #4 \bold 1.
+      \hcenter-in #12
+      \normal-text (Tutti) 1.
     }
   }
   Per -- so -- nent ho -- di -- e
@@ -59,7 +80,8 @@ verseOne = \lyricmode {
 verseTwo = \lyricmode {
   \notemode {
     \set stanza = \markup {
-      \normal-text (S/A) \hspace #4 \bold 2.
+      \hcenter-in #12
+      \normal-text (S/A) 2.
     }
   }
   In mun -- do na -- sci -- tur,
@@ -76,7 +98,8 @@ verseTwo = \lyricmode {
 verseThree = \lyricmode {
   \notemode {
     \set stanza = \markup {
-      \normal-text (T/B) \hspace #4 \bold 3.
+      \hcenter-in #12
+      \normal-text (T/B) 3.
     }
   }
   Ma -- gi tres ve -- ne -- runt,
@@ -94,7 +117,8 @@ verseFour = \lyricmode {
   % Liedtekst volgt hier.
   \notemode {
     \set stanza = \markup {
-      \normal-text (Tutti) \hspace #4 \bold 4.
+      \hcenter-in #12
+      \normal-text (Tutti) 4.
     }
   }
   Om -- nes cle -- ri -- cu -- li,
@@ -225,7 +249,7 @@ left = \relative c' {
   \line {
     \column {
       \line {
-        \bold 1.
+        \hcenter-in #3 \bold 1.
         \override #'(line-width . 55)
         \wordwrap {
           Laten heden kinderstemmen klinken
@@ -237,7 +261,7 @@ left = \relative c' {
       }
       \line { \hspace #10 }
       \line {
-        \bold 2.
+        \hcenter-in #3 \bold 2.
         \override #'(line-width . 55)
         \wordwrap {
           In de wereld wordt hij geboren, in doeken
@@ -252,7 +276,7 @@ left = \relative c' {
     \hspace #4
     \column {
       \line {
-        \bold 3.
+        \hcenter-in #3 \bold 3.
         \override #'(line-width . 55)
         \wordwrap {
           Drie wijzen gingen op weg,
@@ -265,7 +289,7 @@ left = \relative c' {
       }
       \line { \hspace #10 }
       \line {
-        \bold 4.
+        \hcenter-in #3 \bold 4.
         \override #'(line-width . 55)
         \wordwrap {
           Laten alle priesters en alle kinderen
