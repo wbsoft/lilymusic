@@ -5,6 +5,7 @@
 \header {
   title = "Machet die Tore weit"
   composer = "Andreas Hammerschmidt (1612-1675)"
+  poet = "Psalm 24, 7 – 10"
   copyright = \markup \center-column {
     \line {
       Engraved by
@@ -27,15 +28,6 @@
       edited, performed or recorded.
     }
   }
-  meter = \markup \italic \fontsize #1 \column {
-    \line { Hef, o poorten, uw hoofden omhoog, }
-    \line { verhef u, aloude ingangen: }
-    \line { de koning vol majesteit wil binnengaan. }
-    \line { Wie is die koning vol majesteit? }
-    \line { De \small HEER, machtig en heldhaftig, }
-    \line { de \small HEER, heldhaftig in de strijd. }
-    \line { Hosanna in de hoge! (Psalm 24, NBV) }
-  }
 }
 
 \paper {
@@ -46,7 +38,7 @@
 }
 
 global = {
-  \key g \major
+  \key g \mixolydian
   \time 3/4
 }
 
@@ -103,7 +95,7 @@ alto = \relative c'' {
   g2. g4 g2 g4 g4 g4 g2 g4 g2 g4 c,2 c4 g'2. g4 g4.( fis8) g2.
 }
 
-tenorOne = \relative c' {
+tenor = \relative c' {
   \global
   % Muziek volgt hier.
   d4. d8 d4 d4. d8 d4 r d b c2 c4 d2. e4 a,2 b r4
@@ -121,7 +113,7 @@ tenorOne = \relative c' {
   c c d2 d4 c2 d4 e2 c4 d2. e4 a,( d) d2.
 }
 
-tenorTwo = \relative c' {
+bassOne = \relative c' {
   \global
   % Muziek volgt hier.
   b4. b8 b4 b4. b8 b4 r g g c2 c4 g2. g4 d'( d,) g2 r4
@@ -139,7 +131,7 @@ tenorTwo = \relative c' {
   g g g2 g4 g2 g4 c2 a4 d2. g,4 d'( a) g2.
 }
 
-bass = \relative c' {
+bassTwo = \relative c' {
   \global
   % Muziek volgt hier.
   g4. g8 g4 g4. g8 g4 r g g a2 a,4 b2. c4 d2 g, r4
@@ -224,7 +216,7 @@ altoVerse = \lyricmode {
   ho -- si -- an -- na in der Hö -- he.
 }
 
-tenorOneVerse = \lyricmode {
+tenorVerse = \lyricmode {
   % Liedtekst volgt hier.
   Ma -- chet die To -- re weit und die Tü -- ren in der Welt hoch,
   daß der Kö -- nig der Eh -- ren, daß der Kö -- nig ein -- zie -- he.
@@ -244,12 +236,12 @@ tenorOneVerse = \lyricmode {
   ho -- si -- an -- na,
   ho -- si -- an -- na in der Hö -- he.
   Ho -- si -- an -- na,
-  ho -- si -- an -- na in der Hö -- he,
+  ho -- si -- an -- na in __ der Hö -- he,
   ho -- si -- an -- na,
   ho -- si -- an -- na in der Hö -- he.
 }
 
-tenorTwoVerse = \lyricmode {
+bassOneVerse = \lyricmode {
   % Liedtekst volgt hier.
   Ma -- chet die To -- re weit und die Tü -- ren in der Welt __ hoch.
   Ma -- chet die To -- re weit und die Tü -- ren in der Welt hoch,
@@ -272,7 +264,7 @@ tenorTwoVerse = \lyricmode {
   ho -- si -- an -- na in der Hö -- he.
 }
 
-bassVerse = \lyricmode {
+bassTwoVerse = \lyricmode {
   % Liedtekst volgt hier.
   Ma -- chet die To -- re weit und die Tü -- ren in der Welt hoch.
   Ma -- chet die To -- re weit und die Tü -- ren in der Welt hoch,
@@ -298,15 +290,10 @@ bassVerse = \lyricmode {
   \new ChoirStaff <<
     \new Staff = "ss" \with {
       instrumentName = \markup \center-column {
-        "Soprano I"
-        "Soprano II"
+        "Soprano"
+        "I–II"
       }
-      shortInstrumentName = \markup \center-column {
-        "S.I"
-        "S.II"
-      }
-      \override VerticalAxisGroup #'minimum-Y-extent = #'(-3 . 3)
-      \override VerticalAxisGroup #'keep-fixed-while-stretching = ##t
+      shortInstrumentName = "S."
     } <<
       \new Voice = "soprano1" { \voiceOne \sopranoOne }
       \new Voice = "soprano2" { \voiceTwo \sopranoTwo }
@@ -322,32 +309,32 @@ bassVerse = \lyricmode {
     } \new Voice = "alto" \alto
     \new Lyrics \lyricsto "alto" { \altoVerse }
     \new Staff \with {
-      instrumentName = "Tenor I"
-      shortInstrumentName = "T.I"
+      instrumentName = "Tenor"
+      shortInstrumentName = "T."
     } {
       \clef "treble_8"
-      \new Voice = "tenor1" \tenorOne
+      \new Voice = "tenor" \tenor
     }
-    \new Lyrics \lyricsto "tenor1" { \tenorOneVerse }
-    \new Staff \with {
-      instrumentName = "Tenor II"
-      shortInstrumentName = "T.II"
-    } {
-      \clef "treble_8"
-      \new Voice = "tenor2" \tenorTwo
-    }
-    \new Lyrics \lyricsto "tenor2" { \tenorTwoVerse }
-    \new Staff \with {
-      instrumentName = "Bass"
+    \new Lyrics \lyricsto "tenor" { \tenorVerse }
+    \new Staff = "bb" \with {
+      instrumentName = \markup \center-column {
+        "Bass"
+        "I–II"
+      }
       shortInstrumentName = "B."
-    } {
+    } <<
       \clef bass
-      \new Voice = "bass" \bass
-    }
-    \new Lyrics \lyricsto "bass" { \bassVerse }
+      \new Voice = "bass1" { \voiceOne \bassOne }
+      \new Voice = "bass2" { \voiceTwo \bassTwo }
+    >>
+    \new Lyrics \with {
+      alignAboveContext = "bb"
+      \override VerticalAxisGroup #'minimum-Y-extent = #'(0 . 0)
+    } \lyricsto "bass1" { \bassOneVerse }
+    \new Lyrics \lyricsto "bass2" { \bassTwoVerse }
   >>
   \layout {
-    system-count = #8
+    system-count = #9
     \context {
       \Score
       \override VerticalAlignment #'max-stretch = #ly:align-interface::calc-max-stretch
@@ -366,3 +353,16 @@ bassVerse = \lyricmode {
   \midi { }
 }
 
+\markup {
+  \italic
+  \fontsize #1
+  \wordwrap {
+    Hef, o poorten, uw hoofden omhoog,
+    verhef u, aloude ingangen:
+    de koning vol majesteit wil binnengaan.
+    Wie is die koning vol majesteit?
+    De \small HEER, machtig en heldhaftig,
+    de \small HEER, heldhaftig in de strijd.
+    Hosanna in de hoge! (NBV)
+  }
+}
