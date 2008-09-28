@@ -8,8 +8,9 @@
   subtitle = "from “Weihnachtslieder” op. 8"
   composer = "Peter Cornelius (1824-1874)"
   poet = \markup \column {
-    \line { “Wie schön leuchtet der Morgenstern” (1599) }
-    \line { Philipp Nicolai (1556-1608) }
+    \line { Peter Cornelius (1824-1874) }
+    \line { Text and melody “Wie schön leuchtet der Morgenstern” (1599) }
+    \line { by Philipp Nicolai (1556-1608) }
   }
   copyright = \markup {
     \center-column {
@@ -70,7 +71,7 @@ soloVoice = \relative c' {
   g8 fis e g fis2 |
   r8 d c'8. a16 e'8(d) b(g) |
   r8 g g e b'2 |
-  r8^\markup\italic"piú mosso" c b g e fis16 e dis8 e |
+  r8^\markup\italic"un poco piú mosso" c b g e fis16 e dis8 e |
   fis c' b a16 g e8 fis16 e dis8 e fis fis c' b a g16(e)
   d8^\markup\italic"rit." d'16 c |
   b4^\markup\italic"a tempo" b8 a16 g d'8(b) g(fis) |
@@ -86,7 +87,7 @@ verseSoloVoice = \lyricmode {
   In Ju -- da fra -- gen und for -- schen die drei, wo der
   neu -- ge -- bo -- re -- ne Kö -- nig_ sei?
   Sie wol -- len Weih -- rauch, Myr -- rhen und Gold
-  zum Kin -- de __ spen -- den zum Op -- fer -- sold.
+  dem Kin -- de __ spen -- den zum Op -- fer -- sold.
 
   Und hell er -- glän -- zet des Ster -- nes Schein,
   zum Stal -- le ge -- hen die Kön’ -- ge ein;
@@ -136,7 +137,7 @@ tenor = \relative c' {
   r4 r r
   c b d b g8( d') c4 c b2 r4 d b dis e b d cis d2 r4 d c b a8(d) d4 e(d8 c) b2
   a4(d) d2 b4(cis) d2 c4( a8 d) d2 b4(cis) dis2
-  a4 g c b a g c b a g g4.(fis8) g(b cis4)
+  fis,4 g e a8(g) fis4 g e a8(g) fis4 g g4.(fis8) g(b cis4)
   d d c b d d e(d8 c) b2
 }
 
@@ -145,12 +146,12 @@ bass = \relative c' {
   \dynamicDown
   % Muziek volgt hier.
   r8 r4 r r
-  c\p g d e b c c g'2 r4 b g fis e d g a d,2 r4 g c, g' a8(d,)g(b,) c4(d) g2
+  g\p g, d' e b c c g'2 r4 b g fis e d g a d,2 r4 g c, g' a8(d,)g(b,) c4(d) g2
   r4 r r
-  c g d e b c c g'2 r4 b g fis e d g a d,2 r4 g c, g' a8(d,)g(b,) c4(d) g2
+  g g, d' e b c c g'2 r4 b g fis e d g a d,2 r4 g c, g' a8(d,)g(b,) c4(d) g2
   d g g4(\<e)\> b2\! a4(d) g2 g4(\<e)\> b2\!
-  fis'4 g a a8(g) fis4 g a a8(g) fis4 g c,(d) g(\<e)
-  b\f b' c g\> a b c8(\p c, d4) g2
+  a4 g c b a g c b a g c(d) g(\<e)
+  b\f b' c g\> a b c8(\p c, d4) <g g,>2
 }
 
 verseChoir = \lyricmode {
