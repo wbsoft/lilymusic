@@ -1,5 +1,4 @@
-\version "2.11.58"
-\include "../include/merge-rests.ly"
+\version "2.11.61"
 
 #(set-global-staff-size 18)
 
@@ -14,13 +13,17 @@
   }
   copyright = \markup {
     \center-column {
-      \line { Arranged and typeset by
-        \with-url #"http://www.wilbertberendsen.nl/"
-        {Wilbert Berendsen (http://www.wilbertberendsen.nl/)}
+      \line {
+        Arranged and engraved by
+        \with-url #"http://www.wilbertberendsen.nl/" {
+          Wilbert Berendsen (http://www.wilbertberendsen.nl/)
+        }
       }
-      \line { Copyright © 2008
-        \with-url #"http://www.cpdl.org/"
-        {The Choral Public Domain Library (http://www.cpdl.org/)}
+      \line {
+        Copyright © 2008
+        \with-url #"http://www.cpdl.org/" {
+          The Choral Public Domain Library (http://www.cpdl.org/)
+        }
       }
       \line {This edition may be freely distributed, edited, performed or recorded.}
       \null
@@ -207,12 +210,11 @@ verseChoir = \lyricmode {
   >>
   \layout {
     system-count = #11
+  }
+  \midi {
     \context {
-      \Staff
-      \override RestCollision
-      #'positioning-done = #merge-rests-on-positioning
+      \Voice
+      \remove "Dynamic_performer"
     }
   }
-  \midi { }
 }
-

@@ -1,4 +1,4 @@
-\version "2.11.41"
+\version "2.11.61"
 \include "../include/merge-rests.ly"
 
 #(set-global-staff-size 19)
@@ -7,7 +7,7 @@
   title = "God so loved the world"
   subtitle = "from The Crucifixion (1887)"
   composer = "Sir John Stainer (1840-1901)"
-  copyright = \markup \center-align {
+  copyright = \markup \center-column {
     \line {
       Engraved by
       \with-url #"http://www.wilbertberendsen.nl/"
@@ -70,14 +70,14 @@ dyn = {
   #'dash-period = #-1.0
   s2.\p
   s2.*3
-  \setTextCresc
+  \crescTextCresc
   s2.\<
   s2.*6\!
   s2 s4\mf
   s2.*4
   s2.\p
   s2.
-  \setTextCresc
+  \crescTextCresc
   s2.\<
   s2 s4\f
   s2.*3
@@ -85,7 +85,7 @@ dyn = {
   \mark \default
   s4 s\p s
   s2.*2
-  \setTextCresc
+  \crescTextCresc
   s4 s2\<
   s2 s4\mf
   s2.*4
@@ -95,21 +95,21 @@ dyn = {
   \mark \default
   s2.\pp
   s2.*3
-  \setTextCresc
+  \crescTextCresc
   s2.\<
   s2.*6\!
   s2 s4\mf
   s2.*4
   s2.\p
   s2.
-  \setTextCresc
+  \crescTextCresc
   s2.\<
   s2 s4\f
   s2.*2
-  \setTextCresc
+  \crescTextCresc
   s2.\<
   s2.*4\!
-  \setTextDim
+  \dimTextDim
   s2.\>
   \override TextSpanner #'bound-details #'left
   #'text = "rall."
@@ -273,7 +273,7 @@ text = \lyricmode {
     instrumentName = \markup
     \italic
     \override #'(baseline-skip . 2.5)
-    \center-align{
+    \center-column{
       Quartet or Chorus
     }
   } <<
