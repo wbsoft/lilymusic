@@ -88,7 +88,7 @@ sopranoTwo = \relative c'' {
 alto = \relative c'' {
   \global
   % Muziek volgt hier.
-  g4. g8 g4 g4. g8 g4 r g g e2 e4 g2. g4 d2 g r4
+  g4. g8 g4 g4. g8 g4 r g g e2 e4 g2. g4 d2 d r4
   R2.*6
   g4. g8 g4 g4. g8 g4 r g g a4. a8 g4 g f2 g4
   c, d e e f g2. d4 d e f2. e r4 e e e e e fis2 fis4 g fis2 e2.

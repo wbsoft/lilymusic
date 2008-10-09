@@ -92,7 +92,7 @@ bassTwoVerse = \lyricmode {
     } \lyricsto "soprano1" { \sopranoOneVerse }
     \new Lyrics \lyricsto "soprano2" { \sopranoTwoVerse }
     \new Staff \with {
-      instrumentName = "Alt"
+      instrumentName = "Alto"
       shortInstrumentName = "A."
     } \new Voice = "alto" \alto
     \new Lyrics \lyricsto "alto" { \altoVerse }
