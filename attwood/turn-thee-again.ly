@@ -1,4 +1,4 @@
-\version "2.11.41"
+\version "2.12.0"
 
 #(set-global-staff-size 18)
 organPartSize = #-1
@@ -6,7 +6,7 @@ organPartSize = #-1
 \header {
   title = "Turn Thee again, O Lord"
   composer = "Thomas Attwood (1765-1838)"
-  copyright = \markup \center-align {
+  copyright = \markup \center-column {
     \line {
       Engraved by
       \with-url #"http://www.wilbertberendsen.nl/"
@@ -347,7 +347,7 @@ choirPart = \removeWithTag #'organ
 
 organPart = \removeWithTag #'choir
 \new PianoStaff \with {
-  instrumentName = \markup\center-align {
+  instrumentName = \markup\center-column {
     Organ \italic (optional)
   }
 } <<
