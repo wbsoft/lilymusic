@@ -1,4 +1,4 @@
-\version "2.11.34"
+\version "2.12.0"
 
 #(set-global-staff-size 18)
 
@@ -29,7 +29,7 @@
   tagline = #(string-append "versie: "
     (strftime "%d-%m-%Y" (localtime (current-time)))
     " (LilyPond " (lilypond-version) ")")
-  copyright = \markup \override #'(baseline-skip . 2.5) \center-align {
+  copyright = \markup \override #'(baseline-skip . 2.5) \center-column {
     \with-url #"http://www.wilbertberendsen.nl/mouvement"
       "© 2003 Wilbert Berendsen (http://www.wilbertberendsen.nl/mouvement)"
     "Deze muziek mag worden verspreid onder de voorwaarden van de Creative Commons Licentie"
@@ -158,18 +158,18 @@ rightHand = \relative c' {
   >>
   % from: http://lsr.dsi.unimi.it/LSR/Item?id=170
   \once \override BreathingSign #'text = #(markup #:line
-                                  (#:musicglyph "scripts.caesura.straight"
+                                  (#:musicglyph "scripts.caesura.curved"
                                    #:translate (cons -1.75 1.7)
                                    #:musicglyph "scripts.ufermata"))
   \breathe
   % maat 105
-  #(set-octavation 1)
+  \ottava #1
   a'8\p a'16 ^\markup \italic "(of met 4')" a, a'8 a, a'16 a, a'8 a, a' |
   \repeat unfold 3 {a,8 a'16 a, a'8 a, a'16 a, a'8 a, a' | }
   a,8 <b a'>16 a <b a'>8 a <b a'>16 a <b a'>8 a <b a'> |
   a8 <c a'>16 a <c a'>8 a <c a'>16 a <c a'>8 a <c a'> |
   \repeat unfold 2 {a8 a'16 a, a'8 a, a'16 a, a'8 a, a' | }
-  #(set-octavation 0)
+  \ottava #0
   a,,8\mp <e' a>16 a, <e' a>8 a, <f' a>16 a, <f' a>8 a, <g' a> |
   a,8 <g' a>16 a, <g' a>8 a, <e' a>16 a, <e' a>8 <a, d> <c a'> |
   <e, g>8 e'16 <e, g> e'8 <e, g> d'16 <e, g> d'8 <e, g> c' |
@@ -322,7 +322,7 @@ leftHand = \relative c {
     e8 g16 e g8 e g16 e g8 e g | e8 fis16 e fis8 e fis16 e fis8 e fis |
   }
   >>
-  \once \override BreathingSign #'text = #(make-musicglyph-markup "scripts.caesura.straight")
+  \once \override BreathingSign #'text = #(make-musicglyph-markup "scripts.caesura.curved")
   \breathe
   \clef treble
   % maat 105
@@ -405,7 +405,7 @@ pedal = \relative c {
   r4. g8 r4 g,8 r | r4. g'8 g, bes c d | f g r r16 bes,~ bes4 d | c r8 c' r4 r8 c, |
   \repeat unfold 4 { f,4 r8 f r4 r8 f' | }
   e,4 r8 e r4 r8 e' | e,4 r8 e r ais~ ais b | d( e) r e, r4 r8 e' | e,4 r8 e r4 e'8 r |
-  \once \override BreathingSign #'text = #(make-musicglyph-markup "scripts.caesura.straight")
+  \once \override BreathingSign #'text = #(make-musicglyph-markup "scripts.caesura.curved.straight")
   \breathe
   % maat 105
   R1*8
@@ -430,3 +430,4 @@ pedal = \relative c {
 >>
 }
 % kate: space-indent on; indent-width 2; replace-tabs on; replace-tabs-save on;
+
