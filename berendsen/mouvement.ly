@@ -405,7 +405,7 @@ pedal = \relative c {
   r4. g8 r4 g,8 r | r4. g'8 g, bes c d | f g r r16 bes,~ bes4 d | c r8 c' r4 r8 c, |
   \repeat unfold 4 { f,4 r8 f r4 r8 f' | }
   e,4 r8 e r4 r8 e' | e,4 r8 e r ais~ ais b | d( e) r e, r4 r8 e' | e,4 r8 e r4 e'8 r |
-  \once \override BreathingSign #'text = #(make-musicglyph-markup "scripts.caesura.curved.straight")
+  \once \override BreathingSign #'text = #(make-musicglyph-markup "scripts.caesura.curved")
   \breathe
   % maat 105
   R1*8
