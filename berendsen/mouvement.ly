@@ -55,9 +55,10 @@ rightHand = \relative c' {
   \clef violin
   \global
   \once \override Score.RehearsalMark #'self-alignment-X = #LEFT
+  \once \override Score.RehearsalMark #'break-align-symbols = #'(time-signature key-signature)
+  \once \override Staff.TimeSignature #'break-align-anchor-alignment = #LEFT
   \once \override Score.RehearsalMark #'font-series = #'bold
   \once \override Score.RehearsalMark #'font-size = #1
-  \once \override Score.RehearsalMark #'extra-offset = #'(3 . -1)
   \mark \markup { "Allegretto " \fontsize #'-2 \general-align #Y #DOWN \note #"4" #.8 "= 108" }
   R1*7 r4. r r8 g\mp |
   a2. b8 c | b4. a~ a4~ | a1~ | a4. r r8 g |
@@ -156,11 +157,10 @@ rightHand = \relative c' {
   { fisis,1( | gis1) | } \\
   { ais8 bis cis \stemDown bis dis cis bis cis | b cis d fis e d cis d | }
   >>
-  % from: http://lsr.dsi.unimi.it/LSR/Item?id=170
-  \once \override BreathingSign #'text = #(markup #:line
-                                  (#:musicglyph "scripts.caesura.curved"
-                                   #:translate (cons -1.75 1.7)
-                                   #:musicglyph "scripts.ufermata"))
+  \once \override BreathingSign #'text = \markup \line {
+    \musicglyph #"scripts.caesura.curved"
+    \translate #'(-1.75 . 1.7) \musicglyph #"scripts.ufermata"
+  }
   \breathe
   % maat 105
   \ottava #1
@@ -322,7 +322,7 @@ leftHand = \relative c {
     e8 g16 e g8 e g16 e g8 e g | e8 fis16 e fis8 e fis16 e fis8 e fis |
   }
   >>
-  \once \override BreathingSign #'text = #(make-musicglyph-markup "scripts.caesura.curved")
+  \once \override BreathingSign #'text = \markup \musicglyph #"scripts.caesura.curved"
   \breathe
   \clef treble
   % maat 105
@@ -405,7 +405,7 @@ pedal = \relative c {
   r4. g8 r4 g,8 r | r4. g'8 g, bes c d | f g r r16 bes,~ bes4 d | c r8 c' r4 r8 c, |
   \repeat unfold 4 { f,4 r8 f r4 r8 f' | }
   e,4 r8 e r4 r8 e' | e,4 r8 e r ais~ ais b | d( e) r e, r4 r8 e' | e,4 r8 e r4 e'8 r |
-  \once \override BreathingSign #'text = #(make-musicglyph-markup "scripts.caesura.curved")
+  \once \override BreathingSign #'text = \markup \musicglyph #"scripts.caesura.curved"
   \breathe
   % maat 105
   R1*8
