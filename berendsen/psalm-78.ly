@@ -27,6 +27,15 @@
   line-width = 185 \mm
 }
 
+tempoMark = {
+  \once \override Score.RehearsalMark #'self-alignment-X = #LEFT
+  \once \override Score.RehearsalMark #'break-align-symbols = #'(time-signature key-signature)
+  \once \override Staff.TimeSignature #'break-align-anchor-alignment = #LEFT
+  \mark \markup \bold {
+    Allegro non troppo ( \small \general-align #Y #DOWN \note #"2" #.8 ± 54 )
+  }
+}
+
 haak = {
   \set PianoStaff.connectArpeggios = ##t
   \once \override PianoStaff.Arpeggio #'extra-offset = #'(0.5 . 0)
@@ -38,18 +47,9 @@ rh = \relative c' {
   \clef violin
   \override Score.TimeSignature #'style = #'()
   \time 2/2
+  \tempoMark
   \set Score.beatLength = #(ly:make-moment 1 4)
-  d16
-  ^\markup \column {
-    \line {
-      \hspace #'-4
-      \bold "Allegro non troppo ("
-      \fontsize #'-2 \general-align #Y #DOWN \note #"2" #.8 
-      "± 54 )"
-    }
-    \line {II fluit 8'}
-  }
-  _\markup {\dynamic p \italic leggiero}
+  d16^"II fluit 8'"_\markup {\dynamic p \italic leggiero}
   d' a c d g, a c f, a c e, g a e f |
   \repeat unfold 5 { d d' a c d g, a c f, a c e, g a e f | }
   d d' a c d g, a c f, a c e, g a f g | e d' a c d g, a c f, a c e, g a e f |
