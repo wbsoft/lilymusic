@@ -1,33 +1,33 @@
-\version "2.11"
+\version "2.12.0"
 
 #(set-global-staff-size 16)
 
 \paper {
-	#(set-paper-size "a4")
-	bottom-margin = 12 \mm
-	line-width = 185 \mm
-	ragged-last-bottom = ##f
+        #(set-paper-size "a4")
+        bottom-margin = 12 \mm
+        line-width = 185 \mm
+        ragged-last-bottom = ##f
 }
 
 \header {
-	title = "Heer, hoor mijn gebed"
-	poet = "Psalm 143, 1-2"
-	composer = "Moritz Hauptmann (1792-1868)"
-	copyright = \markup \center-align {
-	\with-url #"http://www.cpdl.org/"
-	"Copyright © 2007 The Choral Public Domain Library (http://www.cpdl.org/)"
-	"This edition may be freely distributed, edited, performed or recorded."
-	"Source: Attachment to “De Lofstem”, 1899 nº 3. Some obvious errors have been corrected:"
-	"m.34.4 alto: d#; m.52.2-3 alto: a' e''; m.56.3 soprano: b'; alto: g'; m.59.3 alto: c'; m.71.1 bass: c'"
-	}
+        title = "Heer, hoor mijn gebed"
+        poet = "Psalm 143, 1-2"
+        composer = "Moritz Hauptmann (1792-1868)"
+        copyright = \markup \center-column {
+        \with-url #"http://www.cpdl.org/"
+        "Copyright © 2007 The Choral Public Domain Library (http://www.cpdl.org/)"
+        "This edition may be freely distributed, edited, performed or recorded."
+        "Source: Attachment to “De Lofstem”, 1899 nº 3. Some obvious errors have been corrected:"
+        "m.34.4 alto: d#; m.52.2-3 alto: a' e''; m.56.3 soprano: b'; alto: g'; m.59.3 alto: c'; m.71.1 bass: c'"
+        }
 }
 
 global = {
-	\time 4/4
-	\key e \major
-	\dynamicUp
-	#(set-accidental-style 'modern)
-	\set hairpinToBarline = ##f
+        \time 4/4
+        \key e \major
+        \dynamicUp
+        #(set-accidental-style 'modern)
+        \override Hairpin #'to-barline = ##f
 }
 
 sop = \relative c' {
@@ -370,20 +370,21 @@ ver -- neem mijn sme -- ken.
 }
 
 \score {
-	\new ChoirStaff <<
-		{ \set Staff.instrumentName = "S. " \global \sop }
-		\addlyrics { \soptext }
-		{ \set Staff.instrumentName = "A. " \global \alt }
-		\addlyrics { \alttext }
-		{ \set Staff.instrumentName = "T. " \global \ten }
-		\addlyrics { \tentext }
-		{ \set Staff.instrumentName = "B. " \global \bas }
-		\addlyrics { \bastext }
-	>>
-	\midi { }
-	\layout {
-		\context { \Staff
-			\consists "Ambitus_engraver"
-		}
-	}
+        \new ChoirStaff <<
+                { \set Staff.instrumentName = "S. " \global \sop }
+                \addlyrics { \soptext }
+                { \set Staff.instrumentName = "A. " \global \alt }
+                \addlyrics { \alttext }
+                { \set Staff.instrumentName = "T. " \global \ten }
+                \addlyrics { \tentext }
+                { \set Staff.instrumentName = "B. " \global \bas }
+                \addlyrics { \bastext }
+        >>
+        \midi { }
+        \layout {
+                \context { \Staff
+                        \consists "Ambitus_engraver"
+                }
+        }
 }
+
