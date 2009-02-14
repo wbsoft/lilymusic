@@ -1,9 +1,11 @@
-\version "2.12.2"
+\version "2.12.1"
 
 #(set-global-staff-size 18)
 \paper {
   ragged-last-bottom = ##f
+  between-system-padding = #0
 }
+\layout { system-count = #15 }
 
 \header {
   title = "Alleluia Surrexit Dominus"
@@ -246,7 +248,6 @@ bassVerse = \lyricmode {
     \addlyrics { \bassVerse }
   >>
   \layout {
-    system-count = #15
     \context {
       \Voice
       \remove "Note_heads_engraver"
