@@ -1,4 +1,4 @@
-\version "2.11.46"
+\version "2.12.0"
 
 \header {
   title = "“Singet dem Herrn ein neues Lied”"
@@ -9,7 +9,7 @@
     \line { Freiberg, 1628; revised Dresden, 1661}
   }
   poet = "Berijming 1773"
-  copyright = \markup \center-align {
+  copyright = \markup \center-column {
     \line {
       Engraved by
       \with-url #"http://www.wilbertberendsen.nl/"
