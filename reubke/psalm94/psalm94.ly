@@ -15,8 +15,8 @@
   }
   \context {
     \Voice
-    \override TextSpanner #'dash-period = #5
-    \override TextSpanner #'dash-fraction = #0.15
+    \override DynamicTextSpanner #'dash-period = #6
+    \override DynamicTextSpanner #'dash-fraction = #0.08
     
   }
 }
@@ -24,16 +24,16 @@
 scoreSetup = <<
   \new Devnull = "breaks" { }
   \new PianoStaff <<
-    \new Staff = "rh" {
+    \new Staff = "rh" \new Voice = "rh" {
       \clef treble
       #(set-accidental-style 'piano)
     }
-    \new Staff = "lh" {
+    \new Staff = "lh" \new Voice = "lh" {
       \clef bass
       #(set-accidental-style 'piano)
     }
   >>
-  \new Staff = "ped" {
+  \new Staff = "ped" \new Voice = "ped" {
     \clef bass
     #(set-accidental-style 'piano)
   }
@@ -46,7 +46,7 @@ scoreSetup = <<
 \score {
   {
     \scoreSetup
-    %\graveMusic
+    \graveMusic
     \larghettoMusic
     
   }

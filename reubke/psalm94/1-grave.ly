@@ -17,7 +17,7 @@ tempoMark = {
 graveMusic = {
   % bar 1 - 7
   <<
-    \context Staff = "rh" \relative c' {
+    \context Voice = "rh" \relative c' {
       \global
       \tempoMark
       R1*2 |
@@ -43,7 +43,7 @@ graveMusic = {
       <beses des~ ges>2. <as~ des~ f>4 |
       <as des as'>1\fermata
     }
-    \context Staff = "lh" \relative c {
+    \context Voice = "lh" \relative c {
       \global
       \clef bass
       r4 bes2.~^\pp
@@ -73,9 +73,8 @@ graveMusic = {
           _\markup\italic { decresc. }
         }
       >>
-      
     }
-    \context Staff = "ped" \relative c' {
+    \context Voice = "ped" \relative c' {
       r4 as2\(
       \p
       -\tweak #'X-offset #3 -\markup \italic { etwas hervortretend. }
@@ -101,15 +100,15 @@ graveMusic = {
   >>
   % bar 8 - 15
   <<
-    \context Staff = "rh" \relative c' {
-      R1 R1 R1 r2 r4 s | s1 | s1\< | s1\!
-      
+    \context Voice = "rh" \relative c' {
+      R1*3 r2 r4 s | s1 | s1\< | s1\! | s1 |
     }
-    \context Staff = "lh" \relative c' {
+    \context Voice = "lh" \relative c' {
       R1 |
       r4
       <<
         {
+          \voiceOne
           g2\(^\p
           -\tweak #'X-offset #3
           ^\markup \whiteout \italic { düster aber hervortretender. }
@@ -126,14 +125,17 @@ graveMusic = {
           <as c~ f>2. <g c~ e>4 |
           <e c'>1\fermata
           _\markup\italic { decresc. }
-        } \\ {
+        }
+        \new Voice {
+          \voiceTwo
           g,2\( fis8. d16 |
           f8.\) r16 s2. |
           \voiceOne
           r2 r4 <a' b~>4 |
           \once \override Dots #'extra-offset = #'(0 . 0.5)
           b2. c4
-        } \\ {
+        }
+        \new Voice {
           s2. s1 s2.
           \voiceThree \shiftOff
           \oops a4_~ |
@@ -146,7 +148,9 @@ graveMusic = {
           f'~ <f~ c'~> <f c'~ d> |
           <as c~ f>2. <g~ c~ e>4 |
           <g c g'>1\fermata
-        } \\ {
+        }
+        \new Voice {
+          \voiceFour
           s2. s1 s1 |
           d,4\rest d\rest
           \shiftOff
@@ -156,16 +160,17 @@ graveMusic = {
         }
       >>
     }
-    \context Staff = "ped" \relative c' {
+    \context Voice = "ped" \relative c' {
       <<
-        \context Voice = "p2" {
+        {
+          \voiceOne
           as2._\> a4~\! |
           a1~ a~ a~ a~ |
           a4 as2.~ |
           as2. g4 |
           g1\fermata
         }
-        {
+        \new Voice {
           \voiceTwo
           R1 |
           r4 a,2.~\pp |
@@ -177,7 +182,7 @@ graveMusic = {
   >>
   % bar 16 - 52
   <<
-    \context Staff = "rh" \relative c' {
+    \context Voice = "rh" \relative c' {
       r8. c16\f
       ^\markup \bold { Man. II. }
       des2( <c f>8)[ r16 f]~ |
@@ -229,24 +234,45 @@ graveMusic = {
       <a c fis>8-|[ r16 <fis a c>] <fis a c>2~ <fis a c>8. <g b>16( |
       <as b d>8)-| r <f' as b d>2( <e g cis>8[)-| r16 g] |
       <es fis c'>8-|[ r16 <c es fis>] <c es fis>2.~ |
-      <c es fis>4 <a c es>\(
-      _\markup\italic "poco a poco decresc." % TODO: make into spanner
-      <as b d> <g cis>8. <as c>16 |
-      << { b4 bes } \\ g2 >> <e a>4 <es as>\) |
-      g^\(\f fis f es~ es d cis c |
-      \change Staff = "lh"
-      \voiceOne
-      <ges ces>^\mf <g bes> a as |
-      g\)
-      \oneVoice
-      \change Staff = "rh"
+      <c es fis>4 
+      \set decrescendoSpanner = #'text
+      \set decrescendoText = "poco"
+      <a c es>\(\> <as b d> <g cis>8. <as c>16 |
+      <<
+        {
+          \voiceOne
+          \set decrescendoText = "a"
+          b4\> bes
+        }
+        \new Voice {
+          \voiceTwo 
+          g2
+        }
+      >>
+      <e a>4 <es as>\) |
+      \set decrescendoText = "poco"
+      g^\(\>^\markup \dynamic f
+      fis f es~ |
+      \set decrescendoText = "decresc."
+      es\> d\! cis c |
+      <<
+        {
+          \change Staff = "lh"
+          \voiceOne
+          <ges ces>^\mf <g bes> a as |
+          g\)
+          \oneVoice
+          \change Staff = "rh"
+        }
+        \new Voice { s1 s4 } % keep the staff alive
+      >>
       s2. | s1*2 |
       r2 r4 b'(~ |
       <b as'>1~) |
       <b as'>4 r r2 |
       R1*3 |
     }
-    \context Staff = "lh" \relative c {
+    \context Voice = "lh" \relative c {
       r8. <dis fis>16 <e g>2( f8)[ r16 f]( |
       <as c>4~) <as c>8[ r16 <f as c f>] <f as c f>2 |
       r8. <f as>16 <fis a>2( g8)[ r16 g]( |
@@ -324,7 +350,7 @@ graveMusic = {
       fis f es d\) |
       \bar "||"
     }
-    \context Staff = "ped" \relative c {
+    \context Voice = "ped" \relative c {
       r4 bes2(^\f a8. f16 |
       as8. d,16~) <d c'^~>2. |
       c'2. b8. g16 |

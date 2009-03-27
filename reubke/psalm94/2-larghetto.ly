@@ -15,7 +15,7 @@ tempoMark = {
 
 larghettoMusic = {
   <<
-    \context Staff = "rh" \relative c {
+    \context Voice = "rh" \relative c {
       \clef bass
       \global
       \tempoMark
@@ -32,7 +32,8 @@ larghettoMusic = {
           \voiceOne
           \times 2/3 { es'8 d c } |
           g'4) d2 es4~^( |
-          es d des~ \times 2/3 { des8 c bes } |
+          \crescTextCresc
+          es^\< d des~ \times 2/3 { des8 c bes } |
           as'4 g2 fis4) |
         }
         \new Voice {
@@ -53,7 +54,7 @@ larghettoMusic = {
         }
       >>
     }
-    \context Staff = "lh" \relative c {
+    \context Voice = "lh" \relative c {
       \clef bass
       \global
       <<
@@ -75,30 +76,35 @@ larghettoMusic = {
         }
       >>
     }
-    \context Staff = "ped" \relative c, {
+    \context Voice = "ped" \relative c, {
       \clef bass
       \global
       R1*6
     }
   >>
   <<
-    \context Staff = "rh" {
+    \context Voice = "rh" {
       <<
         \relative c' {
+          \voiceOne
           f4( c'8. b16 bes2~) |
-          bes8( as g fis f4 g8 as~ |
+          bes8( as g fis
+          \set decrescendoSpanner = #'text
+          \set decrescendoText = \markup\whiteout\italic { decresc. molto }
+          f4\> g8 as~ |
           as4) g(~ g8 f c' b~ |
-          b bes4 c8 bes as g fis) |
+          b bes4 c8\! bes as g fis) |
           \oneVoice
-          <c fis d'^~>2 <f b~ d>4 <g b es> |
+          <c fis d'^~>2\pp <f b~ d>4 <g b es> |
         }
-        \\ \relative c' {
+        \new Voice \relative c' {
+          \voiceTwo
           c4 f2 fes4 |
           es2~ <ces es>4. <bes~ d>8 |
           <bes es>4. d8 c4 f~ |
           f fes es2 |
         }
-        \\ \relative c' {
+        \new Voice \relative c' {
           s1*2 | s2 s8 \voiceOne \oops f4*1/2 _~ \stemDown \oops f4
         }
       >>
