@@ -26,16 +26,16 @@ scoreSetup = <<
   \new PianoStaff <<
     \new Staff = "rh" {
       \clef treble
-      #(set-accidental-style 'modern)
+      #(set-accidental-style 'piano)
     }
     \new Staff = "lh" {
       \clef bass
-      #(set-accidental-style 'modern)
+      #(set-accidental-style 'piano)
     }
   >>
   \new Staff = "ped" {
     \clef bass
-    #(set-accidental-style 'modern)
+    #(set-accidental-style 'piano)
   }
 >>
 
@@ -46,7 +46,7 @@ scoreSetup = <<
 \score {
   {
     \scoreSetup
-    \graveMusic
+    %\graveMusic
     \larghettoMusic
     
   }
