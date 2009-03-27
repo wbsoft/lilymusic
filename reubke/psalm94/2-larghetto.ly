@@ -4,8 +4,6 @@ global = {
   \key c \minor
 }
 
-breaks = { }
-
 tempoMark = {
   \once \override Score.RehearsalMark #'self-alignment-X = #LEFT
   \once \override Score.RehearsalMark #'break-align-symbols = #'(time-signature key-signature)
@@ -13,7 +11,7 @@ tempoMark = {
   \mark \markup \bold Grave.
 }
 
-music = {
+larghettoMusic = {
   <<
     \context Staff = "rh" \relative c {
       \clef bass

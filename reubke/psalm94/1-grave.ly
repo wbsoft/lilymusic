@@ -1,10 +1,5 @@
 \version "2.12.0"
 
-breaks = {
-  s1*7 \break
-  s1*8 \break
-}
-
 global = {
   \time 4/4
   \key c \major
@@ -19,7 +14,7 @@ tempoMark = {
   \mark \markup \bold Grave.
 }
 
-music = {
+graveMusic = {
   % bar 1 - 7
   <<
     \context Staff = "rh" \relative c' {

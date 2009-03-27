@@ -39,27 +39,15 @@ scoreSetup = <<
   }
 >>
 
-
 \include "1-grave.ly"
-
-gravePart = <<
-  \context Devnull \breaks
-  \music
->>
-
 \include "2-larghetto.ly"
 
-larghettoPart = <<
-  \context Devnull \breaks
-  \music
->>
 
 \score {
   {
     \scoreSetup
-    \gravePart
-    \context Devnull \pageBreak
-    \larghettoPart
+    \graveMusic
+    \larghettoMusic
     
   }
 }
