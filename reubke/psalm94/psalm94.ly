@@ -46,7 +46,7 @@ scoreSetup = <<
 \score {
   {
     \scoreSetup
-    \graveMusic
+    %\graveMusic
     \larghettoMusic
     
   }
