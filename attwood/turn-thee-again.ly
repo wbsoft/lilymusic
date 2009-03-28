@@ -407,13 +407,11 @@ organPart = \removeWithTag #'choir
   >>
 }
 
-\markup\column{
-  \fill-line {
-    \line {
-      Vertaling: Keer u tot ons,
-      \smaller HEER – hoe lang nog?
-      Ontferm u over uw dienaren.
-      \smallCaps (nbv 2004)
-    }
+\markup\fill-line {
+  \line {
+    Vertaling: Keer u tot ons,
+    \smaller HEER – hoe lang nog?
+    Ontferm u over uw dienaren.
+    \smallCaps (nbv 2004)
   }
 }
