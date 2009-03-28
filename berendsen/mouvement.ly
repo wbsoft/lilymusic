@@ -173,10 +173,10 @@ rightHand = \relative c' {
   a,,8\mp <e' a>16 a, <e' a>8 a, <f' a>16 a, <f' a>8 a, <g' a> |
   a,8 <g' a>16 a, <g' a>8 a, <e' a>16 a, <e' a>8 <a, d> <c a'> |
   <e, g>8 e'16 <e, g> e'8 <e, g> d'16 <e, g> d'8 <e, g> c' |
-  << {s2. d16 e f g} \\ {g,8 <b g'>16\< g <b g'>8 g <b g'>16 g <c g'>8 g d'\!} >> |
-  << {<a a'>2.\f^\markup \bold "Grandioso"
+  << {s2. d16 e f g} \\ {g,8 <b g'>16\< g <b g'>8 g <b g'>16 g <c g'>8 g d'} >> |
+  << {<a a'>2.^\markup \bold "Grandioso"
   \stemDown <b b'>8 <c c'> | \stemUp <b b'>4. <a a'~> \stemDown <a a'>8 <g g'> \stemNeutral } \\
-     { c8 a16 c a8 c a16 c a8 s4 | b8 c16 b c8 a c16 a c8 s4  } >> |
+     { c8\f a16 c a8 c a16 c a8 s4 | b8 c16 b c8 a c16 a c8 s4  } >> |
   <a a'>2. <c c'>4 | <d d'>2. r8_\markup { \italic "meno" \dynamic f }
   g,8 |
   % maat 121

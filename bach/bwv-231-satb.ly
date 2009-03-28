@@ -1,13 +1,13 @@
-\version "2.11.43"
+\version "2.12.0"
 
-#(set-global-staff-size 17) % 15 of 19
+#(set-global-staff-size 15) % 15 of 19
 
 \header {
   title = "Sei Lob und Preis mit Ehren"
   composer = "Johann Sebastian Bach (1685-1750)"
   subtitle = "Motette BWV 231"
-  instrument = "Rehearsal accompaniment"
-  copyright = \markup \center-align {
+  %instrument = "Rehearsal accompaniment"
+  copyright = \markup \center-column {
     \line {
       Engraved by
       \with-url #"http://www.wilbertberendsen.nl/"
@@ -791,7 +791,7 @@ basText = \lyricmode {
   gläub’n __ wir __ aus Her -- zens -- grund.
 }
 
-%{
+% {
 \book {
   \paper {
     page-count = 8 % 8 of 12
@@ -836,7 +836,7 @@ basText = \lyricmode {
 
   \markup {
     \fill-line {
-      \center-align {
+      \center-column {
         \line { Lof, prijs en eer zij God, }
         \line { Vader, Zoon en heilige Geest! }
         \line { Moge hij in ons doen toenemen }
@@ -853,8 +853,8 @@ basText = \lyricmode {
       }
     }
   }
-%}
-
+}
+%{
 \score {
   <<
     \new PianoStaff <<
@@ -879,3 +879,5 @@ basText = \lyricmode {
     >>
   >>
 }
+
+%}

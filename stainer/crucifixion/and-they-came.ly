@@ -1,4 +1,4 @@
-\version "2.11.43"
+\version "2.12.0"
 
 global = {
   \key cis \minor
@@ -12,7 +12,7 @@ tenor = \relative c'' {
   bis2 cis8. cis16
   dis4 bis cis8. dis16
   dis8. gis,16 gis8 gis gis ais
-  \setTextCresc
+  \crescTextCresc
   bis4.\< bis8\! cis dis
   e e4. r4
   e2\p\( dis4 cis2\) gis4
@@ -107,3 +107,4 @@ lh = \relative c {
     >>
   >>
 }
+

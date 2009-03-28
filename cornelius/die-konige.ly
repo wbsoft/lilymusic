@@ -1,5 +1,5 @@
 \version "2.11.61"
-
+\include "../include/merge-rests.ly"
 #(set-global-staff-size 18)
 
 \header {
@@ -154,7 +154,7 @@ bass = \relative c' {
   g g, d' e b c c g'2 r4 b g fis e d g a d,2 r4 g c, g' a8(d,)g(b,) c4(d) g2
   d g g4(\<e)\> b2\! a4(d) g2 g4(\<e)\> b2\!
   a4 g c b a g c b a g c(d) g(\<e)
-  b\f b' c g\> a b c8(\p c, d4) <g g,>2
+  b\f b' c g\> a b c8(\p c, d4) <g g,>2\fermata
 }
 
 verseChoir = \lyricmode {
@@ -210,6 +210,10 @@ verseChoir = \lyricmode {
   >>
   \layout {
     system-count = #11
+    \context {
+      \Staff
+      \override RestCollision #'positioning-done = #merge-rests-on-positioning
+    }
   }
   \midi {
     \context {
