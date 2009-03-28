@@ -351,6 +351,7 @@ graveMusic = {
       \bar "||"
     }
     \context Voice = "ped" \relative c {
+      \oneVoice
       r4 bes2(^\f a8. f16 |
       as8. d,16~) <d c'^~>2. |
       c'2. b8. g16 |
