@@ -12,11 +12,13 @@
     \Staff
     \override TextScript #'staff-padding = #1
     \override VerticalAxisGroup #'minimum-Y-extent = #'(-2 . 2)
+    \override BreathingSign #'text = #(make-musicglyph-markup "scripts.caesura.curved")
   }
   \context {
     \Voice
     \override DynamicTextSpanner #'dash-period = #6
     \override DynamicTextSpanner #'dash-fraction = #0.08
+    \override DynamicTextSpanner #'font-size = #0
     extraNatural = ##t
   }
 }
@@ -39,15 +41,23 @@ scoreSetup = <<
   }
 >>
 
+% temporary
+tempKeySetup = <<
+  \context Voice = "rh" \key g \minor
+  \context Voice = "lh" \key g \minor
+  \context Voice = "ped" \key g \minor
+>>
+
 \include "1-grave.ly"
 \include "2-larghetto.ly"
-
+\include "3-allegro.ly"
 
 \score {
   {
     \scoreSetup
-    \graveMusic
-    \larghettoMusic
-    
+    %\graveMusic
+    %\larghettoMusic
+    \tempKeySetup % delete me
+    \allegroMusic
   }
 }
