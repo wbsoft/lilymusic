@@ -212,6 +212,25 @@ larghettoMusic = {
   >>
   <<
     \context Voice = "rh" {
+      <<
+        \relative c''' {
+          \voiceOne
+          c8( bes as g) g f f es |
+          es d f( es d c bes a) |
+          as4( es'8. d16 des4. es8 |
+          des ces bes beses as4 bes8 ces) |
+          des4( as'8. g16 ges4. as8 |
+          ges fes es d bes' as g f~ |
+          f es des c bes as ges f) |
+          
+        }
+        \new Voice \relative c'' {
+          \voiceTwo
+          <d f>4( <c es>8 <bes d>) <as c>4( <g bes> |
+          <f b> <f c'> fis es~) |
+          es8 
+        }
+      >>
     }
     \context Voice = "lh" \relative c' {
       << { \voiceOne f4.) g8 } \new Voice { \voiceTwo s4 f,8 g } >>

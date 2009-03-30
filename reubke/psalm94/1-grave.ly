@@ -343,7 +343,7 @@ graveMusic = {
         }
       >>
       as4^\(
-      ^\markup { Flöte oder Harmonika 8' allein }
+      ^\markup \whiteout { Flöte oder Harmonika 8' allein }
       g fis |
       f es d c |
       b as g fis~ |

@@ -17,7 +17,7 @@
     \Voice
     \override DynamicTextSpanner #'dash-period = #6
     \override DynamicTextSpanner #'dash-fraction = #0.08
-    
+    extraNatural = ##t
   }
 }
 
@@ -46,7 +46,7 @@ scoreSetup = <<
 \score {
   {
     \scoreSetup
-    %\graveMusic
+    \graveMusic
     \larghettoMusic
     
   }
