@@ -549,9 +549,9 @@ larghettoMusic = {
       <d d'>8 r r4 r r8 d~ |
       <d d'>2~
       ^\markup { alle Bässe ohne Posaune. } 
-      <d d'>8 r8 r d( |
-      d'2)~ d8 r r d,( |
-      d'2)~ d8 r r d,( |
+      <d d'>8 r8 r d_( |
+      d'2)~ d8 r r d,_( |
+      d'2)~ d8 r r d,_( |
       d'1)~ |
       d1~ |
       d1~ |
