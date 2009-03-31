@@ -55,9 +55,9 @@ tempKeySetup = <<
 \score {
   {
     \scoreSetup
-    %\graveMusic
-    %\larghettoMusic
-    \tempKeySetup % delete me
+    \graveMusic
+    \larghettoMusic
+    %\tempKeySetup % delete me
     \allegroMusic
   }
 }

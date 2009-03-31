@@ -15,7 +15,7 @@ tempoMark = {
 
 larghettoMusic = {
   <<
-    \context Voice = "rh" \relative c {
+    \context Staff = "rh" \relative c {
       \clef bass
       \global
       \tempoMark
@@ -54,7 +54,7 @@ larghettoMusic = {
         }
       >>
     }
-    \context Voice = "lh" \relative c {
+    \context Staff = "lh" \relative c {
       \clef bass
       \global
       <<
@@ -65,7 +65,8 @@ larghettoMusic = {
           es4 d2 c4 |
           b2 bes4~ \times 2/3 { bes8 c des } |
           d4( es d2) |
-        } \\ {
+        }
+        \\ {
           c,1~\p
           ^\markup \whiteout { M. II. Salicional und Gedackt 16'. u. 8'. }
           c1~ |
@@ -76,14 +77,14 @@ larghettoMusic = {
         }
       >>
     }
-    \context Voice = "ped" \relative c, {
+    \context Staff = "ped" \relative c, {
       \clef bass
       \global
       R1*6
     }
   >>
   <<
-    \context Voice = "rh" <<
+    \context Staff = "rh" <<
       \relative c' {
         \voiceOne
         f4( c'8. b16 bes2~) |
@@ -107,16 +108,14 @@ larghettoMusic = {
         s1*2 | s2 s8 \voiceOne \oops f4*1/2 _~ \stemDown \oops f4
       }
     >>
-    \context Voice = "lh" <<
+    \context Staff = "lh" <<
       \relative c' {
-        \voiceOne
         as2.( g4~ |
         g8 as bes c) s2 |
         s4. bes8 a4( as~ |
         as4. g8~ g as d c) |
       }
-      \new Voice \relative c {
-        \voiceTwo
+      \\ \relative c {
         d2( des |
         c4 bes8 a \oneVoice as4 g8 f) |
         es8_( bes' \voiceTwo es4)~ es2( |
@@ -124,13 +123,12 @@ larghettoMusic = {
         \oneVoice as2 g
       }
     >>
-    \context Voice = "ped" \relative c' {
+    \context Staff = "ped" \relative c' {
       R1*5
     }
   >>
   <<
-    \context Voice = "rh" \relative c'' {
-      \oneVoice
+    \context Staff = "rh" \relative c'' {
       <as c es>2^\(_\ppp
       ^\markup \whiteout { M. II. Flöte 8'. }
       <es as c>4 << { d'8. es16 } \\ <g, bes>4 >> |
@@ -174,15 +172,15 @@ larghettoMusic = {
         }
       >>
     }
-    \context Voice = "lh" \relative c, {
-      \oneVoice
+    \context Staff = "lh" \context Voice = "lh" \relative c, {
       r4 \times 2/3 {
         \once \override DynamicText #'X-offset = #-3
         c8^\(
         \p
         _\markup\whiteout\italic { Melodie sehr hervortretend. } 
         ^\markup\whiteout { M. I. V. d. Gamba 8'. }
-        d es }
+        d es
+      }
       as4 g |
       f c' d es |
       as g f \times 2/3 { es8 d c } |
@@ -194,7 +192,7 @@ larghettoMusic = {
       as\( g bes \clef treble es g f c' ces~ |
       ces\) bes4( c8 bes as g ges |
     }
-    \context Voice = "ped" \relative c, {
+    \context Staff = "ped" \relative c, {
       R1*3 | r2 r4 
       fis4\pp
       ^\markup\whiteout { Subbass 16'. }
@@ -207,9 +205,8 @@ larghettoMusic = {
     }
   >>
   <<
-    \context Voice = "rh" <<
+    \context Staff = "rh" <<
       \relative c''' {
-        \voiceOne
         c8( bes as g) g f f es |
         es d f( es d c bes a) |
         as4(
@@ -220,8 +217,7 @@ larghettoMusic = {
         ges( fes es d bes' as g f~ |
         f es des c bes as ges f) |
       }
-      \new Voice \relative c'' {
-        \voiceTwo
+      \\ \relative c'' {
         \set crescendoSpanner = #'text
         \set crescendoText = \markup \whiteout {
           \upright { M. I. u. II. } \italic crescendo
@@ -235,8 +231,8 @@ larghettoMusic = {
         as ges des as)\!
       }
     >>
-    \context Voice = "lh" << 
-      \relative c' {
+    \context Staff = "lh" << 
+      \context Voice = "lh" \relative c' {
         \voiceOne
         f4.) g8 s2 |
         s4 c a g8 ges |
@@ -261,7 +257,7 @@ larghettoMusic = {
         f es des c bes as ges f) |
       }
     >>
-    \context Voice = "ped" \relative c {
+    \context Staff = "ped" \relative c {
       bes2(
       ^\markup { Ped. \italic { poco cresc. } }
       f4 g |
@@ -274,8 +270,8 @@ larghettoMusic = {
     }
   >>
   <<
-    \context Voice = "rh" <<
-      \relative c' {
+    \context Staff = "rh" <<
+      \context Voice = "rh" \relative c' {
         <f as c>4( <des f bes>8. f 16
         \voiceOne as8 g) 
         \oneVoice r <e g bes> |
@@ -298,8 +294,7 @@ larghettoMusic = {
         es c bes beses as4 bes8 ces)
       }
     >>
-    \context Voice = "lh" \relative c'' {
-      \oneVoice
+    \context Staff = "lh" \context Voice = "lh" \relative c'' {
       r8
       c(^\mf
       _\markup { I. Trompete 8'. }
@@ -311,7 +306,7 @@ larghettoMusic = {
       des8~ des c es as |
       g es des c ces4 bes8 as~|
     }
-    \context Voice = "ped" \relative c {
+    \context Staff = "ped" \relative c {
       c2. r8 bes |
       as4 r8 as g4 r8 g |
       c4 r8 c des4 r8 d |
@@ -320,8 +315,8 @@ larghettoMusic = {
     }
   >>
   <<
-    \context Voice = "rh" <<
-      \relative c'' {
+    \context Staff = "rh" <<
+      \context Voice = "rh" \relative c'' {
         <as des es~>2.\p es'8 f~( |
         f es des c~ c bes as f~) |
         \oneVoice
@@ -384,7 +379,7 @@ larghettoMusic = {
         s4*2/3 s2 s4*1/3
         b~ s |
         b4 s2 s4*1/3
-        \once \override Tie #'staff-position = #0
+        \once \override Tie #'staff-position = #0.5
         c_~ s |
         c4 s2
         \times 2/3 {
@@ -407,8 +402,8 @@ larghettoMusic = {
         <a, d>4
       }
     >>
-    \context Voice = "lh" <<
-      \relative c'' {
+    \context Staff = "lh" <<
+      \context Voice = "lh" \relative c'' {
         as8) r8 r4 s2 |
         \voiceOne
         ges,4
@@ -456,7 +451,7 @@ larghettoMusic = {
         des8*2/3)
       }
     >>
-    \context Voice = "ped" \relative c {
+    \context Staff = "ped" \context Voice = "ped" \relative c {
       es4 r r2 |
       R1 |
       des1\pp^\markup{ Subbass 16. } |
@@ -468,7 +463,7 @@ larghettoMusic = {
     }
   >>
   <<
-    \context Voice = "rh" \relative c'' {
+    \context Staff = "rh" \context Voice = "rh" \relative c'' {
       <fis c'>16-|
       \breathe
       \clef bass
@@ -508,7 +503,7 @@ larghettoMusic = {
       cis(\< bes' g cis, bes es cis bes cis bes' g cis, bes es cis bes) |
       cis( bes' g cis, bes es cis bes cis bes' g cis, bes es cis bes) |
     }
-    \context Voice = "lh" \relative c' {
+    \context Staff = "lh" \context Voice = "lh" \relative c' {
       \oneVoice
       <c fis a>16-|
       \breathe
@@ -534,7 +529,7 @@ larghettoMusic = {
       cis( cis, es g bes es, g bes cis cis, es g bes) r a,( a') |
       bes,( bes' b, b' c, c' cis, cis' d, d' es, es' e, e' f, f') |
     }
-    \context Voice = "ped" \relative c, {
+    \context Staff = "ped" \context Voice = "ped" \relative c, {
       d1~\f
       ^\markup Pedalcoppel
       | d4

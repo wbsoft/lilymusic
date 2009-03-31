@@ -17,7 +17,7 @@ tempoMark = {
 graveMusic = {
   % bar 1 - 7
   <<
-    \context Voice = "rh" \relative c' {
+    \context Staff = "rh" \relative c' {
       \global
       \tempoMark
       R1*2 |
@@ -43,7 +43,7 @@ graveMusic = {
       <beses des~ ges>2. <as~ des~ f>4 |
       <as des as'>1\fermata
     }
-    \context Voice = "lh" \relative c {
+    \context Staff = "lh" \relative c {
       \global
       \clef bass
       r4 bes2.~^\pp
@@ -74,7 +74,7 @@ graveMusic = {
         }
       >>
     }
-    \context Voice = "ped" \relative c' {
+    \context Staff = "ped" \relative c' {
       r4 as2\(
       \p
       -\tweak #'X-offset #3 -\markup \italic { etwas hervortretend. }
@@ -100,10 +100,10 @@ graveMusic = {
   >>
   % bar 8 - 15
   <<
-    \context Voice = "rh" \relative c' {
+    \context Staff = "rh" \relative c' {
       R1*3 r2 r4 s | s1 | s1\< | s1\! | s1 |
     }
-    \context Voice = "lh" \relative c' {
+    \context Staff = "lh" \relative c' {
       R1 |
       r4
       <<
@@ -160,7 +160,7 @@ graveMusic = {
         }
       >>
     }
-    \context Voice = "ped" \relative c' {
+    \context Staff = "ped" \relative c' {
       <<
         {
           \voiceOne
@@ -182,7 +182,7 @@ graveMusic = {
   >>
   % bar 16 - 52
   <<
-    \context Voice = "rh" \relative c' {
+    \context Staff = "rh" \relative c' {
       r8. c16\f
       ^\markup \bold { Man. II. }
       des2( <c f>8)[ r16 f]~ |
@@ -250,29 +250,23 @@ graveMusic = {
         }
       >>
       <e a>4 <es as>\) |
-      \set decrescendoText = "poco"
-      g^\(\>^\markup \dynamic f
+      \set decrescendoText = " poco"
+      g(\f\>
       fis f es~ |
       \set decrescendoText = "decresc."
       es\> d\! cis c |
-      <<
-        {
-          \change Staff = "lh"
-          \voiceOne
-          <ges ces>^\mf <g bes> a as |
-          g\)
-          \oneVoice
-          \change Staff = "rh"
-        }
-        \new Voice { s1 s4 } % keep the staff alive
-      >>
+      \change Staff = "lh"
+      <ges ces>^\mf <g bes> a as |
+      g)
       s2. | s1*2 |
+      \change Staff = "rh"
+      \oneVoice
       r2 r4 b'(~ |
       <b as'>1~) |
       <b as'>4 r r2 |
       R1*3 |
     }
-    \context Voice = "lh" \relative c {
+    \context Staff = "lh" \relative c {
       r8. <dis fis>16 <e g>2( f8)[ r16 f]( |
       <as c>4~) <as c>8[ r16 <f as c f>] <f as c f>2 |
       r8. <f as>16 <fis a>2( g8)[ r16 g]( |
@@ -350,8 +344,7 @@ graveMusic = {
       fis f es d\) |
       \bar "||"
     }
-    \context Voice = "ped" \relative c {
-      \oneVoice
+    \context Staff = "ped" \relative c {
       r4 bes2(^\f a8. f16 |
       as8. d,16~) <d c'^~>2. |
       c'2. b8. g16 |
