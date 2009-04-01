@@ -14,6 +14,7 @@ tempoMark = {
 }
 
 larghettoMusic = {
+  % bar 53 - 58
   <<
     \context Staff = "rh" \relative c {
       \clef bass
@@ -83,6 +84,7 @@ larghettoMusic = {
       R1*6
     }
   >>
+  % bar 59 - 63
   <<
     \context Staff = "rh" <<
       \relative c' {
@@ -127,6 +129,7 @@ larghettoMusic = {
       R1*5
     }
   >>
+  % bar 64 - 73
   <<
     \context Staff = "rh" \relative c'' {
       <as c es>2^\(_\ppp
@@ -204,6 +207,7 @@ larghettoMusic = {
       d des c bes8 a) |
     }
   >>
+  % bar 74 - 80
   <<
     \context Staff = "rh" <<
       \relative c''' {
@@ -269,6 +273,7 @@ larghettoMusic = {
       as a bes b)
     }
   >>
+  % bar 81 - 85
   <<
     \context Staff = "rh" <<
       \context Voice = "rh" \relative c' {
@@ -314,6 +319,7 @@ larghettoMusic = {
       as,\p r8 c des4 r8 d |
     }
   >>
+  % bar 86 - 93
   <<
     \context Staff = "rh" <<
       \context Voice = "rh" \relative c'' {
@@ -462,6 +468,7 @@ larghettoMusic = {
       f |
     }
   >>
+  % bar 94 - 107
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c'' {
       <fis c'>16-|

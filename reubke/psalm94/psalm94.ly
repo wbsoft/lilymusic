@@ -24,7 +24,6 @@
 }
 
 scoreSetup = <<
-  \new Devnull = "breaks" { }
   \new PianoStaff <<
     \new Staff = "rh" \new Voice = "rh" {
       \clef treble
@@ -55,9 +54,9 @@ tempKeySetup = <<
 \score {
   {
     \scoreSetup
-    %\graveMusic
-    %\larghettoMusic
-    \tempKeySetup % delete me
+    \graveMusic
+    \larghettoMusic
+    %\tempKeySetup % delete me
     \allegroMusic
   }
 }

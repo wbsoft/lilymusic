@@ -10,6 +10,7 @@ tempoMark = {
 }
 
 allegroMusic = {
+  % bar 108 - 125
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c'' {
       \set tieWaitForNote = ##t
@@ -134,6 +135,7 @@ allegroMusic = {
       \times 2/3 { r8 g' fis } f2-^ es8. c16 |
     }
   >>
+  % bar 126 - 136
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c' {
       <es as c~>4-> <f c' d>8. <g c es>16 <c es g>4-> <d g b>8. <es g c>16 |
@@ -180,6 +182,7 @@ allegroMusic = {
       f2. f,4
     }
   >>
+  % bar 137 - 
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c' {
       \oneVoice
