@@ -180,6 +180,77 @@ allegroMusic = {
       f2. f,4
     }
   >>
+  <<
+    \context Staff = "rh" \context Voice = "rh" \relative c' {
+      \oneVoice
+      <des~ as'>2^(
+      ^\markup \italic { weniger stark und ruhiger. }
+      _\markup { M. II. \dynamic f } 
+      <des g>4) r8 des |
+      \voiceOne
+      fes1~-^ |
+      <<
+        { fes4-- es-- as-- bes-- }
+        \new Voice {
+          \voiceTwo
+          s4 es,16( des bes g) as'( f 
+          \change Staff = "lh" \voiceOne ces des
+          \change Staff = "rh" \voiceTwo bes' g 
+          \change Staff = "lh" \voiceOne bes, des)
+        }
+      >> |
+      \oneVoice
+      <es ges~ des'>2^( <ges c>4.) ges8 |
+      \voiceOne
+      beses1~-^ |
+      <<
+        { beses4 as-- des-- es-- }
+        \new Voice {
+          \voiceTwo
+          s4 as,16( ges es c) des'( beses
+          \change Staff = "lh" \voiceOne fes ges
+          \change Staff = "rh" \voiceTwo es' c 
+          \change Staff = "lh" \voiceOne es, fes)
+        }
+      >> |
+      
+    }
+    \context Staff = "lh" \context Voice = "lh" \relative c {
+      \oneVoice
+      r16 bes( c des es fes as a bes g fes es d des bes g) |
+      r \stemDown es_([ as bes] des
+      \stemUp fes[^\markup \italic { R.H. } as bes] des
+      \stemNeutral \clef treble as'[^\<_\markup \italic { L.H. }
+      bes des] 
+      <<
+        { \voiceTwo fes bes, des fes)\! | as fes des bes es4^- }
+        \new Voice { \voiceOne fes4-^ | as-- }
+      >>
+      \clef bass s2 |
+      \oneVoice
+      r16 des,,,( es f ges beses c des es c beses as g ges es c) |
+      r \stemUp as_( des es ges
+      \change Staff = "rh" \stemDown beses des es ges 
+      \change Staff = "lh" \stemUp \clef treble des' es ges
+      <<
+        { \voiceTwo beses es, ges beses) | des beses ges es as4 }
+        \new Voice { \voiceOne beses4-- | des-- as-- }  
+      >>
+      \clef bass s2
+      
+    }
+    \context Staff = "ped" \context Voice = "ped" \relative c, {
+      fes2
+      ^\markup \whiteout { starke Bässe und Pedalcoppel fort. }
+      es~ |
+      es1~ |
+      es4 des'( ces bes) |
+      beses2 as~ |
+      as1~ |
+      as4 ges'( fes es) |
+      
+    }
+  >>
 }
 
 
