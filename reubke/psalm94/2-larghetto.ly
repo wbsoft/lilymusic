@@ -10,7 +10,7 @@ tempoMark = {
   \once \override Score.RehearsalMark #'self-alignment-X = #LEFT
   \once \override Score.RehearsalMark #'break-align-symbols = #'(time-signature key-signature)
   \once \override Staff.TimeSignature #'break-align-anchor-alignment = #LEFT
-  \mark \markup \bold Grave.
+  \mark \markup \bold Larghetto.
 }
 
 larghettoMusic = {
