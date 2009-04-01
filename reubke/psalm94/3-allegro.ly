@@ -213,7 +213,7 @@ allegroMusic = {
           s4 as,16( ges es c) des'( beses
           \change Staff = "lh" \voiceOne fes ges
           \change Staff = "rh" \voiceTwo es' c 
-          \change Staff = "lh" \voiceOne es, fes)
+          \change Staff = "lh" \voiceOne es, ges)
         }
       >> |
       
