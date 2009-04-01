@@ -9,6 +9,9 @@ tempoMark = {
   \mark \markup \bold { Allegro con fuoco. }
 }
 
+rh = { \change Staff = "rh" \stemDown }
+lh = { \change Staff = "lh" \stemUp }
+
 allegroMusic = {
   % bar 108 - 125
   <<
@@ -182,7 +185,7 @@ allegroMusic = {
       f2. f,4
     }
   >>
-  % bar 137 - 
+  % bar 137 - 154
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c' {
       \oneVoice
@@ -196,10 +199,7 @@ allegroMusic = {
         { fes4-- es-- as-- bes-- }
         \new Voice {
           \voiceTwo
-          s4 es,16( des bes g) as'( f 
-          \change Staff = "lh" \voiceOne ces des
-          \change Staff = "rh" \voiceTwo bes' g 
-          \change Staff = "lh" \voiceOne bes, des)
+          s4 es,16( des bes g) as'( f \lh ces des \rh bes' g \lh bes, des)
         }
       >> |
       \oneVoice
@@ -210,13 +210,36 @@ allegroMusic = {
         { beses4 as-- des-- es-- }
         \new Voice {
           \voiceTwo
-          s4 as,16( ges es c) des'( beses
-          \change Staff = "lh" \voiceOne fes ges
-          \change Staff = "rh" \voiceTwo es' c 
-          \change Staff = "lh" \voiceOne es, ges)
+          s4 as,16( ges es c) des'( beses \lh fes ges \rh es' c \lh es, ges)
         }
       >> |
-      
+      <beses des ges>4-- fes'-- es-- d-- |
+      des( ces bes << { as16 ces d~ f~) } \new Voice { \voiceTwo as,4 } >> |
+      <d f as>4( ges fes es) |
+      \oneVoice
+      <f, as~ es'>2^( <as d>4.) as8 |
+      ces1^~^^ |
+      <<
+        { ces4 \voiceOne bes-- es,-- f-- }
+        \new Voice {
+          \voiceTwo
+          s4 bes16( as f d) es( ces \lh ges as \rh f' d \lh f, as)
+        }
+      >> |
+      \oneVoice
+      <bes des~ as'>2^( <des g>4.) des8 |
+      \voiceOne
+      fes1~ |
+      <<
+        { fes4 es-- as-- bes-- }
+        \new Voice {
+          \voiceTwo
+          s4 es,16( des bes g) as'( fes \lh ces des) \rh bes'( g \lh bes, des)
+        }
+      >> |
+      <fes as des>4 ces'( bes a) |
+      as( ges f es16 ges beses~ c~) |
+      <beses c es>4( des ces bes) | 
     }
     \context Staff = "lh" \context Voice = "lh" \relative c {
       \oneVoice
@@ -240,7 +263,66 @@ allegroMusic = {
         \new Voice { \voiceOne beses4-- | des-- as-- }  
       >>
       \clef bass s2
-      
+      \oneVoice
+      r16
+      <<
+        {
+          \voiceOne
+          fes,,16_( beses ces
+          \voiceTwo
+          des4 bes g) |
+          as fes f as |
+          s des ces bes |
+        }
+        \new Voice {
+          \voiceOne \slurDown
+          s8. des16 fes \rh beses as
+          \lh bes, es \rh g bes \lh g, d' \rh g bes |
+          \lh as,( des \rh fes as) \lh fes,( ces' \rh fes as)
+          \lh f,( bes \rh d f) \lh as,( ces \rh d f) |
+          ces'( as f d) \lh des( ges \rh bes des)
+          \lh ces,( fes \rh as ces) \lh bes,( es \rh ges bes) |
+        }
+      >>
+      \oneVoice
+      r f,( ges as bes ces d es f d ces bes a as f d) |
+      r
+      \voiceOne
+      bes_( es f as \rh ces es f as \lh \clef treble es' f as
+      <<
+        { \voiceTwo ces f, as ces | es ces as f bes4^-) }
+        \new Voice { \voiceOne ces4-- | es-- }
+      >>
+      \clef bass s2
+      \oneVoice
+      r16 bes,,,( c des es fes as a bes g fes es d des bes g) |
+      r
+      \voiceOne
+      es_( as bes des \rh fes as bes des \lh \clef treble as' bes des
+      <<
+        { \voiceTwo fes bes, des fes | as fes des bes) es4-- }
+        \new Voice { \voiceOne fes4-- | as-- }
+      >>
+      \clef bass s2
+      \oneVoice
+      r16
+      <<
+        {
+          \voiceOne \slurDown
+          ces,,,_( fes ges) as( ces \rh fes es)
+          \lh f,( bes \rh d f) \lh d,( a' \rh d f) |
+          \lh es,( as \rh ces es) \lh ces,( ges' \rh ces es)
+          \lh c,( f \rh a c) \lh es,( beses' c es) |
+          ges( es c beses) as( des \rh f as) 
+          \lh ges,( ces \rh es ges) \lh f,( bes \rh des f) |
+        }
+        \new Voice {
+          \voiceTwo
+          s8. as,4 f d |
+          es ces c es |
+          s as ges f |
+        }
+      >>
     }
     \context Staff = "ped" \context Voice = "ped" \relative c, {
       fes2
@@ -251,7 +333,18 @@ allegroMusic = {
       beses2 as~ |
       as1~ |
       as4 ges'( fes es) |
-      
+      des2-| es-| |
+      fes-| f-| |
+      ges,-| as4-| bes-| |
+      ces2-| bes~ |
+      bes1~ |
+      bes4 as'( ges f) |
+      fes2-| es~ |
+      es1~ |
+      es4 des( ces bes) |
+      as2-| bes-| |
+      ces-| c-| |
+      des-| es4-| f-| |
     }
   >>
 }
