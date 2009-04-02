@@ -189,6 +189,7 @@ allegroMusic = {
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c' {
       \oneVoice
+      \key c \minor
       <des~ as'>2^(
       ^\markup \italic { weniger stark und ruhiger. }
       _\markup { M. II. \dynamic f } 
@@ -243,6 +244,7 @@ allegroMusic = {
     }
     \context Staff = "lh" \context Voice = "lh" \relative c {
       \oneVoice
+      \key c \minor
       r16 bes( c des es fes as a bes g fes es d des bes g) |
       r \stemDown es_([ as bes] des
       \stemUp fes[^\markup \italic { R.H. } as bes] des
@@ -325,6 +327,7 @@ allegroMusic = {
       >>
     }
     \context Staff = "ped" \context Voice = "ped" \relative c, {
+      \key c \minor
       fes2
       ^\markup \whiteout { starke Bässe und Pedalcoppel fort. }
       es~ |
@@ -346,6 +349,89 @@ allegroMusic = {
       ces-| c-| |
       des-| es4-| f-| |
     }
+  >>
+  % bar 155 - 
+  <<
+    \context Staff = "rh" \context Voice = "rh" \relative c'' {
+      \oneVoice
+      r16 \voiceTwo c^( des es f ges a bes c a f ges es c bes a~) |
+      <<
+        a1 |
+        \new Voice {
+          \voiceOne 
+          c8( des4 es f ges8)~ |
+          \oneVoice
+          <ges, c ges'>2-| <f c' f>4.-| <c' f>8-| |
+        }
+      >>
+      \oneVoice
+      <c f~ c'>2( <b f' b>4)~ <b f' b>16 as'( f b,) |
+      <bes f'>( g as bes c des e f g e c des bes g f e)_~ |
+      <<
+        \voiceTwo e1 |
+        \new Voice {
+          \voiceOne
+          g8( as4 bes c des8)~ |
+          \oneVoice
+          <des, g des'>2-| <c g' c>4.-| <g' c>8-| |
+        }
+      >>
+      \oneVoice
+      <g c~ g'>2( <fis c'~ fis~>4) <c' fis>16( es fis c') |
+      <f, c'>( d es f g as b c d b g as f d c b)_~ |
+      <<
+        \voiceTwo b1
+        \new Voice {
+          \voiceOne
+          d8( es4 f g as8)~ |
+          \oneVoice
+          <as, d as'>2-| <g d' g>4.-| <d' g>8-| |
+        }
+      >>
+      \oneVoice
+      <d g~ d'>2( <des g des'>4)~ <des g des'>16( bes' g e) |
+    }
+    \context Staff = "lh" \context Voice = "lh" \relative c' {
+      \oneVoice
+      \clef treble
+      <c~ es~ bes'>2^(-^ <c es a>4.) es8 |
+      \clef bass
+      ges16( es c bes a ges es des c ges' a bes c a ges f) |
+      es( ges bes c es c bes ges) f( a c es f es c a) |
+      as( c es f as f es c) \clef treble b( d f as b8)-| r8 |
+      \clef bass
+      <<
+        { f2( e4.) bes8 }
+        \\ <g bes>1
+      >>
+      des'16( bes g f e des bes as g des' e f g e des c) |
+      bes( des f g bes g f des) c( e g bes c bes g e) |
+      es( g bes c es c bes g) fis( a c es fis8) r |
+      \clef treble
+      <<
+        { c'2( b4.) f8 }
+        \\ <d f>1
+      >>
+      as'16( f d c \clef bass b as f es d as' b c d b as g) |
+      f( as c d f d c as) g( b d f g f d b) |
+      \clef treble
+      bes( d f g bes g f d) des e g bes des8-| r |
+    }
+    \context Staff = "ped" \context Voice = "ped" \relative c' {
+      ges2(-^ f4.) r8 |
+      r2 r4 r8 f,-| |
+      bes2-| a-| |
+      es'-| d-| |
+      des(-^ c4.) r8 |
+      r2 r4 r8 c-| |
+      f2-| e-| |
+      bes'-| a-| |
+      as(-^ g4.) r8 |
+      r2 r4 r8 g,-| |
+      c2-| b-| |
+      bes-| e,-| |
+    }
+    
   >>
 }
 
