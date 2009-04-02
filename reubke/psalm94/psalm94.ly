@@ -11,7 +11,6 @@
   \context {
     \Staff
     \override TextScript #'staff-padding = #1
-    \override VerticalAxisGroup #'minimum-Y-extent = #'(-2 . 2)
     \override BreathingSign #'text = #(make-musicglyph-markup "scripts.caesura.curved")
   }
   \context {
@@ -25,16 +24,22 @@
 
 scoreSetup = <<
   \new PianoStaff <<
-    \new Staff = "rh" \new Voice = "rh" {
+    \new Staff = "rh" \with {
+      \override VerticalAxisGroup #'minimum-Y-extent = #'(-2 . 3)
+    } {
       \clef treble
       #(set-accidental-style 'piano)
     }
-    \new Staff = "lh" \new Voice = "lh" {
+    \new Staff = "lh" \with {
+      \override VerticalAxisGroup #'minimum-Y-extent = #'(-3 . 2)
+    } {
       \clef bass
       #(set-accidental-style 'piano)
     }
   >>
-  \new Staff = "ped" \new Voice = "ped" {
+  \new Staff = "ped" \with {
+    \override VerticalAxisGroup #'minimum-Y-extent = #'(-2 . 4)
+  } {
     \clef bass
     #(set-accidental-style 'piano)
   }
@@ -54,9 +59,9 @@ tempKeySetup = <<
 \score {
   {
     \scoreSetup
-    %\graveMusic
-    %\larghettoMusic
-    \tempKeySetup % delete me
+    \graveMusic
+    \larghettoMusic
+    %\tempKeySetup % delete me
     \allegroMusic
   }
 }

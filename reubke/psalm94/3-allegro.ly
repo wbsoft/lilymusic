@@ -350,7 +350,7 @@ allegroMusic = {
       des-| es4-| f-| |
     }
   >>
-  % bar 155 - 
+  % bar 155 - 166
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c'' {
       \oneVoice
@@ -365,7 +365,10 @@ allegroMusic = {
         }
       >>
       \oneVoice
-      <c f~ c'>2( <b f' b>4)~ <b f' b>16 as'( f b,) |
+      \set doubleSlurs = ##t
+      <c f~ c'>2( <b f' b>4)~
+      \unset doubleSlurs
+      <b f' b>16 as'( f b,) |
       <bes f'>( g as bes c des e f g e c des bes g f e)_~ |
       <<
         \voiceTwo e1 |
@@ -377,7 +380,10 @@ allegroMusic = {
         }
       >>
       \oneVoice
-      <g c~ g'>2( <fis c'~ fis~>4) <c' fis>16( es fis c') |
+      \set doubleSlurs = ##t
+      <g c^~ g'>2( <fis c'~ fis~>4)
+      \unset doubleSlurs
+      <c' fis>16( es fis c') |
       <f, c'>( d es f g as b c d b g as f d c b)_~ |
       <<
         \voiceTwo b1
@@ -389,12 +395,17 @@ allegroMusic = {
         }
       >>
       \oneVoice
-      <d g~ d'>2( <des g des'>4)~ <des g des'>16( bes' g e) |
+      \set doubleSlurs = ##t
+      <d g~ d'>2( <des g des'>4)~
+      \unset doubleSlurs
+      <des g des'>16( bes' g e) |
     }
     \context Staff = "lh" \context Voice = "lh" \relative c' {
       \oneVoice
       \clef treble
-      <c~ es~ bes'>2^(-^ <c es a>4.) es8 |
+      <c~ es~ bes'>2^(-^
+      ^\markup { \dynamic ff M. I. ohne Coppel. } 
+      <c es a>4.) es8 |
       \clef bass
       ges16( es c bes a ges es des c ges' a bes c a ges f) |
       es( ges bes c es c bes ges) f( a c es f es c a) |
@@ -418,7 +429,10 @@ allegroMusic = {
       bes( d f g bes g f d) des e g bes des8-| r |
     }
     \context Staff = "ped" \context Voice = "ped" \relative c' {
-      ges2(-^ f4.) r8 |
+      \once \override Script #'avoid-slur = #'around
+      ges2(-^
+      _\markup { \dynamic ff ohne Pedalcoppel. }
+      f4.) r8 |
       r2 r4 r8 f,-| |
       bes2-| a-| |
       es'-| d-| |
@@ -426,13 +440,112 @@ allegroMusic = {
       r2 r4 r8 c-| |
       f2-| e-| |
       bes'-| a-| |
+      \once \override Script #'avoid-slur = #'around
       as(-^ g4.) r8 |
       r2 r4 r8 g,-| |
       c2-| b-| |
       bes-| e,-| |
     }
-    
   >>
+  % bar 167 - 175:1
+  <<
+    \context Staff = "rh" \context Voice = "rh" \relative c''' {
+      bes16( g f e g e des c des bes g e) r c'( f c' |
+      bes g f e g e des c des bes g e) r a( c f |
+      es c bes a c a ges f ges es c a) r f'( bes f' |
+      es c bes a c a ges f ges es c a bes des f bes,) |
+      \lh e,( g bes e, g bes des g, bes \rh des e \lh bes
+      \rh \oneVoice des e g des |
+      e g bes e, g bes des g, bes des e bes des e g des |
+      e g bes bes, des e g des e g bes bes, des e g des |
+      e g bes bes, des e g des e g bes bes, des e g des)~ |
+      <des g bes>4-|
+    }
+    \context Staff = "lh" \context Voice = "lh" \relative c' {
+      <des e bes'>8[ r16 <bes des e>]-| <bes des e>4-| r <as c f>-| |
+      <des e bes'>8[ r16 <bes des e>]-| <bes des e>4-| r <a c f>-| |
+      <a c ges'>8[-| \clef bass r16 <ges a c>]-| <ges a c>4-| r <des f bes> |
+      <ges a es'>8[-| r16 <es ges a>]-| <es ges a>4-| r <des f>-| |
+      \voiceTwo r2 r4 \oneVoice r8. e!16( |
+      g bes des g, bes des e des \clef treble e g bes e, g bes des e, |
+      g bes des des, e g bes e, g bes des des, e g bes e, |
+      g bes des des, e g bes e, g bes des des, e g bes des,)~ |
+      <des g bes>4-|
+    }
+    \context Staff = "ped" \context Voice = "ped" \relative c, {
+      r2 r4 f( |
+      f')-| r r f,( |
+      f')-| r r f,( |
+      f')-| r r
+      f(
+      ^\markup Pedalcoppel
+      _\markup \italic { Sehr hervortretend. }
+      |
+      des'4 c8. g16 bes4 e,) |
+      as4( g8. des16 f4 e) |
+      des( c bes a as g f e |
+      es)-|
+    }
+  >>
+  % bar 175:2 - 181:1
+  <<
+    \context Staff = "rh" \context Voice = "rh" \relative c'' {
+      <<
+        {
+          \voiceOne
+          <c a'>4( <ces as'> <bes g'> |
+          \oneVoice
+          <as ces fes> <g bes es> \voiceOne d' des) |
+          \oneVoice <d gis b>-| \voiceOne <cis ais'>( <c a'> <b gis'> |
+          \oneVoice <a c f> <gis b e> \voiceOne dis' d) |
+          \oneVoice <es a c>-| <d as' b>( <des e bes'> <c f a> |
+          <bes des ges> <a c f> <g bes e> <a c es>) |
+          <c es g>8-| r
+        }
+        \new Voice {
+          \voiceTwo
+          es2. |
+          s2 a, |
+          s4 e'2. |
+          s2 a, |
+        }
+      >>
+    }
+    \context Staff = "lh" \context Voice = "lh" \relative c, {
+      \clef bass
+      es16_( es' e, e' f, f' fis, fis' g, g' bes, bes' |
+      ces, ces' des, des' es, es' e, e' f, f' as, f' des fes ces fes)( |
+      \once \override Script #'avoid-slur = #'around
+      <b, e>4)-| e,,16_( e' eis, eis' fis, fis' fisis, fisis' gis, gis' b, b' |
+      c, c' dis, dis' e, e' eis, eis' fis, fis' a, fis' d f cis f~ |
+      <c f>4)-| f,,16( f' fis, fis' g, g' gis, gis' a, a' c, c' |
+      des, des' e, e' f, f' a, f' g, e' bes e a, es' c es) |
+      <g, c es>8-| r
+    }
+    \context Staff = "ped" \context Voice = "ped" \relative c, {
+      r4 r2 |
+      r r4 fes( |
+      \once \override Script #'avoid-slur = #'around
+      <e e'>)-| r r2 |
+      r r4 f~-| |
+      <f f'> r r2 |
+      r r4 << fis'-| \\ fis,-| >> |
+      << g'8-| \\ g,-| >> r
+    }
+  >>
+  % bar 181:2 - 
+  <<
+    \context Staff = "rh" \context Voice = "rh" \relative c'' {
+      
+    }
+    \context Staff = "lh" \context Voice = "lh" \relative c' {
+      
+    }
+    \context Staff = "ped" \context Voice = "ped" \relative c {
+      
+    }
+  >>
+  
 }
 
 
