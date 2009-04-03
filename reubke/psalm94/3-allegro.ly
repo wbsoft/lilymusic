@@ -642,6 +642,55 @@ allegroMusic = {
       \repeat unfold 7 { <g g'>4-.-^ r r2 | }
     }
   >>
+  % bar 197 - 202
+  <<
+    \context Staff = "rh" \context Voice = "rh" <<
+      \oneVoice
+      \relative c''' {
+        b8-| as-| g-| f-| es-| f-| g-| d-| |
+        c-| d-| es-| bes-| as-| bes-| c-| g-| |
+        f-| d-| es-| f-| g-| as-| b-| c-| |
+        d-| g,-| as-| bes-| c-| d-| es-| f-| |
+        g-| g,-| as-| b-| c-| es-| f-| g-| |
+        as-| es-| f-| g-| as-| b-| c-| d-| |
+      }
+      \relative c'' {
+        <d f>8 f es d c c d bes |
+        as as bes g f f g es |
+        c as bes c d es f g |
+        as d, es f g as bes c |
+        d d, es f g bes c d |
+        es bes c d es f g as |
+      }
+    >>
+    \context Staff = "lh" \context Voice = "lh" <<
+      \relative c' {
+        \clef treble
+        f8-| d-| es-| f-| g-| as-| bes-| g-| |
+        \clef bass
+        es-| f-| g-| es-| c-| d-| es-| c-| |
+        as-| f-| g-| as-| b-| c-| d-| es-| |
+        f-| b,-| c-| d-| \clef treble es-| f-| g-| as-| |
+        b-| b,-| c-| d-| es-| g-| as-| bes-| |
+        c-| g-| as-| bes-| c-| d-| es-| f-| |
+      }
+      \relative c' {
+        d8 b c d es c g' bes, |
+        c as es' g, as f c' es, |
+      }
+    >>
+    \context Staff = "ped" \context Voice = "ped" \relative c {
+      r4 g(^\fff
+      _\markup \italic { sehr hervortretend }
+      c bes8. g16 |
+      as4) es' f g |
+      as g f es |
+      d c bes as |
+      g f' es d |
+      c bes as g |
+    }
+  >>
+  
 }
 
 
