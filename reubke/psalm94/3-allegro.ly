@@ -533,19 +533,115 @@ allegroMusic = {
       << g'8-| \\ g,-| >> r
     }
   >>
-  % bar 181:2 - 
+  % bar 181:2 - 189:1
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c'' {
-      
+      \set doubleSlurs = ##t
+      \override Script #'avoid-slur = #'around
+      <as b f'>2(-^
+      _\fff
+      ^\markup Manualcoppel
+      <g c es>8)[-| r16 c]-| |
+      <a c es>8[-| r16 <fis a>]-| <fis a>2~ <fis a>8[-| r16 es]-| |
+      <d g>4-| 
+      \set tupletSpannerDuration = #(ly:make-moment 1 4)
+      \times 2/3 {
+        r8 c <es a> r d <g b> r  es <g c> |
+        r f <b d> r g <c es> r g <d' f> r g, <c es fis> |
+      }
+      <c es g>8-| r <b f' as>2(-^ <c es g>8)[-| r16 c]-| |
+      \unset doubleSlurs
+      <c fis>8[-| r16 <fis, a c>] <fis a c>2~ <fis a c>8[-| r16 <g b>]-| |
+      <b d>4-| % -| is missing in 1871 print
+      \times 2/3 {
+        r8 g <c es> r g <d' f> r c <es g> |
+        r b <f' as> r c <g' c> r d <g d'> r es <fis c' es> |
+      }
+      <es g c es>4-|
     }
     \context Staff = "lh" \context Voice = "lh" \relative c' {
-      
+      \set doubleSlurs = ##t
+      \override Script #'avoid-slur = #'around
+      <as b f'>2(-^ <g c es>8)[-| r16 c]-| |
+      <c es fis>8[-| r16 <c es>]-| <c es>2~ <c es>8[-| r16 <fis, c'>]-| |
+      \unset doubleSlurs
+      <g b>4-| <c, es a>( <d g b> <es g c> |
+      <g b d> <g c es> <g d' f> <g es' fis>) |
+      \set doubleSlurs = ##t
+      <g es' g>8-| r \clef treble <b f' as>2(-^ <c es g>8)[-| r16 c]-| |
+      <c es fis a>8[-| r16 <c es>] <c es>2~ <c es>8[-| r16 <b d>]-| |
+      \unset doubleSlurs
+      <b d g>4-| <g c es>( <g d' f> <g es' g> |
+      <b f' as> <c es g> <bes d g> <as c g'> |
+      <g c g'>)-|
     }
     \context Staff = "ped" \context Voice = "ped" \relative c {
-      
+      \set tupletSpannerDuration = #(ly:make-moment 1 4)
+      \times 2/3 { r8^\fff g( as a bes b c cis d } |
+      \times 2/3 { es e f fis d es b c d } es8)[ r16 g,]~ |
+      <g g'>4-| fis'8( g f g es g |
+      d g c, g' bes, g' as, g') |
+      g, r \times 2/3 { r8 g( as a bes b c cis d } |
+      \times 2/3 { es e f fis d es b c d } es8)[-| r16 g,]~ |
+      <g g'>4-| fis'8( g f g es g |
+      d g c, g' bes, g' as, g' |
+      g,4)-|
     }
   >>
-  
+  % bar 189:2 - 196
+  <<
+    \context Staff = "rh" <<
+      \context Voice = "rh" \relative c' {
+        \voiceOne
+        es4(^\markup\italic legato as g8. d16 |
+        f4 c' d es |
+        as g f es8. c16 |
+        g'2 d4) g,( |
+        as2. g4~ |
+        g fis c'4. b8) |
+        f'4( es2 d4 |
+        as' g f es)
+      }
+      \new Voice \relative c' {
+        \voiceTwo
+        c8-| bes-| as-| c-| b-| r |
+        c-| d-| es-| g-| as-| ces-| bes-| a-| |
+        c-| b-| bes-| a-| as-| g-| fis-| r |
+        c'-| es-| d-| c-| b-| as-| f-| e-| |
+        f-| es-| d-| c-| b-| as-| g-| des'-| |
+        c-| b-| a-| d-| c-| f-| es-| fis-| |
+        b-| as-| g-| c-| a-| fis-| f-| as-| |
+        d-| b-| bes-| des-| c-| as-| g-| c-| |
+      }
+    >>
+    \context Staff = "lh" \context Voice = "lh" \relative c' {
+      \clef bass 
+      as8-| g-| f-| es-| d-| g-| |
+      as-| bes-| c-| \clef treble es-| f-| as-| g-| fis-| |
+      <<
+        {
+          as-| f-| g-| es-| \clef bass d-| des-| c-| d-| |
+          es-| \clef treble c'-| as-| g-| \clef bass f-| es-| d-| des-| |
+          c-| bes-| as-| g-| f-| es-| d-| des-| |
+          c-| d-| es-| f-| fis-| as-| a-| dis-| |
+          b-| d-| es-| c-| a-| c-| b-| as-| |
+          d-| f-| e-| des-| c-| f-| es-| c-| |
+        }
+        {
+          f d es c b bes a as |
+          g g' f es d c b bes |
+          as g f es d c b bes |
+          a b c d es f fis a |
+          as b c g fis a as f |
+          b d des bes as c c g |
+        }
+      >> 
+    }
+    \context Staff = "ped" \context Voice = "ped" \relative c {
+      r4 r2 |
+      \repeat unfold 7 { <g g'>4-.-^ r r2 | }
+    }
+  >>
 }
 
 

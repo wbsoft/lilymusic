@@ -47,9 +47,9 @@ scoreSetup = <<
 
 % temporary
 tempKeySetup = <<
-  \context Voice = "rh" \key g \minor
-  \context Voice = "lh" \key g \minor
-  \context Voice = "ped" \key g \minor
+  \context Staff = "rh" \key g \minor
+  \context Staff = "lh" \key g \minor
+  \context Staff = "ped" \key g \minor
 >>
 
 \include "1-grave.ly"
