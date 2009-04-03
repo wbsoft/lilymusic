@@ -690,6 +690,58 @@ allegroMusic = {
       c bes as g |
     }
   >>
+  % bar 203 - 219
+  <<
+    \context Staff = "rh" \context Voice = "rh" \relative c'' {
+      \repeat unfold 5 <es fis a es'>1~ <es~ fis a es'~> |
+      \repeat unfold 2 <es ges bes es>1~ <es~ ges~ bes es~> |
+      <es ges c es>4-| r8. <c fis a>16-| <c fis a>4-| r8. <es a c>16-| |
+      <es a c>4-| r8. <a, es' fis>16-| <a es' fis>4-| r8. <c es a>16-| |
+      <c es a>8-| r <b d as'>-| r <c es g>-| r <a d fis>-| r |
+      <as d f>-| r <g bes es>-| r <fis a d>-| r <fis c'>-| r |
+      <g c g'>2 r4 r8. <c es g>16 |
+      <c es as>2 r4 r8. <c es as>16 |
+      <c es fis a>2 r4 r8. <c es fis a>16 |
+      <d f b>2 r4 r8. <d f b>16 |
+    }
+    \context Staff = "lh" \context Voice = "lh" \relative c {
+      \set doubleSlurs = ##t
+      \clef bass
+      <fis c' es fis>1~ | <fis c' es fis>~ | <fis~ c' es~ fis>~ | 
+      <fis ces' es fis>~ | <fis ces' es fis>~ |
+      \once \override Tie #'staff-position = #7.5
+      <fis ces' es_~ fis>( | 
+      <ges bes es ges>)~ | <ges bes es ges>~ | <ges bes es ges>~ | 
+      <ges c es ges>4 r8. \clef treble <c fis a>16-| <c fis a> 4-| r8. <es a c>16-| |
+      <es a c>4-| r8. <a, es' fis>16-| <a es' fis>4-| r8. <c es a>16-| |
+      <c es a>8-| r <b d as'>-| r <c es g>-| r <a d fis>-| r |
+      \clef bass <as d f>-| r <g bes es>-| r <fis a d>-| r <as c es>-| r |
+      <g c es>2 \clef treble r4 r8. <c es g>16 |
+      <c es as>2 r4 r8. <c es as>16 |
+      <c es fis a>2 r4 r8. <c es fis a>16 |
+      <d f b>2 r4 r8. <d f b>16 |
+    }
+    \context Staff = "ped" \context Voice = "ped" \relative c' {
+      \override Script #'avoid-slur = #'around
+      c2(-^ a4.) d,8( |
+      es4.) fis,8 fis2~-^ |
+      fis8 gis a c d es f fis |
+      ces'2(-^ ges4.) d8( |
+      es4.) ges,8-. ges2~-^ |
+      ges8 bes( ces d es f ges a) |
+      bes2(-^ ges4.) d8( |
+      es4.) ges,8-. ges2~-^ |
+      ges8 a bes d es f ges as |
+      a f ges d es d es c |
+      fis d es b c b c a |
+      fis' e f d es cis d ais |
+      b( a bes gis a g as g) |
+      g'( d es b c g g' g,) |
+      as'( d, es b c g as' g,) |
+      a'( d, es b c g a' g,) |
+      b'( e, f cis d g, b' g,) |
+    }
+  >>
   
 }
 
