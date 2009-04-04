@@ -45,23 +45,17 @@ scoreSetup = <<
   }
 >>
 
-% temporary
-tempKeySetup = <<
-  \context Staff = "rh" \key g \minor
-  \context Staff = "lh" \key g \minor
-  \context Staff = "ped" \key g \minor
->>
-
 \include "1-grave.ly"
 \include "2-larghetto.ly"
 \include "3-allegro.ly"
+\include "4-adagio.ly"
 
 \score {
   {
     \scoreSetup
-    \graveMusic
-    \larghettoMusic
-    %\tempKeySetup % delete me
-    \allegroMusic
+    %\graveMusic
+    %\larghettoMusic
+    %\allegroMusic
+    \adagioMusic
   }
 }
