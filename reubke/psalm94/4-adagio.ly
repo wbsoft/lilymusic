@@ -101,12 +101,12 @@ adagioMusic = {
       a4.\> e8 |
       \time 4/4
       fis2\!
-      r4 \clef bass 
+      r4
+      ^\markup { M. III. }
+      \clef bass 
       <<
         {
-          b,,4~_\ppp
-          ^\markup { M. III. }
-          |
+          b,,4~_\ppp |
           b a8 e g4 fis~ |
           fis c'(~  c bes8 f |
           as4 g2) as4 |
@@ -133,6 +133,14 @@ adagioMusic = {
           \voiceTwo g2.
         }
       >>
+      \once \override Slur #'positions = #'(2.5 . 1)
+      as4(\p
+      ^\markup { M. II. }
+      ^\markup { Oboe oder Geigenprinzipal (Aeoline 16'.) }
+      es' des4. bes8 |
+      ges4 as2 bes4)~ |
+      bes\< es( f ges |
+      bes,\> as8 ges des'2)\pp
     }
     \context Staff = "lh" <<
       \context Voice = "lh" \relative c' {
@@ -152,6 +160,12 @@ adagioMusic = {
         _\markup \whiteout \italic { molto cresc. }
         g f g |
         e!2.) \voiceOne c'4 |
+        s1 |
+        es2( des |
+        es4 f2 fes4) |
+        \once \override Slur #'positions = #'(4 . 4)
+        es2( d4 des |
+        \clef treble ges es as2) |
       }
       \new Voice \relative c {
         \voiceTwo
@@ -173,18 +187,37 @@ adagioMusic = {
         as2.
         _\markup \whiteout \italic dimin.
         d,4) |
+        \voiceTwo
+        es2(
+        _\markup { M. III. \dynamic p }
+        f4 ges |
+        bes ces2 bes4) |
+        g as8 ges <f as>4 ges |
+        bes c ges'\pp f
       }
       \new Voice \relative c' {
         \voiceThree
         a4\rest a2 g4 |
         s1 |
-        s4 a
+        s4 a s2 |
+        s2 |
+        s1*7 |
+        as2. ges4 |
+        s2.
+        \voiceTwo
+        \once \override NoteColumn #'ignore-collision = ##t
+        bes4^~ |
+        \voiceThree
+        bes4 as
       }
       \new Voice \relative c' {
-        % this voice just draws the tie in the 2/4 measure 
-        s1*3 |
+        % this voice just draws some ties
         \override NoteColumn #'ignore-collision = ##t
-        \stemDown a4_~ \stemUp a 
+        \hideNotes
+        s1*3 |
+        \stemDown a4_~ \stemUp a
+        s1*9 |
+        s4 \voiceOne as~ \voiceTwo as 
       }
     >>
     \context Staff = "ped" \context Voice = "ped" \relative c {
@@ -207,6 +240,67 @@ adagioMusic = {
           s2 s\!
         }
       >>
+      ces2.(\pp bes4 |
+      es4. d8 des4 ges,) |
+      ces2._( bes4 |
+      es as des,) r |
+    }
+  >>
+  % bar ?? - ??
+  <<
+    \context Staff = "rh" <<
+      \context Voice = "rh" \relative c''' {
+        \oneVoice r4
+        ^\markup { M. III. Harmonika 8' allein }
+        \voiceOne
+        cis2(_\ppp b8 ais~ |
+        ais4 b8 cis dis4. e8)~ |
+        e dis4 d8 cis4 gis8 ais |
+        b4 ais8 eis fis4 eis8 dis |
+        gis2
+        \oneVoice
+        r4
+        \clef bass
+        b,,
+        ^\markup { M. I. }
+        
+      }
+      \new Voice \relative c''' {
+        \voiceTwo
+        s4 gis fisis2( |
+        gis4 fisis\< fis fisis |
+        gis\! a gis)\> cis, |
+        fis eis8\! r r4 bis~ |
+        bis cis
+      }
+      \new Voice \relative c'' {
+        % just draw ties
+        \override NoteColumn #'ignore-collision = ##t
+        s1*3 |
+        s2. s8 \stemUp d4*1/2^~ |
+        \stemDown d
+      }
+    >>
+    \context Staff = "lh" <<
+      \context Voice = "lh" \relative c'' {
+        \voiceOne
+        r4 gis( ais b8 cis |
+        cisis4 dis4~ dis cis) |
+        b bis cis gis |
+        fis8( gis ais2 gis8 fis~ |
+        fis4 eis)
+      }
+      \new Voice \relative c' {
+        \voiceTwo
+        e1~ |
+        e4 dis b' ais |
+        gis fis eis2 |
+        dis4( cisis dis gis |
+        cis,2)
+      }
+    >>
+    \context Staff = "ped" \context Voice = "ped" \relative c {
+      R1*5 |
       
     }
   >>
