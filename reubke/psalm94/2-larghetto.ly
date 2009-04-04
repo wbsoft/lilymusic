@@ -527,7 +527,7 @@ larghettoMusic = {
       e8 r r16 g~\< bes~ cis~ <g bes cis e>8\! r r16 \clef treble g'~\< bes~ cis~|
       <g bes cis e>8.(\! d'16 cis c bes a g f e d cis c b bes) |
       a8 r r16 c~\< es~ fis~ <c es fis a>8\! r r \clef bass <es, a>(|
-      <e bes>4) \clef treble r16 cis'~ e~ g~ <cis, e g bes>8 r r \clef bass <e, bes'>( |
+      <e bes'>4) \clef treble r16 cis'~ e~ g~ <cis, e g bes>8 r r \clef bass <e, bes'>( |
       <fis c'>4) \clef treble r16 es'~ fis~ a~ <es fis a c>8 r \clef bass r16 fis,( a c |
       es a, c es fis c es fis \clef treble a c, es fis a c, es fis) |
       a( a, cis e g bes, cis e a a, cis e g bes, cis e) |
