@@ -26,22 +26,22 @@ scoreSetup = <<
   \new PianoStaff <<
     \new Staff = "rh" \with {
       \override VerticalAxisGroup #'minimum-Y-extent = #'(-2 . 3)
-    } {
+    } \new Voice = "rh" {
       \clef treble
       #(set-accidental-style 'piano)
     }
     \new Staff = "lh" \with {
       \override VerticalAxisGroup #'minimum-Y-extent = #'(-3 . 2)
-    } {
+    } \new Voice = "lh" {
       \clef bass
       #(set-accidental-style 'piano)
     }
   >>
   \new Staff = "ped" \with {
     \override VerticalAxisGroup #'minimum-Y-extent = #'(-2 . 4)
-  } {
+  } \new Voice = "ped" {
     \clef bass
-    #(set-accidental-style 'piano)
+    #(set-accidental-style 'piano 'Staff)
   }
 >>
 
