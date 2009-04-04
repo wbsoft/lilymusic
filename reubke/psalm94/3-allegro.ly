@@ -9,6 +9,13 @@ tempoMark = {
   \mark \markup \bold { Allegro con fuoco. }
 }
 
+tempoMarkGrave = {
+  \once \override Score.RehearsalMark #'self-alignment-X = #LEFT
+  \once \override Score.RehearsalMark #'break-align-symbols = #'(time-signature key-signature)
+  \once \override Staff.TimeSignature #'break-align-anchor-alignment = #LEFT
+  \mark \markup \bold { Grave. }
+}
+
 rh = { \change Staff = "rh" \stemDown }
 lh = { \change Staff = "lh" \stemUp }
 
@@ -703,15 +710,17 @@ allegroMusic = {
       <c es as>2 r4 r8. <c es as>16 |
       <c es fis a>2 r4 r8. <c es fis a>16 |
       <d f b>2 r4 r8. <d f b>16 |
+      \bar "||" % in 1871 score
     }
     \context Staff = "lh" \context Voice = "lh" \relative c {
-      \set doubleSlurs = ##t
       \clef bass
       <fis c' es fis>1~ | <fis c' es fis>~ | <fis~ c' es~ fis>~ | 
       <fis ces' es fis>~ | <fis ces' es fis>~ |
       \once \override Tie #'staff-position = #7.5
+      \set doubleSlurs = ##t
       <fis ces' es_~ fis>( | 
       <ges bes es ges>)~ | <ges bes es ges>~ | <ges bes es ges>~ | 
+      \unset doubleSlurs
       <ges c es ges>4 r8. \clef treble <c fis a>16-| <c fis a> 4-| r8. <es a c>16-| |
       <es a c>4-| r8. <a, es' fis>16-| <a es' fis>4-| r8. <c es a>16-| |
       <c es a>8-| r <b d as'>-| r <c es g>-| r <a d fis>-| r |
@@ -742,7 +751,87 @@ allegroMusic = {
       b'( e, f cis d g, b' g,) |
     }
   >>
-  
+  % bar 220 - 232
+  <<
+    \context Staff = "rh" \context Voice = "rh" \relative c'' {
+      \tempoMarkGrave
+      <c es c'>8.. <as, c>32( <c es>2)(-^  <es g>8)[ r16. <b' es g>32] |
+      <c es as c>8.. <as, c>32( <c es>2)(-^  <es g>8)[ r16. <b' es g>32] |
+      \revert Script #'avoid-slur
+      <c es as c>4(-. <c f as c>-. <c es as c>-. <c d as' c>-. |
+      <c d g c>)-. <bes des e bes'>4.-^ <as c f as>8[ <g c es g> r16 <fis c' d fis>] |
+      <fis c' d fis>4(-. <g b d g>-. <as c f as>-. <g c>-.) |
+      <<
+        { <f f'>2 <g g'>4. <g g'>8 }
+        \\ { c4 b~ <b f'> <bes e> }
+      >> |
+      <as es' as>4-. <<
+        {
+          <as des f>( <g c> <f c'~> |
+          c' bes as) fes'(\( |
+          e) dis\) cis a'~( |
+          a gis) g2~ |
+          g4 f8( e dis4 e |
+          d c bes a~ |
+          <a d>4. gis8) gis2\fermata |
+        }
+        \\ {
+          \set decrescendoSpanner = #'text
+          \set decrescendoText = #"decresc. molto"
+          f4\>
+          es d |
+          <des fes>2. <g des'>4( |
+          <fis~ b>2) <fis a>4 <c' fis> |
+          <b e>2. <bes des>4( |
+          \set decrescendoText = \markup { \dynamic p \italic riten. }
+          <a c>2.)\> <e~ b'>4 |
+          \set decrescendoText = \markup \dynamic pp
+          <e a>2 f~\> |
+          f1\ppp |
+        }
+      >>
+    }
+    \context Staff = "lh" \context Voice = "lh" \relative c' {
+      <c es as>8.. \clef bass es,32( as2)(-^ <g b>8)[ r16. \clef treble <b es g>32]
+      <c es as>8.. \clef bass es,32( as2)(-^ <g b>8)[ r16. \clef treble <b es g>32]
+      \revert Script #'avoid-slur
+      <c es as>4(-. <c f as>-. <c es as>-. <c d as'>-. |
+      <c d g>)-. <bes des e>4.-^ <as c f>8[ <g c es> r16 \clef bass <fis c'd>] |
+      <fis c'd>4(-. <g b d>-. <as c f>-. <g c>)-. |
+      <<
+        { c( b~ <b f'> <bes e>) }
+        \\ { f2 g }
+      >> |
+      <as es'>4-. s2. |
+      s1*4 |
+      s2 d4 c |
+      b2_~( <b d>)_\fermata
+    }
+    \context Staff = "ped" \context Voice = "ped" \relative c {
+      c4 r r g( |
+      c) r r g( |
+      c) d,( es f |
+      g2 as~ |
+      as4) g( f es |
+      d2.
+      ^\markup \column {
+        \line { Manual- und }
+        \line { Pedalcoppel fort. }
+      }
+      des4 |
+      \set decrescendoSpanner = #'text
+      \set decrescendoText = #"decresc. molto"
+      c des^\> es f |
+      g2 as4 bes |
+      b2 cis4 dis |
+      \set decrescendoText = \markup \dynamic p
+      e1\> |
+      f2 fis4 gis |
+      \set decrescendoText = \markup \dynamic pp
+      a2\> d, |
+      e1)\ppp\fermata |
+    }
+  >>
 }
 
 
