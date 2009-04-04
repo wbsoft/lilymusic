@@ -783,7 +783,7 @@ allegroMusic = {
           <des fes>2. <g des'>4( |
           <fis~ b>2) <fis a>4 <c' fis> |
           <b e>2. <bes des>4( |
-          \set decrescendoText = \markup { \dynamic p \italic riten. }
+          \set decrescendoText = \markup { \dynamic p \hspace #2 \italic riten. }
           <a c>2.)\> <e~ b'>4 |
           \set decrescendoText = \markup \dynamic pp
           <e a>2 f~\> |
