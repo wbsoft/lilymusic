@@ -1,16 +1,9 @@
 \version "2.12.0"
 
+\include "defines.ly"
+
 global = {
   \key c \minor
-}
-
-oops = \once \override Staff.NoteColumn #'ignore-collision = ##t
-
-tempoMark = {
-  \once \override Score.RehearsalMark #'self-alignment-X = #LEFT
-  \once \override Score.RehearsalMark #'break-align-symbols = #'(time-signature key-signature)
-  \once \override Staff.TimeSignature #'break-align-anchor-alignment = #LEFT
-  \mark \markup \bold Larghetto.
 }
 
 larghettoMusic = {
@@ -19,7 +12,7 @@ larghettoMusic = {
     \context Staff = "rh" \relative c {
       \clef bass
       \global
-      \tempoMark
+      \tempoMark #"Larghetto."
       r4 \times 2/3 { c8\p d es } as4( g8[) r16 d] |
       <<
         { f4( c' d es) }

@@ -1,17 +1,10 @@
 \version "2.12.0"
 
+\include "defines.ly"
+
 global = {
   \time 4/4
   \key c \major
-}
-
-oops = \once \override Staff.NoteColumn #'ignore-collision = ##t
-
-tempoMark = {
-  \once \override Score.RehearsalMark #'self-alignment-X = #LEFT
-  \once \override Score.RehearsalMark #'break-align-symbols = #'(time-signature key-signature)
-  \once \override Staff.TimeSignature #'break-align-anchor-alignment = #LEFT
-  \mark \markup \bold Grave.
 }
 
 graveMusic = {
@@ -19,7 +12,7 @@ graveMusic = {
   <<
     \context Staff = "rh" \relative c' {
       \global
-      \tempoMark
+      \tempoMark #"Grave."
       R1*2 |
       r2 r4
       <<

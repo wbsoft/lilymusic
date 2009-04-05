@@ -1,23 +1,6 @@
 \version "2.12.0"
 
-oops = \once \override Staff.NoteColumn #'ignore-collision = ##t
-
-tempoMark = {
-  \once \override Score.RehearsalMark #'self-alignment-X = #LEFT
-  \once \override Score.RehearsalMark #'break-align-symbols = #'(time-signature key-signature)
-  \once \override Staff.TimeSignature #'break-align-anchor-alignment = #LEFT
-  \mark \markup \bold { Allegro con fuoco. }
-}
-
-tempoMarkGrave = {
-  \once \override Score.RehearsalMark #'self-alignment-X = #LEFT
-  \once \override Score.RehearsalMark #'break-align-symbols = #'(time-signature key-signature)
-  \once \override Staff.TimeSignature #'break-align-anchor-alignment = #LEFT
-  \mark \markup \bold { Grave. }
-}
-
-rh = { \change Staff = "rh" \stemDown }
-lh = { \change Staff = "lh" \stemUp }
+\include "defines.ly"
 
 allegroMusic = {
   % bar 108 - 125
@@ -25,7 +8,7 @@ allegroMusic = {
     \context Staff = "rh" \context Voice = "rh" \relative c'' {
       \set tieWaitForNote = ##t
       cis16 bes'~ g~ d~ 
-      \tempoMark
+      \tempoMark #"Allegro con fuoco."
       <bes d g bes>2(-^\fff <cis e a>8[)-| r16 <c es>]-| |
       <bes d g>8[-| r16 <bes d>] <c es>2~-^ <c es>8 <b d>-| |
       <<
@@ -754,7 +737,7 @@ allegroMusic = {
   % bar 220 - 232
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c'' {
-      \tempoMarkGrave
+      \tempoMark #"Grave."
       <c es c'>8.. <as, c>32( <c es>2)(-^  <es g>8)[ r16. <b' es g>32] |
       <c es as c>8.. <as, c>32( <c es>2)(-^  <es g>8)[ r16. <b' es g>32] |
       \revert Script #'avoid-slur

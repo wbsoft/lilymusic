@@ -1,25 +1,15 @@
 \version "2.12.0"
 
-oops = \once \override Staff.NoteColumn #'ignore-collision = ##t
-
-tempoMark = {
-  \once \override Score.RehearsalMark #'self-alignment-X = #LEFT
-  \once \override Score.RehearsalMark #'break-align-symbols = #'(time-signature key-signature)
-  \once \override Staff.TimeSignature #'break-align-anchor-alignment = #LEFT
-  \mark \markup \bold { Adagio. }
-}
+\include "defines.ly"
 
 global = { \key c \major }
-
-rh = { \change Staff = "rh" \stemDown }
-lh = { \change Staff = "lh" \stemUp }
 
 adagioMusic = {
   % bar ?? - ??
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c' {
       \global
-      \tempoMark
+      \tempoMark #"Adagio."
       r4 f^(
       _\markup \whiteout { M. III. Salicional und Gedackt 8'. }
       e4. \lh \voiceOne b8 |
@@ -263,6 +253,15 @@ adagioMusic = {
         \clef bass
         b,,
         ^\markup { M. I. }
+        \voiceOne
+        bes1~ |
+        bes4 ces8 des es4 fes |
+        \clef treble
+        as( g8 as bes4 ces8 des) |
+        es1~ |
+        es2~ es4. f8 |
+        ges4 \oneVoice r r2 |
+        
         
       }
       \new Voice \relative c''' {
@@ -271,14 +270,21 @@ adagioMusic = {
         gis4 fisis\< fis fisis |
         gis\! a gis)\> cis, |
         fis eis8\! r r4 bis~ |
-        bis cis
+        bis cis s2 |
+        r4 a, as2~ |
+        as4 g2 as8 bes |
+        <ces fes>( <bes es> <des as'> <fes as>) |
+        es1~ |
+        es2~ es4. f8 |
+        ges4
+        
       }
       \new Voice \relative c'' {
         % just draw ties
         \override NoteColumn #'ignore-collision = ##t
         s1*3 |
-        s2. s8 \stemUp d4*1/2^~ |
-        \stemDown d
+        s2. s8 \stemUp dis4*1/2^~ |
+        \stemDown dis
       }
     >>
     \context Staff = "lh" <<
