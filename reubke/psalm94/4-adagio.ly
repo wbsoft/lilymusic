@@ -261,7 +261,15 @@ adagioMusic = {
         es1~ |
         es2~ es4. f8 |
         ges4 \oneVoice r r2 |
-        
+        R1*3 |
+        r4 <fis, c'>^(_\pp
+        ^\markup { M. III. Salicional. }
+        <g b>4. g8 |
+        <g bes>4. <cis, e>8 \voiceOne e4 f) % continues in left hand
+        \oneVoice
+        s1*2 |
+        s2. r4 |
+        r
         
       }
       \new Voice \relative c''' {
@@ -276,7 +284,10 @@ adagioMusic = {
         <ces fes>4( <bes es> <des as'> <fes as>) |
         es1~ |
         es2~ es4. f8 |
-        ges4
+        ges4 s2. |
+        s1*4 |
+        s2 cis,2 |
+        
       }
       \new Voice \relative c'' {
         \voiceThree
@@ -303,7 +314,24 @@ adagioMusic = {
         cisis4 dis4~ dis cis) |
         b bis cis gis |
         fis8( gis ais2 gis8 fis~ |
-        fis4 eis)
+        fis4 eis) \oneVoice r \clef bass r |
+        r <ges,, c>( <f bes>2) |
+        fes( es4 des |
+        d es fes as |
+        es) des'( ces bes |
+        as1)~ |
+        as4 r^\markup { M. II. } r as^(_~^\p |
+        <as ces d ges>2) r |
+        r r4 as^(~^\pp |
+        <as c d fis>2) r |
+        r4 s2. |
+        s1 |
+        \voiceOne
+        d'4 cis c b |
+        bes a8 g f4. g8 |
+        g4 <d a'>2 \oneVoice r4
+        
+        
       }
       \new Voice \relative c' {
         \voiceTwo
@@ -311,7 +339,14 @@ adagioMusic = {
         e4 dis b' ais |
         gis fis eis2 |
         dis4( cisis dis gis |
-        cis,2)
+        cis,2) s
+        s1*9 |
+        s4 d2.( |
+        es4. <g, bes>8 <g bes>4 a |
+        <f a> <e g>) <es g> <d g> |
+        <d f> <c e> <bes d>4. <g d'>8 |
+        <g d'>4 <d a'>2
+        
       }
     >>
     \context Staff = "ped" \context Voice = "ped" \relative c {
@@ -321,7 +356,7 @@ adagioMusic = {
       _\markup \italic hervortretend.
       d8. bes16 |
       des4 g,2 as4) |
-      fes'_( es8. bes16 des4 as'~ |
+      fes'( es8. bes16 des4 as'~ |
       as g8. es16 ges4 g8 des'~ |
       des4 c ces as |
       d1~)_\>_\markup { Posaune fort. } |
