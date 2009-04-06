@@ -9,6 +9,10 @@
 
 \layout {
   \context {
+    \Score
+    % \override SpacingSpanner #'common-shortest-duration = #(ly:make-moment 1 8)
+  }
+  \context {
     \Staff
     \override TextScript #'staff-padding = #1
     \override BreathingSign #'text = #(make-musicglyph-markup "scripts.caesura.curved")
@@ -50,12 +54,23 @@ scoreSetup = <<
 \include "3-allegro.ly"
 \include "4-adagio.ly"
 
+music = {
+  \scoreSetup
+  %\graveMusic
+  %\larghettoMusic
+  %\allegroMusic
+  \adagioMusic
+}  
+
+% some (page) breaks to enforce easy page turning etc.
+breaks = \new Devnull {
+  s1*52  \pageBreak % Larghetto
+  s1*180 \break % Adagio
+}
+
 \score {
-  {
-    \scoreSetup
-    \graveMusic
-    \larghettoMusic
-    \allegroMusic
-    \adagioMusic
-  }
+  <<
+    \music
+    %\breaks
+  >>
 }

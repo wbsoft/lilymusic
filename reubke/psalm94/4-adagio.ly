@@ -5,19 +5,19 @@
 global = { \key c \major }
 
 adagioMusic = {
-  % bar ?? - ??
+  % bar 232 - 242
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c' {
       \global
       \tempoMark #"Adagio."
       r4 f^(
       _\markup \whiteout { M. III. Salicional und Gedackt 8'. }
-      e4. \lh \voiceOne b8 |
-      <a d>4. gis8 <f~ gis~>4 <f gis c>( |
-      <e a> <e gis> <e g> <d fis> |
-      f e8 dis b'4. a8 |
-      a4 gis2) 
-      \rh \oneVoice r4 |
+      e4. \lh \voiceOne b8 | \noBreak % because of the x-staff slur
+      <a d>4. gis8 <f~ gis~>4 <f gis c>( |  \noBreak % because of the x-staff slur
+      <e a> <e gis> <e g> <d fis> |  \noBreak % because of the x-staff slur
+      f e8 dis b'4. a8 |  \noBreak % because of the x-staff slur
+      a4 gis2)
+      \rh \oneVoice r4 |  \noBreak % because of the x-staff slur
       r a e'4. ais,8~ |
       ais4 b2 r4 |
       r4 <<
@@ -69,8 +69,9 @@ adagioMusic = {
     \context Staff = "ped" \context Voice = "ped" \relative c {
       \global
       R1*4 |
-      r2 r4 dis(^\pp
+      r2 r4
       _\markup { Subbass 16. }
+      dis(^\pp |
       d cis c2 |
       b2.) ais4( |
       a2 g |
@@ -78,13 +79,13 @@ adagioMusic = {
       d2 g4 b) |
     }
   >>
-  % bar ?? - ??
+  % bar 243 - 257
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c'' {
       a4\p(
       ^\markup { M. II. \italic hervortretend }
       ^\markup { Oboe oder Geigenprinzipal }
-      e' d4. b8 |
+      e' d4. b8 | \noBreak % because of the markup
       g4 a2 b4~ |
       b) e\< fis4. g8 |
       \time 2/4
@@ -96,7 +97,7 @@ adagioMusic = {
       \clef bass 
       <<
         {
-          b,,4~_\ppp |
+          b,,4~ |
           b a8 e g4 fis~ |
           fis c'(~  c bes8 f |
           as4 g2) as4 |
@@ -127,7 +128,7 @@ adagioMusic = {
       as4(\p
       ^\markup { M. II. }
       ^\markup { Oboe oder Geigenprinzipal (Aeoline 16'.) }
-      es' des4. bes8 |
+      es' des4. bes8 | \noBreak % because of the markup
       ges4 as2 bes4)~ |
       bes\< es( f ges |
       bes,\> as8 ges des'2)\pp
@@ -141,7 +142,9 @@ adagioMusic = {
         \time 2/4
         <c~ e> <a c> |
         \time 4/4
-        <ais cis>2 d,4\rest^\ppp g,(~ |
+        <ais cis>2
+        \once \override DynamicText #'extra-offset = #'(0 . 2)
+        d,4\rest^\ppp g,(~ |
         g2~ g4 a~ |
         a2 as~ |
         as4 bes~ bes2) |
@@ -238,14 +241,14 @@ adagioMusic = {
       es as des,) r |
     }
   >>
-  % bar ?? - ??
+  % bar 258 - 288
   <<
     \context Staff = "rh" <<
       \context Voice = "rh" \relative c''' {
         \oneVoice r4
         ^\markup { M. III. Harmonika 8' allein }
         \voiceOne
-        cis2(_\ppp b8 ais~ |
+        cis2(_\ppp b8 ais~ | \noBreak % because of the markup
         ais4 b8 cis dis4. e8)~ |
         e dis4 d8 cis4 gis8 ais |
         b4 ais8 eis fis4 eis8 dis |
@@ -273,7 +276,7 @@ adagioMusic = {
         s2. r4 |
         r \oops <d' f>(
         ^\markup { Harmonika 8' allein. }
-        \voiceOne <b e>4. b8 |
+        \voiceOne <b e>4. b8 |  \noBreak % because of the markup and the x-staff slur
         <bes d>4. a8 gis4 a |
         a gis g fis) |
         f e8 dis b'4. a8 |
@@ -389,7 +392,7 @@ adagioMusic = {
         \oneVoice r4
         r4 b,( ais a |
         d2. <dis a'>4) |
-        <e~ gis>1\fermata
+        <e~ gis>1_\fermata
       }
       \new Voice \relative c' {
         \voiceTwo
@@ -433,9 +436,88 @@ adagioMusic = {
       c2. b4 |
       a g fis e |
       d2 g4 b |
-      e1)\fermata
+      e1)_\fermata
     }
   >>
+  % bar 289 - 
+  <<
+    \context Staff = "rh" {
+      R1*2 |
+      s1*2 |
+      <<
+        \context Voice = "rh" \relative c'' {
+          \voiceOne
+          s2 g4. a8 |
+          c2. b4 |
+          d1
+        }
+        \new Voice \relative c' {
+          \voiceOne
+          s4 c_~ \voiceTwo <c g'>2~ |
+          <c g'~>2. <d g>4~ |
+          <d g>1
+        }
+      >>
+    }
+    \context Staff = "lh" <<
+      \context Voice = "lh" \relative c {
+        \voiceOne
+        e1~ 
+        ^\markup \whiteout { Salicional u. Gedackt 16' u. 8'. }
+        e~ |
+        \voiceFour e_~ |
+        \crescTextCresc
+        << e_~ { s2. s4\< } >> |
+        \voiceTwo <b e>4 <c es~> es2~ |
+        \oneVoice es2. <d g>4~ |
+        <d g~ b>1\> |
+      }
+      \new Voice \relative c {
+        \voiceTwo
+        r4
+        \once \override DynamicText #'Y-extent = #'(-1 . -1)
+        d2(\pp
+        _\markup \italic düster
+        cis8. a16 |
+        c8. fis,16 fis2^~ fis8 g |
+        e2.) fis4~ |
+        fis2. g4
+      }
+      \new Voice \relative c {
+        \voiceThree
+        s1*2
+        e2. \voiceOne fis4~ |
+        fis2. g4~ |
+        <g~ b> g2.~ |
+        \oops \voiceTwo g2.
+      }
+    >>
+    \context Staff = "ped" \context Voice = "ped" \relative c' {
+      R1 |
+      r2 r4 r8 g(\pp |
+      e4 dis d cis |
+      c b a g~) |
+      g1~ | g~ | g | 
+    }
+  >>
+  % bar 
+  <<
+    \context Staff = "rh" \context Voice = "rh" \relative c'' {
+      
+    }
+    \context Staff = "lh" <<
+      \context Voice = "lh" \relative c' {
+        \voiceOne
+        g1\!
+      }
+      
+      
+    >>
+    \context Staff = "ped" \context Voice = "ped" \relative c {
+      
+    }
+  >>
+  
   
 }
 

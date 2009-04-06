@@ -541,7 +541,7 @@ allegroMusic = {
       }
       <c es g>8-| r <b f' as>2(-^ <c es g>8)[-| r16 c]-| |
       \unset doubleSlurs
-      <c fis>8[-| r16 <fis, a c>] <fis a c>2~ <fis a c>8[-| r16 <g b>]-| |
+      <c fis>8[-| r16 <fis, a c>]-| <fis a c>2~ <fis a c>8[-| r16 <g b>]-| |
       <b d>4-| % -| is missing in 1871 print
       \times 2/3 {
         r8 g <c es> r g <d' f> r c <es g> |
@@ -559,11 +559,11 @@ allegroMusic = {
       <g b d> <g c es> <g d' f> <g es' fis>) |
       \set doubleSlurs = ##t
       <g es' g>8-| r \clef treble <b f' as>2(-^ <c es g>8)[-| r16 c]-| |
-      <c es fis a>8[-| r16 <c es>] <c es>2~ <c es>8[-| r16 <b d>]-| |
+      <c es fis a>8[-| r16 <c es>]-| <c es>2~ <c es>8[-| r16 <b d>]-| |
       \unset doubleSlurs
       <b d g>4-| <g c es>( <g d' f> <g es' g> |
-      <b f' as> <c es g> <bes d g> <as c g'> |
-      <g c g'>)-|
+      <b f' as> <c es g> <bes d g> <as c g'>) |
+      <g c g'>-|
     }
     \context Staff = "ped" \context Voice = "ped" \relative c {
       \set tupletSpannerDuration = #(ly:make-moment 1 4)

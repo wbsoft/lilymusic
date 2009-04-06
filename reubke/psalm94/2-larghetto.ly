@@ -295,6 +295,7 @@ larghettoMusic = {
       }
     >>
     \context Staff = "lh" \context Voice = "lh" \relative c'' {
+      \oneVoice
       r8
       c(^\mf
       _\markup { I. Trompete 8'. }
