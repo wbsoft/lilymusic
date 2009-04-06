@@ -476,6 +476,7 @@ adagioMusic = {
         \voiceTwo
         r4
         \once \override DynamicText #'Y-extent = #'(-1 . -1)
+        \once \override TextScript  #'Y-extent = #'(1 . 1)
         d2(\pp
         _\markup \italic düster
         cis8. a16 |
@@ -500,21 +501,72 @@ adagioMusic = {
       g1~ | g~ | g | 
     }
   >>
-  % bar 
+  % bar 296 - 303
   <<
-    \context Staff = "rh" \context Voice = "rh" \relative c'' {
-      
-    }
+    \context Staff = "rh" <<
+      \context Voice = "rh" \relative c' {
+        \oneVoice
+        s4 s2.
+        ^\markup { Aeoline 16'. }
+        R1 |
+        s1*2 |
+        \voiceOne
+        d4 es_~ \voiceTwo <es bes'>2~ |
+        <es bes'~>2. <d bes'~>4 |
+        <f_~ bes^~>1 |
+        <f bes>2 \oneVoice r |
+      }
+      \new Voice \relative c'' {
+        s1*4 |
+        s2 \voiceOne bes4. c8 |
+        es2. d4( |
+        f1~) |
+        f2
+      }
+    >>
     \context Staff = "lh" <<
       \context Voice = "lh" \relative c' {
         \voiceOne
-        g1\!
+        g1~\! |
+        g~ |
+        \voiceFour
+        \once \override Tie #'staff-position = #2
+        g~ |
+        \once \override Tie #'staff-position = #2
+        g~ |
+        \voiceOne 
+        g4
       }
-      
-      
+      \new Voice \relative c {
+        \voiceTwo
+        r4 fis^\markup { etwas heller } f e8. c16 |
+        es8. a,16 a2~ a8 bes |
+        \crescTextCresc
+        g2. a4~ |
+        a2. bes4\< |
+        d \oneVoice <es ges>( <ges bes>2)~ |
+        <ges bes~>2. <f_~ bes>4 |
+        <f bes d>1~\> |
+        <f bes d>2 r\!
+      }
+      \new Voice \relative c' {
+        s1*2 |
+        \voiceOne 
+        g2.( a4~ |
+        a2.)
+        bes4_( |
+        \rh bes2)
+      }
     >>
     \context Staff = "ped" \context Voice = "ped" \relative c {
-      
+      R1 |
+      r2 r4 r8 bes'( |
+      g4 fis f e |
+      es d c bes~) |
+      bes1~ |
+      bes1~ |
+      bes1~ |
+      bes2. a4( |      
     }
   >>
   

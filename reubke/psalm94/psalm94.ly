@@ -56,9 +56,9 @@ scoreSetup = <<
 
 music = {
   \scoreSetup
-  %\graveMusic
-  %\larghettoMusic
-  %\allegroMusic
+  \graveMusic
+  \larghettoMusic
+  \allegroMusic
   \adagioMusic
 }  
 
