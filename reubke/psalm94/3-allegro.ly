@@ -773,6 +773,7 @@ allegroMusic = {
           f1\ppp |
         }
       >>
+      \unset decrescendoSpanner
     }
     \context Staff = "lh" \context Voice = "lh" \relative c' {
       <c es as>8.. \clef bass es,32( as2)(-^ <g b>8)[ r16. \clef treble <b es g>32]
@@ -813,6 +814,7 @@ allegroMusic = {
       \set decrescendoText = \markup \dynamic pp
       a2\> d, |
       e1)\ppp\fermata |
+      \unset decrescendoSpanner
     }
   >>
 }

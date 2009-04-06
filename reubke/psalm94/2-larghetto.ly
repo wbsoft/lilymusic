@@ -91,6 +91,7 @@ larghettoMusic = {
         b bes4 c8\! bes as g fis) |
         \oneVoice
         <c fis d'^~>2\pp <f b~ d>4 <g b es> |
+        \unset decrescendoSpanner
       }
       \new Voice \relative c' {
         \voiceTwo
@@ -226,6 +227,7 @@ larghettoMusic = {
         as'8 fes des'4~ des8 beses c4 |
         as2 des4( b |
         as ges des as)\!
+        \unset crescendoSpanner
       }
     >>
     \context Staff = "lh" << 
@@ -502,6 +504,7 @@ larghettoMusic = {
       \set crescendoText = \markup \italic do
       cis(\< bes' g cis, bes es cis bes cis bes' g cis, bes es cis bes) |
       cis( bes' g cis, bes es cis bes cis bes' g cis, bes es cis bes) |
+      \unset crescendoSpanner
     }
     \context Staff = "lh" \context Voice = "lh" \relative c' {
       \oneVoice
@@ -510,8 +513,6 @@ larghettoMusic = {
       r r8
       \clef bass
       \set tieWaitForNote = ##t
-      \unset crescendoSpanner
-      \unset decrescendoSpanner
       r16 a,~\< c~ es_~ <a, c es fis>8\! r r16 a'~ c~ es~ |
       <a, c es fis>8.( f'16 es d c bes a g fis f es d cis c) |
       b8 r r16 d~\< f~ gis~ <d f gis b>8\! r \clef treble r16 d'~ f~ gis~ |

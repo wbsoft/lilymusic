@@ -172,7 +172,9 @@ adagioMusic = {
         es2. d4 |
         des4. es8 fes4 f |
         s1 |
-        s2. f'8( g |
+        s2.
+        \once \override Slur #'positions = #'(-2.5 . -1.5)
+        f'8( g |
         \oneVoice
         as2.
         _\markup \whiteout \italic dimin.
@@ -269,8 +271,25 @@ adagioMusic = {
         \oneVoice
         s1*2 |
         s2. r4 |
-        r
-        
+        r \oops <d' f>(
+        ^\markup { Harmonika 8' allein. }
+        \voiceOne <b e>4. b8 |
+        <bes d>4. a8 gis4 a |
+        a gis g fis) |
+        f e8 dis b'4. a8 |
+        a4 gis2 \oneVoice r4 |
+        r4 \voiceOne a(
+        ^\markup { Salicional u. Gedackt. }
+        e'4. ais,8 |
+        ais4 b2) \oneVoice r4 |
+        r \voiceOne c(
+        ^\markup { Harmonika allein. }
+        g'4. dis8 |
+        dis4 e2) \oneVoice r4 |
+        \tempoMark #"Lento."
+        r \voiceOne e,( fis g |
+        b4. a8 g4 fis |
+        e1)\fermata
       }
       \new Voice \relative c''' {
         \voiceTwo
@@ -287,7 +306,29 @@ adagioMusic = {
         ges4 s2. |
         s1*4 |
         s2 cis,2 |
-        
+        s1*3 |
+        s4
+        % FIXME: tricky!
+        \once \override Slur #'positions = #'(-4 . -20)
+        a'(\ppp gis4. gis8 |
+        g4 f e \change Staff = "lh" \oneVoice <a, d> |
+        <a cis> <e b'> <c c'> <d a'>) | % continues in left hand
+        \change Staff = "rh"
+        s1*2 |
+        \voiceTwo
+        s4
+        \once \override Slur #'positions = #'(-4 . -4)
+        e'8(\< fis g4 fis8 e~ |
+        e4\> dis2)\! s4 |
+        s 
+        \once \override DynamicText #'extra-offset = #'(0 . -2)
+        c'~\ppp c b~ |
+        b c2 s4 |
+        s4 b,
+        _\markup \whiteout \italic { immer schwächer werdend. } 
+        cis2 |
+        d4 c b b |
+        b1
       }
       \new Voice \relative c'' {
         \voiceThree
@@ -297,14 +338,20 @@ adagioMusic = {
         \voiceFour
         \once \override Tie #'staff-position = #0.5
         ces4~ |
-        \voiceTwo \oops ces
+        \voiceTwo \oops ces s2. |
+        s1*10 |
+        e,2. d4 |
+        c2 dis |
+        e2.
       }
       \new Voice \relative c'' {
         % just draw some ties
         \override NoteColumn #'ignore-collision = ##t
         s1*3 |
         s2. s8 \stemUp dis4*1/2^~ |
-        \stemDown dis
+        \stemDown dis4 s2. |
+        s1*17 |
+        s4. \stemUp dis,4*1/2_~ \stemDown dis2
       }
     >>
     \context Staff = "lh" <<
@@ -330,8 +377,19 @@ adagioMusic = {
         d'4 cis c b |
         bes a8 g f4. g8 |
         g4 <d a'>2 \oneVoice r4
-        
-        
+        r4 s2. |
+        s1*2 |
+        \voiceOne
+        a'2 \oneVoice <b, b'~> |
+        <e b'>2. r4 |
+        r e8_( fis g4 fis8 e |
+        fis2.) r4 |
+        r e f2_~ |
+        << { \voiceTwo f4 e2 } \new Voice { \voiceOne g4~ g2 } >>
+        \oneVoice r4
+        r4 b,( ais a |
+        d2. <dis a'>4) |
+        <e~ gis>1\fermata
       }
       \new Voice \relative c' {
         \voiceTwo
@@ -345,8 +403,9 @@ adagioMusic = {
         es4. <g, bes>8 <g bes>4 a |
         <f a> <e g>) <es g> <d g> |
         <d f> <c e> <bes d>4. <g d'>8 |
-        <g d'>4 <d a'>2
-        
+        <g d'>4 <d a'>2 s4 |
+        s1*3 |
+        f'4 fis
       }
     >>
     \context Staff = "ped" \context Voice = "ped" \relative c {
@@ -366,8 +425,15 @@ adagioMusic = {
       d1~_\ppp_\markup { Subbass allein } |
       \repeat unfold 5 d1~ |
       d2. r4 |
-      
-      
+      R1*2 |
+      r2 r4 dis,( |
+      d cis c2 |
+      b2. ais4 |
+      a2 g |
+      c2. b4 |
+      a g fis e |
+      d2 g4 b |
+      e1)\fermata
     }
   >>
   
