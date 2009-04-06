@@ -1,6 +1,6 @@
 \version "2.12.0"
 
-\include "defines.ly"
+\include "definitions.ly"
 
 allegroMusic = {
   % bar 108 - 125

@@ -1,6 +1,6 @@
 \version "2.12.0"
 
-\include "defines.ly"
+\include "definitions.ly"
 
 global = { \key c \major }
 
@@ -251,10 +251,10 @@ adagioMusic = {
         \oneVoice
         r4
         \clef bass
-        b,,
+        b,,\mf
         ^\markup { M. I. }
         \voiceOne
-        bes1~ |
+        bes1~_\markup \whiteout { \italic düster 16' 8' u. 4'. } |
         bes4 ces8 des es4 fes |
         \clef treble
         as( g8 as bes4 ces8 des) |
@@ -273,14 +273,23 @@ adagioMusic = {
         bis cis s2 |
         r4 a, as2~ |
         as4 g2 as8 bes |
-        <ces fes>( <bes es> <des as'> <fes as>) |
+        <ces fes>4( <bes es> <des as'> <fes as>) |
         es1~ |
         es2~ es4. f8 |
         ges4
-        
       }
       \new Voice \relative c'' {
-        % just draw ties
+        \voiceThree
+        s1*8 |
+        as4_( g ges g)~ |
+        g as2
+        \voiceFour
+        \once \override Tie #'staff-position = #0.5
+        ces4~ |
+        \voiceTwo \oops ces
+      }
+      \new Voice \relative c'' {
+        % just draw some ties
         \override NoteColumn #'ignore-collision = ##t
         s1*3 |
         s2. s8 \stemUp dis4*1/2^~ |
@@ -307,6 +316,22 @@ adagioMusic = {
     >>
     \context Staff = "ped" \context Voice = "ped" \relative c {
       R1*5 |
+      r4 es2(
+      _\markup { Posaune 16'. }
+      _\markup \italic hervortretend.
+      d8. bes16 |
+      des4 g,2 as4) |
+      fes'_( es8. bes16 des4 as'~ |
+      as g8. es16 ges4 g8 des'~ |
+      des4 c ces as |
+      d1~)_\>_\markup { Posaune fort. } |
+      d2. as4\pp |
+      d1~\> |
+      d2. as4 |
+      d1~_\ppp_\markup { Subbass allein } |
+      \repeat unfold 5 d1~ |
+      d2. r4 |
+      
       
     }
   >>

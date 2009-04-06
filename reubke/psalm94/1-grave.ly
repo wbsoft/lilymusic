@@ -1,6 +1,6 @@
 \version "2.12.0"
 
-\include "defines.ly"
+\include "definitions.ly"
 
 global = {
   \time 4/4
