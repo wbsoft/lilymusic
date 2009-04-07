@@ -7,6 +7,11 @@
   composer = "Julius Reubke (1834-1858)"
 }
 
+\paper {
+  systems-per-page = #5
+}
+
+
 \layout {
   \context {
     \Score
@@ -57,10 +62,10 @@ scoreSetup = <<
 
 music = {
   \scoreSetup
-  %\graveMusic
-  %\larghettoMusic
-  %\allegroMusic
-  %\adagioMusic
+  \graveMusic
+  \larghettoMusic
+  \allegroMusic
+  \adagioMusic
   \fugaMusic
 }  
 
@@ -69,11 +74,12 @@ breaks = \new Devnull {
   s1*52  %\pageBreak % 53: Larghetto
   s1*128 \newSpacingSection % 181
   s1*52 \break \newSpacingSection % 233: Adagio
+  s1*84 \newSpacingSection % 317: Fuga
 }
 
 \score {
   <<
     \music
-    %\breaks
+    \breaks
   >>
 }
