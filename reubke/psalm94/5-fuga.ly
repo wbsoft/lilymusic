@@ -28,8 +28,6 @@ fugaMusic = {
       c'16 as r8 as16 f r8 c'16 as r8 es'16 c r8) |
       as'16( f d g f c b d es bes a c d as g b |
       c g f bes as es d g as es d g f c bes es) |
-      
-      
     }
     \context Staff = "lh" \context Voice = "lh" \relative c' {
       \oneVoice
