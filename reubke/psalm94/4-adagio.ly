@@ -569,6 +569,89 @@ adagioMusic = {
       bes2. a4( |      
     }
   >>
+  % bar 304 - 316
+  <<
+    \context Staff = "rh" <<
+      \context Voice = "rh" \relative c'' {
+        \oneVoice r4 \voiceOne c2( c4~ |
+        c4 bes~ bes8[ as g8. fis16]) |
+        fis4( g as c, |
+        f2 g4. g8 |
+        \oneVoice <as, as'>4) <as des f>( \clef bass <es as c> <f c'> |
+        \voiceOne c' bes as \clef treble fes' |
+        fes es deses beses'~) |
+        beses as g2~ |
+        g4 f8 e es2~ |
+        es4 des2 c4 |
+        g'2.( as4) |
+        as1~ |
+        as2\fermata \oneVoice r\fermata
+      }
+      \new Voice \relative c' {
+        \voiceTwo
+        s4 f(\pp g as |
+        g2~ g8[ f es8. d16] |
+        d2) f4 c~ |
+        c b2 bes4 |
+        s1 |
+        fes2. des'4 |
+        ces2 beses4 ges' |
+        fes2( e4) des |
+        c2~ c |
+        as1 |
+        c2\ppp b~ |
+        b1~\pppp |
+        b2_\markup \italic smorz.
+      }
+      \new Voice \relative c' {
+        % draw ties
+        \override NoteColumn #'ignore-collision = ##t
+        s1*9 |
+        s2. \stemUp c4~ |
+        \stemDown c2
+      }
+    >>
+    \context Staff = "lh" \context Voice = "lh" \relative c' {
+      r4 d2. |
+      des2~ des8 c4.~ |
+      c4 b c g |
+      f2. fes4 |
+      es des,_( es <f d'> |
+      <<
+        {
+          \voiceTwo
+          g2 as4 bes |
+          ces2 des4 es) |
+          fes2( e4) e |
+          f2 as, |
+          des1 |
+          g,1~ |
+          g1~ |
+          g2 \oneVoice r\fermata
+        }
+        \new Voice {
+          \voiceOne
+          des'2. aeses'4 |
+          ges2. deses'4 |
+          ces2( b4) bes |
+          a2 as4 ges |
+          f1~ |
+          f1~ |
+          f1~ |
+          f2\fermata
+        }
+      >>
+    }
+    \context Staff = "ped" \context Voice = "ped" \relative c {
+      as2 g4 f |
+      e2 f4 g8. as16 |
+      as4 g f es' |
+      d2. des4 |
+      c) r r2 |
+      R1*7 |
+      R1-\fermataMarkup
+    }
+  >>
   
   
 }
