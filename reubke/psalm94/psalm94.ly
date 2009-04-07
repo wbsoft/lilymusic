@@ -53,13 +53,15 @@ scoreSetup = <<
 \include "2-larghetto.ly"
 \include "3-allegro.ly"
 \include "4-adagio.ly"
+\include "5-fuga.ly"
 
 music = {
   \scoreSetup
-  \graveMusic
-  \larghettoMusic
-  \allegroMusic
-  \adagioMusic
+  %\graveMusic
+  %\larghettoMusic
+  %\allegroMusic
+  %\adagioMusic
+  \fugaMusic
 }  
 
 % some (page) breaks to enforce easy page turning etc.
@@ -72,6 +74,6 @@ breaks = \new Devnull {
 \score {
   <<
     \music
-    \breaks
+    %\breaks
   >>
 }
