@@ -32,7 +32,7 @@ fugaMusic = {
     \context Staff = "lh" \context Voice = "lh" \relative c' {
       \oneVoice
       \global
-      r4^\markup { \dynamic f M. II. }
+      r4^\markup { \dynamic f \hspace #1 M. II. }
       c4-. b4..( g16 |
       bes2. a8. f16) |
       as8[-| r16 d,]-| d2(-^ es4) |
@@ -68,12 +68,43 @@ fugaMusic = {
   <<
     \context Staff = "rh" <<
       \context Voice = "rh" \relative c'' {
+        \voiceOne
+        r4 c-| b4..( g16) |
+        bes2.( a8. f16) |
+        as8[-| r16 d,16]-| d2(-| es4) |
+        b4. c8 d4. es8 |
+        e4. f8 g4. as8 |
+        <as es'>2-| <es fis>4.-| <es g>8-| |
+        <f as>2-| b,4.( c16 d) |
+        \oneVoice
+        <fis, es'>4~ <fis es'>16 c'( a g fis a es' fis g g, b d) |
+        <gis, f'>4~ <gis f'>16 d'( b a gis b f' gis a a, cis e) |
         
       }
-      
+      \new Voice \relative c' {
+        \voiceTwo
+        d16( es f g as f es d) g2 |
+        des16( es e fis g e des c) f2 |
+        c4 b2( g4) |
+        as( g ces bes |
+        des c fes es) |
+        ges2 c,4. c8 |
+        d2 f, |
+        s1*2 |
+        
+      }
     >>
     \context Staff = "lh" \context Voice = "lh" \relative c {
-       f2)~ f16 g b es d b g f |
+      f2)~ f16 g b es d b g f |
+      e2( es16) f a bes c a f es |
+      d( es f g as g f e f d b g c bes as g) |
+      f( d' as f es c' g es as f' ces as g es' bes g) |
+      bes( g' des bes as f' c as des bes' fes des c as' es c) |
+      c'( bes as g as f es d) es( c bes as g c es g) |
+      b( as f e f es d cis d as g fis g f es d) |
+      c( fis a b) c2( b4) |
+      d,16( gis b cis) d2( cis4)-. |
+      
     }
     \context Staff = "ped" \context Voice = "ped" \relative c {
       
