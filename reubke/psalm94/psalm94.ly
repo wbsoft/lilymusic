@@ -56,21 +56,22 @@ scoreSetup = <<
 
 music = {
   \scoreSetup
-  %\graveMusic
-  %\larghettoMusic
-  %\allegroMusic
+  \graveMusic
+  \larghettoMusic
+  \allegroMusic
   \adagioMusic
 }  
 
 % some (page) breaks to enforce easy page turning etc.
 breaks = \new Devnull {
-  s1*52  \pageBreak % Larghetto
-  s1*180 \break % Adagio
+  s1*52  %\pageBreak % 53: Larghetto
+  s1*128 \newSpacingSection % 181
+  s1*52 \break \newSpacingSection % 233: Adagio
 }
 
 \score {
   <<
     \music
-    %\breaks
+    \breaks
   >>
 }

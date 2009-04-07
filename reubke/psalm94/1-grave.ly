@@ -41,7 +41,7 @@ graveMusic = {
       \clef bass
       r4 bes2.~^\pp
       -\tweak #'X-offset #3 ^\markup \whiteout \italic düster
-      ^\markup \whiteout \bold { M. III. 8'. }
+      ^\markup \whiteout { M. III. 8'. }
       bes1~ |
       <<
         {
@@ -105,7 +105,7 @@ graveMusic = {
           g2\(^\p
           -\tweak #'X-offset #3
           ^\markup \whiteout \italic { düster aber hervortretender. }
-          ^\markup \bold { 16'. u. 8'. }
+          ^\markup { 16'. u. 8'. }
           fis8. d16 |
           f8. b,16 \oneVoice b2~ b8 c\) |
           \voiceTwo
@@ -177,22 +177,22 @@ graveMusic = {
   <<
     \context Staff = "rh" \relative c' {
       r8. c16\f
-      ^\markup \bold { Man. II. }
+      ^\markup { Man. II. }
       des2( <c f>8)[ r16 f]~ |
       <f c'>4~ <f c'>8[ r16 <c' f as c>]\ff
-      ^\markup \bold { Man. I. }
+      ^\markup { Man. I. }
       <c f as c>2 |
       r8. d,16\f
-      ^\markup \bold { M. II. }
+      ^\markup { M. II. }
       es2( <d g>8)[ r16 g]~ |
       <g d'>4~ <g d'>8[ r16 <d' g bes d>]\ff
-      ^\markup \bold { M. I. }
+      ^\markup { M. I. }
       <d g bes d>2 |
       r8. e,16\f
-      ^\markup \bold { M. II. }
+      ^\markup { M. II. }
       f2( <e a>8)[ r16 a]~ |
       <a e'>4~ <a e'>8[ r16 <e' a c e>]\ff
-      ^\markup \bold { M. I. }
+      ^\markup { M. I. }
       <e a c e>2 |
       r4 <e a c e>(-.\fff <e g c e>-. <e fis c' e>-. |
       <e fis b e>-.) <d f gis d'>4.-- <c e a c>8[( <b e g b>8. <ais e' g ais>16)] |
@@ -311,11 +311,11 @@ graveMusic = {
       <<
         {
           <es g bes>( <cis e a> <c es as> |
-          <b d g>) <es g bes>\(^\p <cis e a> <c es as> |
+          <b d g>) <es g bes>(^\p <cis e a> <c es as> |
           <as' es'>2
           ^\pp
-          -\tweak #'X-offset #3 ^\markup \italic { immer leiser werdend }
-          d4. a8\) |
+          -\tweak #'X-offset #3 ^\markup \whiteout \italic { immer leiser werdend }
+          d4. a8) |
           c2. b4~ |
           <b d>1~^\pppp \voiceTwo \oops <b d>4
         } \\ {

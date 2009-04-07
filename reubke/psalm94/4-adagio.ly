@@ -38,6 +38,7 @@ adagioMusic = {
       r2 r4 r8 <<
         {
           \voiceTwo
+          \once \override Slur #'positions = #'(-2 . -4)
           <e gis>8( |
           d4 c <b d~> <e, d'> |
           <a c> <e b'> <c c'> <d a'> |
@@ -539,7 +540,7 @@ adagioMusic = {
       }
       \new Voice \relative c {
         \voiceTwo
-        r4 fis^\markup { etwas heller } f e8. c16 |
+        r4 fis^\markup \whiteout \italic { etwas heller } f e8. c16 |
         es8. a,16 a2~ a8 bes |
         \crescTextCresc
         g2. a4~ |
@@ -573,7 +574,10 @@ adagioMusic = {
   <<
     \context Staff = "rh" <<
       \context Voice = "rh" \relative c'' {
-        \oneVoice r4 \voiceOne c2( c4~ |
+        \oneVoice r4 \voiceOne 
+        c2(
+        ^\markup \italic{ sehr weich, singend }
+        c4~ |
         c4 bes~ bes8[ as g8. fis16]) |
         fis4( g as c, |
         f2 g4. g8 |
@@ -596,7 +600,9 @@ adagioMusic = {
         s1 |
         fes2. des'4 |
         ces2 beses4 ges' |
-        fes2( e4) des |
+        \set decrescendoSpanner = #'text
+        \set decrescendoText = \markup \whiteout \italic { "dimin. " }
+        fes2( e4)\> des |
         c2~ c |
         as1 |
         c2\ppp b~ |
@@ -612,7 +618,9 @@ adagioMusic = {
       }
     >>
     \context Staff = "lh" \context Voice = "lh" \relative c' {
-      r4 d2. |
+      r4 d2.
+      _\markup \whiteout { ohne Gedackt und Aeoline 16'. }
+      |  \noBreak % because of markup text
       des2~ des8 c4.~ |
       c4 b c g |
       f2. fes4 |
