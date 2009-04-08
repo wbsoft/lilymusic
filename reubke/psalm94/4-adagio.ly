@@ -12,12 +12,12 @@ adagioMusic = {
       \tempoMark #"Adagio."
       r4 f^(
       _\markup \whiteout { M. III. Salicional und Gedackt 8'. }
-      e4. \lh \voiceOne b8 | \noBreak % because of the x-staff slur
-      <a d>4. gis8 <f~ gis~>4 <f gis c>( |  \noBreak % because of the x-staff slur
-      <e a> <e gis> <e g> <d fis> |  \noBreak % because of the x-staff slur
-      f e8 dis b'4. a8 |  \noBreak % because of the x-staff slur
+      e4. \lh \voiceOne b8 |
+      <a d>4. gis8 <f~ gis~>4 <f gis c>( |
+      <e a> <e gis> <e g> <d fis> |
+      f e8 dis b'4. a8 |
       a4 gis2)
-      \rh \oneVoice r4 |  \noBreak % because of the x-staff slur
+      \rh \oneVoice r4 |
       r a e'4. ais,8~ |
       ais4 b2 r4 |
       r4 <<
@@ -86,7 +86,7 @@ adagioMusic = {
       a4\p(
       ^\markup { M. II. \italic hervortretend }
       ^\markup { Oboe oder Geigenprinzipal }
-      e' d4. b8 | \noBreak % because of the markup
+      e' d4. b8 |
       g4 a2 b4~ |
       b) e\< fis4. g8 |
       \time 2/4
@@ -129,7 +129,7 @@ adagioMusic = {
       as4(\p
       ^\markup { M. II. }
       ^\markup { Oboe oder Geigenprinzipal (Aeoline 16'.) }
-      es' des4. bes8 | \noBreak % because of the markup
+      es' des4. bes8 |
       ges4 as2 bes4)~ |
       bes\< es( f ges |
       bes,\> as8 ges des'2)\pp
@@ -249,7 +249,7 @@ adagioMusic = {
         \oneVoice r4
         ^\markup { M. III. Harmonika 8' allein }
         \voiceOne
-        cis2(_\ppp b8 ais~ | \noBreak % because of the markup
+        cis2(_\ppp b8 ais~ |
         ais4 b8 cis dis4. e8)~ |
         e dis4 d8 cis4 gis8 ais |
         b4 ais8 eis fis4 eis8 dis |
@@ -277,7 +277,7 @@ adagioMusic = {
         s2. r4 |
         r \oops <d' f>(
         ^\markup { Harmonika 8' allein. }
-        \voiceOne <b e>4. b8 |  \noBreak % because of the markup and the x-staff slur
+        \voiceOne <b e>4. b8 | \noBreak % because of the x-staff slur
         <bes d>4. a8 gis4 a |
         a gis g fis) |
         f e8 dis b'4. a8 |
@@ -620,8 +620,7 @@ adagioMusic = {
     \context Staff = "lh" \context Voice = "lh" \relative c' {
       r4 d2.
       _\markup \whiteout { ohne Gedackt und Aeoline 16'. }
-      |  \noBreak % because of markup text
-      des2~ des8 c4.~ |
+      | des2~ des8 c4.~ |
       c4 b c g |
       f2. fes4 |
       es des,_( es <f d'> |

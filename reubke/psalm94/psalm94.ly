@@ -5,18 +5,33 @@
   title = "Der 94ste Psalm."
   subtitle = "Sonate."
   composer = "Julius Reubke (1834-1858)"
+  copyright = \markup \center-column {
+    \line {
+      Edited, engraved and copyright © 2009 by
+      \with-url #"http://www.wilbertberendsen.nl/"
+      { Wilbert Berendsen (http://www.wilbertberendsen.nl/) }
+    }
+    \line {
+      This edition may be freely copied, distributed,
+      performed and recorded under the provisions of the
+    }
+    \with-url #"http://creativecommons.org/licenses/by-nc-sa/3.0/nl/"
+    \line {
+      Creative Commons License (BY-NC-SA)
+      (http://creativecommons.org/licenses/by-nc-sa/3.0/nl/)
+    }
+  }
 }
 
 \paper {
   systems-per-page = #5
 }
 
-
 \layout {
   \context {
     \Score
     % \override SpacingSpanner #'common-shortest-duration = #(ly:make-moment 1 8)
-    % \override PaperColumn #'keep-inside-line = ##t 
+    \override PaperColumn #'keep-inside-line = ##t 
   }
   \context {
     \Staff
