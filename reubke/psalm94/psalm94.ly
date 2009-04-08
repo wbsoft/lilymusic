@@ -77,10 +77,10 @@ scoreSetup = <<
 
 music = {
   \scoreSetup
-%   \graveMusic
-%   \larghettoMusic
-%   \allegroMusic
-%   \adagioMusic
+  \graveMusic
+  \larghettoMusic
+  \allegroMusic
+  \adagioMusic
   \fugaMusic
 }  
 
@@ -96,6 +96,6 @@ breaks = \new Devnull {
 \score {
   <<
     \music
-%     \breaks
+    \breaks
   >>
 }
