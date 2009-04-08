@@ -25,7 +25,7 @@
 
 \paper {
   %#(set-paper-size "a4" 'landscape)
-  systems-per-page = #5
+  max-systems-per-page = #5
 }
 
 \layout {
@@ -37,7 +37,6 @@
     \Staff
     \override TextScript #'staff-padding = #1
     \override BreathingSign #'text = #(make-musicglyph-markup "scripts.caesura.curved")
-    extraNatural = ##t
   }
   \context {
     \Voice
@@ -78,10 +77,10 @@ scoreSetup = <<
 
 music = {
   \scoreSetup
-  \graveMusic
-  \larghettoMusic
-  \allegroMusic
-  \adagioMusic
+%   \graveMusic
+%   \larghettoMusic
+%   \allegroMusic
+%   \adagioMusic
   \fugaMusic
 }  
 
@@ -97,6 +96,6 @@ breaks = \new Devnull {
 \score {
   <<
     \music
-    \breaks
+%     \breaks
   >>
 }
