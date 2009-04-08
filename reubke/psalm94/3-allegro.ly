@@ -583,6 +583,7 @@ allegroMusic = {
     \context Staff = "rh" <<
       \context Voice = "rh" \relative c' {
         \voiceOne
+        \once \override Slur #'positions = #'(2 . 4)
         es4(^\markup\italic legato as g8. d16 |
         f4 c' d es |
         as g f es8. c16 |

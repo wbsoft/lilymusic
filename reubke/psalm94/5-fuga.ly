@@ -119,6 +119,7 @@ fugaMusic = {
   % bar 350 - 354
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c'' {
+      \oneVoice
       <cis e bes'>4-| r r <c es a>8[-| r16 d]-| |
       <b d as'>4-| r r <bes des g>8[-| r16 c]-| |
       <a c fis>4-| r r <g d' g>-| |
@@ -173,14 +174,66 @@ fugaMusic = {
       <bes des>16( a bes c des bes g f es g a bes c a f es) |
       d( e fis g a bes c d es4) d |
       es,16( g c es g4)~ g16( a, c g' fis d c a) |
-      as( c \clef treble f as c4~ c16) d,( f c' b g f d) |
+      as( c \clef treble f as c4)~ c16( d, f c' b g f d) |
     }
     \context Staff = "ped" \context Voice = "ped" \relative c' {
       bes2( cis,4.. d16) |
       es2( g,4)-. a-. |
       d,-. r r d'-. |
       es-. r r d-. |
-      as'-. r r g-. |
+      as'-. r r g |
+    }
+  >>
+  % bar 360 - 366
+  <<
+    \context Staff = "rh" <<
+      \context Voice = "rh" \relative c'' {
+        \oneVoice
+        r16 des( g bes) r c,( f as) r b,( d g) r a,( c fis) |
+        r as,( d f) r g,( c es) r f,( b d) r es,( g c)
+        \voiceOne
+        <es g>4( f8. es16 d4 es8. f16) |
+        \voiceTwo f,4~ \voiceOne f16( es d f c'4 b8. g16) |
+        bes4(~ bes16 as g bes f'4 e8. c16) |
+        \oneVoice
+        r16 ges( c es) r f,( bes des) r e,( g c) r d,( f b) |
+        r des,( g bes) r c,( f as) r des,( e g) r c,( f as) |
+      }
+      \new Voice \relative c'' {
+        \voiceTwo
+        s1*2 |
+        c2.( b4) |
+        \voiceOne <c f>8 r \voiceTwo s4 f,2~ |
+        f4 s bes2 |
+      }
+      \new Voice \relative c' {
+        % draw ties
+        \override NoteColumn #'ignore-collision = ##t
+        s1*3 |
+        s4.. \stemUp f4*1/4~ \stemDown f2 |
+        s4.. \stemUp bes4*1/4_~ \stemDown bes2
+      }
+    >>
+    \context Staff = "lh" \context Voice = "lh" \relative c' {
+      <des g bes>8-| r <c f as>-| r <b d g>-| r <a c fis>-| r |
+      \clef bass
+      <as d f>-| r <g c es>-| r <f b d>-| r <es g c>-| r |
+      \clef treble
+      g16( a b c d es f g as4 g) |
+      \clef bass
+      r16 c,,( f as c4)~ c16( d, f c' b g f d) |
+      des( f bes des f4)~ f16( g, bes f' e c bes g) |
+      <ges c es>8-| r <f bes des>-| r <e g c>-| r <d f b>-| r |
+      <des g bes>-| r <c f as>-| r bes'4( as) |
+    }
+    \context Staff = "ped" \context Voice = "ped" \relative c, {
+      e4( f g a) |
+      b( c d es) |
+      g,-. r r g'-. |
+      as-. r r g,-. |
+      des'-. r r c-. |
+      a( bes c d) |
+      e,( f g as) |
     }
   >>
   
