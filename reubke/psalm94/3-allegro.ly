@@ -694,7 +694,7 @@ allegroMusic = {
       <c es as>2 r4 r8. <c es as>16 |
       <c es fis a>2 r4 r8. <c es fis a>16 |
       <d f b>2 r4 r8. <d f b>16 |
-      \bar "||" % in 1871 score
+      %\bar "||" % in 1871 score
     }
     \context Staff = "lh" \context Voice = "lh" \relative c {
       \clef bass

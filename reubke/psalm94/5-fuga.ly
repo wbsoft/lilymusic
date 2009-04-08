@@ -10,6 +10,7 @@ fugaMusic = {
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c'' {
       \oneVoice
+      \bar "||"
       \global
       \tempoMark #"Allegro."
       R1*7 |

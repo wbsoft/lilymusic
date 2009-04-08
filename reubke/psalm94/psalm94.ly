@@ -24,6 +24,7 @@
 }
 
 \paper {
+  %#(set-paper-size "a4" 'landscape)
   systems-per-page = #5
 }
 

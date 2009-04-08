@@ -8,6 +8,7 @@ adagioMusic = {
   % bar 232 - 242
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c' {
+      \bar "||"
       \global
       \tempoMark #"Adagio."
       r4 f^(
