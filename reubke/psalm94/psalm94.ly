@@ -17,8 +17,8 @@
     }
     \with-url #"http://creativecommons.org/licenses/by-nc-sa/3.0/nl/"
     \line {
-      Creative Commons License (BY-NC-SA)
-      (http://creativecommons.org/licenses/by-nc-sa/3.0/nl/)
+      Creative Commons License (BY-NC-SA,
+      http://creativecommons.org/licenses/by-nc-sa/3.0/nl/)
     }
   }
 }

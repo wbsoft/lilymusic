@@ -236,8 +236,68 @@ fugaMusic = {
       e,( f g as) |
     }
   >>
-  
-  
+  % bar 367 - 374
+  <<
+    \context Staff = "rh" <<
+      \context Voice = "rh" \relative c'' {
+        \voiceOne
+        c2.(
+        ^\markup Manualcoppel.
+        b8. g16 |
+        \set crescendoSpanner = #'text
+        \set crescendoText = #"poco "
+        <e bes'>4 <f as> g\< f8.) f'16 |
+        \set crescendoText = #"a "
+        c'2.( b8.\< g16 |
+        \set crescendoText = #"poco "
+        <e bes'>4 <f as> g~\< g8. g16) |
+        d'2.( cis8. g16 |
+        \oneVoice
+        \set crescendoText = #"cresc. "
+        <es fis c'>4\< <bes d~ bes'> <a d~ a'> <as d as'>8. <as as'>16) |
+        <es' as c es>4 \voiceOne es2( d8. as16 |
+        des4 c bes as8. as16) |
+      }
+      \new Voice \relative c' {
+        \voiceTwo
+        <f as>4(\ff <e g> <es fis> <d f> |
+        c2.) f8. f16 | % the original slur goes until g, which has two stems
+        <c' f as>4 <e g> <es fis> <d f> |
+        c2. cis4 |
+        <d g bes> <fis a> <f as> <e g> |
+        s1 |
+        s4 <g, bes> <fis a> <as f> |
+        <es g> <es as> <des es> <c es> |
+      }
+    >>
+    \context Staff = "lh" \context Voice = "lh" \relative c' {
+      r8. c16( bes8. c16 a8. c16 as8. c16 |
+      g8. as16 f8. g16 es8. f16 des8. f16) |
+      c8. c'16 <bes g'>8. c16 <a fis'>8. c16 <as f'>8. c16 |
+      <g e'>8. as16 <f c'>8. g16 <e c'>8. g16 <es cis'>8. g16 |
+      <d d'>8. d'16 <c a'>8. d16 <b gis'>8. d16 <bes g'>8. d16 |
+      <a fis'>8. bes16 <g d'>8. a16 <fis d'>8. a16 <f d'>8. as16 |
+      <es es'>8. es'16 des8. es16 c8. es16 ces8. es16 |
+      bes8. c16 as8. bes16 g8. as16 ges8. as16 |
+    }
+    \context Staff = "ped" \context Voice = "ped" \relative c, {
+      c8. c'16( bes8. c16 a8. c16 as8. c16 |
+      g8. as16 f8. g16 es8. f16 des8. f16 |
+      c8.) c'16( bes8. c16 a8. c16 as8. c16 |
+      g8. as16 f8. g16 e8. g16 es8. g16 |
+      d8.) d'16( c8. d16 b8. d16 bes8. d16 |
+      a8. bes16 g8. a16 fis8. a16 f8. as16 |
+      es8.) es'16( des8. es16 c8. es16 ces8. es16 |
+      bes8. c16 as8. bes16 g8. as16 ges8. as16) |
+    }
+  >>
+  % bar 375 - 382
+  <<
+    \context Staff = "rh" \context Voice = "rh" \relative c'' {
+      \oneVoice
+      <gis b e gis>8.\ff <e gis>16
+    }
+  >>
   
 }
 
