@@ -16,6 +16,7 @@
   \context {
     \Score
     % \override SpacingSpanner #'common-shortest-duration = #(ly:make-moment 1 8)
+    % \override PaperColumn #'keep-inside-line = ##t 
   }
   \context {
     \Staff
