@@ -49,13 +49,13 @@
 scoreSetup = <<
   \new PianoStaff <<
     \new Staff = "rh" \with {
-      \override VerticalAxisGroup #'minimum-Y-extent = #'(-2 . 3)
+      \override VerticalAxisGroup #'minimum-Y-extent = #'(-3 . 3)
     } \new Voice = "rh" {
       \clef treble
       #(set-accidental-style 'piano)
     }
     \new Staff = "lh" \with {
-      \override VerticalAxisGroup #'minimum-Y-extent = #'(-3 . 2)
+      \override VerticalAxisGroup #'minimum-Y-extent = #'(-3 . 3)
     } \new Voice = "lh" {
       \clef bass
       #(set-accidental-style 'piano)
