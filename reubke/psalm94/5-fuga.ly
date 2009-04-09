@@ -455,7 +455,63 @@ fugaMusic = {
       e eis fis g gis a ais b)
     }
   >>
-  
+  % bar 399 - 405
+  <<
+    \context Staff = "rh" \context Voice = "rh" \relative c'' {
+      <b e g>4-- s <ais cis fis>-- s8 \voiceOne cis-- |
+      \oneVoice <g b e>4..-- <g b>16-- <g b>4~-- <g b>16( b e g) |
+      <b, e g>4-- s <ais cis fis>-- s8 \voiceOne cis-- |
+      \oneVoice <a c e>4..-- <fis a>16-- <fis a>4~-- <fis a>16( e' a c) |
+      <e, a c>4-- s <dis fis b>-- s8 \voiceOne fis-- |
+      \oneVoice <c e a>4..-- <c e>16-- <c e>4~-- <c e>16( e a c) |
+      <e, a c>4-- s <dis fis b>-- s8 \voiceOne fis-- |
+      \oneVoice
+    }
+    \context Staff = "lh" \context Voice = "lh" \relative c' {
+      r16_\markup { Manualcoppel fort! } \stemUp
+      \once \override Hairpin #'rotation = #'(10 0 0)
+      \once \override Hairpin #'extra-offset = #'(0 . 5)
+      b(\< cis e g \rh b cis g')\! \lh
+      r
+      \once \override Hairpin #'rotation = #'(10 0 0)
+      \once \override Hairpin #'extra-offset = #'(0 . 5)
+      ais,,\< cis e fis \rh ais cis e\! \lh
+      \stemNeutral
+      r b,,( d e g d e g b e, g b e8)-. r |
+      r16 \stemUp
+      \once \override Hairpin #'rotation = #'(10 0 0)
+      \once \override Hairpin #'extra-offset = #'(0 . 5)
+      b(\< cis e g \rh b cis g')\! \lh
+      r
+      \once \override Hairpin #'rotation = #'(10 0 0)
+      \once \override Hairpin #'extra-offset = #'(0 . 5)
+      ais,,(\< cis e fis \rh ais cis e)\! \lh
+      \stemNeutral
+      r c,,( e fis a e fis a c fis, a c e4) |
+      \clef treble
+      r16 \stemUp
+      \once \override Hairpin #'rotation = #'(10 0 0)
+      \once \override Hairpin #'extra-offset = #'(0 . 2)
+      e(\< fis a c \rh e a c)\! \lh
+      r
+      \once \override Hairpin #'rotation = #'(10 0 0)
+      \once \override Hairpin #'extra-offset = #'(0 . 1.5)
+      dis,,(\< fis a b \rh dis fis a)\! \lh
+      \stemNeutral
+      r e,,( g a c g a c e a, c e a4) |
+      r16 \stemUp
+      \once \override Hairpin #'rotation = #'(10 0 0)
+      \once \override Hairpin #'extra-offset = #'(0 . 2)
+      e(\< fis a c \rh e a c)\! \lh
+      r
+      \once \override Hairpin #'rotation = #'(10 0 0)
+      \once \override Hairpin #'extra-offset = #'(0 . 1.5)
+      dis,,(\< fis a b \rh dis fis a)\! \lh
+    }
+    \context Staff = "ped" \context Voice = "ped" \relative c {
+      cis1 | d | cis | c | fis, | g | fis |
+    }
+  >>
 }
 
 
