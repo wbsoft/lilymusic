@@ -514,6 +514,169 @@ fugaMusic = {
       cis1 | d | cis | c | fis, | g | fis |
     }
   >>
+  % bar 406 - 413
+  <<
+    \context Staff = "rh" \context Voice = "rh" \relative c'' {
+      <d f a>1~ |
+      <d f a>8-| r s2 s8. <d f a>16 |
+      <cis f a>1~ |
+      <cis f a>8-| r s2 s8. <d f bes>16 |
+      <d f bes>1~ |
+      <d f bes>8-| r s2 s8. <d f as b>16 |
+      <d f as b>1~ |
+      <d f as b>8-| r s2 s8. <es as c>16 |
+    }
+    \context Staff = "lh" \context Voice = "lh" \relative c' {
+      \oneVoice
+      <d f a>1~ |
+      <d f a>8-| r16
+      \clef bass
+      <d, f>( \stemUp a' \rh d <f a>)
+      \lh <f, a>( d' \rh f <a d>) \lh <a, d>( f'[ \rh a <d f>]) 
+      \lh \clef treble <d, f a> |
+      <cis f a>1~ |
+      <cis f a>8-| r16
+      <f, a>16( \stemUp cis' \rh f <a cis>)
+      \lh <a, cis>( f' \rh a <cis f>) \lh <cis, f>( a'[ \rh cis <f a>])
+      \lh <d, f bes> |
+      <d f bes>1~ |
+      <d f bes>8-| r16
+      <f, bes>( \stemUp d' \rh f <bes d>)
+      \lh <bes, d>( f' \rh bes <d f>) \lh <d, f>( bes'[ \rh d <f bes>])
+      \lh <d, f as b> |
+      <d f as b>1~ |
+      <d f as b>8- | r16
+      as( \stemUp <b d> \rh as' <b d>)
+      \lh <b, d>( as' \rh b <d as'>) \lh <d, as'>( b'[ \rh b %{ d? %} <as' b>])
+      \lh <es, as c>16 |
+    }
+    \context Staff = "ped" \context Voice = "ped" \relative c, {
+      r8 f( gis a bes a cis d |
+      f1) |
+      r8 f,( gis a bes a cis e |
+      f1) |
+      r8 f,( a bes cis d e f) |
+      f1 |
+      r8 f,( as b cis d es e) |
+      f1 |
+    }
+  >>
+  % bar 414 - 417
+  <<
+    \context Staff = "rh" \context Voice = "rh" \relative c'' {
+      \oneVoice
+      <es as c>4\fff
+      -\tweak #'X-offset #3 _\markup Manualcoppel.
+      r8. <es, as c>16 <e as c>4.. <c' e as c>16 |
+      <c f as c>4.. <f, as c>16 <fes as c>4.. <c' fes as c>16 |
+      <c es as c>4.. <es, as c>16 <e as c>4.. <c' e as c>16 |
+      <c f as c>4.. <f, as c>16 <es a c es>4.. <a c es>16 |
+    }
+    \context Staff = "lh" \context Voice = "lh" \relative c' {
+      \oneVoice
+      <es as c>8[ r16 \clef bass c,16]~ <c es as c>4 r8. c16~ <c e as c>4 |
+      r8. c16~ <c f as c>4 r8. c16~ <c fes as c>4 |
+      r8. c16~ <c es as c>4 r8. c16~ <c e as c>4 |
+      r8. c16~ <c f as c>4 r8. c16~ <c fis a c>4 |
+    }
+    \context Staff = "ped" \context Voice = "ped" \relative c, {
+      r8. es16~^\fff <es es'>4 r8. e16~ <e e'>4 |
+      r8. f16~ <f f'>4 r8. fes16~ <fes fes'>4 |
+      r8. es16~ <es es'>4 r8. e16~ <e e'>4 |
+      r8. f16~ <f f'>4 r8. fis16~ <fis fis'>4 |
+    }
+  >>
+  % bar 418 - 429
+  <<
+    \context Staff = "rh" <<
+      \context Voice = "rh" \relative c'' {
+        \oneVoice
+        <g c es>4-.
+        \voiceOne
+        fis16( g fis g f g f g e g e g |
+        es g es g d g d g des g fes g bes des fes g |
+        \oneVoice 
+        <c, es as>4)-|
+        \voiceOne
+        g16( as g as f as f as e as e as |
+        \set tieWaitForNote = ##t
+        f as f as es as es as d, as' f as b~ d~ f~ as~ |
+        \oneVoice
+        <b, d f as b>4)-|
+        as16 b as b g b g b fis b fis b |
+        f b f b b d b d bes d bes d a d a d |
+        as d as d c f c f b, f' b, f' es as es as |
+        d, as' f as f b f as f b f as f c' f, as |
+        d( b bes as b as g f as f es d f d c b) |
+        d( b bes as b as g f as f es d f d c b) |
+        s1*2 |
+      }
+      \new Voice \relative c' {
+        \voiceTwo
+        s4 fis f e |
+        \mergeDifferentlyDottedOn
+        es d des bes'4*1/4 des8.*1/3\noBeam fes8 |
+        s4 g, f e |
+        f es d b' |
+      }
+    >>
+    \context Staff = "lh" <<
+      \context Voice = "lh" \relative c {
+        <c es g c>4-.
+        _\markup { Manualcoppel fort. }
+        \voiceTwo
+        fis16( es' g, es' f, d' g, d' e, cis' g cis |
+        es, c' g c d, b' g b \oneVoice <des, bes'>4) <fes g des'>( |
+        <es as c>)-|
+        \voiceTwo
+        g16( es' as, es' f, d' as d e, cis' as cis |
+        f, d' as d es, c' as c \oneVoice <d, b'>4 <f as b d>~ |
+        <f as b d>)-|
+        \voiceTwo
+        as16 d b d g, d' b d fis, d' b d |
+        f, d' b d b f' d f bes, f' d f a, f' d f |
+        as, f' d f \clef treble \voiceOne 
+        es as f as d, as' f as g c as c |
+        f, b f as es as f as d, as' f as c, as' f as |
+        \oneVoice
+        <b, f' as>1 |
+        \clef bass
+        R1 |
+        \voiceOne d16( b bes a as b as g f g f es d es d c |
+        b c b as g as fis as g[ as] \voiceTwo
+        f[_\markup \italic riten. g] es f d es) |
+      }
+      \new Voice \relative c {
+        \voiceOne
+        s4 fis f e |
+        es d s2 |
+        s4 g f e |
+        f es s2 |
+        s4 as g fis |
+        f b bes a |
+        as \voiceTwo es' d g |
+        f es d c |
+        s1*2 |
+        R1 |
+      }
+    >>
+    \context Staff = "ped" \context Voice = "ped" \relative c {
+      <g g'>4 r r r |
+      r2 r4 g_~^( |
+      <g g'>) r r2 |
+      r r4 g_~^( |
+      <g g'>)-. r r g_~^( |
+      <g b>)-. r r g_~^( |
+      <g d'>)-. r r <<
+        { g_~ | \voiceTwo g g2 g4~ }
+        \new Voice { \oops g4^( \voiceOne f'2) g }
+      >>
+      \oneVoice
+      <g, as'>1 |
+      R1*3
+    }
+  >>
+  
 }
 
 
