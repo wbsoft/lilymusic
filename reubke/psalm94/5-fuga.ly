@@ -384,7 +384,7 @@ fugaMusic = {
         \once \override Hairpin #'rotation = #'(10 0 0)
         \once \override Hairpin #'extra-offset = #'(0 . 2)
         \set tieWaitForNote = ##t
-        d,,\< fis a d \rh fis_~ a\! d |
+        d,,\<( fis a d \rh fis_~ a\! d) | % this slur is not in 1871 score
         <fis, ais d fis>4-.--
       }
       \new Voice \relative c {
@@ -395,8 +395,8 @@ fugaMusic = {
         d\< fis ais \rh d fis ais\! d) \lh
         \once \override Hairpin #'rotation = #'(10 0 0)
         \once \override Hairpin #'extra-offset = #'(0 . 2)
-        d,,\<( fis ais d \rh fis d'\! fis |
-        <g, d' g>4)-.--
+        d,,\<( fis ais d \rh fis d'\! fis) |
+        <g, d' g>4-.--
       }
       \new Voice \relative c {
         s1*2 |
@@ -407,7 +407,7 @@ fugaMusic = {
         \once \override Hairpin #'rotation = #'(10 0 0)
         \once \override Hairpin #'extra-offset = #'(0 . 4)
         \set tieWaitForNote = ##t
-        g,,\<( b d g \rh b~ d\! g) |
+        g,,\<( b d g \rh b_~ d\! g) |
         <b, dis g b>4-.--
       }
       \new Voice \relative c {
@@ -459,11 +459,11 @@ fugaMusic = {
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c'' {
       <b e g>4-- s <ais cis fis>-- s8 \voiceOne cis-- |
-      \oneVoice <g b e>4..-- <g b>16-- <g b>4~-- <g b>16( b e g) |
+      \oneVoice <g b e>4..-- <g b>16-- <g b>4~-- <g b>16 b( e g) |
       <b, e g>4-- s <ais cis fis>-- s8 \voiceOne cis-- |
       \oneVoice <a c e>4..-- <fis a>16-- <fis a>4~-- <fis a>16( e' a c) |
       <e, a c>4-- s <dis fis b>-- s8 \voiceOne fis-- |
-      \oneVoice <c e a>4..-- <c e>16-- <c e>4~-- <c e>16( e a c) |
+      \oneVoice <c e a>4..-- <c e>16-- <c e>4~-- <c e>16 e( a c) |
       <e, a c>4-- s <dis fis b>-- s8 \voiceOne fis-- |
       \oneVoice
     }
@@ -475,7 +475,7 @@ fugaMusic = {
       r
       \once \override Hairpin #'rotation = #'(10 0 0)
       \once \override Hairpin #'extra-offset = #'(0 . 5)
-      ais,,\< cis e fis \rh ais cis e\! \lh
+      ais,,(\< cis e fis \rh ais cis e)\! \lh % this slur is not in 1871 score
       \stemNeutral
       r b,,( d e g d e g b e, g b e8)-. r |
       r16 \stemUp
@@ -498,7 +498,9 @@ fugaMusic = {
       \once \override Hairpin #'extra-offset = #'(0 . 1.5)
       dis,,(\< fis a b \rh dis fis a)\! \lh
       \stemNeutral
+      \clef bass
       r e,,( g a c g a c e a, c e a4) |
+      \clef treble
       r16 \stemUp
       \once \override Hairpin #'rotation = #'(10 0 0)
       \once \override Hairpin #'extra-offset = #'(0 . 2)
