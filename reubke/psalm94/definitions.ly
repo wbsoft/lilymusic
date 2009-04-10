@@ -16,4 +16,4 @@ tempoMark = #(define-music-function (parser location text) (string?)
 
 rh = { \change Staff = "rh" \stemDown }
 lh = { \change Staff = "lh" \stemUp }
-
+lhd = { \change Staff = "lh" \stemDown }
