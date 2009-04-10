@@ -186,7 +186,7 @@ larghettoMusic = {
       as'4 g2 fis4\) |
       f4( c'8. ces16 bes2~) |
       bes8( as g ges) f4 g8 as~ |
-      as\( g bes \clef treble es g f c' ces~ |
+      as\( g bes es \clef treble g f c' ces~ |
       ces\) bes4( c8 bes as g ges |
     }
     \context Staff = "ped" \relative c, {
@@ -225,7 +225,7 @@ larghettoMusic = {
         es8 ces as'4~ as8 fes g4 |
         es2~ es8 as, des4 |
         as'8 fes des'4~ des8 beses c4 |
-        as2 des4( b |
+        as2 d4( b |
         as ges des as)\!
         \unset crescendoSpanner
       }
@@ -481,7 +481,7 @@ larghettoMusic = {
       d( a' gis\< d f gis b d \clef treble f a gis d f\! gis b d) |
       f( a\> gis d b e d gis, f a gis d b\! e d gis,) |
       \bar "||" \key g \minor
-      g( d' cis g bes cis\< e g bes d cis g bes cis e\! g) |
+      g!( d' cis g bes cis\< e g bes d cis g bes cis e\! g) |
       bes( d cis g\> e a g cis, bes d cis g\! e a g cis,) |
       \set crescendoSpanner = #'text
       \set crescendoText = \markup \italic sempre

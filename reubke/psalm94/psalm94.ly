@@ -33,6 +33,7 @@
   \context {
     \Score
     \override PaperColumn #'keep-inside-line = ##t 
+    %\override SpacingSpanner #'common-shortest-duration = #(ly:make-moment 3 16)
   }
   \context {
     \Staff
@@ -87,18 +88,6 @@ music = {
   \piumossoMusic
 }  
 
-% some (page) breaks to enforce easy page turning etc.
-breaks = \new Devnull {
-  s1*52  %\newSpacingSection %\pageBreak % 53: Larghetto
-  s1*41  %\newSpacingSection % 94 "nach und nach schneller"
-  s1*87  \newSpacingSection % 181
-  s1*52  \break \newSpacingSection % 233: Adagio
-  s1*84  \newSpacingSection % 317: Fuga
-}
-
 \score {
-  <<
-    \music
-%    \breaks
-  >>
+  \music
 }

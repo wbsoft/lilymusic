@@ -144,7 +144,7 @@ allegroMusic = {
       <d as' ces>4 <d as' bes>2^- <bes d as'>4^- |
     }
     \context Staff = "lh" \context Voice = "lh" \relative c' {
-      << { s4^> d8. es16 } \\ { <as, c>4~ <as c> } >>
+      << { s4 d8. es16 } \\ { <as, c>4~^> <as c> } >>
       <c es g>4-> \clef treble <d g b>8. <es g c>16 |
       <fis a es'>4..-^ <f as b>16 <es g c>8[ r16 c'] b8[ r16 bes] |
       as8[ r16 f] d8[ r16 b] \clef bass c8[ r16 as] g8[ r16 fis] |
