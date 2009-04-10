@@ -1,6 +1,10 @@
 \version "2.12.0"
 
+% ignore collisions
 oops = \once \override Staff.NoteColumn #'ignore-collision = ##t
+
+% script around slur
+sas = \once \override Script #'avoid-slur = #'around
 
 tempoMark = #(define-music-function (parser location text) (string?)
   #{

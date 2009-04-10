@@ -50,8 +50,8 @@ piumossoMusic = {
       <f as c>2.( <f as b>4)-| |
       <b d as'>2-| r4 <b d g>-| |
       <cis e bes'>2-| r4 <cis e a>-| |
-      
-      
+      <es fis c'>1~ |
+      <es fis c'>2 r |
     }
     \context Staff = "lh" \context Voice = "lh" \relative c, {
       \oneVoice
@@ -95,13 +95,51 @@ piumossoMusic = {
         \clef treble
         f( fis g as f es d es e f d g,) |
         g'( gis a bes g f e f fis g e a,) |
-        
-        
+        a'( bes b c a g fis g gis a fis es |
+        \clef bass
+        c cis d es c a) fis( g gis a fis es) |
       }
     }
     \context Staff = "ped" \context Voice = "ped" \relative c'' {
       \oneVoice
-      R1*35
+      R1*37
+    }
+  >>
+  % bar 
+  <<
+    \context Staff = "rh" \context Voice = "rh" \relative c {
+      \scaleDurations #'(2 . 3) {
+        r8 fis( a es' fis d) r d( fis a d g,) |
+        r des( f e as g bes des e f c f,) |
+        r c( es beses' c as) r as( c es as des,) |
+        r g,( b ais d cis e g ais b fis b,) |
+        r gis,( b f' gis e) r e( gis b e a,) |
+        r es( g fis b a c es fis g d g,) |
+        r d( f ces' d bes) r bes( d f bes es,) |
+        r beses( des c f es ges beses c des as des,) |
+        r ges,( bes a des c es ges a bes f bes,) |
+        r des,( ges f c' bes f' des bes f des bes) |
+        r des( ges f des' a f' des a f des as) |
+        r bes( g des' bes f' des g f bes g f |
+        e bes' g c bes e c g' e c bes g) |
+        r bes( g des' bes f' des g f bes g f) |
+      }
+      <f g des'>2 <e g c>4. g8 |
+      
+    }
+    \context Staff = "lh" \context Voice = "lh" \relative c {
+      c2( b4. g8) |
+      << { r4 des'2*1/2( e4 <c f>)-. } \\ { bes2.( a4) } \\ { s4 b'\rest } >> |
+      ges2( f4. des8) |
+      << { r4 g2*1/2( ais4 <fis b>) } \\ { e2.( dis4)-. } \\ { s4 d'\rest } >> |
+      d,2( cis4. a8) |
+      << { r4 es'2*1/2( fis4 <d g>)-. } \\ { c2.( b4) } \\ { s4 c'\rest } >> |
+      as2( g4. es8) |
+      << { r4 beses'2*1/2( c4 \sas <as des>)-| } \\ { ges2.( f4) } \\ { s4 e'\rest } >> |
+      
+    }
+    \context Staff = "ped" \context Voice = "ped" \relative c {
+      R1*10
     }
   >>
   
