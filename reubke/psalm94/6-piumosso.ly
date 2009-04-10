@@ -48,12 +48,12 @@ piumossoMusic = {
       \set crescendoText = #"a "
       <g a es'>2-|\< fis4( \times 2/3 { g4 a8 } |
       \set crescendoText = #"poco "
-      <cis, e bes'>2)-|\< <cis e a>4.-| e8 |
+      \sas <cis, e bes'>2)-|\< <cis e a>4.-| e8 |
       \set crescendoText = #"più "
-      <c es g>2.(\< <c es fis>4)-| |
+      <c es g>2.(\< \sas <c es fis>4)-| |
       \set crescendoText = #"cre "
       <fis a es'>2-|\< <fis a d>4.-| a8 |
-      <f as c>2.( <f as b>4)-| |
+      <f as c>2.( \sas <f as b>4)-| |
       \set crescendoText = #"scen "
       <b d as'>2-|\< r4 <b d g>-| |
       <cis e bes'>2-| r4 <cis e a>-| |
@@ -121,7 +121,8 @@ piumossoMusic = {
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c {
       \scaleDurations #'(2 . 3) {
-        r8-\tweak #'X-offset #-2 \f
+        \once \override DynamicText #'extra-spacing-width = #'(-0.1 . 0.5)
+        r8\f
         ^\markup { M. I. }
         fis( a es' fis d) r d( fis a d g,) |
         r des( f e as g bes des e f c f,) |
@@ -192,7 +193,8 @@ piumossoMusic = {
         \lh es,,( a c \rh es a c) \lh d,,( g bes \rh d g bes) |
         \lh ces,,( e a \rh cis e a) \lh b,,( d gis \rh b d gis) |
         %\slurUp
-        \lhd \clef bass bes,,( e g \rh bes e g) \lhd a,,( d f \rh a d f) |
+        \change Staff = "lh"
+        \clef bass bes,,( e g \rh bes e g) \change Staff = "lh" a,,( d f \rh a d f) |
       }
     }
     \context Staff = "ped" \context Voice = "ped" \relative c {
@@ -330,7 +332,64 @@ piumossoMusic = {
       r r4 g~ |
       <g g'>-. r r2 |
       r r4 g |
-      
+    }
+  >>
+  % bar 516 - 530 (end)
+  <<
+    \context Staff = "rh" \context Voice = "rh" \relative c' {
+      <c es g>1~ |
+      <c es g>2.. <d f c'>8 |
+      <es g c>1~ |
+      <es g c>2.. <f c' d>8 |
+      <g c es>1~ |
+      <g c es>2.. <c d f>8 |
+      <c es g>1~ |
+      <c es g>2.. <d f c'>8 |
+      <es g c>4-. r <as, es' g as>2~-^ |
+      <as es' g as>4-. <as es' g as>2-^ <as b f' as>4-| |
+      <as c es as>-| r <bes des g>-| r |
+      <as c f>-| r <a c es>-| r8 c-| |
+      <g c es g>4-| r r2 |
+      <b f' g b>4-| r r r8 <c es g c> |
+      <c es g c>1\fermata
+      \bar "|."
+    }
+    \context Staff = "lh" \context Voice = "lh" \relative c {
+      <c es g>1~ |
+      <c es g>2.. <d f c'>8 |
+      <es g c>1~ |
+      <es g c>2.. <f c' d>8 |
+      <g c es>1~ |
+      <g c es>2.. \clef treble <c d f>8 |
+      <c es g>1~ |
+      <c es g>2.. <d f c'>8 |
+      <es g c>4-. r <as, c es g>2~-^ |
+      <as c es g>4-. <as es' g>2-^ <as b f'>4-| |
+      <as c es>-| r <bes des g>-| r |
+      <as c f>-| r \clef bass <a c es>-| r8 c-| |
+      <g c es g>4-| r r2 |
+      <g b d f g>4-| r r r8 <g c es g> |
+      <g c es g>1\fermata
+    }
+    \context Staff = "ped" \context Voice = "ped" \relative c' {
+      \set tupletSpannerDuration = #(ly:make-moment 1 2)
+      \times 2/3 {
+        g4 as fis g f g |
+        e g es g d g |
+        c, d b c bes c |
+        a c bes c as c |
+        g as fis g f g |
+        e g es g d g |
+        c, c' b c bes c |
+        a c bes c as c |
+      }
+      g4-. r c2~-^ |
+      c4-. \sas b(-^ c) d |
+      es-| r <e, e'>-| r 
+      <f f'>-| r <fis fis'>-| r |
+      <g g'>-| r r2 |
+      <g g'>4-| r r r8 c,~ |
+      <c c'>1\fermata
     }
   >>
   

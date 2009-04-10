@@ -2,8 +2,9 @@
 #(set-global-staff-size 16)
 
 \header {
+  dedication = "Hernn Professor Carl Riedel gewidmet."
   title = "Der 94ste Psalm."
-  subtitle = "Sonate."
+  subtitle = "Sonate für die Orgel."
   composer = "Julius Reubke (1834-1858)"
   copyright = \markup \center-column {
     \line {
@@ -78,11 +79,11 @@ scoreSetup = <<
 
 music = {
   \scoreSetup
-%   \graveMusic
-%   \larghettoMusic
-%   \allegroMusic
-%   \adagioMusic
-%   \fugaMusic
+  \graveMusic
+  \larghettoMusic
+  \allegroMusic
+  \adagioMusic
+  \fugaMusic
   \piumossoMusic
 }  
 
@@ -98,6 +99,6 @@ breaks = \new Devnull {
 \score {
   <<
     \music
-    %    \breaks
+%    \breaks
   >>
 }
