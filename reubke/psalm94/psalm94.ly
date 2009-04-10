@@ -2,7 +2,7 @@
 #(set-global-staff-size 16)
 
 \header {
-  dedication = "Hernn Professor Carl Riedel gewidmet."
+  dedication = "Herrn Professor Carl Riedel gewidmet."
   title = "Der 94ste Psalm."
   subtitle = "Sonate für die Orgel."
   composer = "Julius Reubke (1834-1858)"
