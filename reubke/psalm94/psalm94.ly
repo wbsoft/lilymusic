@@ -33,7 +33,7 @@
   \context {
     \Score
     \override PaperColumn #'keep-inside-line = ##t 
-    %\override SpacingSpanner #'common-shortest-duration = #(ly:make-moment 3 16)
+    %\override SpacingSpanner #'common-shortest-duration = #(ly:make-moment 2 16)
   }
   \context {
     \Staff
