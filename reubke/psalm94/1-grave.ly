@@ -155,7 +155,7 @@ graveMusic = {
     }
     \context Staff = "ped" \relative c' {
       <<
-        {
+        \context Voice = "p2" {
           \voiceOne
           as2._\> a4~\! |
           a1~ a~ a~ a~ |
@@ -387,7 +387,8 @@ graveMusic = {
       g'2 \times 2/3 { c,,8(\pp d es) }
       g4 r r2 |
       R1*2 |
-      g1~\ppp |
+      g1~\ppp
+      ^\markup { Subbass 16'. }
       g~ |
       g4 r r2 |
       R1*3 |

@@ -152,7 +152,7 @@ fugaMusic = {
         g2( es4.. d16)
         \oneVoice <g, des'>2^( <des bes'>4 \voiceOne a'8. g16) |
         <bes d>4( c8. bes16 a4 bes8. c16) |
-        c4~( \oneVoice c16 bes a c_~ <c g'>4 <c fis>8. d16) |
+        c4~( \oneVoice c16 bes a c_~ <c_~ g'>4 <c fis>8. d16) |
         \voiceOne f4~( \oneVoice f16 es d f \voiceOne c'4 b8. g16) |
       }
       \new Voice \relative c'' {
@@ -249,7 +249,7 @@ fugaMusic = {
         \set crescendoText = #"poco "
         <e bes'>4 <f as> g\< f8.) f'16 |
         \set crescendoText = #"a "
-        c'2.( b8.\< g16 |
+        c'2.( b8.\< f16 |
         \set crescendoText = #"poco "
         <e bes'>4 <f as> g~\< g8. g16) |
         d'2.( cis8. g16 |
@@ -265,7 +265,7 @@ fugaMusic = {
         c2.) f8. f16 | % the original slur goes until g, which has two stems
         <c' f as>4 <e g> <es fis> <d f> |
         c2. cis4 |
-        <d g bes> <fis a> <f as> <e g> |
+        <d g bes> <fis a> <f gis> <e g> |
         s1 |
         s4 <g, bes> <fis a> <as f> |
         <es g> <es as> <des es> <c es> |
@@ -591,7 +591,7 @@ fugaMusic = {
     \context Staff = "rh" <<
       \context Voice = "rh" \relative c'' {
         \oneVoice
-        <g c es>4-.
+        <g c es g>4-.
         \voiceOne
         fis16( g fis g f g f g e g e g |
         es g es g d g d g des g fes g bes des fes g |
@@ -606,7 +606,7 @@ fugaMusic = {
         as16 b as b g b g b fis b fis b |
         f b f b b d b d bes d bes d a d a d |
         as d as d c f c f b, f' b, f' es as es as |
-        d, as' f as f b f as f b f as f c' f, as |
+        d, as' f as f b f as f b f as f c' as c |
         d( b bes as b as g f as f es d f d c b) |
         d( b bes as b as g f as f es d f d c b) |
         s1*2 |

@@ -189,7 +189,7 @@ adagioMusic = {
         _\markup { M. III. \dynamic p }
         f4 ges |
         bes ces2 bes4) |
-        g as8 ges <f as>4 ges |
+        g! as8 ges <f as>4 ges |
         bes c ges'\pp f
       }
       \new Voice \relative c' {
@@ -250,6 +250,7 @@ adagioMusic = {
         \oneVoice r4
         ^\markup { M. III. Harmonika 8' allein }
         \voiceOne
+        \once \override DynamicText #'extra-offset = #'(0 . -2)
         cis2(_\ppp b8 ais~ |
         ais4 b8 cis dis4. e8)~ |
         e dis4 d8 cis4 gis8 ais |
@@ -344,10 +345,14 @@ adagioMusic = {
         \once \override Tie #'staff-position = #0.5
         ces4~ |
         \voiceTwo \oops ces s2. |
-        s1*10 |
-        e,2. d4 |
+        s1*9 |
+        s2. f,4 |
+        e2. d4 |
         c2 dis |
-        e2.
+        e2. s4 |
+        s1*5 |
+        \voiceThree
+        fis2
       }
       \new Voice \relative c'' {
         % just draw some ties
@@ -584,7 +589,7 @@ adagioMusic = {
         f2 g4. g8 |
         \oneVoice <as, as'>4) <as des f>( \clef bass <es as c> <f c'> |
         \voiceOne c' bes as \clef treble fes' |
-        fes es deses beses'~) |
+        fes es des beses'~) |
         beses as g2~ |
         g4 f8 e es2~ |
         es4 des2 c4 |

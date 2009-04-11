@@ -15,14 +15,14 @@ piumossoMusic = {
       b( c d es |
       e f g as) |
       es'2--( fis,4.*10/9 g8*2/3) |
-      as2--( b,4~ \scaleDurations #'(2 . 3) {
+      as2--( b,4~-- \scaleDurations #'(2 . 3) {
         b8 c d) |
         es( c g' c es, f d f c' b f g) |
         as( f c' f c es ces es f as ces, f) |
         \clef treble
         fes( as bes fes' as, bes g as bes es g, as) |
         f( g as des f, g e f g c es, f) |
-        d( es f bes d, es c d es as c, d) |
+        d( es f bes d, es c d es a c, d) |
         b( c d es f g as g f c' g c,) |
         fis( g a bes c d es d c g' d g,) |
         a( c a es' bes es fis, a fis d' g, d') |
@@ -38,8 +38,8 @@ piumossoMusic = {
         { r4 <es g>-| <d fis>4..( d16) }
         \\ a1_\markup\italic { poco cresc. }
       >> |
-      <as d f>2-| <g c e>4..(-| c16) |
-      <fis, c' es>4..( <es a>16) <es a>4-| <d bes'>-| |
+      <as d f>2-| \sas <g c e>4..(-| c16) |
+      \sas <fis, c' es>4..(-| <es a>16) <es a>4-| <d bes'>-| |
       <c fis>-| <bes g'>-| <es fis a>-| <d g bes>-| |
       <f as b>-| <es g c>-| <f b d>-| <g c es>-| |
       \set crescendoSpanner = #'text
@@ -191,7 +191,7 @@ piumossoMusic = {
         %\slurDown
         \lh e,8( g cis \rh e g cis) |
         \lh es,,( a c \rh es a c) \lh d,,( g bes \rh d g bes) |
-        \lh ces,,( e a \rh cis e a) \lh b,,( d gis \rh b d gis) |
+        \lh cis,,( e a \rh cis e a) \lh b,,( d gis \rh b d gis) |
         %\slurUp
         \change Staff = "lh"
         \clef bass bes,,( e g \rh bes e g) \change Staff = "lh" a,,( d f \rh a d f) |

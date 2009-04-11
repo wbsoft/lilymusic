@@ -303,7 +303,7 @@ larghettoMusic = {
       f4( es8. c16 es8 d f as) |
       c( as g ges~ ges f g as) |
       es4.(
-      _\markup { I. Trompete fort }
+      _\markup { I. Trompete fort und \italic decresc. }
       des8~ des c es as |
       g es des c ces4 bes8 as~|
     }
@@ -320,7 +320,9 @@ larghettoMusic = {
     \context Staff = "rh" <<
       \context Voice = "rh" \relative c'' {
         <as des es~>2.\p es'8 f~( |
-        f es des c~ c bes as f~) |
+        f
+        ^\markup { Flöte 8' allein. }
+        es des c~ c bes as f~) |
         \oneVoice
         <b, f'>4
         ^\markup\italic { nicht schleppend }
@@ -406,7 +408,9 @@ larghettoMusic = {
     >>
     \context Staff = "lh" <<
       \context Voice = "lh" \relative c'' {
-        as8) r8 r4 s2 |
+        as8) \breathe r8
+        ^\markup { M. II. }
+        r4 s2 |
         \voiceOne
         ges,4
         \once \override Slur #'positions = #'(-4 . -4)

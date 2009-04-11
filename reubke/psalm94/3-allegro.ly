@@ -173,6 +173,7 @@ allegroMusic = {
       as'2)~ as8. d,16 es8. c16( |
       f1)~ |
       f2. f,4
+      ^\markup \whiteout { einige starke Bässe und Pedalcoppel fort. }
     }
   >>
   % bar 137 - 154
@@ -185,12 +186,12 @@ allegroMusic = {
       _\markup { M. II. \dynamic f } 
       <des g>4) r8 des |
       \voiceOne
-      fes1~-^ |
+      fes1_~-^ |
       <<
         { fes4-- es-- as-- bes-- }
         \new Voice {
           \voiceTwo
-          s4 es,16( des bes g) as'( f \lh ces des \rh bes' g \lh bes, des)
+          s4 es,16( des bes g) as'( fes \lh ces des \rh bes' g \lh bes, des)
         }
       >> |
       \oneVoice
@@ -198,7 +199,7 @@ allegroMusic = {
       \voiceOne
       beses1~-^ |
       <<
-        { beses4 as-- des-- es-- }
+        { beses4( as-- des-- \sas es--) }
         \new Voice {
           \voiceTwo
           s4 as,16( ges es c) des'( beses \lh fes ges \rh es' c \lh es, ges)
@@ -208,7 +209,7 @@ allegroMusic = {
       des( ces bes << { as16 ces d~ f~) } \new Voice { \voiceTwo as,4 } >> |
       <d f as>4( ges fes es) |
       \oneVoice
-      <f, as~ es'>2^( <as d>4.) as8 |
+      <f, as_~ es'>2^( <as d>4.) as8 |
       ces1^~^^ |
       <<
         { ces4 \voiceOne bes-- es,-- f-- }
@@ -229,8 +230,14 @@ allegroMusic = {
         }
       >> |
       <fes as des>4 ces'( bes a) |
-      as( ges f es16 ges beses~ c~) |
-      <beses c es>4( des ces bes) | 
+      as( ges f << 
+        { es16 ges beses~ c~) }
+        \new Voice {
+          \voiceTwo
+          es,4
+        }
+      >> |
+      <beses' c es>4( des ces bes) | 
     }
     \context Staff = "lh" \context Voice = "lh" \relative c {
       \oneVoice
@@ -241,7 +248,7 @@ allegroMusic = {
       \stemNeutral \clef treble as'[^\<_\markup \italic { L.H. }
       bes des] 
       <<
-        { \voiceTwo fes bes, des fes)\! | as fes des bes es4^- }
+        { \voiceTwo fes bes, des fes)\! | as( fes des bes) es4^- }
         \new Voice { \voiceOne fes4-^ | as-- }
       >>
       \clef bass s2 |
@@ -318,9 +325,7 @@ allegroMusic = {
     }
     \context Staff = "ped" \context Voice = "ped" \relative c, {
       \key c \minor
-      fes2
-      ^\markup \whiteout { starke Bässe und Pedalcoppel fort. }
-      es~ |
+      fes2 es~ |
       es1~ |
       es4 des'( ces bes) |
       beses2 as~ |
@@ -473,7 +478,7 @@ allegroMusic = {
       |
       des'4 c8. g16 bes4 e,) |
       as4( g8. des16 f4 e) |
-      des( c bes a as g f e |
+      des( c bes a as g f e-| |
       es)-|
     }
   >>
@@ -495,7 +500,7 @@ allegroMusic = {
         \new Voice {
           \voiceTwo
           es2. |
-          s2 a, |
+          s2 as, |
           s4 e'2. |
           s2 a, |
         }
@@ -571,7 +576,7 @@ allegroMusic = {
       \times 2/3 { es e f fis d es b c d } es8)[ r16 g,]~ |
       <g g'>4-| fis'8( g f g es g |
       d g c, g' bes, g' as, g') |
-      g, r \times 2/3 { r8 g( as a bes b c cis d } |
+      g,-| r \times 2/3 { r8 g( as a bes b c cis d } |
       \times 2/3 { es e f fis d es b c d } es8)[-| r16 g,]~ |
       <g g'>4-| fis'8( g f g es g |
       d g c, g' bes, g' as, g' |
