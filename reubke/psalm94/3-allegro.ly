@@ -168,7 +168,7 @@ allegroMusic = {
       g8 f'( es d c bes a as |
       g f es d' c bes a as) |
       g r c4-^~ c8[ b->( c) r16 d]-| |
-      es8. c16( e8.) c16( f8.) c16( g8.) c16( |
+      es8. c16( e8.) c16( f8.) c16( g'8.) c,16( |
       as'2)~ as8. d,16 es8. c16( |
       as'2)~ as8. d,16 es8. c16( |
       f1)~ |
