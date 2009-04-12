@@ -22,15 +22,23 @@
       http://creativecommons.org/licenses/by-nc-sa/3.0/nl/)
     }
   }
+  tagline = \markup {
+    Engraved at \simple #(strftime "%d-%m-%Y" (localtime (current-time)))
+    with \with-url #"http://lilypond.org/web/"
+    { LilyPond (http://lilypond.org/) }
+    version \simple #(lilypond-version)
+  }
 }
 
 \paper {
   ragged-last-bottom = ##f
   min-systems-per-page = #4
   max-systems-per-page = #5
+  between-system-padding = 1\mm
 }
 
 \layout {
+  system-count = #129
   \context {
     \Score
     \override PaperColumn #'keep-inside-line = ##t 
@@ -79,6 +87,18 @@ scoreSetup = <<
 \include "5-fuga.ly"
 \include "6-piumosso.ly"
 
+breaks = \new Devnull <<
+  % page break at larghetto
+  { s1*52 \pageBreak }
+  
+  % line break at adagio due to LilyPond x-staff slur bug
+  { s1*232 \break }
+  
+  % measure 247 and above must substract one s2 due to 2/4 measure 246.
+  { s2 s1*304 \break }
+  
+>>
+
 music = {
   \scoreSetup
   \graveMusic
@@ -90,5 +110,8 @@ music = {
 }  
 
 \score {
-  \music
+  <<
+    \music
+    \breaks
+  >>
 }
