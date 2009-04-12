@@ -26,6 +26,7 @@
 
 \paper {
   %#(set-paper-size "a4" 'landscape)
+  ragged-last-bottom = ##f
   max-systems-per-page = #5
 }
 

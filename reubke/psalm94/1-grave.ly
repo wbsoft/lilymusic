@@ -272,9 +272,10 @@ graveMusic = {
       \clef treble
       <<
         {
-          <c a'>2_\( \voiceTwo b\)
+          \once \override PhrasingSlur #'positions = #'(2 . 2)
+          <c a'>2^\(_( \stemDown b2*1/2) \stemUp <d as'>4\)
         } \\ {
-          e4^\( dis~ \voiceOne <dis a'> <d as'>\)
+          e4 dis~ \stemUp <dis a'>
         }
       >> |
       <c e g>4-.( <c f a>-. <g b e>-. \clef bass <fis a e'>-.) |
