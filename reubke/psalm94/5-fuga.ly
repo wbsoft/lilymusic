@@ -283,7 +283,9 @@ fugaMusic = {
       bes8. c16 as8. bes16 g8. as16 ges8. as16 |
     }
     \context Staff = "ped" \context Voice = "ped" \relative c, {
-      c8. c'16( bes8. c16 a8. c16 as8. c16 |
+      c8.^\fff
+      -\tweak #'X-offset #3 ^\markup { Pedal \italic cresc. }
+      c'16( bes8. c16 a8. c16 as8. c16 |
       g8. as16 f8. g16 es8. f16 des8. f16 |
       c8.) c'16( bes8. c16 a8. c16 as8. c16 |
       g8. as16 f8. g16 e8. g16 es8. g16 |
