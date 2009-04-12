@@ -28,6 +28,7 @@ fugaMusic = {
       \change Staff = "lh" \voiceOne
       \once \override Slur #'positions = #'(-8 . -8)
       as( f r8 c'16 as r8 \change Staff = "rh" es'16 c \oneVoice r8 \voiceOne as'16 f r8 |
+      \noBreak % BUG: because of x-staff slur
       c'16 as r8 as16 f r8 c'16 as r8 es'16 c r8) |
       as'16( f d g f c b d es bes a c d as g b |
       c g f bes as es d g as es d g f c bes es) |

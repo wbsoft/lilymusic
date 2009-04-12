@@ -3,7 +3,7 @@
 \include "definitions.ly"
 
 piumossoMusic = {
-  % bar 430 - 
+  % bar 430 - 466
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c' {
       \oneVoice
@@ -117,7 +117,7 @@ piumossoMusic = {
       R1*37
     }
   >>
-  % bar 
+  % bar 467 - 493
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c {
       \scaleDurations #'(2 . 3) {
@@ -218,7 +218,7 @@ piumossoMusic = {
       cis d |
     }
   >>
-  % bar 
+  % bar 494 - 503
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c' \scaleDurations #'(2 . 3) {
       r8 d( b' a d b a' d, b' a d, b) |
@@ -257,7 +257,7 @@ piumossoMusic = {
       as-. r4 as-. |
     }
   >>
-  % bar 
+  % bar 504 - 511
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c'' {
       \tempoMark #"Allegro assai."
@@ -299,7 +299,7 @@ piumossoMusic = {
       }
     }
   >>
-  % bar 
+  % bar 512 - 515
   <<
     \context Staff = "rh" \context Voice = "rh" {
       \set tupletSpannerDuration = #(ly:make-moment 1 2)
@@ -392,7 +392,6 @@ piumossoMusic = {
       <c c'>1\fermata
     }
   >>
-  
 }
 
 %%master: psalm94.ly

@@ -25,8 +25,8 @@
 }
 
 \paper {
-  %#(set-paper-size "a4" 'landscape)
   ragged-last-bottom = ##f
+  min-systems-per-page = #4
   max-systems-per-page = #5
 }
 
@@ -34,7 +34,7 @@
   \context {
     \Score
     \override PaperColumn #'keep-inside-line = ##t 
-    %\override SpacingSpanner #'common-shortest-duration = #(ly:make-moment 2 16)
+    \override SpacingSpanner #'common-shortest-duration = #(ly:make-moment 3 32)
   }
   \context {
     \Staff

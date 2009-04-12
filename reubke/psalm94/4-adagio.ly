@@ -279,7 +279,7 @@ adagioMusic = {
         s2. r4 |
         r \oops <d' f>(
         ^\markup { Harmonika 8' allein. }
-        \voiceOne <b e>4. b8 | \noBreak % because of the x-staff slur
+        \voiceOne <b e>4. b8 | \noBreak % BUG: because of the x-staff slur
         <bes d>4. a8 gis4 a |
         a gis g fis) |
         f e8 dis b'4. a8 |
