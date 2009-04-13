@@ -17,3 +17,15 @@ tempoMark = #(define-music-function (parser location text) (string?)
 rh = { \change Staff = "rh" \stemDown }
 lh = { \change Staff = "lh" \stemUp }
 lhd = { \change Staff = "lh" \stemDown }
+
+
+% we place this after layout has been determined,
+% because LilyPond has no real footnote support.
+nbMarkup = \markup \fontsize #2 \bold NB.
+
+tenutoFootnote = \markup {
+  \nbMarkup
+  Alle Töne des gebrochenen Accordes,
+  soweit es die Applicatur erlaubt,
+  bleiben liegen.
+}

@@ -243,7 +243,8 @@ allegroMusic = {
       \oneVoice
       \key c \minor
       r16 bes( c des es fes as a bes g fes es d des bes g) |
-      r \stemDown es_([ as bes] des
+      r^\nbMarkup 
+      \stemDown es_([ as bes] des
       \stemUp fes[^\markup \italic { R.H. } as bes] des
       \stemNeutral \clef treble as'[^\<_\markup \italic { L.H. }
       bes des] 
