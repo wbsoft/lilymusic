@@ -143,3 +143,5 @@ footnote = \context Staff = "ped" {
     >>
   }
 }
+
+\include "psalmtext.ly"
