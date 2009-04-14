@@ -1,4 +1,5 @@
 \version "2.13.1"
+%#(set-global-staff-size 16)
 
 % set the column width here (50 is good for global staff size 16)
 #(define psalm-column-width 50)
@@ -95,7 +96,7 @@
         }
         \override #psalm-column-width-override
         \italic \justify {
-          But the LORD is my defence;
+          But the \smaller LORD is my defence;
           and my God is the rock of my refuge. 
           And he shall bring upon them their own iniquity,
           and shall cut them off in their own wickedness.
@@ -112,17 +113,14 @@
       \justify {
         
         I created this score to deepen my understanding of, and as a tribute to,
-        both Reubke and his splended Organ Sonata,
-        and the LilyPond development community and their
-        truly amazing LilyPond music typesetter.
+        both Reubke’s splendid Organ Sonata, and the LilyPond development
+        community’s truly amazing LilyPond music typesetter.
 
-        This edition exactly follows its source, the (probably 1871) score from the
-        \concat { 
-          \with-url #"http://www.imslp.org/"
-          { International Music Score Library Project (http://imslp.org/) } ;
-        }
-        only where the original sometimes writes all music in one staff,
-        I use both staffs to improve readability.
+        This edition exactly follows its source: the (probably 1871) score from the
+        \with-url #"http://www.imslp.org/"
+        { International Music Score Library Project (http://imslp.org/); }
+        only where the original sometimes writes the music for both hands
+        in one staff, I use both staffs to improve readability.
       }
       
       \strut
@@ -147,6 +145,9 @@
         performer should \italic suggest an increasing tension by playing the notes
         a little over-legato (tenuto).
       }
+      
+      \strut
+      \fill-line { \null \line { Wilbert Berendsen, Easter 2009 } }
       
       \strut \strut
       \fill-line {
@@ -181,9 +182,6 @@
         Hold the notes from the broken
         chords as long as possible
       }
-      
-      \strut
-      \fill-line { \null \line { Wilbert Berendsen, Easter 2009 } }
     }
   }
 }
