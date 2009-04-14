@@ -540,6 +540,7 @@ larghettoMusic = {
       d1~\f
       ^\markup Pedalcoppel
       | d4
+      -\tweak #'X-offset #-4
       ^\markup {
         Pedal \italic { nach und nach immer stärker durch die andern Bässe }
       }
