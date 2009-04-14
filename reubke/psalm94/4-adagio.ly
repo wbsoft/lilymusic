@@ -474,7 +474,7 @@ adagioMusic = {
         e~ |
         \voiceFour e_~ |
         \crescTextCresc
-        << e_~ { s2. s4\< } >> |
+        << e_~ { s2 s\< } >> |
         \voiceTwo <b e>4 <c es~> es2~ |
         \oneVoice es2. <d g>4~ |
         <d g~ b>1\> |
@@ -550,8 +550,8 @@ adagioMusic = {
         es8. a,16 a2~ a8 bes |
         \crescTextCresc
         g2. a4~ |
-        a2. bes4\< |
-        d \oneVoice <es ges>( <ges bes>2)~ |
+        << { a2. bes4 } { s2 s\< } >> |
+        d4 \oneVoice <es ges>( <ges bes>2)~ |
         <ges bes~>2. <f_~ bes>4 |
         <f bes d>1~\> |
         <f bes d>2 r\!

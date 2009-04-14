@@ -229,12 +229,12 @@ graveMusic = {
       <es fis c'>8-|[ r16 <c es fis>] <c es fis>2.~ |
       <c es fis>4 
       \set decrescendoSpanner = #'text
-      \set decrescendoText = "poco"
+      \set decrescendoText = "poco "
       <a c es>\(\> <as b d> <g cis>8. <as c>16 |
       <<
         {
           \voiceOne
-          \set decrescendoText = "a"
+          \set decrescendoText = "a "
           b4\> bes
         }
         \new Voice {
@@ -243,7 +243,7 @@ graveMusic = {
         }
       >>
       <e a>4 <es as>\) |
-      \set decrescendoText = " poco"
+      \set decrescendoText = " poco "
       g(\f\>
       fis f es~ |
       \set decrescendoText = "decresc."

@@ -26,7 +26,8 @@ larghettoMusic = {
           \voiceOne
           \times 2/3 { es'8 d c } |
           g'4) d2 es4~^( |
-          \crescTextCresc
+          \set crescendoSpanner = #'text
+          \set crescendoText = #"cresc. "
           es^\< d des~ \times 2/3 { des8 c bes } |
           as'4 g2 fis4) |
         }
@@ -85,7 +86,7 @@ larghettoMusic = {
         f4( c'8. b16 bes2~) |
         bes8( as g fis
         \set decrescendoSpanner = #'text
-        \set decrescendoText = \markup\whiteout\italic { decresc. molto }
+        \set decrescendoText = \markup\whiteout\italic { decresc. molto \hspace #0 }
         f4\> g8 as~ |
         as4) g(~ g8 f c' b~ |
         b bes4 c8\! bes as g fis) |
@@ -218,7 +219,7 @@ larghettoMusic = {
       \\ \relative c'' {
         \set crescendoSpanner = #'text
         \set crescendoText = \markup \whiteout {
-          \upright { M. I. u. II. } \italic crescendo
+          \upright { M. I. u. II. } \italic crescendo \hspace #0
         }
         <d f>4(\< <c es>8 <bes d>) <as c>4( <g bes> |
         <f b> <f c'> fis es~) |
@@ -279,7 +280,7 @@ larghettoMusic = {
         as es4.~ es8 des es f) |
         \set decrescendoSpanner = #'text
         \set decrescendoText = \markup \whiteout {
-          \upright { M. II. } \italic { molto decresc. }
+          \upright { M. II. } \italic { molto decresc. \hspace #0 }
         }
         <des es>4.(_\>
         f8~ f es as des |
@@ -488,25 +489,25 @@ larghettoMusic = {
       g!( d' cis g bes cis\< e g bes d cis g bes cis e\! g) |
       bes( d cis g\> e a g cis, bes d cis g\! e a g cis,) |
       \set crescendoSpanner = #'text
-      \set crescendoText = \markup \italic sempre
+      \set crescendoText = #"sempre "
       c(\< g' fis c es fis a c es g fis es
-      \set crescendoText = \markup \italic poco 
+      \set crescendoText = #"poco "
       c\< a fis c) |
-      \set crescendoText = \markup \italic a
+      \set crescendoText = #"a "
       r a'( g cis,\< e g bes cis e a g e
-      \set crescendoText = \markup \italic poco 
+      \set crescendoText = #"poco "
       cis\< bes g cis,) |
-      \set crescendoText = \markup \italic cre
+      \set crescendoText = #"cre "
       r bes'( a es\< fis a c es fis bes a fis es
-      \set crescendoText = \markup \italic scen
+      \set crescendoText = #"scen "
       c\< a fis) |
-      \set crescendoText = \markup \italic do
+      \set crescendoText = #"do "
       a( d c a c f es c es g fis c\< es a fis c) |
-      \set crescendoText = \markup \italic "  cre"
+      \set crescendoText = #"  cre "
       cis(\ff\< a' g e bes e cis bes cis a' g e bes e cis bes) |
-      \set crescendoText = \markup \italic scen
+      \set crescendoText = #"scen "
       cis(\< bes' g cis, bes e cis bes cis bes' g cis, bes e cis bes) |
-      \set crescendoText = \markup \italic do
+      \set crescendoText = #"do "
       cis(\< bes' g cis, bes es cis bes cis bes' g cis, bes es cis bes) |
       cis( bes' g cis, bes es cis bes cis bes' g cis, bes es cis bes) |
       \unset crescendoSpanner

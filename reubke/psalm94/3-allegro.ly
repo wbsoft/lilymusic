@@ -590,6 +590,7 @@ allegroMusic = {
       \context Voice = "rh" \relative c' {
         \voiceOne
         \once \override Slur #'positions = #'(2 . 4)
+        \once \override TextScript #'extra-offset = #'(0 . -2)
         es4(^\markup\italic legato as g8. d16 |
         f4 c' d es |
         as g f es8. c16 |
@@ -767,15 +768,15 @@ allegroMusic = {
         }
         \\ {
           \set decrescendoSpanner = #'text
-          \set decrescendoText = #"decresc. molto"
+          \set decrescendoText = \markup \whiteout \italic "decresc. molto "
           f4\>
           es d |
           <des fes>2. <g des'>4( |
           <fis~ b>2) <fis a>4 <c' fis> |
           <b e>2. <bes des>4( |
-          \set decrescendoText = \markup { \dynamic p \hspace #2 \italic riten. }
+          \set decrescendoText = \markup { \dynamic p \hspace #2 \italic "riten. " }
           <a c>2.)\> <e~ b'>4 |
-          \set decrescendoText = \markup \dynamic pp
+          \set decrescendoText = \markup { \dynamic pp \hspace #0 }
           <e a>2 f~\> |
           f1\ppp |
         }
@@ -811,14 +812,14 @@ allegroMusic = {
       }
       des4 |
       \set decrescendoSpanner = #'text
-      \set decrescendoText = #"decresc. molto"
+      \set decrescendoText = #"decresc. molto "
       c des^\> es f |
       g2 as4 bes |
       b2 cis4 dis |
-      \set decrescendoText = \markup \dynamic p
+      \set decrescendoText = \markup { \dynamic p \hspace #0 }
       e1\> |
       f2 fis4 gis |
-      \set decrescendoText = \markup \dynamic pp
+      \set decrescendoText = \markup { \dynamic pp \hspace #0 }
       a2\> d, |
       e1)\ppp\fermata |
       \unset decrescendoSpanner

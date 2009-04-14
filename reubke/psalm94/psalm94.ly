@@ -21,6 +21,7 @@
   system-count = #129
   \context {
     \Score
+    \override BarNumber #'extra-offset = #'(1 . 0)
     \override PaperColumn #'keep-inside-line = ##t 
     \override SpacingSpanner #'common-shortest-duration = #(ly:make-moment 3 32)
   }
@@ -73,6 +74,9 @@ music = {
 breaks = \new Devnull <<
   % page break at larghetto
   { s1*52 \pageBreak }
+  
+  % line break just before adagio because of decresc. molto sticking out
+  { s1*225 \break }
   
   % line break at adagio due to LilyPond x-staff slur bug
   { s1*232 \break }
