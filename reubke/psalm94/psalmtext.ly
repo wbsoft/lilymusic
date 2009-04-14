@@ -186,10 +186,4 @@
       \fill-line { \null \line { Wilbert Berendsen, Easter 2009 } }
     }
   }
-  
-  
-  
-  
-  
-  
 }
