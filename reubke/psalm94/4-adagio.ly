@@ -11,8 +11,7 @@ adagioMusic = {
       \bar "||"
       \global
       \tempoMark #"Adagio."
-      \clef bass
-      r4 f^(
+      r4 \clef bass f^(
       _\markup \whiteout { M. III. Salicional und Gedackt 8'. }
       e4. <gis, b>8 |
       <a d>4. gis8 <f~ gis~>4) <f gis c>( |
