@@ -455,8 +455,8 @@ adagioMusic = {
         \context Voice = "rh" \relative c'' {
           \voiceOne
           s2 g4. a8 |
-          c2. b4 |
-          d1
+          c2. b4( |
+          d1)
         }
         \new Voice \relative c' {
           \voiceOne
@@ -611,7 +611,12 @@ adagioMusic = {
         fes2( e4)\> des |
         c2~ c |
         as1 |
-        c2\ppp b~ |
+        % keep the ppp within the bar lines
+        \once \override DynamicText #'extra-spacing-width = #'(-0.1 . 0.5)
+        % don't print lines but keep ppp and pppp on same height
+        \once \override DynamicTextSpanner #'stencil = ##f
+        \unset decrescendoText
+        c2\ppp\> b~ |
         b1~\pppp |
         b2_\markup \italic smorz.
       }

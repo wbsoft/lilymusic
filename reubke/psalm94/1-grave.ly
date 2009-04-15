@@ -254,7 +254,7 @@ graveMusic = {
       s2. | s1*2 |
       \change Staff = "rh"
       \oneVoice
-      r2 r4 b'(~ |
+      r2 r4 b'^(_~ |
       <b as'>1~) |
       <b as'>4 r r2 |
       R1*3 |
