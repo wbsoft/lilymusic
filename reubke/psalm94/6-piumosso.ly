@@ -26,7 +26,7 @@ piumossoMusic = {
         b( c d es f g as g f c' g c,) |
         fis( g a bes c d es d c g' d g,) |
         a( c a es' bes es fis, a fis d' g, d') |
-        d,( f d as' es as b, d b g' c, g' |
+        d,( f d as' es as b, d b g' c, g') |
         des( g es bes' g es' bes g' es g bes, d) |
         a( c g fis a es d fis c bes d a) |
         g( d' bes a g' es bes g' d c a' g) |
@@ -79,7 +79,7 @@ piumossoMusic = {
       }
       c8-| r as'2(-- g4 |
       f8)-| r es'2(-- d4 |
-      des8)-| r des'2(-- c4~-- |
+      \sas des8)-| r des'2(-- c4~-- |
       c bes2-- as4~-- |
       as) g-. fis4..( d16) |
       f2.( e8. c16) |

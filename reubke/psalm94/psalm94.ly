@@ -132,10 +132,10 @@ footnote = \context Staff = "ped" {
       }
     }
     tagline = \markup {
-      Engraved at \simple #(strftime "%d-%m-%Y" (localtime (current-time)))
+      Engraved at
+      \simple #(strftime "%d-%m-%Y" (localtime (current-time)))
       with \with-url #"http://lilypond.org/web/"
-      { LilyPond (http://lilypond.org/) }
-      version \simple #(lilypond-version)
+      { LilyPond \simple #(lilypond-version) (http://lilypond.org/) }
     }
   }
 

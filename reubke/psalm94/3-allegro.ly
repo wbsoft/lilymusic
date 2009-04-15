@@ -10,7 +10,7 @@ allegroMusic = {
       cis16 bes'~ g~ d~ 
       \tempoMark #"Allegro con fuoco."
       <bes d g bes>2(-^\fff <cis e a>8[)-| r16 <c es>]-| |
-      <bes d g>8[-| r16 <bes d>] <c es>2~-^ <c es>8 <b d>-| |
+      <bes d g>8[-| r16 <bes d>]-| <c es>2~-^ <c es>8 <b d>-| |
       <<
         { g'4-> d8. d16 es4-> a,8. a16 }
         \\ { d8 c4 bes8~ bes-. a-. g-. fis-. }
@@ -107,14 +107,14 @@ allegroMusic = {
       >> r8 <as' b>2 <g c>4 |
     }
     \context Staff = "ped" \context Voice = "ped" \relative c {
-      d8 g,~ <g g'>2.~-^\fff
+      d8 g,~\fff <g g'>2.~-^
       -\tweak #'X-offset #3 ^\markup Posaune.
       <g g'>1~ |
       <g g'>4 r r2 |
       r8 f'( e es d c bes a |
       g f e es d c' bes a |
       g-|) r g4-^~ g8[ fis8(-^ g) r16 a]-| |
-      bes8-| r16 g( b8.) g16( c8.) g16( d'8.) g,16( |
+      bes8-| r16 g( b8.) g16( c8.) g16( d'8.) g,16_( |
       es'2~) es8. a,16 bes8. g16_( |
       es'2~) es8. a,16 bes8. g16 |
       c2 r8. fis,16[ a8. bes16] |

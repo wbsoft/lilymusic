@@ -75,7 +75,7 @@ fugaMusic = {
         \voiceOne
         r4 c-| b4..( g16) |
         bes2.( a8. f16) |
-        as8[-| r16 d,16]-| d2(-| es4) |
+        as8[-| r16 d,16]-| d2(-^ es4) |
         b4. c8 d4. es8 |
         e4. f8 g4. as8 |
         <as es'>2-| <es fis>4.-| <es g>8-| |
@@ -245,7 +245,7 @@ fugaMusic = {
         \voiceOne
         c2.(
         ^\markup Manualcoppel.
-        b8. g16 |
+        b8. f16 |
         \set crescendoSpanner = #'text
         \set crescendoText = #"poco "
         <e bes'>4 <f as> g\< f8.) f'16 |
@@ -344,11 +344,11 @@ fugaMusic = {
       <c fis>8[-| r16 <c f>] <bes e>8[-| r16 <as des>] <g c>8[-| r16 <f b>] |
       <e bes'>8[-| r16 <e as>] <des g>8[-| r16 <c f>] <bes e>8[-| r16 \clef bass <as des>] <g c>8[ r16 <f b>] |
       bes( g c e, des' bes es g, \clef treble e' des f bes, g' e as des,) |
-      bes'( g c e, des' bes es g, e' des f g, g' e gis c,) |
+      bes'( g c e, des' bes es g, e' c f g, g' e gis c,) |
       <cis a'>8[-| r16 <a e'>] <a dis>8[ r16 <a d>] <g cis>8[-| r16 <f bes>] <e a>8[-| r16 <d gis>] |
       <cis g'>8[-| r16 <cis f>] <bes e>8[ r16 \clef bass <a d>] <g cis>8[-| r16 <f bes>] <e a>8[-| r16 <d gis>] |
       g( e a cis, bes' g c e, cis' bes d g, \clef treble e' cis f bes,) |
-      g'( e a cis, bes' g c e, cis' bes d e, e' cis eis a,~ |
+      g'( e a cis, bes' g c e, cis' a d e, e' cis eis a,~ |
     }
     \context Staff = "lh" \context Voice = "lh" \relative c'' {
       <g c e>8.[ bes16] a8[-| r16 as] g8[-| r16 f] e8[-| r16 d] |
@@ -545,12 +545,12 @@ fugaMusic = {
       <d f bes>1~ |
       <d f bes>8-| r16
       <f, bes>( \stemUp d' \rh f <bes d>)
-      \lh <bes, d>( f' \rh bes <d f>) \lh <d, f>( bes'[ \rh d <f bes>])
+      \lh <bes, d>( f' \rh bes <d f>) \lh <d, f>( bes'[ \rh d %{ original: f'' %} <f bes>])
       \lh <d, f as b> |
       <d f as b>1~ |
       <d f as b>8- | r16
       as( \stemUp <b d> \rh as' <b d>)
-      \lh <b, d>( as' \rh b <d as'>) \lh <d, as'>( b'[ \rh b %{ d? %} <as' b>])
+      \lh <b, d>( as' \rh b <d as'>) \lh <d, as'>( b'[ \rh b %{ d''? %} <as' b>])
       \lh <es, as c>16 |
     }
     \context Staff = "ped" \context Voice = "ped" \relative c, {
@@ -597,13 +597,19 @@ fugaMusic = {
         <g c es g>4-.
         \voiceOne
         fis16( g fis g f g f g e g e g |
-        es g es g d g d g des g fes g bes des fes g |
+        es g es g d g d g des
+        \once \override Hairpin #'rotation = #'(10 0 0)
+        \once \override Hairpin #'extra-offset = #'(0 . -2.5)
+        g^\< fes g bes des fes g\! |
         \oneVoice 
         <c, es as>4)-|
         \voiceOne
         g16( as g as f as f as e as e as |
         \set tieWaitForNote = ##t
-        f as f as es as es as d, as' f as b~ d~ f~ as~ |
+        f as f as es as es as d,
+        \once \override Hairpin #'rotation = #'(11 0 0)
+        \once \override Hairpin #'extra-offset = #'(0 . -2.5)
+        as'^\< f as b~ d~ f~ as~\! |
         \oneVoice
         <b, d f as b>4)-|
         as16 b as b g b g b fis b fis b |

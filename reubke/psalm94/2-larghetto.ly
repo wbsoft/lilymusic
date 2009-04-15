@@ -556,7 +556,7 @@ larghettoMusic = {
       d'2)~ d8 r r d,_( |
       d'2)~ d8 r r d,_( |
       d'1)~ |
-      d1~ |
+      d1~^\ff |
       d1~ |
       d1~ |
       d1~ |
