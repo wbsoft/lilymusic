@@ -11,17 +11,27 @@ adagioMusic = {
       \bar "||"
       \global
       \tempoMark #"Adagio."
+      \clef bass
       r4 f^(
       _\markup \whiteout { M. III. Salicional und Gedackt 8'. }
-      e4. \lh \voiceOne b8 |
-      <a d>4. gis8 <f~ gis~>4 <f gis c>( |
+      e4. <gis, b>8 |
+      <a d>4. gis8 <f~ gis~>4) <f gis c>( |
       <e a> <e gis> <e g> <d fis> |
-      f e8 dis b'4. a8 |
-      a4 gis2)
-      \rh \oneVoice r4 |
+      <<
+        {
+          \voiceOne
+          f e8 dis b'4. a8 |
+          a4 gis2)
+        }
+        \new Voice {
+          \voiceTwo
+          c,2 <dis fis> e2.
+        }
+      >>
+      \oneVoice r4 |
       r a e'4. ais,8~ |
       ais4 b2 r4 |
-      r4 <<
+      r4 \clef treble <<
         {
           c( g'4. dis8~ |
           dis4 e fis g |
@@ -36,31 +46,12 @@ adagioMusic = {
     }
     \context Staff = "lh" \context Voice = "lh" \relative c {
       \global
-      r2 r4 r8 <<
-        {
-          \voiceTwo
-          \once \override Slur #'positions = #'(-2 . -4)
-          <e gis>8( |
-          d4 c <b d~> <e, d'> |
-          <a c> <e b'> <c c'> <d a'> |
-          f fis <b~ dis>2 |
-          <e, b'>2.)
-        }
-        \new Voice {
-          \voiceThree
-          s8 | s1*2 |
-          c'2 fis |
-          e2.
-        }
-        \new Voice {
-          \voiceFour
-          s8 |
-          f2 s |
-          s1 |
-          a,2
-        }
-      >>
-      \oneVoice
+      r2 r4 r8 e_( |
+      << f2 \\ { d4 c} >>
+      <b d^~> <e, d'> |
+      <a c> <e b'> <c c'> <d a'> |
+      << a'2 \\ { f4 fis } >> b2^~
+      <e, b'>2.)
       r4 |
       r4 e'8( fis g4 fis8 e~ |
       e4 dis2) r4 |
