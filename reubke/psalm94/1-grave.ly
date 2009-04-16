@@ -330,12 +330,13 @@ graveMusic = {
           s2. | s1 s2 fis
         }
       >>
-      as4^\(
+      \oneVoice
+      as4^(
       ^\markup \whiteout { Flöte oder Harmonika 8' allein }
       g fis |
       f es d c |
       b as g fis~ |
-      fis f es d\) |
+      fis f es d) |
       \bar "||"
     }
     \context Staff = "ped" \relative c {
