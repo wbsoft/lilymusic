@@ -132,7 +132,7 @@
         The original score has a “Vorbemerkung” which notes that, if stops
         are named without “allein” (only) appended, some other stops may be
         added as well, to create a good balance with the foreground melody.
-        Some registrations probably refer to the new Ladegast organ of Merseburg
+        Some registrations possibly refer to the new Ladegast organ of Merseburg
         Cathedral, where Reubke played the premiere of this piece on June 17th, 1857.
         The Aeoline 16' on that organ was a soft free reed stop and the Posaune 32'
         had a warm-round sound, not very loud.
