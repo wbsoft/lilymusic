@@ -116,7 +116,7 @@
         both Reubke’s splendid Organ Sonata, and the LilyPond development
         community’s truly amazing LilyPond music typesetter.
 
-        This edition exactly follows its source: the (probably 1871) score from the
+        This edition exactly follows its source: the 1871 score from the
         \with-url #"http://www.imslp.org/"
         { International Music Score Library Project (http://imslp.org/); }
         only where the original sometimes writes the music for both hands
@@ -131,8 +131,11 @@
         performed.
         The original score has a “Vorbemerkung” which notes that, if stops
         are named without “allein” (only) appended, some other stops may be
-        added as well, to create a good balance with the (foreground)
-        melody.
+        added as well, to create a good balance with the foreground melody.
+        Some registrations probably refer to the new Ladegast organ of Merseburg
+        Cathedral, where Reubke played the premiere of this piece on June 17th, 1857.
+        The Aeoline 16' on that organ was a reed stop and the Posaune 32'
+        had a warm-round sound, not very loud.
       }
       
       \strut
@@ -149,7 +152,7 @@
       \strut
       \fill-line { \null \line { Wilbert Berendsen, Easter 2009 } }
       
-      \strut \strut
+      \strut
       \fill-line {
         \fontsize #4 \line { Translations of German terms }
       }
