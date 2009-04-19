@@ -84,10 +84,9 @@ larghettoMusic = {
       \relative c' {
         \voiceOne
         f4( c'8. b16 bes2~) |
-        bes8( as g fis
         \set decrescendoSpanner = #'text
         \set decrescendoText = \markup\whiteout\italic { decresc. molto \hspace #0 }
-        f4\> g8 as~ |
+        bes8( as g fis f4 g8\> as~ |
         as4) g(~ g8 f c' b~ |
         b bes4 c8\! bes as g fis) |
         \oneVoice
@@ -477,8 +476,8 @@ larghettoMusic = {
       \clef bass
       es,,[(\f
       _\markup { M. I. }
-      ^\markup { ohne Mixturen }
       ^\markup \italic { nach und nach schneller }
+      ^\markup { ohne Mixturen }
       \unset crescendoSpanner
       \unset decrescendoSpanner
       d a] c es\< fis a c es d a c es \clef treble fis a\!) |
@@ -519,15 +518,17 @@ larghettoMusic = {
       r r8
       \clef bass
       \set tieWaitForNote = ##t
+      \override Hairpin #'to-barline = ##f
       r16 a,~\< c~ es_~ <a, c es fis>8\! r r16 a'~ c~ es~ |
       <a, c es fis>8.( f'16 es d c bes a g fis f es d cis c) |
-      b8 r r16 d~\< f~ gis~ <d f gis b>8\! r \clef treble r16 d'~ f~ gis~ |
-      <d f gis b>8.( a'16 gis g f e \clef bass d c b a gis g fis f) |
+      b8 r r16 d~\< f~ gis~ <d f gis b>8\! r \clef treble r16 d'~\< f~ gis~ |
+      <d f gis b>8.(\! a'16 gis g f e \clef bass d c b a gis g fis f) |
       \key g \minor
       e8 r r16 g~\< bes~ cis~ <g bes cis e>8\! r r16 \clef treble g'~\< bes~ cis~|
       <g bes cis e>8.(\! d'16 cis c bes a g f e d cis c b bes) |
       a8 r r16 c~\< es~ fis~ <c es fis a>8\! r r \clef bass <es, a>(|
-      <e bes'>4) \clef treble r16 cis'~ e~ g~ <cis, e g bes>8 r r \clef bass <e, bes'>( |
+      <e bes'>4) \clef treble r16 cis'~\< e~ g~ <cis, e g bes>8\! r r \clef bass <e, bes'>( |
+      \revert Hairpin #'to-barline
       <fis c'>4) \clef treble r16 es'~ fis~ a~ <es fis a c>8 r \clef bass r16 fis,( a c |
       es a, c es fis c es fis \clef treble a c, es fis a c, es fis) |
       a( a, cis e g bes, cis e a a, cis e g bes, cis e) |

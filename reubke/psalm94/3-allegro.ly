@@ -71,7 +71,7 @@ allegroMusic = {
       g'\<
       \change Staff = "rh" c g' a)]
       \change Staff = "lh" <bes,, d g>8[-|\! r16 <bes d g>]-| |
-      <c g' a>4 r8 a16[( c
+      <a c g'>4 r8 a16[( c
       \once \override Hairpin #'rotation = #'(18 0 0)
       \once \override Hairpin #'extra-offset = #'(2 . 8)
       g'\<
@@ -180,6 +180,7 @@ allegroMusic = {
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c' {
       \oneVoice
+      \bar "||"
       \key c \minor
       <des~ as'>2^(
       ^\markup \italic { weniger stark und ruhiger. }
