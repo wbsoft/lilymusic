@@ -7,4 +7,4 @@ psalm94.pdf: $(files)
 
 psalm94.zip: $(files)
 	rm -f psalm94.zip
-	zip -9 psalm94.zip $(files)
+	zip -9 psalm94.zip $(files) Makefile
