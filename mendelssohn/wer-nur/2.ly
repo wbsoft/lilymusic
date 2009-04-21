@@ -78,6 +78,40 @@ violinoOne = \relative c'' {
   r8 e c'4. b8 b a |
   gis b e4 r8 bes' a4 |
   % bar 60
+  r8 a, f' d b'2~ |
+  b8 e, a2 gis4 |
+  a8 r a,4 fis'2 |
+  e4 r e2 |
+  a,4 d~ d8 c c b |
+  % bar 65
+  c4_\markup \italic { cresc. } f~ f8 e e d |
+  e4 a4. a8 g fis |
+  e2~ e8 e d c |
+  b4 e c4. c8 |
+  a4 d b4. b8 |
+  % bar 70
+  g4 c r2 |
+  f2 g4 bes |
+  a8 g g f b4. b8 |
+  c2~ c8 bes bes a |
+  d,2 e4 g |
+  % bar 75
+  f8 e e d bes'4.-> bes8 |
+  e,8 d d c a'2 |
+  as~ as8 g g f |
+  e g, c d es d c d |
+  bes4 bes8 g cis2 |
+  % bar 80
+  d4 r r2 |
+  r8 e a b c b a b |
+  gis r gis,4 d' gis, |
+  a8 r a'4 dis,2 |
+  e8 r g4 cis,2 |
+  % bar 85
+  d2 e4 g |
+  f8 e e d gis4. gis8 |
+  e'8 d c b a g f e |
+  a g f e d c b a |
   
 }
 
@@ -153,6 +187,41 @@ violinoTwo = \relative c' {
   a4\! r8 e f4 r8 b_\markup \italic { dim. } |
   a e a4. gis8 gis fis |
   e4 r8 gis a4 r8 cis |
+  % bar 60
+  d f, d' a d4 c8 b |
+  r a d e f e d e |
+  a,4 a2 gis8 a |
+  b f e d cis e d cis |
+  d e f4~ f8 e e d |
+  % bar 65
+  e_\markup \italic { cresc. } c' b c d4. g,8 |
+  g4 c4. c8 b a |
+  g b a g fis4 a |
+  gis8 fis fis e a4. a8 |
+  a g g fis g4. g8 |
+  % bar 70
+  e c d e f e f g |
+  a2 bes8 c d e |
+  f2~ f8 e e d |
+  g,2 a4 c |
+  bes8 a a g bes4. bes8 |
+  % bar 75
+  a2~ a8 g g f |
+  c'4 bes a8 g g f |
+  b2 f'8 e e d |
+  c4 c8 bes a4. a8 |
+  g d g a bes a g a |
+  % bar 80
+  f4 f b4. b8 |
+  e d c4 fis, b |
+  r8 b d e f e d e |
+  c r c4 fis,2 |
+  g8 r bes4 e,2 |
+  % bar 85
+  a8 g a d, d'4 cis8 e |
+  a,4. g16 a b4. e8 |
+  c' b a g f e d c |
+  f e d c b a gis a |
   
   
 }
@@ -230,6 +299,41 @@ viola = \relative c' {
   e4\! r8 c d4 r8 e_\markup \italic { dim. } |
   a,4 r8 fis b4 b |
   e d cis a |
+  % bar 60
+  d8 c c b e2 |
+  f8 e d c b4 e |
+  c b8 a dis2 |
+  e, e4 g |
+  f8 e e d gis4. gis8 |
+  % bar 65
+  a8_\markup \italic { cresc. } g g f b4.-> b8 |
+  c b b a dis4. dis8 |
+  e d c b a g fis4 |
+  d' b a8 b b c |
+  c4. c8 b a a g |
+  % bar 70
+  bes2 a8 g f e |
+  f c' f e d4 g |
+  c,2 d4 f |
+  e8 d d c es4 d |
+  g f e8 d d c |
+  % bar 75
+  f2~ f8 e e d |
+  g4 e c8 bes bes a |
+  d4. d,8 d e e f |
+  c bes' a g fis2 |
+  g4. f8 e4 a |
+  % bar 80
+  d,8 a' d e f e d e |
+  c4 a b2 |
+  e4 b gis e |
+  a8 e a b c b a b |
+  g e g a bes a g a |
+  % bar 85
+  f e f d bes' g a cis |
+  d4 b8 c d2 |
+  e,4 a e2 f2. f4 |
+  
   
 }
 
