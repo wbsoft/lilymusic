@@ -228,7 +228,6 @@ violinoTwo = \relative c' {
 
 viola = \relative c' {
   \global
-  \clef alto % TODO put this in staff def.
   a4\p r r dis |
   e b gis e |
   a8 e a b c b a b |
@@ -659,7 +658,7 @@ basText = \lyricmode {
       >>
       \new Staff \with {
         instrumentName = #"Viola"
-      } \viola
+      } { \clef alto \viola }
     >>
     \new ChoirStaff <<
       \new Staff \with {
