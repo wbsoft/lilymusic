@@ -91,7 +91,7 @@
         \override #psalm-column-width-override
         \justify {
           Aber der Herr ist mein Hort und meine Zuversicht.
-          Er wird eihnen ihr Unrecht vergelten
+          Er wird ihnen ihr Unrecht vergelten
           und sie um ihre Bosheit vertilgen.
         }
         \override #psalm-column-width-override
