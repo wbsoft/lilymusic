@@ -367,7 +367,7 @@ piumossoMusic = {
       <as c es g>4-. <as es' g>2-^ <as b f'>4-| |
       <as c es>-| r <bes des g>-| r |
       <as c f>-| r \clef bass <a c es>-| r8 c-| |
-      <g c es g>4-| r r2 |
+      <g c es>4-| r r2 |
       <g b d f g>4-| r r r8 <g c es g> |
       <g c es g>1\fermata
     }
