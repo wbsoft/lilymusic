@@ -50,10 +50,10 @@ piumossoMusic = {
       \set crescendoText = #"poco "
       \sas <cis, e bes'>2)-|\< <cis e a>4.-| e8 |
       \set crescendoText = #"più "
-      <c es g>2.(\< \sas <c es fis>4)-| |
+      <c es g>2.^(\< <c es fis>4)-| |
       \set crescendoText = #"cre "
       <fis a es'>2-|\< <fis a d>4.-| a8 |
-      <f as c>2.( \sas <f as b>4)-| |
+      <f as c>2.^( <f as b>4)-| |
       \set crescendoText = #"scen "
       <b d as'>2-|\< r4 <b d g>-| |
       <cis e bes'>2-| r4 <cis e a>-| |
