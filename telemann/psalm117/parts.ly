@@ -334,6 +334,160 @@ violinoTwo = \relative c' {
   \bar "|."
 }
 
+continuo = \relative c {
+  \globalOne
+  bes8 |
+  bes' bes r a g g r f |
+  es d c f bes,4 r8 e |
+  f f r f es es r es |
+  d a' bes e, f4 f8 d |
+  % bar 5
+  es es d d es es es e |
+  f f e e f f f f 
+  g g a a bes bes bes es, |
+  f f es es d es d es |
+  d g a f bes bes bes es, |
+  % bar 10
+  f f f, f bes4 r8 bes |
+  d d r d g g r g |
+  es d c f bes,4 r8 bes |
+  a a r a d d r d |
+  bes a g c f, f a' a |
+  % bar 15
+  bes bes a a bes bes b b |
+  c c b b c c c bes |
+  a d c bes a d c bes |
+  a bes c c, f f f f |
+  bes bes a a g g g g |
+  % bar 20
+  c, c c c f,4 r8 f |
+  f'4 r8 bes, f'4 r8 fis |
+  g g, d' d, bes'' c bes a |
+  g a bes c d c d d, |
+  g4 r8 e f4 r8 f |
+  % bar 25
+  f4 r8 bes, f'4 r8 fis |
+  g g, d' d, bes'' a bes c |
+  d d d c bes bes bes bes |
+  c c c c a a bes bes |
+  c c d d g, r g r |
+  % bar 30
+  g g g, g g4 r |
+  \bar "||"
+  \globalTwo
+  es'2 es es |
+  as, as as |
+  es' es es |
+  d d d |
+  % bar 35
+  es es d |
+  es1 g2 |
+  f f f |
+  es es f |
+  g g g |
+  % bar 40
+  c, c a' |
+  bes bes bes |
+  es, es as |
+  des, es es, |
+  as as' as |
+  % bar 45
+  as as g |
+  as as as |
+  g g g |
+  f f es |
+  d d c |
+  % bar 50
+  bes bes' as |
+  g g g |
+  as as f |
+  es bes' bes, |
+  es1 r2 |
+  % bar 55
+  a,1 r2 |
+  bes bes bes |
+  bes bes bes |
+  bes r4 bes' es,2 |
+  r4 as bes2 bes, |
+  % bar 60
+  es,1. |
+  \bar "||"
+  \globalThree
+  bes''2 r |
+  r4 d,8 d d4 d |
+  es2 r |
+  r4 bes8 bes bes4 b |
+  % bar 65
+  c c'8 c c4 c |
+  f,2 g4 d |
+  es2 f |
+  bes,4 bes'8 bes bes2 |
+  f4 f8 f f2 |
+  % bar 70
+  bes,4 bes'8 bes bes2 |
+  f r |
+  r4 a,8 a a4 a |
+  bes2 r |
+  r4 f8 f f4 fis |
+  % bar 75
+  g g8 g g4 g |
+  c2 d4 a |
+  bes2 c |
+  f,4 f'8 f f2 |
+  c4 c'8 c c2 |
+  % bar 80
+  f,2 r4 d' |
+  g,2 bes |
+  d1 |
+  es,2 g |
+  bes1 |
+  % bar 85
+  c,2 es |
+  g1 |
+  d |
+  g,2 r |
+  d' r |
+  % bar 90
+  g,4 g' g, g' |
+  f f f, f' |
+  bes,2 g' |
+  c, c' |
+  bes1 |
+  % bar 95
+  as |
+  g |
+  f |
+  es |
+  d2 g |
+  % bar 100
+  c,4 c c c |
+  f2 r |
+  bes, r |
+  es r |
+  bes' d |
+  % bar 105
+  f1 |
+  g,2 bes |
+  d1 |
+  es,2 g |
+  bes1 |
+  % bar 110
+  f1 |
+  bes,2 r |
+  f' r |
+  bes, r |
+  f4 es'8 es es4 d8 c |
+  % bar 115
+  d4 bes'8 bes bes4 a8 g |
+  a4 es8 es es4 d8 c |
+  d4 bes'8 bes bes4 a8 g |
+  a4 f g a |
+  bes bes, r2 |
+  \bar "|."
+}
+
+
+
 violinoOnePart = \new Staff \with {
   instrumentName = "Violino I"
 } \violinoOne
@@ -342,10 +496,19 @@ violinoTwoPart = \new Staff \with {
   instrumentName = "Violino II"
 } \violinoTwo
 
+continuoPart = \new Staff \with {
+  instrumentName = "Basso Continuo"
+} {
+  \clef bass
+  \continuo
+}
+
+
 
 \score {
   <<
-    \violinoOnePart
-    \violinoTwoPart
+    %    \violinoOnePart
+    % \violinoTwoPart
+    \continuoPart
   >>
 }
