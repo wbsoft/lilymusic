@@ -1,5 +1,7 @@
 \version "2.13.1"
+
 \paper {
+  indent = 2\cm
   ragged-last-bottom = ##f
 }
 
@@ -45,20 +47,37 @@
   }
 }
 
+tempoMark = #(define-music-function (parser location text) (string?)
+  #{
+    \once \override Score.RehearsalMark #'self-alignment-X = #LEFT
+    \once \override Score.RehearsalMark #'break-align-symbols = #'(time-signature key-signature)
+    \once \override Staff.TimeSignature #'break-align-anchor-alignment = #LEFT
+    \once \override Staff.KeySignature #'break-align-anchor-alignment = #LEFT
+    \mark \markup \bold { $text }
+  #})
+
 globalOne = {
   \time 4/4
   \key bes \major
+  \tempoMark #"Vivace"
   \partial 8
+  % keep 32nd notes in their beams
+  #(revert-auto-beam-setting '(end 1 32 4 4) 1 8)
+  #(revert-auto-beam-setting '(end 1 32 4 4) 3 8)
+  #(revert-auto-beam-setting '(end 1 32 4 4) 5 8)
+  #(revert-auto-beam-setting '(end 1 32 4 4) 7 8)
 }
 
 globalTwo = {
   \key es \major
   \time 3/2
+  \tempoMark #"Andante"
 }
 
 globalThree = {
   \key bes \major
   \time 2/2
+  \tempoMark #"Allegro"
 }
 
 violinoOne = \relative c'' {
@@ -497,7 +516,7 @@ violinoTwoPart = \new Staff \with {
 } \violinoTwo
 
 continuoPart = \new Staff \with {
-  instrumentName = "Basso Continuo"
+  instrumentName = \markup \center-column { Basso Continuo }
 } {
   \clef bass
   \continuo
@@ -507,8 +526,8 @@ continuoPart = \new Staff \with {
 
 \score {
   <<
-    %    \violinoOnePart
-    % \violinoTwoPart
-    \continuoPart
+    \violinoOnePart
+%     \violinoTwoPart
+%     \continuoPart
   >>
 }
