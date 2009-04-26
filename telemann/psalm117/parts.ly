@@ -1,6 +1,51 @@
 \version "2.13.1"
+\paper {
+  ragged-last-bottom = ##f
+}
 
-global = {
+\header {
+  title = "Laudate Jehovam, omnes gentes"
+  subtitle = "117. Psalm"
+  composer = "Georg Philip Telemann (1681-1767)"
+  copyright = \markup \center-column {
+    \line {
+      Engraved by
+      \with-url #"http://www.wilbertberendsen.nl/"
+      {
+        Wilbert Berendsen
+        (http://www.wilbertberendsen.nl/)
+      }
+    }
+    \line {
+      Copyright © 2009
+      \with-url #"http://www.cpdl.org/"
+      {
+        The Choral Public Domain Library
+        (http://www.cpdl.org/)
+      }
+    }
+    \line {
+      This edition may be freely distributed,
+      edited, performed or recorded.
+    }
+  }
+  tagline = \markup {
+    Engraved at
+    \simple #(strftime "%d-%m-%Y" (localtime (current-time)))
+    with \with-url #"http://lilypond.org/web/"
+    { LilyPond \simple #(lilypond-version) (http://lilypond.org/) }
+  }
+}
+
+
+\layout {
+  \context {
+    \Score
+    skipBars = ##t
+  }
+}
+
+globalOne = {
   \time 4/4
   \key bes \major
   \partial 8
@@ -17,7 +62,7 @@ globalThree = {
 }
 
 violinoOne = \relative c'' {
-  \global
+  \globalOne
   bes8 bes d16( c) bes8 bes bes d16( c) bes8 bes |
   g' f es4 d16( f) bes,( d) bes,8 c' |
   c es16( d) c8 c c es16( d) c8 c |
@@ -56,48 +101,251 @@ violinoOne = \relative c'' {
   d bes g32( a bes16) bes g d' g g4 r |
   \bar "||"
   \globalTwo
-  
-  es,8( g) bes( es) es( bes) g( es) r2 |
-  es8( as) c( es) es( c) as( es) r2 |
-  es8( g) bes( es) es( bes) g( es) r2 |
-  f8( bes) d( f) f( d) bes( f) r2 |
+  es,8( g bes es) es( bes g es) r2 |
+  es8( as c es) es( c as es) r2 |
+  es8( g bes es) es( bes g es) r2 |
+  f8( bes d f) f( d bes f) r2 |
   % bar 35
-  g8( bes) es( g) g( es) bes( g) r2 |
-  g8( bes) es( g) g( es) bes( g) r2 |
-  b8( d) f( as) as( f) d( b) r2 |
-  g8( c) es( g) g( es) c( g) r2 |
-  g8( c) es( g) f( d) b( g) r2 |
+  g8( bes es g) g( es bes g) r2 |
+  g8( bes es g) g( es bes g) r2 |
+  b8( d f as) as( f d b) r2 |
+  g8( c es g) g( es c g) r2 |
+  g8( c es g) f( d b g) r2 |
   % bar 40
-  es8( g) c( es) es( c) g( es) r2 |
-  f8( bes) des( f) f( des) bes( f) r2 |
-  es8( g) bes( des) des( bes) g( es) r2 |
-  f8( bes) des( f) des( bes) g( es) r2 |
-  c8( es) as( c) c( as) es( c) r2 |
+  es8( g c es) es( c g es) r2 |
+  f8( bes des f) f( des bes f) r2 |
+  es8( g bes des) des( bes g es) r2 |
+  f8( bes des f) des( bes g es) r2 |
+  c8( es as c) c( as es c) r2 |
   % bar 45
-  d8( f) bes( d) d( bes) f( d) r2 |
-  es8( as) c( es) es( c) as( es) r2 |
-  es8( g) bes( es) es( bes) g( es) r2 |
-  a8( c) f( a) a( f) c( a) r2 |
-  f8( a) c( f) f( d) bes( f) r2 |
+  d8( f bes d) d( bes f d) r2 |
+  es8( as c es) es( c as es) r2 |
+  es8( g bes es) es( bes g es) r2 |
+  a8( c f a) a( f c a) r2 |
+  f8( a c f) f( d bes f) r2 |
   % bar 50
-  f8( bes) d( f) f( d) bes( f) r2 |
-  es8( g) bes( es) es( bes) g( es) r2 |
-  es8( as) c( es) es( c) as( es) r2 |
+  f8( bes d f) f( d bes f) r2 |
+  es8( g bes es) es( bes g es) r2 |
+  es8( as c es) es( c as es) r2 |
   R1. |
   r2 g g |
   % bar 55
   r g g |
-  f8( bes) d( f) f( d) bes( f) r2 |
-  es8( g) bes( es) es( bes) g( es) r2 |
+  f8( bes d f) f( d bes f) r2 |
+  es8( g bes es) es( bes g es) r2 |
   as r4 f g2 |
   r4 as \grace g2 f1\trill |
   % bar 60
   es1. |
   \bar "||"
   \globalThree 
-  
+  R1*7 |
+  % bar 68
+  r4 d'8 d d4 c8( bes) |
+  c4 es8 es es4 d8( c) |
+  % bar 70
+  d4 d8 d8 d4 c8( bes) |
+  c2 r |
+  R1*6 |
+  % bar 78
+  r4 a'8 a a4 g8( f) |
+  g4 bes8 bes bes4 a8( g) |
+  % bar 80
+  a2 r |
+  r r4 d |
+  a a~ a8 c bes( a) |
+  g4 g~ g8 bes a( g) |
+  f4 f~ f8 as g( f) |
+  % bar 85
+  es4 es~ es8 g f( es) |
+  d4 d g g~ |
+  g8 g f( e) d4 e8( fis) |
+  g2 r |
+  R1*4 |
+  % bar 93
+  r4 c,8( d) es( d es f) |
+  g4( g,) g'( g,) |
+  % bar 95
+  r as8( bes) c( bes) c( d) |
+  es4( es,) es'( es,) |
+  r f8( g) a( f) a( b) |
+  c4( c,) c'( c,) |
+  r8 c' d( c) b2\trill |
+  % bar 100
+  c r |
+  c r |
+  d r |
+  es r |
+  r4 f bes bes~ |
+  % bar 105
+  bes8 bes a( g) a4 a~ |
+  a8 a g( f) g4 g~ |
+  g8 g f( e) f4 f~ |
+  f8 f es( d) es4 es~ |
+  es8 es d( c) d d c( bes) |
+  % bar 110
+  c( d) c( bes) c2\trill |
+  bes r |
+  c r |
+  d r |
+  c4 es,8 es es4 d8( c) |
+  % bar 115
+  bes'2 d |
+  f4 es,8 es es4 d8( c) |
+  bes'2 d |
+  f1 |
+  bes,2 r |
+  \bar "|."
 }
 
+violinoTwo = \relative c' {
+  \globalOne
+  d8 |
+  d d r d d d r d |
+  bes' bes4 a8 bes( bes,) r bes' |
+  a a r a a a r a |
+  f c'4 bes8 a( f) r f' |
+  % bar 5 (5 and 6 same in Vln. II)
+  g16 a,( bes) g' f a,( bes) as' g d( es) as g es( g) bes |
+  a b,( c) a' g b,( c) bes' a e( f) bes a( c) a( f) |
+  d8( d) c( c) bes r bes( bes) |
+  d,( f') a,4\trill bes16( d) c( a) bes( d) c( a) |
+  f8( bes) c( c) bes r bes( bes) |
+  % bar 10
+  d,( f') a,4\trill bes r |
+  R1 |
+  bes8( bes) bes( a) bes4 r |
+  R1 |
+  f8( c') d( c) a4 r8 c |
+  % bar 15
+  d16 e,( f) d' c e,( f) es' d a( bes) es d( g,) d'( f) |
+  e fis,( g) c d fis,( g) d' e b( c) f e( g) e( c) |
+  f a,( bes) g a( c) d( bes) c( a) bes( g) a( c) d( bes) |
+  c8 bes4 g8 a( f) a( c) |
+  d16 e,( f) d' c e,( f) c' bes fis( g) bes d fis,( g) bes |
+  % bar 20
+  e8 f e4\trill f r |
+  R1 |
+  r2 d8 g,4( fis8) |
+  g( g) g( g) g( g) fis( fis) |
+  g4 r r2 |
+  % bar 25
+  R1 |
+  r2 g8( g) g( g) |
+  g( g) fis( fis) d'( d) d( d) |
+  d( d) c( c) c( c) bes( bes) |
+  a( a) a( a) bes16 bes, bes32( c d16) d bes g'32( a bes16) |
+  % bar 30
+  bes g bes32( c d16) d bes g32( a bes16) bes4 r |
+  \bar "||"
+  \globalTwo 
+  r2 r es8( bes g es) |
+  r2 r es'8( c as es) |
+  r2 r es'8( bes g es) |
+  r2 r f'8( d bes f) |
+  % bar 35
+  r2 r f'8( d bes f) |
+  r2 r es'8( bes g es) |
+  r2 r as'8( f d b) |
+  r2 r as'8( f d c) |
+  r2 r f8( d b g) |
+  % bar 40
+  r2 r es'8( c a f) |
+  r2 r bes8( f des bes) |
+  r2 r c'8( as es c) |
+  r2 r des'8( bes g es) |
+  r2 r c'8( as es c) |
+  % bar 45
+  r2 r es'8( bes g es) |
+  r2 r es'8( c as es) |
+  r2 r bes''8( g e c) |
+  r2 r a'8( f c a) |
+  r2 r es'8( c a es) |
+  % bar 50
+  r2 r f'8( d bes f) |
+  r2 r es'8( bes g es) |
+  r2 r as8( f d bes)
+  R1. |
+  r2 es es |
+  % bar 55
+  r es es |
+  r r f'8( d bes f) |
+  g,2 r es''8( bes g es) |
+  d2 r4 d es2 |
+  r4 f \grace es2 d1\trill |
+  % bar 60
+  es1. |
+  \bar "||"
+  \globalThree 
+  R1*7 |
+  % bar 68
+  r4 bes'8 bes bes4 a8( g) |
+  a4 c8 c c4 bes8( a) |
+  % bar 70
+  bes4 bes8 bes bes4 a8( g) |
+  a2 r |
+  R1*6 |
+  % bar 78
+  r4 f'8 f f4 e8( d) |
+  e4 g8 g g4 f8( e) |
+  % bar 80
+  f2 r |
+  r4 d g g~ |
+  g8 g f( e) f4 f~ |
+  f8 f es( d) es4 es~ |
+  es8 es d( c) d4 d~ |
+  % bar 85
+  d8 d c( b) c4 c~ |
+  c8 c bes a bes bes a( g) |
+  a( bes) a( g) a2\trill |
+  g r |
+  R1*5 |
+  r4 des'8( c) des( f) es( des) |
+  % bar 95
+  c4 es, es' as, |
+  r bes8( c) bes( des) c( bes) |
+  a4 f c' f, |
+  r g8( f) g( bes) as( g) |
+  f( e) f( g) f( es) d( f) |
+  % bar 100
+  e2 r |
+  a r |
+  as r |
+  g r |
+  r r4 f' |
+  % bar 105
+  c c~ c8 es d( c) |
+  bes4 bes~ bes8 d c( bes) |
+  a4 a~ a8 c bes( a) |
+  g4 g~ g8 bes a( g) |
+  f4 f bes bes~ |
+  % bar 110
+  bes8 bes a( g) a( bes) g( a) |
+  bes2 r |
+  a r |
+  bes r |
+  a4 es8 es es4 d8( c) |
+  % bar 115
+  d4 d'8 d d4 c8( bes) |
+  c4 es,8 es es4 d8( c) |
+  d4 d'8 d d4 c8( bes) |
+  c4( a) bes( c) |
+  bes2 r |
+  \bar "|."
+}
+
+violinoOnePart = \new Staff \with {
+  instrumentName = "Violino I"
+} \violinoOne
+
+violinoTwoPart = \new Staff \with {
+  instrumentName = "Violino II"
+} \violinoTwo
+
+
 \score {
-  \violinoOne
+  <<
+    \violinoOnePart
+    \violinoTwoPart
+  >>
 }
