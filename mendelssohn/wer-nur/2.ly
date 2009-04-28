@@ -3,6 +3,7 @@
 global = {
   \key a \minor
   \time 4/4
+  \set beatLength = #(ly:make-moment 1 2)
 }
 
 violinoOne = \relative c'' {
@@ -112,7 +113,22 @@ violinoOne = \relative c'' {
   f8 e e d gis4. gis8 |
   e'8 d c b a g f e |
   a g f e d c b a |
-  
+  gis b c d e4. f8 |
+  % bar 90
+  e c e d c4 b |
+  e'8 d c b a g f e |
+  a g f e d c b a |
+  gis e fis gis a gis a b |
+  c b c d e2~ |
+  % bar 95
+  e8 e fis gis a gis a b |
+  c gis a b c b c d |
+  e d c b a g f e |
+  d2 c |
+  b a4 b |
+  c2 b |
+  a1 |
+  \bar "|."
 }
 
 violinoTwo = \relative c' {
@@ -222,8 +238,22 @@ violinoTwo = \relative c' {
   a,4. g16 a b4. e8 |
   c' b a g f e d c |
   f e d c b a gis a |
-  
-  
+  e gis a b c d e b |
+  % bar 90
+  c a c b a4 gis |
+  c'8 b a g f e d c |
+  f e d c b a gis a |
+  e2 fis8 e fis gis |
+  a2~ a8 gis a b |
+  % bar 95
+  c b c d e b e d |
+  c b c d e gis a b |
+  c b a g f e d c |
+  b a a gis a2 |
+  e4 d c d |
+  e f d2 |
+  cis1 |
+  \bar "|."
 }
 
 viola = \relative c' {
@@ -331,9 +361,25 @@ viola = \relative c' {
   % bar 85
   f e f d bes' g a cis |
   d4 b8 c d2 |
-  e,4 a e2 f2. f4 |
-  
-  
+  e,4 a e2 |
+  f2. f4 |
+  e e' e8 d c b |
+  % bar 90
+  a2 a4 e |
+  e2. e4 |
+  b'2 f |
+  e e'~ |
+  e4. d8 c d c b |
+  % bar 95
+  a gis a b c e fis gis |
+  a d, e f e f e d |
+  c1 |
+  f2 e |
+  gis, a |
+  % bar 100
+  a2. gis4 |
+  e1 |
+  \bar "|."
 }
 
 vocal = {
@@ -351,8 +397,8 @@ sop = \relative c' {
   % bar 10
   a2. gis4 |
   a b8[ c] d[ c] b4 |
-  e2\melisma d\< |
-  << c2~ { s4 s4\! } >> c8[ b]\melismaEnd a4 |
+  e2( d\< |
+  << c2~ { s4 s4\! } >> c8[ b]) a4 |
   r8 b\f e d c4 b |
   % bar 15
   a8[\< gis]\! a[ e] c'2\> |
@@ -366,8 +412,8 @@ sop = \relative c' {
   g4 b d2 |
   c4^( b8[ c] d4.) d8 |
   % bar 25
-  g,4 c8[ b] c2~\<\melisma |
-  c4\! b\melismaEnd d b |
+  g,4 c8[ b] c2~\<( |
+  c4\! b) d b |
   cis4 e2\f d8[ cis] |
   d4 r r2 |
   r8 a\f d4.( cis8 g'4 |
@@ -382,8 +428,8 @@ sop = \relative c' {
   a2. gis4 |
   % bar 40
   a b8[ c] d[ c] b4 |
-  e4\melisma a,2 gis4 |
-  a8[^\markup\italic { cresc. } b c a] dis2\melismaEnd |
+  e4( a,2 gis4 |
+  a8[^\markup\italic { cresc. } b c a] dis2) |
   e8 b\f e d c4 b |
   a8[ gis] a[ e] c'2 |
   % bar 45
@@ -398,10 +444,61 @@ sop = \relative c' {
   % bar 55
   d4 r r2 |
   R1 |
-  a2 b4 d c8[ b] b[ a] dis4. dis8 |
+  a2 b4 d |
+  c8[ b] b[ a] dis4. dis8 |
   e4 r r a, |
-  
-  
+  % bar 60
+  d( f4.) f8 e d |
+  c4( b8[ a] d4 c8[ b] |
+  e4 dis8[ e] fis4.) b,8 |
+  b4 e2 a,4 |
+  a( d4. c8) c[ b] |
+  % bar 65
+  c4( f4. e8) e[ d] |
+  e4( a2 g8[ fis]) |
+  e2. d8[ c] |
+  b8[ a] a[ gis] c4. c8 |
+  a4 r r2 |
+  % bar 70
+  r4 g c bes |
+  a2( bes8[ c]) d[ e] |
+  f2~ f8[ e] e[ d] |
+  c4 r r2 |
+  d e4 g |
+  % bar 75
+  f8[ e] e[ d] d4. g,8 |
+  c4 r r2 |
+  R1 |
+  r8 g c d es[ d] c[ d] |
+  bes4 g cis2 |
+  % bar 80
+  d2 d8[ c] b4 |
+  e8[( d] c2) b8[ a] |
+  gis[ b] d[ e] f[ e] d[ e] |
+  c r a4 dis4. dis8 |
+  e4 g cis,4. cis8 |
+  % bar 85
+  d4 r r2 |
+  R1 |
+  r4 e, a2~ |
+  a8 r a4 f'4. a,8 |
+  gis b c d e4. f8 |
+  % bar 90
+  e[ c] e[ d] c4 b |
+  a4 e a2~ |
+  a8 r a4 f'4. a,8 |
+  gis8[( e fis gis] a[ gis a b]) |
+  c[ b c d] e2~ |
+  % bar 95
+  e1~ |
+  e2 r |
+  e1 |
+  d2 c |
+  b a4( b) |
+  % bar 100
+  c2 b |
+  a1 |
+  \bar "|."
 }
 
 alt = \relative c' {
@@ -415,9 +512,9 @@ alt = \relative c' {
   e r r2 |
   r4 a a gis\< |
   a8[ gis]\! a4 fis4. fis8 |
-  b2~\f\melisma b8 a4 gis8 |
+  b2~\f( b8 a4 gis8 |
   % bar 15
-  a4 e dis8[\> e fis a]\melismaEnd |
+  a4 e dis8[\> e fis a]) |
   gis4\! r r2
   R1*3 |
   % bar 20
@@ -461,7 +558,56 @@ alt = \relative c' {
   a'4 r r2 |
   R1 |
   e2 e4 g |
-  
+  % bar 60
+  f8[ e] e[ d] gis4. gis8 |
+  a4 r r e |
+  a( c4.) c8 b a |
+  gis4( e8[ f] g4 f8[ e] |
+  a4 gis8[ a] b4.) e,8 |
+  % bar 65
+  e4 a4.( g8) g[ f] |
+  e4 r r2 |
+  e2 fis4 a |
+  gis8[ fis] fis[ e] a4. a8 |
+  fis[ e] e[ d] g4. g8|
+  % bar 70
+  e([ c d e] f[ e f g] |
+  a[ g f e] d4) g |
+  c,4 r r2 |
+  g'2 a4 c |
+  bes8[ a] a[ g] c4. bes8 |
+  % bar 75
+  a2~ a8[ g] g[ f] |
+  c'4 bes a g8[ f] |
+  b4( c8[ d] f,4 g8[ as] |
+  g4) c, c' r |
+  r8 d,8 g a bes[ a] g[ a] |
+  % bar 80
+  f4 d gis2 |
+  a2 a8[ g] fis4 |
+  b8[ a] gis4 d'4. gis,8 |
+  a r e4 fis4. fis8 |
+  g4 bes e, r |
+  % bar 85
+  d2 e4 g |
+  f8[ e] e[ d] gis4. gis8 |
+  a4 c, e( a8[ g] |
+  f4) d'8[ c] b4 a |
+  e8 gis a b a[ b] c[ d] |
+  % bar 90
+  c4. b8 a4. gis8 |
+  a4 r r2 |
+  r4 d, b'4. a8 |
+  b4. e,8 fis[( e fis gis] |
+  a2~ a8[ gis a b] |
+  % bar 95
+  c4) a e2~( |
+  e8[ d c b] c[ d] e4) |
+  a1 |
+  a4( gis) a2 |
+  e4( d) c( d) |
+  e( f) d2 |
+  cis1 |
 }
 
 ten = \relative c' {
@@ -476,7 +622,7 @@ ten = \relative c' {
   e4 a,\! r2 |
   e'4\f b r8 e, e' d |
   % bar 15
-  c[\< b] a[\! g] fis[\>\melisma e] dis4\melismaEnd |
+  c[\< b] a[\! g] fis[\>( e] dis4) |
   e4\! r r2 |
   R1*4 |
   % bar 21
@@ -502,7 +648,7 @@ ten = \relative c' {
   e8[( g f e] d[ c]) d4 |
   c8[^\markup\italic { cresc. } d] e[ c] b4 r |
   e4\f b r8 e, e' d |
-  c[ b] c[ a] fis'[\melisma e] dis4\melismaEnd |
+  c[ b] c[ a] fis'[( e] dis4) |
   % bar 45
   e4 r r2 |
   R1* 4 |
@@ -591,8 +737,20 @@ sopText = \lyricmode {
   in al -- lem Kreuz.
   
   Wer Gott dem Al -- ler -- höch -- sten traut,
-  wer
+  wer Gott __ dem Al -- ler -- höch -- sten traut,
+  Gott dem Al -- ler -- höch -- sten traut, __
+  Gott dem Al -- ler -- höch -- sten traut,
+  wer Gott dem Al -- ler -- höch -- sten traut,
+  wer Gott dem Al -- ler -- höch -- sten traut,
   
+  der hat auf kei -- nen Sand ge -- baut, 
+  der hat auf kei -- nen, kei -- nen Sand ge -- baut, 
+  der hat auf kei -- nen Sand ge -- baut.
+  
+  Wer Gott, __ wer Gott ver -- traut,
+  der hat auf kei -- nen, kei -- nen Sand ge -- baut.
+  Wer Gott dem Al -- ler -- höch -- sten __ traut, __
+  der hat auf kei -- nen Sand ge -- baut.
 }
 
 altText = \lyricmode {
@@ -613,7 +771,23 @@ altText = \lyricmode {
   in al -- lem Kreuz,
   al -- lem Kreuz und Trau -- rig -- keit.
   
-  Wer Gott dem
+  Wer Gott dem Al -- ler -- höch -- sten traut,
+  wer Gott dem Al -- ler -- höch -- sten traut,
+  Gott ver -- traut,
+  wer Gott dem Al -- ler -- höch -- sten traut,
+  dem Al -- ler -- höch -- sten traut,
+  wer Gott dem Al -- ler -- höch -- sten traut, __
+  wer Gott dem Al -- ler -- höch -- sten traut,
+  
+  der hat auf kei -- nen Sand ge -- baut,
+  der hat auf kei -- nen Sand ge -- baut,
+  auf kei -- nen Sand ge -- baut.
+  
+  Wer Gott dem Al -- ler -- höch -- sten traut,
+  dem Al -- ler -- höch -- sten traut,
+  der hat auf kei -- nen, kei -- nen Sand ge -- baut.
+  Wer Gott dem Al -- ler -- höch -- sten traut, __
+  der hat auf kei -- nen Sand ge -- baut.
 }
 
 tenText = \lyricmode {
