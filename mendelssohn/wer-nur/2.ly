@@ -663,8 +663,56 @@ ten = \relative c' {
   f[ g] f[ e] d[ c] b4 |
   c4 r r2 |
   R1*3 |
-  
-  
+  % bar 61
+  a2 b4 d |
+  c8[ b] b[ a] dis4. dis8 |
+  e4 r e, g |
+  f8[ e] e[ d] gis4. gis8 |
+  % bar 65
+  a[ g] g[ f] b4. b8 |
+  c[ b] b[ a] dis2( |
+  e8[ d c b] a4 d~ |
+  d) d c8[ b] b[ a] |
+  c4. c8 b[ a] a[ g] |
+  % bar 70
+  bes2( a8[ g f e] |
+  f4) r r2 |
+  c'2 d4 f |
+  e8[ d] d[ c] fis4. fis8 |
+  g4. f8 e[ d] d[ c] |
+  % bar 75
+  c4( f4. e8) e[ d] |
+  g4 e c8[ bes] bes[ a] |
+  f'4. d8 b4. b8 |
+  c[ bes] a[ g] fis4. fis8 |
+  g4 r r2 |
+  % bar 80
+  r8 a d e f[ e] d[ e] |
+  c4 a dis2 |
+  e4( b) gis e |
+  a4 a8[ b] c[ b] a[ b] |
+  g4 g8[ a] bes[ a] g[ a] |
+  % bar 85
+  f[ e] f[ d] g4 a |
+  d8 a d e f[ e] d[ e] |
+  a,2. a4 |
+  b2. b4 |
+  e, e'8[ d] c[ b] a[ gis] |
+  % bar 90
+  a4 f' e e, |
+  a2. a4 |
+  f'2 d4( b) |
+  e4.( d8) c[ d c b] |
+  a[ gis a b] c[ b c d] |
+  % bar 95
+  e2.~( e8[ d] |
+  c[ b a gis] a4 e) |
+  c'1 |
+  f2 e |
+  gis, a |
+  % bar 100
+  a2. gis4 |
+  a1 |
 }
 
 bas = \relative c {
@@ -715,7 +763,22 @@ bas = \relative c {
   a1~ |
   a4 r r2 |
   R1*8 |
-  
+  % bar 66
+  r2 b, |
+  c d |
+  e e |
+  d d |
+  % bar 70
+  \repeat unfold 8 c1~ |
+  c4 r r2 |
+  % bar 79
+  R1*18 |
+  % bar 97
+  a1 |
+  b2 c4( d) |
+  e2 f |
+  e4( d) e2 |
+  a,1 |
 }
 
 sopText = \lyricmode {
@@ -749,7 +812,7 @@ sopText = \lyricmode {
   
   Wer Gott, __ wer Gott ver -- traut,
   der hat auf kei -- nen, kei -- nen Sand ge -- baut.
-  Wer Gott dem Al -- ler -- höch -- sten __ traut, __
+  Wer Gott __ dem Al -- ler -- höch -- sten __ traut, __
   der hat auf kei -- nen Sand ge -- baut.
 }
 
@@ -765,7 +828,7 @@ altText = \lyricmode {
 
   den wird er wun -- der -- bar er -- hal -- ten,
   wird er wun -- der -- bar er -- hal -- ten,
-  den wird __ er wun -- der -- bar er -- hal -- ten,
+  den wird er wun -- der -- bar er -- hal -- ten,
   
   in al -- lem Kreuz und Trau -- rig -- keit,
   in al -- lem Kreuz,
@@ -773,7 +836,7 @@ altText = \lyricmode {
   
   Wer Gott dem Al -- ler -- höch -- sten traut,
   wer Gott dem Al -- ler -- höch -- sten traut,
-  Gott ver -- traut,
+  Gott __ ver -- traut,
   wer Gott dem Al -- ler -- höch -- sten traut,
   dem Al -- ler -- höch -- sten traut,
   wer Gott dem Al -- ler -- höch -- sten traut, __
@@ -808,6 +871,22 @@ tenText = \lyricmode {
   in al -- lem Kreuz,
   al -- lem Kreuz und Trau -- rig -- keit.
 
+  Wer Gott dem Al -- ler -- höch -- sten traut,
+  Gott dem Al -- ler -- höch -- sten traut,
+  wer Gott dem Al -- ler -- höch -- sten,
+  Gott dem Al -- ler -- höch -- sten traut, __
+  wer Gott dem Al -- ler -- höch -- sten traut,
+  dem Al -- ler -- höch -- sten traut,
+  wer Gott dem Al -- ler -- höch -- sten traut,
+  wer Gott ver -- traut,
+  
+  der hat auf kei -- nen Sand ge -- baut,
+  der __ hat auf kei -- nen Sand ge -- baut,
+  der hat auf kei -- nen Sand ge -- baut,
+  der hat auf kei -- nen Sand, auf kei -- nen Sand,
+  der hat auf kei -- nen Sand ge -- baut.
+  Wer Gott dem __ Al -- ler -- höch -- sten __ traut, __
+  der hat auf kei -- nen Sand ge -- baut.
 }
 
 basText = \lyricmode {
@@ -815,7 +894,8 @@ basText = \lyricmode {
   und hof -- fet auf ihn al -- le -- zeit, __
   den wird er wun -- der -- bar er -- hal -- ten, __
   in al -- lem Kreuz und Trau -- rig -- keit. __
-
+  Wer Gott dem Al -- ler -- höch -- sten traut, __
+  der hat auf kei -- nen Sand ge -- baut.
 }
 
 
