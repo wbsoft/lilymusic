@@ -59,13 +59,15 @@ tempoMark = #(define-music-function (parser location text) (string?)
 globalOne = {
   \time 4/4
   \key bes \major
-  \tempoMark #"Vivace"
+  \tempoMark #"Allegretto"
   \partial 8
   % keep 32nd notes in their beams
   #(revert-auto-beam-setting '(end 1 32 4 4) 1 8)
   #(revert-auto-beam-setting '(end 1 32 4 4) 3 8)
   #(revert-auto-beam-setting '(end 1 32 4 4) 5 8)
   #(revert-auto-beam-setting '(end 1 32 4 4) 7 8)
+  
+  #(set-accidental-style 'modern)
 }
 
 globalTwo = {
@@ -114,7 +116,7 @@ violinoOne = \relative c'' {
   R1 |
   r2 g'8.\prall f32( es) d8 c |
   bes32( g'16.) bes,32( g16.) a16( es') c( a) g32( bes16.) d32( g16.) d16( bes) g( bes) |
-  d,16 d d d g' g g g fis fis fis fis g g g g |
+  es,16 es es es g' g g g fis fis fis fis g g g g |
   g g g g fis fis fis fis g g, g32( a bes16) bes g bes32( c d16) |
   % bar 30
   d bes g32( a bes16) bes g d' g g4 r |
@@ -526,8 +528,18 @@ continuoPart = \new Staff \with {
 
 \score {
   <<
-    \violinoOnePart
+%     \violinoOnePart
 %     \violinoTwoPart
-%     \continuoPart
+    \continuoPart
   >>
+  \layout {
+    
+  }
+  \midi {
+    \context {
+      \Score
+      tempoWholesPerMinute = #(ly:make-moment 120 4)
+    }
+  }
+  
 }
