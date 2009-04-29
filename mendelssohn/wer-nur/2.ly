@@ -283,7 +283,7 @@ viola = \relative c' {
   % bar 20
   g'4 f8 e f b e,4 |
   g f8 e a2 |
-  fis8 a g b f2 |
+  fis8 a g b fis2 |
   r8 b dis e d,2 |
   e4 c2 d4~ |
   % bar 25
@@ -380,6 +380,83 @@ viola = \relative c' {
   a2. gis4 |
   e1 |
   \bar "|."
+}
+
+basso = \relative c {
+  \global
+  R1*9 |
+  % bar 10
+  r2 e\p |
+  a b |
+  c b |
+  a b |
+  gis e~\< |
+  % bar 15
+  << e1~\! { s4. s\> } >> |
+  e4\! r r2 |
+  R1*6 |
+  r2 g\p |
+  g f |
+  % bar 25
+  e a |
+  a gis |
+  a a,~ |
+  a1~ |
+  a~ |
+  % bar 30
+  a~ |
+  a4 r r2 |
+  R1*7 |
+  % bar 39
+  r2 e'\p |
+  % bar 40
+  a b |
+  c b |
+  a b |
+  gis e~ |
+  e1~ |
+  % bar 45
+  e4 r r2 |
+  R1*4 |
+  % bar 50
+  r2 g\p |
+  g f |
+  e a |
+  a gis |
+  a a,~ |
+  % bar 55
+  a1~ |
+  a~ |
+  a4 r r2 |
+  R1*8 |
+  % bar 66
+  r2 b |
+  c d |
+  e e |
+  d d |
+  % bar 70
+  \repeat unfold 8 c1~ |
+  c4 r r2 |
+  % bar 79
+  R1*8 |
+  % bar 87
+  c2. c4 |
+  d2. d4 |
+  e e'8 d c b a gis |
+  % bar 90
+  a4 d, e d |
+  c2. c4 |
+  d2. d4 |
+  e r r2 |
+  R1 |
+  % bar 95
+  r2 r8 d' c b |
+  a f e d c d c b |
+  a1 |
+  b2 c4( d) |
+  e2 f |
+  e4( d) e2 |
+  a,1 |
 }
 
 vocal = {
@@ -898,8 +975,44 @@ basText = \lyricmode {
   der hat auf kei -- nen Sand ge -- baut.
 }
 
+organUpperOne = {
+  \voiceOne
+  s1*21
+  % bar 22: short swap
+  \voiceTwo s2 \voiceOne
+}
 
-\score {
+organUpperTwo = {
+  \voiceTwo
+  s1*11
+  % bar 12: swap voices
+  \change Staff = "lh" \oneVoice s1*2 s4.
+  \change Staff = "rh" \voiceTwo s8 s2 |
+  s1*5 |
+  % bar 20: also
+  \change Staff = "lh" \oneVoice s2.
+  \change Staff = "rh" \voiceTwo s4 |
+  s1
+  % bar 22: short swap
+  \voiceOne s2 \voiceTwo
+}
+
+organLower = {
+  \oneVoice 
+  s1*11
+  % bar 12: swap voices
+  \change Staff = "rh" \voiceTwo s1*2 s4.
+  \change Staff = "lh" \oneVoice s8 s2 |
+  s1*5 |
+  % bar 20: also
+  \change Staff = "rh" \voiceTwo s2.
+  \change Staff = "lh" \oneVoice s4 |
+  
+}
+
+
+
+%{\score {
   <<
     \new StaffGroup <<
       \new GrandStaff <<
@@ -928,14 +1041,28 @@ basText = \lyricmode {
       } \new Voice = "ten" { \clef "treble_8" \ten }
       \new Lyrics \lyricsto "ten" \tenText
       \new Staff \with {
-        instrumentName = \markup {
-          \override #'(baseline-skip . 2.5)
-          \column {
-            Basso Violoncello "e Basso"
-          }
-        }
+        instrumentName = #"Basso"
       } \new Voice = "bas" { \clef bass \bas }
       \new Lyrics \lyricsto "bas" \basText
     >>
+    \new Staff \with {
+      instrumentName = #"Violoncello e Basso"
+    } { \clef bass \basso }
+  >>
+%}
+
+% organ part:
+\score {
+  <<
+    \new PianoStaff <<
+      \new Staff = "rh" <<
+        \new Voice << \violinoOne \organUpperOne >>
+        \new Voice << \violinoTwo \organUpperTwo >>
+      >>
+      \new Staff = "lh" \new Voice {
+        \clef bass << \viola \organLower >>
+      }
+    >>
+    \new Staff { \clef bass \basso }
   >>
 }

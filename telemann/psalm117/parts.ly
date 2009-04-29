@@ -507,6 +507,271 @@ continuo = \relative c {
   \bar "|."
 }
 
+sop = \relative c'' {
+  \globalOne
+  r8 |
+  R1*9 |
+  % bar 10
+  r2 r4 r8 bes |
+  bes( d16 c) bes8 bes bes( d16 c bes8) bes |
+  g' f es4 d r |
+  R1 |
+  d8 c bes4 a c8 es |
+  % bar 15
+  d( bes c) es d16( c) d8 d f |
+  e( c d) f e16( d) e8 g e |
+  f4 f f f |
+  f8 d e4 f c8 a |
+  d4 c bes d |
+  % bar 20
+  e8 f e4 f r|
+  R1 |
+  r2 g8.( f32 es d8) c |
+  bes16( d c es d8) c bes4( a16 g) a8 |
+  g g16 a bes8 bes a a16 bes c8 c |
+  % bar 25
+  c r r4 r2 |
+  r g'8.( f32 es d8) c |
+  bes4( a16 g) a8 g4 d'~ |
+  d c fis g |
+  g fis g r |
+  % bar 30
+  R1 |
+  \bar "||"
+  \globalTwo
+  r2 bes, bes |
+  c4 c8 c c2 c |
+  bes2 bes bes |
+  as4( f') f( d) d bes |
+  % bar 35
+  bes2 bes4 bes as2 |
+  g1 bes2 |
+  b4 b b2 b( |
+  c) c d |
+  es d c |
+  % bar 40
+  c r r |
+  des4 des des2 des |
+  des( bes) c |
+  des( bes1) |
+  as r2 |
+  % bar 45
+  r bes bes |
+  c4 c8 c c2 c |
+  bes bes bes |
+  a4( c) c( es) es g |
+  f2. d8 bes e2 |
+  % bar 50
+  d1 d2 |
+  es4 es bes2 des |
+  c c d |
+  es d1 |
+  es r2 |
+  % bar 55
+  R1*6 |
+  \bar "||"
+  \globalThree
+  bes2 d |
+  f1 |
+  bes,2 r |
+  R1 |
+  % bar 65
+  r2 es~ |
+  es d |
+  c2.( es4) |
+  d d8 d d4( c8 bes) |
+  c4 es8 es es4( d8 c) |
+  % bar 70
+  d4 d8 d d4( c8 bes) |
+  c2 r |
+  R1*6 |
+  % bar 78
+  r4 a8 a a4( g8 f) |
+  g4 bes8 bes bes4( a8 g) |
+  % bar 80
+  a4 c8 c c4( bes8 a) |
+  bes4 d g2~\melisma |
+  g f~ |
+  f es~ |
+  es d~ |
+  % bar 85
+  d c~ |
+  c bes\melismaEnd |
+  a1 |
+  g2 r |
+  R1 |
+  % bar 90
+  r4 d'8 d d4( c8 bes) |
+  c4 es8 es es4( d8 c) |
+  d2 r |
+  c es |
+  g1 |
+  % bar 95
+  as,2 c |
+  es1( |
+  f,2 a) |
+  c1~( |
+  c2 b) |
+  % bar 100
+  c4 g'8 g g4( f8 e) |
+  f2 r |
+  r4 f8 f f4( es8 d) |
+  es2 r |
+  d1 |
+  % bar 105
+  c |
+  bes( |
+  a) |
+  g |
+  f2 bes~ |
+  % bar 110
+  bes a |
+  bes4 d8 d d4( c8 bes) |
+  c4 es8 es es4( d8 c) |
+  d4 d8 d d4( c8 bes) |
+  c2 r |
+  % bar 115
+  bes d |
+  f1 |
+  bes,2 bes4 d |
+  f1 |
+  bes,2 r |
+  \bar "|."
+}
+
+alt = \relative c'' {
+  \globalOne
+  r8 |
+  R1*11 |
+  % bar 12
+  bes8 bes bes( a) bes4 r8 f |
+  f( a16 g) f8 f f( a16 g f8) f |
+  f f f( e) f4 f8 f |
+  % bar 15
+  f4 f f8 f f g |
+  g4 g g8 g c c |
+  c( bes a) d c( bes a) d |
+  c bes g4 a a8 f |
+  f4 f g g |
+  % bar 20
+  g8 a bes4 a r |
+  R1 |
+  r2 g4. fis8 |
+  g4 g g( fis8) fis |
+  g g16 fis g8 g f f16 g a8 a |
+  % bar 25
+  a r r4 r2 |
+  r g4 g |
+  g( fis8) fis g4 r |
+  es'2. d4 |
+  a a bes r |
+  % bar 30
+  R1 |
+  \bar "||"
+  \globalTwo
+  r2 g g |
+  as4 as8 as as2 as |
+  g g g |
+  f4 as as2 as |
+  % bar 35
+  g g4 g f2~ |
+  f es es |
+  as4 as as2 as |
+  g g as |
+  g g1 |
+  % bar 40
+  g2 r r |
+  f4 f f2 f |
+  g( bes) as |
+  bes( g bes) |
+  as es es |
+  % bar 45
+  f4 f8 f f2 es |
+  es4 es8 es as2 es |
+  es es e |
+  f4 a a2 c |
+  bes2. bes8 bes a2 |
+  % bar 50
+  bes1 bes2 |
+  bes4 bes bes2 bes |
+  as as as |
+  g f( as) |
+  g1 r2 |
+  % bar 55
+  R1*6 |
+  \bar "||"
+  \globalThree
+  R1*2 |
+  g2 bes |
+  d1 |
+  % bar 65
+  g,2. g4 |
+  a2 bes(~ |
+  bes a |
+  bes4 bes8 bes bes4( a8 g) |
+  a4 a8 a a4( bes8 c) |
+  % bar 70
+  bes4 bes8 bes bes2 |
+  a r |
+  R1*6 |
+  % bar 78
+  r4 f8 f f4( e8 d) |
+  e4 g8 g g4( f8 e) |
+  % bar 80
+  f4 a8 a a4( g8 fis) |
+  g1 |
+  a |
+  g |
+  f( |
+  % bar 85
+  es) |
+  d4 d g2~ |
+  g fis |
+  g r |
+  R1 |
+  % bar 90
+  r4 bes8 bes bes4( a8 g) |
+  a4 c8 c c4( bes8 a) |
+  bes2 r |
+  r c4 c |
+  des( des8 c des4 es8 des |
+  % bar 95
+  c4 c8 bes c4 as) |
+  bes2 bes4 bes |
+  a( a8 g f4 a |
+  g g8 f g4 as8 g) |
+  f4 f8 g f( es d f) |
+  
+}
+
+sopText = \lyricmode {
+  Lau -- da -- te Je -- ho -- vam, om -- nes gen -- tes!
+  om -- nes gen -- tes,
+  om -- nes, om -- nes gen -- tes,
+  om -- nes, om -- nes gen -- tes,
+  om -- nes gen -- tes,
+  om -- nes, om -- nes gen -- tes,
+  om -- nes gen -- tes,
+  om -- nes, om -- nes gen -- tes.
+  
+  om -- nes, om -- nes po -- pu -- li,
+  om -- nes po -- pu -- li,
+  om -- nes po -- pu -- li,
+  om -- nes po -- pu -- li,
+  om -- nes, om -- nes po -- pu -- li!
+  
+  Qui -- a va -- li -- da fac -- ta est
+  su -- per nos mi -- se -- ri -- cor -- di -- a e -- jus,
+  et ve -- ri -- tas Do -- mi -- ni in æ -- ter -- num,
+  in æ -- ter -- num, in __ æ -- ter -- num.
+  Qui -- a va -- li -- da fac -- ta est
+  su -- per nos mi -- se -- ri -- cor -- di -- a e -- jus,
+  et ve -- ri -- tas Do -- mi -- ni in æ -- ter -- num.
+  
+  Al -- le -- lu -- ia,
+  \repeat unfold 20 { al -- le -- lu -- ia, }
+  al -- le -- lu -- ia.
+}
 
 
 violinoOnePart = \new Staff \with {
@@ -524,13 +789,18 @@ continuoPart = \new Staff \with {
   \continuo
 }
 
-
+choirPart = \new ChoirStaff <<
+  \new Staff \new Voice = "sop" \sop
+%   \new Lyrics \lyricsto "sop" \sopText
+  \new Staff \new Voice = "alt" \alt
+>>
 
 \score {
   <<
 %     \violinoOnePart
 %     \violinoTwoPart
-    \continuoPart
+    %     \continuoPart
+    \choirPart
   >>
   \layout {
     
