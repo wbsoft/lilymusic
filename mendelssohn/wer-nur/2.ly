@@ -1067,86 +1067,84 @@ organLower = {
 }
 
 
+#(define-public (define-music-event-filter names)
+  (define-music-function (parser location music) (ly:music?)
+    (music-filter
+      (lambda (event) (not (member (ly:music-property event 'name) names)))
+      music)))
 
-%{\score {
-  <<
-    \new StaffGroup <<
-      \new GrandStaff <<
-        \new Staff \with {
-          instrumentName = #"Violino I"
-        } \violinoOne
-        \new Staff \with {
-          instrumentName = #"Violino II"
-        } \violinoTwo
-      >>
-      \new Staff \with {
-        instrumentName = #"Viola"
-      } { \clef alto \viola }
-    >>
-    \new ChoirStaff <<
-      \new Staff \with {
-        instrumentName = #"Soprano"
-      } \new Voice = "sop" \sop
-      \new Lyrics \lyricsto "sop" \sopText
-      \new Staff \with {
-        instrumentName = #"Alto"
-      } \new Voice = "alt" \alt
-      \new Lyrics \lyricsto "alt" \altText
-      \new Staff \with {
-        instrumentName = #"Tenore"
-      } \new Voice = "ten" { \clef "treble_8" \ten }
-      \new Lyrics \lyricsto "ten" \tenText
-      \new Staff \with {
-        instrumentName = #"Basso"
-      } \new Voice = "bas" { \clef bass \bas }
-      \new Lyrics \lyricsto "bas" \basText
-    >>
+filterdynamics = #(define-music-event-filter 
+  '(AbsoluteDynamicEvent CrescendoEvent DecrescendoEvent TextScriptEvent))
+
+stringPart = \new StaffGroup <<
+  \new GrandStaff <<
     \new Staff \with {
-      instrumentName = #"Violoncello e Basso"
-    } { \clef bass \basso }
+      instrumentName = #"Violino I"
+    } \violinoOne
+    \new Staff \with {
+      instrumentName = #"Violino II"
+    } \violinoTwo
   >>
-%}
+  \new Staff \with {
+    instrumentName = #"Viola"
+  } { \clef alto \viola }
+>>
 
+choirPart = \new ChoirStaff <<
+  \new Staff \with {
+    instrumentName = #"Soprano"
+  } \new Voice = "sop" \sop
+  \new Lyrics \lyricsto "sop" \sopText
+  \new Staff \with {
+    instrumentName = #"Alto"
+  } \new Voice = "alt" \alt
+  \new Lyrics \lyricsto "alt" \altText
+  \new Staff \with {
+    instrumentName = #"Tenore"
+  } \new Voice = "ten" { \clef "treble_8" \ten }
+  \new Lyrics \lyricsto "ten" \tenText
+  \new Staff \with {
+    instrumentName = #"Basso"
+  } \new Voice = "bas" { \clef bass \bas }
+  \new Lyrics \lyricsto "bas" \basText
+>>
 
-#(define (filterOneEvent event)
-  (let ((eventname (ly:music-property  event 'name)))
-   (not (member eventname '(
-     AbsoluteDynamicEvent
-     CrescendoEvent
-     DecrescendoEvent
-     TextScriptEvent
-     )))))
+bassPart = \new Staff \with {
+  instrumentName = #"Violoncello e Basso"
+} { \clef bass \basso }
 
-filtermusic = #(define-music-function
-  (parser location music) (ly:music?)
-  (music-filter filterOneEvent music)
-)
+organPart = <<
+  \new PianoStaff \with {
+    instrumentName = #"Organo"
+  } <<
+    \new Staff = "rh" <<
+      \new Voice <<
+        \filterdynamics \violinoOne
+        \organUpperOne
+      >>
+      \new Voice <<
+        \filterdynamics \violinoTwo
+        \organUpperTwo
+      >>
+    >>
+    \new Staff = "lh" \new Voice {
+      \clef bass <<
+        \filterdynamics \viola 
+        \organLower
+      >>
+    }
+  >>
+  \new Staff {
+    \clef bass
+    \filterdynamics \basso
+  }
+>>
 
-
-% organ part:
 \score {
   <<
-    \new PianoStaff <<
-      \new Staff = "rh" <<
-        \new Voice <<
-          \filtermusic \violinoOne
-          \organUpperOne
-        >>
-        \new Voice <<
-          \filtermusic \violinoTwo
-          \organUpperTwo
-        >>
-      >>
-      \new Staff = "lh" \new Voice {
-        \clef bass <<
-          \filtermusic \viola 
-          \organLower
-        >>
-      }
-    >>
-    \new Staff {
-      \clef bass
-      \filtermusic \basso
-    }
+    \stringPart
+    \choirPart
+    \bassPart
+    \organPart
   >>
 }
