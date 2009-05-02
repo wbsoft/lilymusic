@@ -199,7 +199,7 @@ violinoTwo = \relative c' {
   a4 bes2\f a8 g |
   % bar 55
   a f' e d cis g' f e |
-  d bes\< a g f e\> g4 |
+  d bes\< a g f e\> gis4 |
   a4\! r8 e f4 r8 b_\markup \italic { dim. } |
   a e a4. gis8 gis fis |
   e4 r8 gis a4 r8 cis |
@@ -975,39 +975,95 @@ basText = \lyricmode {
   der hat auf kei -- nen Sand ge -- baut.
 }
 
+rh = \change Staff = "rh"
+lh = \change Staff = "lh"
+
 organUpperOne = {
   \voiceOne
   s1*21
   % bar 22: short swap
-  \voiceTwo s2 \voiceOne
+  \voiceTwo s2 \voiceOne s2
+  s1*18 |
+  % bar 41: swap for one measure
+  \voiceTwo s1 \voiceOne |
+  s1 |
+  % bar 43: go to lh
+  \lh \oneVoice s4 \rh \voiceTwo s4 \voiceOne s2 |
+  s1*38 |
+  % bar 82: swap for 4.5 beats
+  \voiceTwo s1 | s8 \voiceOne s2.. |
+  
 }
 
 organUpperTwo = {
   \voiceTwo
   s1*11
   % bar 12: swap voices
-  \change Staff = "lh" \oneVoice s1*2 s4.
-  \change Staff = "rh" \voiceTwo s8 s2 |
+  \lh \oneVoice
+  s2. \clef treble s4 |
+  s1 \clef bass |
+  s4.
+  \rh \voiceTwo s8 s2 |
   s1*5 |
   % bar 20: also
-  \change Staff = "lh" \oneVoice s2.
-  \change Staff = "rh" \voiceTwo s4 |
-  s1
+  \lh \oneVoice s2.
+  \rh \voiceTwo s4 |
+  s1 |
   % bar 22: short swap
-  \voiceOne s2 \voiceTwo
+  \voiceOne s2 \voiceTwo s2 |
+  s1*18 |
+  % bar 41: swap for one measure
+  \voiceOne s1 \voiceTwo |
+  s1 |
+  % bar 43:2: go to lh
+  \voiceOne s4 \lh \oneVoice s2. \rh \voiceTwo | 
+  s1*38 |
+  % bar 82: swap for 4.5 beats
+  \voiceOne s1 | s8 \voiceTwo s2.. |
+  
+  
 }
 
 organLower = {
   \oneVoice 
   s1*11
   % bar 12: swap voices
-  \change Staff = "rh" \voiceTwo s1*2 s4.
-  \change Staff = "lh" \oneVoice s8 s2 |
+  \rh \voiceTwo s1*2 s4.
+  \lh \oneVoice s8 s2 |
   s1*5 |
-  % bar 20: also
-  \change Staff = "rh" \voiceTwo s2.
-  \change Staff = "lh" \oneVoice s4 |
-  
+  % bar 20: also, and change clef
+  \clef treble
+  \rh \voiceTwo s2.
+  \lh \oneVoice s4 |
+  s1*10 |
+  % bar 31: back to bass clef
+  s2. \clef bass s4 |
+  s1*6 |
+  % bar 38: treble
+  s4 \clef treble s2. |
+  s1*4 |
+  % bar 43: go to rh
+  \rh \voiceTwo s4 \voiceOne s \voiceTwo s2
+  \lh \oneVoice
+  s1 |
+  % bar 45:
+  s8 \clef bass s2.. |
+  s1*3 |
+  % bar 49:
+  s2. \clef treble s4 |
+  s1*6 |
+  s2 \clef bass s |
+  s1*14 |
+  % bar 71
+  s8 \clef treble s2.. |
+  s1*4 |
+  % bar 76
+  s2 \clef bass s |
+  % bar 95
+  s1*18 |
+  s2 s8 \clef treble s4. |
+  s1*3 |
+  \clef bass
 }
 
 
@@ -1051,18 +1107,46 @@ organLower = {
   >>
 %}
 
+
+#(define (filterOneEvent event)
+  (let ((eventname (ly:music-property  event 'name)))
+   (not (member eventname '(
+     AbsoluteDynamicEvent
+     CrescendoEvent
+     DecrescendoEvent
+     TextScriptEvent
+     )))))
+
+filtermusic = #(define-music-function
+  (parser location music) (ly:music?)
+  (music-filter filterOneEvent music)
+)
+
+
 % organ part:
 \score {
   <<
     \new PianoStaff <<
       \new Staff = "rh" <<
-        \new Voice << \violinoOne \organUpperOne >>
-        \new Voice << \violinoTwo \organUpperTwo >>
+        \new Voice <<
+          \filtermusic \violinoOne
+          \organUpperOne
+        >>
+        \new Voice <<
+          \filtermusic \violinoTwo
+          \organUpperTwo
+        >>
       >>
       \new Staff = "lh" \new Voice {
-        \clef bass << \viola \organLower >>
+        \clef bass <<
+          \filtermusic \viola 
+          \organLower
+        >>
       }
     >>
-    \new Staff { \clef bass \basso }
+    \new Staff {
+      \clef bass
+      \filtermusic \basso
+    }
   >>
 }
