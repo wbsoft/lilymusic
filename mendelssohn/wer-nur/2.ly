@@ -1,4 +1,7 @@
 \version "2.12.0"
+
+\include "definitions.ly"
+
 #(set-global-staff-size 16)
 global = {
   \key a \minor
@@ -975,9 +978,6 @@ basText = \lyricmode {
   der hat auf kei -- nen Sand ge -- baut.
 }
 
-rh = \change Staff = "rh"
-lh = \change Staff = "lh"
-
 organUpperOne = {
   \voiceOne
   s1*21
@@ -1108,19 +1108,6 @@ organLowerDynamics = {
   s1^\markup\italic cresc. |
 }
 
-organPedalDynamics = {
-  
-}
-
-#(define-public (define-music-event-filter names)
-  (define-music-function (parser location music) (ly:music?)
-    (music-filter
-      (lambda (event) (not (member (ly:music-property event 'name) names)))
-      music)))
-
-filterdynamics = #(define-music-event-filter 
-  '(AbsoluteDynamicEvent CrescendoEvent DecrescendoEvent TextScriptEvent))
-
 stringPart = \new StaffGroup <<
   \new GrandStaff <<
     \new Staff \with {
@@ -1182,8 +1169,7 @@ organPart = <<
   >>
   \new Staff {
     \clef bass
-    \dynamicUp
-    \basso
+    \filterdynamics \basso
   }
 >>
 
