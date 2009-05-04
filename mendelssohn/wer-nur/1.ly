@@ -1,5 +1,6 @@
 \version "2.12.1"
 #(set-global-staff-size 16)
+\include "definitions.ly"
 
 global = {
   \key a \minor
@@ -64,16 +65,16 @@ bas = \relative c {
 
 organAltChanges = {
   s1*17
-  \change Staff = "lh" \voiceOne
+  \lh \voiceOne
   s2
-  \change Staff = "rh" \voiceTwo
+  \rh \voiceTwo
 }
 
 organTenChanges = {
   s1*17
-  \change Staff = "rh" \voiceTwo
+  \rh \voiceTwo
   s2
-  \change Staff = "lh" \voiceOne
+  \lh \voiceOne
 }
 
 sopText = \lyricmode {
@@ -117,50 +118,53 @@ tenText = \lyricmode {
   }
 }
 
+choirPart = \new ChoirStaff <<
+  \new Staff \with {
+    instrumentName = \markup\column { Soprano "Violino I" }
+  } \new Voice = "sop" << \sop \fermatas \breaks >>
+  \new Lyrics \lyricsto "sop" \sopText
+
+  \new Staff \with {
+    instrumentName = \markup\column { Alto "Violino II" }
+  } \new Voice << \alt \fermatas >>
+
+  \new Staff \with {
+    instrumentName = \markup\column { Tenore Viola }
+  } \new Voice = "ten" << \clef "treble_8" \ten \fermatas >>
+  \new Lyrics \lyricsto "ten" \tenText
+
+  \new Staff \with {
+    instrumentName = \markup\column { Basso Violoncello "e Basso" }
+  } \new Voice << \clef bass \bas \fermatas >>
+>>
+
+organPart = \new PianoStaff \with {
+  instrumentName = #"Organo"
+} <<
+  \new Staff = "rh" <<
+    \new Voice \with {
+      \remove "Slur_engraver"
+    } { \voiceOne << \sop \fermatas >> }
+    \new Voice \with {
+      \remove "Slur_engraver"
+    } { \voiceTwo << \alt \organAltChanges >> }
+  >>
+  \new Staff = "lh" {
+    \clef bass <<
+      \new Voice \with {
+      \remove "Slur_engraver"
+    } { \voiceOne << \ten \organTenChanges >> }
+      \new Voice \with {
+      \remove "Slur_engraver"
+    } { \voiceTwo << \bas \fermatas >> }
+    >>
+  }
+>>
+
 
 \score {
   <<
-    \new ChoirStaff <<
-      \new Staff \with {
-        instrumentName = \markup\column { Soprano "Violino I" }
-      } \new Voice = "sop" << \sop \fermatas \breaks >>
-      \new Lyrics \lyricsto "sop" \sopText
-      
-      \new Staff \with {
-        instrumentName = \markup\column { Alto "Violino II" }
-      } \new Voice << \alt \fermatas >>
-      
-      \new Staff \with {
-        instrumentName = \markup\column { Tenore Viola }
-      } \new Voice = "ten" << \clef "treble_8" \ten \fermatas >>
-      \new Lyrics \lyricsto "ten" \tenText
-      
-      \new Staff \with {
-        instrumentName = \markup\column { Basso Violoncello "e Basso" }
-      } \new Voice << \clef bass \bas \fermatas >>
-    >>
-    
-    \new PianoStaff \with {
-      instrumentName = #"Organo"
-    } <<
-      \new Staff = "rh" <<
-        \new Voice \with {
-          \remove "Slur_engraver"
-        } { \voiceOne << \sop \fermatas >> }
-        \new Voice \with {
-          \remove "Slur_engraver"
-        } { \voiceTwo << \alt \organAltChanges >> }
-      >>
-      \new Staff = "lh" {
-        \clef bass <<
-          \new Voice \with {
-          \remove "Slur_engraver"
-        } { \voiceOne << \ten \organTenChanges >> }
-          \new Voice \with {
-          \remove "Slur_engraver"
-        } { \voiceTwo << \bas \fermatas >> }
-        >>
-      }
-    >>
+    \choirPart
+    \organPart
   >>
 }
