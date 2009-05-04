@@ -1066,6 +1066,51 @@ organLower = {
   \clef bass
 }
 
+organLowerDynamics = {
+  \dynamicUp
+  s1\p
+  s1*10 |
+  % bar 12
+  \dynamicDown
+  s2. s4\< |
+  s2 s\! |
+  s8 s\f s2. |
+  s1 |
+  \dynamicUp
+  s8 s\p s2. |
+  s1*8 |
+  s2 s\< |
+  s1\! |
+  s4 s2\f s4 |
+  s1*3
+  % bar 31
+  s8 s\p s2. |
+  s1*9 |
+  % bar 42
+  s2 s\< |
+  s s\! |
+  \dynamicDown
+  s1\f |
+  \dynamicUp
+  s1 |
+  s8 s\p s2. |
+  s1*2 |
+  s2 s\< |
+  s1\! |
+  s2 s\p |
+  s1*3 |
+  s4 s2\f s4 |
+  s1 |
+  s8 s2\< s4.\> |
+  s2\! s^\markup\italic dim. |
+  s1*7 |
+  % bar 65
+  s1^\markup\italic cresc. |
+}
+
+organPedalDynamics = {
+  
+}
 
 #(define-public (define-music-event-filter names)
   (define-music-function (parser location music) (ly:music?)
@@ -1131,19 +1176,21 @@ organPart = <<
       \clef bass <<
         \filterdynamics \viola 
         \organLower
+        \organLowerDynamics
       >>
     }
   >>
   \new Staff {
     \clef bass
-    \filterdynamics \basso
+    \dynamicUp
+    \basso
   }
 >>
 
 \score {
   <<
     \stringPart
-    \choirPart
+    %    \choirPart
     \bassPart
     \organPart
   >>
