@@ -71,12 +71,14 @@ globalOne = {
 }
 
 globalTwo = {
+  \bar "||"
   \key es \major
   \time 3/2
   \tempoMark #"Andante"
 }
 
 globalThree = {
+  \bar "||"
   \key bes \major
   \time 2/2
   \tempoMark #"Allegro"
@@ -120,7 +122,6 @@ violinoOne = \relative c'' {
   g g g g fis fis fis fis g g, g32( a bes16) bes g bes32( c d16) |
   % bar 30
   d bes g32( a bes16) bes g d' g g4 r |
-  \bar "||"
   \globalTwo
   es,8( g bes es) es( bes g es) r2 |
   es8( as c es) es( c as es) r2 |
@@ -158,7 +159,6 @@ violinoOne = \relative c'' {
   r4 as \grace g2 f1\trill |
   % bar 60
   es1. |
-  \bar "||"
   \globalThree 
   R1*7 |
   % bar 68
@@ -258,7 +258,6 @@ violinoTwo = \relative c' {
   a( a) a( a) bes16 bes, bes32( c d16) d bes g'32( a bes16) |
   % bar 30
   bes g bes32( c d16) d bes g32( a bes16) bes4 r |
-  \bar "||"
   \globalTwo 
   r2 r es8( bes g es) |
   r2 r es'8( c as es) |
@@ -296,7 +295,6 @@ violinoTwo = \relative c' {
   r4 f \grace es2 d1\trill |
   % bar 60
   es1. |
-  \bar "||"
   \globalThree 
   R1*7 |
   % bar 68
@@ -394,7 +392,6 @@ continuo = \relative c {
   c c d d g, r g r |
   % bar 30
   g g g, g g4 r |
-  \bar "||"
   \globalTwo
   es'2 es es |
   as, as as |
@@ -432,7 +429,6 @@ continuo = \relative c {
   r4 as bes2 bes, |
   % bar 60
   es,1. |
-  \bar "||"
   \globalThree
   bes''2 r |
   r4 d,8 d d4 d |
@@ -537,7 +533,6 @@ sop = \relative c'' {
   g fis g r |
   % bar 30
   R1 |
-  \bar "||"
   \globalTwo
   r2 bes, bes |
   c4 c8 c c2 c |
@@ -568,8 +563,7 @@ sop = \relative c'' {
   es d1 |
   es r2 |
   % bar 55
-  R1*6 |
-  \bar "||"
+  R1.*6 |
   \globalThree
   bes2 d |
   f1 |
@@ -667,7 +661,6 @@ alt = \relative c'' {
   a a bes r |
   % bar 30
   R1 |
-  \bar "||"
   \globalTwo
   r2 g g |
   as4 as8 as as2 as |
@@ -698,8 +691,7 @@ alt = \relative c'' {
   g f( as) |
   g1 r2 |
   % bar 55
-  R1*6 |
-  \bar "||"
+  R1.*6 |
   \globalThree
   R1*2 |
   g2 bes |
@@ -707,7 +699,7 @@ alt = \relative c'' {
   % bar 65
   g,2. g4 |
   a2 bes(~ |
-  bes a |
+  bes a) |
   bes4 bes8 bes bes4( a8 g) |
   a4 a8 a a4( bes8 c) |
   % bar 70
@@ -741,7 +733,281 @@ alt = \relative c'' {
   a( a8 g f4 a |
   g g8 f g4 as8 g) |
   f4 f8 g f( es d f) |
-  
+  % bar 100
+  e4 bes'8 bes bes4( a8 g) |
+  a2 r |
+  r4 as8 as as4( g8 f) |
+  g2 r |
+  r bes~ |
+  % bar 105
+  bes a~ |
+  a g~ |
+  g f~ |
+  f es'~ |
+  es d |
+  % bar 110
+  c1 |
+  bes4 bes8 bes bes4( a8 g) |
+  a4 c8 c c4( bes8 a) |
+  bes4 bes8 bes bes4( a8 g) |
+  a4 a2 c4 |
+  % bar 115
+  f,2 f~ |
+  f4 a2 c4 |
+  f,2 f |
+  f4 f2 f4 |
+  f2 r |
+  \bar "|."
+}
+
+ten = \relative c' {
+  \globalOne
+  r8 |
+  R1*11 |
+  % bar 12
+  es8 f g( f) f4 r |
+  R1 |
+  bes,8 c d( c) c4 c8 c |
+  % bar 15
+  bes( d c) c bes bes b d |
+  c( e d) d d c e g |
+  f4 f f f |
+  f8 f c4 c f8 c |
+  bes4 c d bes |
+  % bar 20
+  c8 c c4 c r8 a16( bes |
+  c8) c c d c16( bes a bes c8) d |
+  \appoggiatura c8 bes4 a d8( c d) es |
+  r4 d8 es d4. c8 |
+  bes4 r r r8 a16( bes |
+  % bar 25
+  c8) c c d c16( bes a bes c8) d |
+  \appoggiatura c8 bes4 a d8( c d) es |
+  d4 d d g~ |
+  g g c, d |
+  es d d r |
+  % bar 30
+  R1 |
+  \globalTwo
+  r2 es es |
+  es4 es8 es es2 es |
+  es es es |
+  bes4 bes bes2. f'4 |
+  % bar 35
+  es2 es4 bes bes2 |
+  bes1 bes2 |
+  d4 d d2 d( |
+  c) c c |
+  c b c |
+  % bar 40
+  es c4 g' f2 |
+  f f f |
+  es1 es2 |
+  f es des |
+  c c c |
+  % bar 45
+  d4 d8 d d2 bes |
+  as4 as8 as as2 as |
+  bes bes bes |
+  c4 f f2 a, |
+  a f4 f f'2 |
+  % bar 50
+  f1 f2 |
+  es4 es es2 es |
+  es es f4( f,) |
+  bes2 bes1 |
+  bes r2 |
+  % bar 55
+  R1.*6 |
+  \globalThree
+  R1*7 |
+  r4 f'8 f f2 |
+  f4 f8 f f2 |
+  % bar 70
+  f4 f8 f f4 f
+  f,2 a |
+  c1 |
+  f,2 r |
+  R1 |
+  % bar 75
+  r2 bes~ |
+  bes a |
+  g2.( bes4) |
+  a4 c8 c c2 |
+  c4 c8 c c2 |
+  % bar 80
+  c r |
+  d1 |
+  d |
+  bes~ |
+  bes |
+  % bar 85
+  g2 g~ |
+  g d'~ |
+  d c |
+  bes4 bes8 bes bes4( a8 g) |
+  a4 c8 c c4( bes8 a) |
+  % bar 90
+  bes2 r |
+  R1 |
+  r4 f'8 f f4( es8 d) |
+  es2 r |
+  bes1 |
+  % bar 95
+  es |
+  bes |
+  c |
+  es, |
+  as2 g |
+  % bar 100
+  g r |
+  r4 es'8 es es4( d8 c) |
+  d2 r |
+  r4 es8 es es4( d8) c |
+  bes2 d |
+  % bar 105
+  f1 |
+  g,2 bes( |
+  d1) |
+  es,2 g |
+  bes f'~( |
+  % bar 110
+  f es) |
+  d r |
+  f r |
+  f r |
+  r4 c8 c c4( bes8 a) |
+  % bar 115
+  bes4 bes8 bes bes4( c8 d) |
+  c4 c8 c c4( bes8 a) |
+  bes4 d8 d d4( c8 bes) |
+  c4 a bes c |
+  d2 r |
+  \bar "|."
+}
+
+bas = \relative c' {
+  \globalOne
+  r8 |
+  R1*11 |
+  % bar 12
+  es8 d c( f,) bes4 r |
+  R1 |
+  bes8 a g( c) f,4 a8 a |
+  % bar 15
+  bes4 a bes8 bes b b |
+  c4 b c8 c c bes |
+  a( d c) bes a( d c) bes |
+  a bes c4 f, f8 f |
+  bes4 a g g c8 c c4 f, r8 f16( g |
+  % bar 20
+  a8) a a bes a16( g f g a8) bes |
+  \appoggiatura a8 g4 fis bes8( c bes) a |
+  g( a bes) c d( c d) d, |
+  g4 r r r8 f16( g |
+  a8) a a bes a16( g f g a8) bes |
+  % bar 25
+  \appoggiatura a8 g4 fis bes8( a bes) c |
+  d4. c8 bes4 bes8 bes |
+  c4 c a bes |
+  c d g, r4 |
+  R1 |
+  % bar 30
+  \globalTwo
+  r2 es es |
+  as4 as8 as as2 as |
+  es es es |
+  d4 d d2 d |
+  es es4 es d2 |
+  % bar 35
+  es1 g2 |
+  f4 f f2 f |
+  es es f |
+  g1 g2 |
+  c, c'4 c a2 |
+  % bar 40
+  bes bes bes |
+  es, es as |
+  des, es1 |
+  as2 as as |
+  as4 as8 as as2 g |
+  % bar 45
+  as4 as8 as as2 as |
+  g g g |
+  f4 f f2 es |
+  d d4 d c2 |
+  bes( bes') as |
+  % bar 50
+  g4 g g2 g |
+  as as f |
+  es bes'( bes,) |
+  es1 r2 |
+  R1.*6 |
+  \globalThree
+  R1*7 |
+  r4 bes'8 bes bes2 |
+  f4 f8 f f2 |
+  % bar 70
+  bes,4 bes'8 bes bes2 |
+  f2 r |
+  R1 |
+  d2 f |
+  a1 |
+  % bar 75
+  d,2. d4 |
+  e2 f~( |
+  f e) |
+  f4 f8 f f2 |
+  c4 c'8 c c2 |
+  % bar 80
+  f,2 r4 d' |
+  g,2 bes |
+  d1 |
+  es,2 g |
+  bes1 |
+  % bar 85
+  c,2 es |
+  g1 |
+  d |
+  g4 g8 g g4( fis8 e) |
+  fis4 a8 a a4( g8 fis) |
+  % bar 90
+  g2 r |
+  R1 |
+  r4 d'8 d d4( c8 b) |
+  c2 r |
+  bes1 |
+  % bar 95
+  as |
+  g |
+  f |
+  es |
+  d2 g |
+  % bar 100
+  c, r |
+  r4 c'8 c c4( bes8 a) |
+  bes2 r |
+  r4 g8 g g4( bes8) a |
+  bes2 d |
+  % bar 105
+  f1 |
+  g,2 bes( |
+  d1) |
+  es,2 g |
+  bes1 |
+  % bar 110
+  f |
+  bes,2 r |
+  f' r |
+  bes, r |
+  r4 es8 es es4( d8 c) |
+  % bar 115
+  d4 bes'8 bes bes4( a8 g) |
+  a4 es8 es es4( d8 c) |
+  d4 bes'8 bes bes4( a8 g) |
+  a4 f g a |
+  bes2 r |
+  \bar "|."
 }
 
 sopText = \lyricmode {
@@ -753,13 +1019,11 @@ sopText = \lyricmode {
   om -- nes, om -- nes gen -- tes,
   om -- nes gen -- tes,
   om -- nes, om -- nes gen -- tes.
-  
   om -- nes, om -- nes po -- pu -- li,
   om -- nes po -- pu -- li,
   om -- nes po -- pu -- li,
   om -- nes po -- pu -- li,
   om -- nes, om -- nes po -- pu -- li!
-  
   Qui -- a va -- li -- da fac -- ta est
   su -- per nos mi -- se -- ri -- cor -- di -- a e -- jus,
   et ve -- ri -- tas Do -- mi -- ni in æ -- ter -- num,
@@ -767,12 +1031,102 @@ sopText = \lyricmode {
   Qui -- a va -- li -- da fac -- ta est
   su -- per nos mi -- se -- ri -- cor -- di -- a e -- jus,
   et ve -- ri -- tas Do -- mi -- ni in æ -- ter -- num.
-  
   Al -- le -- lu -- ia,
   \repeat unfold 20 { al -- le -- lu -- ia, }
   al -- le -- lu -- ia.
 }
 
+altText = \lyricmode {
+  om -- nes gen -- tes!
+  Lau -- da -- te Je -- ho -- vam om -- nes gen -- tes,
+  om -- nes, om -- nes gen -- tes,
+  om -- nes, om -- nes gen -- tes,
+  om -- nes gen -- tes,
+  om -- nes, om -- nes gen -- tes,
+  om -- nes gen -- tes,
+  om -- nes, om -- nes gen -- tes.
+  om -- nes, om -- nes po -- pu -- li,
+  om -- nes po -- pu -- li,
+  om -- nes po -- pu -- li,
+  om -- nes po -- pu -- li,
+  om -- nes po -- pu -- li!
+  Qui -- a va -- li -- da fac -- ta est
+  su -- per nos mi -- se -- ri -- cor -- di -- a e -- jus,
+  et ve -- ri -- tas Do -- mi -- ni in æ -- ter -- num,
+  in æ -- ter -- num, in __ æ -- ter -- num.
+  Qui -- a va -- li -- da,
+  qui -- a va -- li -- da fac -- ta est
+  su -- per nos mi -- se -- ri -- cor -- di -- a e -- jus,
+  et ve -- ri -- tas Do -- mi -- ni in æ -- ter -- num.
+  Al -- le -- lu -- ia,
+  \repeat unfold 16 { al -- le -- lu -- ia, }
+  al -- le -- lu -- ia, __
+  \repeat unfold 4 { al -- le -- lu -- ia, }
+  al -- le -- lu -- ia, __
+  al -- le -- lu -- ia,
+  al -- le -- lu -- ia.
+}
+
+tenText = \lyricmode {
+  om -- nes gen -- tes!
+  om -- nes gen -- tes,
+  om -- nes, om -- nes gen -- tes,
+  om -- nes, om -- nes gen -- tes,
+  om -- nes gen -- tes,
+  om -- nes, om -- nes gen -- tes,
+  om -- nes gen -- tes,
+  om -- nes, om -- nes gen -- tes.
+  Lau -- di -- bus ef -- fer -- te
+  om -- nes, om -- nes, 
+  om -- nes po -- pu -- li!
+  Lau -- di -- bus ef -- fer -- te
+  om -- nes,
+  om -- nes po -- pu -- li,
+  om -- nes, 
+  om -- nes po -- pu -- li!
+  Qui -- a va -- li -- da fac -- ta est
+  su -- per nos mi -- se -- ri -- cor -- di -- a e -- jus,
+  et ve -- ri -- tas Do -- mi -- ni in æ -- ter -- num,
+  in æ -- ter -- num, in æ -- ter -- num, in æ -- ter -- num.
+  Qui -- a va -- li -- da,
+  qui -- a va -- li -- da fac -- ta est
+  su -- per nos mi -- se -- ri -- cor -- di -- a e -- jus,
+  et ve -- ri -- tas Do -- mi -- ni in æ -- ter -- num.
+  Al -- le -- lu -- ia,
+  \repeat unfold 22 { al -- le -- lu -- ia, }
+  al -- le -- lu -- ia.
+}
+
+basText = \lyricmode {
+  om -- nes gen -- tes!
+  om -- nes gen -- tes,
+  om -- nes, om -- nes gen -- tes,
+  om -- nes, om -- nes gen -- tes,
+  om -- nes gen -- tes,
+  om -- nes, om -- nes gen -- tes,
+  om -- nes gen -- tes,
+  om -- nes, om -- nes gen -- tes.
+  Lau -- di -- bus ef -- fer -- te
+  om -- nes, om -- nes, 
+  om -- nes po -- pu -- li!
+  Lau -- di -- bus ef -- fer -- te
+  om -- nes,
+  om -- nes po -- pu -- li,
+  om -- nes,
+  om -- nes,
+  om -- nes po -- pu -- li!
+  Qui -- a va -- li -- da fac -- ta est
+  su -- per nos mi -- se -- ri -- cor -- di -- a e -- jus,
+  et ve -- ri -- tas Do -- mi -- ni in æ -- ter -- num,
+  in æ -- ter -- num, in æ -- ter -- num, in æ -- ter -- num.
+  Qui -- a va -- li -- da,
+  qui -- a va -- li -- da fac -- ta est
+  su -- per nos mi -- se -- ri -- cor -- di -- a e -- jus, __
+  et ve -- ri -- tas Do -- mi -- ni in æ -- ter -- num.
+  Al -- le -- lu -- ia,
+  \repeat unfold 23 { al -- le -- lu -- ia, }
+  al -- le -- lu -- ia.
+}
 
 violinoOnePart = \new Staff \with {
   instrumentName = "Violino I"
@@ -789,18 +1143,38 @@ continuoPart = \new Staff \with {
   \continuo
 }
 
+sopranoPart = \new Staff \with {
+  instrumentName = #"Soprano"
+} { \sop } \addlyrics { \sopText }
+
+altoPart = \new Staff \with {
+  instrumentName = #"Alto"
+} { \alt } \addlyrics { \altText }
+
+tenorPart = \new Staff \with {
+  instrumentName = #"Tenor"
+} { \clef "treble_8" \ten } \addlyrics { \tenText }
+
+bassPart = \new Staff \with {
+  instrumentName = #"Bass"
+} { \clef bass \bas } \addlyrics { \basText }
+
 choirPart = \new ChoirStaff <<
-  \new Staff \new Voice = "sop" \sop
-%   \new Lyrics \lyricsto "sop" \sopText
-  \new Staff \new Voice = "alt" \alt
+  \sopranoPart
+  \altoPart
+  \tenorPart
+  \bassPart
 >>
 
+#(set-global-staff-size 16)
 \score {
   <<
-%     \violinoOnePart
-%     \violinoTwoPart
-    %     \continuoPart
+    \new StaffGroup <<
+      \violinoOnePart
+      \violinoTwoPart
+    >>
     \choirPart
+    \continuoPart
   >>
   \layout {
     
