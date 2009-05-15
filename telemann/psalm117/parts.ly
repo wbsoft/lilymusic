@@ -1010,6 +1010,26 @@ bas = \relative c' {
   \bar "|."
 }
 
+organo = \relative c' {
+  \globalOne
+  <d f>8 |
+  <d f> <d f> r <d f> <d bes'> <d bes'> r <d bes'> |
+  << { g8 bes4 a8 } \\ { g f es4 } >> <d bes'>4 r8 <c g'> |
+  <c a'> <c a'> r <c a'> <f a c> <f a c> r <f c'> |
+  << { bes8 f4 bes8 } \\ { f es d4 } >> <c a'>4 <c a'>8 <f bes> |
+  % bar 5
+  <g bes>4 <f bes> <g bes>8 g16 a <g bes>8 <g c> |
+  <a c>4 <g c> <a c>8 a16 g f8 <a c> |
+  <g bes>4 << { c4 f, } \\ { f8 es d c } >> d <g bes> |
+  <d bes'>4 <c a'> <f bes>8 <f a> <f bes> <f a>|
+  << { bes4 c8 a } \\ { f8 d f4 } >> <f d'>8 <es c'> <d bes'> <es g> |
+  % bar 10
+  <d bes'>4 << a' \\ { c,8 es } >> <d bes'>4 r8 <d f> |
+  <f bes> <f bes> r <f bes> <d bes'> <d bes'> r <d bes'> |
+  
+}
+
+
 sopText = \lyricmode {
   Lau -- da -- te Je -- ho -- vam, om -- nes gen -- tes!
   om -- nes gen -- tes,
@@ -1166,15 +1186,25 @@ choirPart = \new ChoirStaff <<
   \bassPart
 >>
 
+organoPart = \new PianoStaff \with {
+  instrumentName = #"Organo"
+}  <<
+  \new Staff \with {
+    fontSize = #-3
+    \override StaffSymbol #'staff-space = #(magstep -1)
+  } \organo
+  \new Staff { \clef bass \continuo }
+>>
+
 #(set-global-staff-size 16)
 \score {
   <<
-    \new StaffGroup <<
-      \violinoOnePart
-      \violinoTwoPart
-    >>
-    \choirPart
-    \continuoPart
+%     \new StaffGroup <<
+%       \violinoOnePart
+%       \violinoTwoPart
+%     >>
+%     \choirPart
+    \organoPart
   >>
   \layout {
     
