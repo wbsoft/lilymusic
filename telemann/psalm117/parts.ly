@@ -30,6 +30,10 @@
       This edition may be freely distributed,
       edited, performed or recorded.
     }
+    \line {
+      The organ realisation and all tempo and dynamic indications
+      are editorial.
+    }
   }
   tagline = \markup {
     Engraved at
@@ -38,7 +42,6 @@
     { LilyPond \simple #(lilypond-version) (http://lilypond.org/) }
   }
 }
-
 
 \layout {
   \context {
@@ -59,7 +62,7 @@ tempoMark = #(define-music-function (parser location text) (string?)
 globalOne = {
   \time 4/4
   \key bes \major
-  \tempoMark #"Allegretto"
+  \tempoMark #"Vivace"
   \partial 8
   % keep 32nd notes in their beams
   #(revert-auto-beam-setting '(end 1 32 4 4) 1 8)
@@ -1330,11 +1333,11 @@ altoPart = \new Staff \with {
 } { \alt } \addlyrics { \altText }
 
 tenorPart = \new Staff \with {
-  instrumentName = #"Tenor"
+  instrumentName = #"Tenore"
 } { \clef "treble_8" \ten } \addlyrics { \tenText }
 
 bassPart = \new Staff \with {
-  instrumentName = #"Bass"
+  instrumentName = #"Basso"
 } { \clef bass \bas } \addlyrics { \basText }
 
 choirPart = \new ChoirStaff <<
@@ -1355,24 +1358,4 @@ organoPart = \new PianoStaff \with {
   \new Staff { \clef bass \continuo }
 >>
 
-#(set-global-staff-size 16)
-\score {
-  <<
-%     \new StaffGroup <<
-%       \violinoOnePart
-%       \violinoTwoPart
-%     >>
-%     \choirPart
-    \organoPart
-  >>
-  \layout {
-    
-  }
-%   \midi {
-%     \context {
-%       \Score
-%       tempoWholesPerMinute = #(ly:make-moment 120 4)
-%     }
-%   }
-  
-}
+%%master: tele-psalm117-fullscore.ly
