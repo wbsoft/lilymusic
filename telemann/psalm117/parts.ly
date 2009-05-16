@@ -1026,9 +1026,167 @@ organo = \relative c' {
   % bar 10
   <d bes'>4 << a' \\ { c,8 es } >> <d bes'>4 r8 <d f> |
   <f bes> <f bes> r <f bes> <d bes'> <d bes'> r <d bes'> |
-  
+  << { g bes4 a8 } \\ { g f es4 } >> <d bes'> r8 <d f> |
+  <c f> <c f> r <c f> <a f'> <a f'> r <a f'> |
+  << { d f4 e8 } \\ { d c bes4 } >> <a f'> << { f'8 c' } \\ f,4 >> |
+  % bar 15
+  << { d'8 bes c <c, f> } \\ f4. >> <d bes'>4 << { g8 d' } \\ g,4 >> |
+  << { e'8 c d <d, g> } \\ g4. >> <e c'>8. d'16 <g, e'>8 <e c'> |
+  << { c' bes a d c bes a d } \\ { f,4. f8 f4. f8 } >> |
+  <f c'> <d f bes> <e g>4 <c f a> <f a>8 <a c> |
+  <f bes d>4 <f c'> <d g bes> <bes d g> |
+  % bar 20
+  <e g bes>8 <f a> <e g>4 <c f a>4 r8 <c f a> |
+  <c f a>4 r8 <d f bes> <c f a>4 r8 <d a'> |
+  << { a' g } \\ d4 >> <d fis> << { g4. c8 } \\ { d, es d fis } >> |
+  << { bes c d <g, es'> } \\ g4. >> <g bes>8 r <fis a> r |
+  <bes, d g>4 r8 <bes c g'> <a c f>4 r8 <a c f> |
+  % bar 25
+  <c f a>4 r8 <d f bes> <c f a>4 r8 <d a'> |
+  << { a' g } \\ d4 >> <d fis> << { d'4. c8 } \\ { g fis g a } >> |
+  <g bes>4 <fis a>8 <fis a es'> <g d'>4 <d g d'^~> |
+  <es g d'> <es g c> <es fis c'> <d g bes> |
+  <g a es'> <fis a d> <g bes d>8 r <d g bes> r |
+  % bar 30
+  <d g bes>4 <bes d g> <bes d g> r |
+  \globalTwo
+  <g bes>2 <g bes es> <bes es g> |
+  <c es as> <c es> <c es as> |
+  <bes es g> <g bes es> <bes es g> |
+  <bes f'> <bes f' bes> <f' as bes> |
+  % bar 35
+  <es g bes> <bes es g> <bes f' as> |
+  <bes f' g> <bes es g> <bes es bes'> |
+  <d as' b> <d as' b> <d as' b> |
+  <c g' c> <c g'> <c d as'> |
+  << { g'1 <f g>2 } \\ { <c es> b2. c4 } \\ { s2 d } >> |
+  % bar 40
+  <c es g> <c es> <c f c'> |
+  <des f c'> <des f bes> <des f as> |
+  << { <es g> <g bes> } \\ des1 >> <c es as>2 |
+  <f bes> <es g> <des g bes> |
+  <c es as> <c es> <c es> |
+  % bar 45
+  <d f> <d f bes> <es bes'> |
+  <es as c> <c es as> <es as c> |
+  <es bes'> <es bes'> <bes e bes'> |
+  <c f a> <f a c> <f a c> |
+  << <f f'>1 \\ { c'2 bes } >> <f a es'> |
+  % bar 50
+  <f bes d> <d f bes> <f bes d> |
+  <es bes' es> <es bes'> <es bes' des> |
+  <es as c> <es as c> <as d> |
+  <g bes es> << <bes d>1 \\ { f2 as } >> |
+  <g bes es>1 r2 |
+  % bar 55
+  <c, es g>1 r2 |
+  <d f>1 <d f>2 |
+  <es g>1 <es g>2 |
+  <d f as>2 r4 <d f> <es g>2 |
+  r4 <f c'> << { bes2 as } \\ <d, f>1 >> |
+  % bar 60
+  <bes es g>1. |
+  \globalThree
+  <d f bes>2 r |
+  r4 <f bes>8 <f bes> <f bes>4 <bes, f'> |
+  <bes es g>2 r |
+  r4 <d g>8 <d g> <d g>4 <d f> |
+  % bar 65
+  es4 <es g> <es g c> <es g> |
+  <es a>2 << bes' \\ { d,4 f } >> |
+  <c g' bes>2 <c f a> |
+  <d f bes>4 <f bes d>8 <f bes d> <f bes d>2 |
+  <f a c>4 <f a c>8 <f a c> <f a c>2 |
+  % bar 70
+  <d f bes>4 <f bes d>8 <f bes d> <f bes d>2 |
+  <f a c>2 r |
+  r4 <c f>8 <c f> <c f>4 <c es> |
+  <bes d>2 r |
+  r4 <d a'>8 <d a'> <d a'>4 <c a'> |
+  % bar 75
+  <bes d> <bes g'>8 <c a'> << bes'2 \\ { d,4 g8 f } >> |
+  <e bes'>2 <f a>4 <f c'> |
+  <f g d'>2 <e g c> |
+  <f a>4 <c f a>8 <c f a> <c f a>2 |
+  <c e g>4 <e g c>8 <e g c> <e g c>2 |
+  % bar 80
+  <f a c>2 r4 <fis a> |
+  <d g bes>2 <d g d'> |
+  <<
+    {
+      a'1 |
+      g2 bes |
+      f1 |
+      % bar 85
+      es |
+      d2 g~ |
+      g fis |
+    }
+    \\ {
+      g2 f~ |
+      f es~ |
+      es d~ |
+      % bar 85
+      d c~ |
+      c bes |
+      <a d>1 |
+    }
+  >>
+  <bes d g>2 r |
+  <d fis a> r |
+  % bar 90
+  <d g bes>4 <d g bes>8 <d g bes> <d g bes>4 <bes d g> |
+  <c f a> <c f a>8 <c f a> <f a c>4 <c f a> |
+  <d f bes>2 <d f g b> |
+  <es g c> <g c es> |
+  <g des'>1 |
+  % bar 95
+  <es as c> |
+  <es bes'> |
+  <c f a> |
+  <c g' c^~> |
+  <f c'>2 <f b> |
+  % bar 100
+  <e g c>2 <e g bes> |
+  <f a> r |
+  <d f as> r |
+  <es g> r |
+  <<
+    {
+      d'1 |
+      % bar 105
+      c |
+      bes |
+      a |
+      g2 es'~ |
+      es d |
+      % bar 110
+      c1 |
+    }
+    \\ {
+      f,2 bes~ |
+      % bar 105
+      bes a~ |
+      <a d,> g~ |
+      g f~ |
+      f es |
+      f <f bes>~ |
+      % bar 110
+      <f bes> <es a> |
+    }
+  >>
+  <d f bes>2 r |
+  <f a c> r |
+  <f bes d> r |
+  <f a c>4 <f a c>2 <f a c>4 |
+  % bar 115
+  <bes, f' bes> <f' bes d>8 <f bes d> << { d'4 c8 bes } \\ f2 >> |
+  <f c'>4 <f a c>2 <f a c>4 |
+  <bes, f' bes> <f' bes d>8 <f bes d> << { d'4 c8 bes } \\ f2 >> |
+  <f c'>4 << f'2 \\ { <a, c>4 <g bes> } >> <f c' es>4 |
+  <f bes d>2 r |
+  \bar "|."
 }
-
 
 sopText = \lyricmode {
   Lau -- da -- te Je -- ho -- vam, om -- nes gen -- tes!
@@ -1192,6 +1350,7 @@ organoPart = \new PianoStaff \with {
   \new Staff \with {
     fontSize = #-3
     \override StaffSymbol #'staff-space = #(magstep -1)
+    \override TimeSignature #'font-size = #2
   } \organo
   \new Staff { \clef bass \continuo }
 >>
@@ -1209,11 +1368,11 @@ organoPart = \new PianoStaff \with {
   \layout {
     
   }
-  \midi {
-    \context {
-      \Score
-      tempoWholesPerMinute = #(ly:make-moment 120 4)
-    }
-  }
+%   \midi {
+%     \context {
+%       \Score
+%       tempoWholesPerMinute = #(ly:make-moment 120 4)
+%     }
+%   }
   
 }
