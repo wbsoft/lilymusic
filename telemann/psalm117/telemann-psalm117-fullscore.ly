@@ -4,21 +4,20 @@
 
 \include "parts.ly"
 
-\paper {
-  between-system-padding = #0.1
-  system-separator-markup = \slashSeparator
-}
-
 \score {
-  <<
+  \new Score \with {
+    \override VerticalAlignment #'max-stretch = #ly:align-interface::calc-max-stretch
+  } <<
     \new StaffGroup \with {
       \consists "Instrument_name_engraver"
       instrumentName = #"Violinos"
     } <<
       \new Staff \with {
+        \override InstrumentName #'self-alignment-X = #RIGHT
         instrumentName = #"I"
       } \violinoOne
       \new Staff \with {
+        \override InstrumentName #'self-alignment-X = #RIGHT
         instrumentName = #"II"
         % keep some distance
         \override VerticalAxisGroup #'minimum-Y-extent = #'(-6 . 4)
