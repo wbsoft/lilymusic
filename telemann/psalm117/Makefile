@@ -13,3 +13,6 @@ all: $(pdfs)
 
 $(pdfs): %.pdf: %.ly
 	lilypond -dno-point-and-click -ddelete-intermediate-files $<
+
+clean:
+	rm $(pdfs)
