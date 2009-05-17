@@ -11,7 +11,7 @@ pdfs = $(patsubst %,telemann-psalm117-%.pdf,$(scores))
 
 all: $(pdfs)
 
-$(pdfs): %.pdf: %.ly
+$(pdfs): %.pdf: %.ly parts.ly
 	lilypond -dno-point-and-click -ddelete-intermediate-files $<
 
 clean:

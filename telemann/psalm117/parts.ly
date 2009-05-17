@@ -87,7 +87,7 @@ globalThree = {
   \tempoMark #"Allegro"
 }
 
-violinoOne = \relative c'' {
+violinoOneMusic = \relative c'' {
   \globalOne
   bes8 bes d16( c) bes8 bes bes d16( c) bes8 bes |
   g' f es4 d16( f) bes,( d) bes,8 c' |
@@ -222,7 +222,7 @@ violinoOne = \relative c'' {
   \bar "|."
 }
 
-violinoTwo = \relative c' {
+violinoTwoMusic = \relative c' {
   \globalOne
   d8 |
   d d r d d d r d |
@@ -356,7 +356,7 @@ violinoTwo = \relative c' {
   \bar "|."
 }
 
-continuo = \relative c {
+continuoMusic = \relative c {
   \globalOne
   bes8 |
   bes' bes r a g g r f |
@@ -506,7 +506,7 @@ continuo = \relative c {
   \bar "|."
 }
 
-sop = \relative c'' {
+sopranoMusic = \relative c'' {
   \globalOne
   r8 |
   R1*9 |
@@ -636,7 +636,7 @@ sop = \relative c'' {
   \bar "|."
 }
 
-alt = \relative c'' {
+altoMusic = \relative c'' {
   \globalOne
   r8 |
   R1*11 |
@@ -763,7 +763,7 @@ alt = \relative c'' {
   \bar "|."
 }
 
-ten = \relative c' {
+tenorMusic = \relative c' {
   \globalOne
   r8 |
   R1*11 |
@@ -889,7 +889,7 @@ ten = \relative c' {
   \bar "|."
 }
 
-bas = \relative c' {
+bassMusic = \relative c' {
   \globalOne
   r8 |
   R1*11 |
@@ -1191,7 +1191,7 @@ organo = \relative c' {
   \bar "|."
 }
 
-sopText = \lyricmode {
+sopranoText = \lyricmode {
   Lau -- da -- te Je -- ho -- vam, om -- nes gen -- tes!
   om -- nes gen -- tes,
   om -- nes, om -- nes gen -- tes,
@@ -1217,7 +1217,7 @@ sopText = \lyricmode {
   al -- le -- lu -- ia.
 }
 
-altText = \lyricmode {
+altoText = \lyricmode {
   om -- nes gen -- tes!
   Lau -- da -- te Je -- ho -- vam om -- nes gen -- tes,
   om -- nes, om -- nes gen -- tes,
@@ -1248,7 +1248,7 @@ altText = \lyricmode {
   al -- le -- lu -- ia.
 }
 
-tenText = \lyricmode {
+tenorText = \lyricmode {
   om -- nes gen -- tes!
   om -- nes gen -- tes,
   om -- nes, om -- nes gen -- tes,
@@ -1278,7 +1278,7 @@ tenText = \lyricmode {
   al -- le -- lu -- ia.
 }
 
-basText = \lyricmode {
+bassText = \lyricmode {
   om -- nes gen -- tes!
   om -- nes gen -- tes,
   om -- nes, om -- nes gen -- tes,
@@ -1309,6 +1309,221 @@ basText = \lyricmode {
   al -- le -- lu -- ia.
 }
 
+violinoOneDynamics = \tag #'dynamics {
+  s8\mf |
+  s1*30 |
+  s1.\p |
+  s1.*12 |
+  s1.\mp |
+  s1.*9 |
+  s2 s\p s |
+  s1.*6 |
+  s1*7 |
+  s4 s\f s s |
+  s1*43 |
+  s1\mf |
+  s1*2 |
+  s1\f
+}
+
+violinoTwoDynamics = \tag #'dynamics {
+  s8\mf |
+  s1*30 |
+  s1 s2\p |
+  s1.*12 |
+  s1 s2\mp |
+  s1.*9 |
+  s2 s\p s |
+  s1.*6 |
+  s1*7 |
+  s4 s\f s s |
+  s1*43 |
+  s1\mf |
+  s1*2 |
+  s1\f
+}
+
+continuoDynamics = \tag #'dynamics {
+  s8\mf |
+  s1*19 |
+  s2.. s8\mp |
+  s1 |
+  s2 s\mf |
+  s1 |
+  s4. s8\mp s2 |
+  s1 |
+  s2 s\mf |
+  s1*4 |
+  s1.\p |
+  s1.*12 |
+  s2 s1\mp |
+  s1.*10 |
+  s1.\p |
+  s1.*5 |
+  s1\mf |
+  s1*6 |
+  s4 s\f s s |
+  s1*3 |
+  s4 s2.\mf |
+  s1*5 |
+  s4 s2.\f |
+  s1*10 |
+  s1\mp |
+  s1*3 |
+  s2 s\f |
+  s1*6 |
+  s4 s2.\mf |
+  s1*3 |
+  s1\f |
+  s1*7 |
+  s1\mf
+  s1*2 |
+  s1\f
+}
+
+sopranoDynamics = \tag #'dynamics {
+  s8 |
+  s1*9 |
+  s2.. s8\mf |
+  s1*13 |
+  s8 s2..\mp |
+  s1 |
+  s2 s\mf |
+  s1*4 |
+  s2 s1\p |
+  s1.*13 |
+  s2 s\mp s |
+  s1.*15 |
+  s1\mf |
+  s1*6 |
+  s4 s2.\f |
+  s1*21 |
+  s4 s2.\mp |
+  s1*2 |
+  s1\f |
+  s1*6 |
+  s4 s2.\mf |
+  s1*3 |
+  s1\f |
+  s1*6 |
+  s4 s2.\mf |
+  s1*3 |
+  s1\f
+}
+
+altoDynamics = \tag #'dynamics {
+  s8 |
+  s1*11 |
+  s1\mf |
+  s1*11 |
+  s8 s2..\mp |
+  s1 |
+  s2 s\mf |
+  s1*4 |
+  s2 s1\p |
+  s1.*12 |
+  s2 s\mp s |
+  s1.*16 |
+  s1*2
+  s1\mf |
+  s1*4 |
+  s4 s2.\f |
+  s1*21 |
+  s4 s2.\mp |
+  s1*2 |
+  s2 s\f |
+  s1*6 |
+  s4 s2.\mf |
+  s1*3 |
+  s2 s\f |
+  s1*6 |
+  s4 s2.\mf |
+  s1*3 |
+  s1\f
+}
+
+tenorDynamics = \tag #'dynamics {
+  s8 |
+  s1*11 |
+  s1\mf |
+  s1*7 |
+  s2.. s8\mp |
+  s1 |
+  s2 s\mf |
+  s1 |
+  s2.. s8\mp |
+  s1 |
+  s2 s\mf |
+  s1*4 |
+  s2 s1\p |
+  s1.*12 |
+  s2 s\mp s |
+  s1.*16 |
+  s1*7
+  s4 s2.\f |
+  s1*2 |
+  s1\mf |
+  s1*6 |
+  s4 s2.\f |
+  s1*9 |
+  s4 s2.\mp |
+  s1*5 |
+  s1\f |
+  s1*6 |
+  s4 s2.\mf |
+  s1*2 |
+  s1\f |
+  s1*7 |
+  s1\mf |
+  s1*2 |
+  s1\f
+}
+
+bassDynamics = \tag #'dynamics {
+  s8 |
+  s1*11 |
+  s1\mf |
+  s1*7 |
+  s2.. s8\mp |
+  s1 |
+  s2 s\mf |
+  s1 |
+  s2.. s8\mp |
+  s1 |
+  s2 s\mf |
+  s1*4 |
+  s2 s1\p |
+  s1.*12 |
+  s2 s\mp s |
+  s1.*16 |
+  s1*7
+  s4 s2.\f |
+  s1*4 |
+  s1\mf |
+  s1*4 |
+  s4 s2.\f |
+  s1*9 |
+  s4 s2.\mp |
+  s1*5 |
+  s1\f |
+  s1*6 |
+  s4 s2.\mf |
+  s1*2 |
+  s1\f |
+  s1*7 |
+  s1\mf |
+  s1*2 |
+  s1\f
+}
+
+violinoOne = << \violinoOneMusic \violinoOneDynamics >>
+violinoTwo = << \violinoTwoMusic \violinoTwoDynamics >>
+continuo = << \continuoMusic \continuoDynamics >>
+soprano = << \dynamicUp \sopranoMusic \sopranoDynamics >>
+alto = << \dynamicUp \altoMusic \altoDynamics >>
+tenor = << \dynamicUp \tenorMusic \tenorDynamics >>
+bass = << \dynamicUp \bassMusic \bassDynamics >>
+
 violinoOnePart = \new Staff \with {
   instrumentName = "Violino I"
 } \violinoOne
@@ -1326,19 +1541,19 @@ continuoPart = \new Staff \with {
 
 sopranoPart = \new Staff \with {
   instrumentName = #"Soprano"
-} { \sop } \addlyrics { \sopText }
+} { \soprano } \addlyrics { \sopranoText }
 
 altoPart = \new Staff \with {
   instrumentName = #"Alto"
-} { \alt } \addlyrics { \altText }
+} { \alto } \addlyrics { \altoText }
 
 tenorPart = \new Staff \with {
   instrumentName = #"Tenore"
-} { \clef "treble_8" \ten } \addlyrics { \tenText }
+} { \clef "treble_8" \tenor } \addlyrics { \tenorText }
 
 bassPart = \new Staff \with {
   instrumentName = #"Basso"
-} { \clef bass \bas } \addlyrics { \basText }
+} { \clef bass \bass } \addlyrics { \bassText }
 
 choirPart = \new ChoirStaff <<
   \sopranoPart
@@ -1355,7 +1570,7 @@ organoPart = \new PianoStaff \with {
     \override StaffSymbol #'staff-space = #(magstep -1)
     \override TimeSignature #'font-size = #2
   } \organo
-  \new Staff { \clef bass \continuo }
+  \new Staff { \clef bass \dynamicUp \continuo }
 >>
 
-%%master: tele-psalm117-fullscore.ly
+%%master: telemann-psalm117-fullscore.ly
