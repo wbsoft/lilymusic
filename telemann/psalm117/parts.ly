@@ -226,7 +226,7 @@ violinoTwoMusic = \relative c' {
   \globalOne
   d8 |
   d d r d d d r d |
-  bes' bes4 a8 bes( bes,) r bes' |
+  bes' bes4 a8 bes( d,) r bes' |
   a a r a a a r a |
   f c'4 bes8 a( f) r f' |
   % bar 5 (5 and 6 same in Vln. II)
