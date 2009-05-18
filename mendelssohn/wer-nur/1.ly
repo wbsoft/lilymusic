@@ -104,8 +104,8 @@ tenText = \lyricmode {
   \context {
     \PianoStaff
     \override InstrumentName #'self-alignment-X = #LEFT
-    fontSize = #-1
-    \override StaffSymbol #'staff-space = #(magstep -1)
+    %    fontSize = #-1
+    %\override StaffSymbol #'staff-space = #(magstep -1)
   }
   \context {
     \Voice
@@ -164,7 +164,6 @@ organPart = \new PianoStaff \with {
 
 \score {
   <<
-    \choirPart
     \organPart
   >>
 }

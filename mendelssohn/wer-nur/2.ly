@@ -1173,11 +1173,13 @@ organPart = <<
   }
 >>
 
+\paper { ragged-last-bottom = ##f }
+
 \score {
   <<
-    \stringPart
+%     \stringPart
     %    \choirPart
-    \bassPart
+%     \bassPart
     \organPart
   >>
 }
