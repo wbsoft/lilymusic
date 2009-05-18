@@ -1122,24 +1122,6 @@ stringPart = \new StaffGroup <<
   } { \clef alto \viola }
 >>
 
-choirPart = \new ChoirStaff <<
-  \new Staff \with {
-    instrumentName = #"Soprano"
-  } \new Voice = "sop" \sop
-  \new Lyrics \lyricsto "sop" \sopText
-  \new Staff \with {
-    instrumentName = #"Alto"
-  } \new Voice = "alt" \alt
-  \new Lyrics \lyricsto "alt" \altText
-  \new Staff \with {
-    instrumentName = #"Tenore"
-  } \new Voice = "ten" { \clef "treble_8" \ten }
-  \new Lyrics \lyricsto "ten" \tenText
-  \new Staff \with {
-    instrumentName = #"Basso"
-  } \new Voice = "bas" { \clef bass \bas }
-  \new Lyrics \lyricsto "bas" \basText
->>
 
 bassPart = \new Staff \with {
   instrumentName = #"Violoncello e Basso"
