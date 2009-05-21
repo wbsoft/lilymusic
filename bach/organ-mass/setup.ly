@@ -1,10 +1,10 @@
-\version "2.11.43"
+\version "2.12.0"
 
 \header {
   title = "The Chorals of the Clavierübung III"
   composer = "Johann Sebastian Bach (1865-1750)"
   poet = "Martin Luther (1483-1546)"
-  copyright = \markup \center-align {
+  copyright = \markup \center-column {
     \line { Typeset by
       \with-url #"http://www.wilbertberendsen.nl/"
       {Wilbert Berendsen (http://www.wilbertberendsen.nl/)}
@@ -35,7 +35,10 @@
   \context {
     \Staff
     %%% Equivalent to #(set-accidental-style 'modern) :
-    autoAccidentals = #'(Staff (same-octave . 0) (any-octave . 0) (same-octave . 1))
+    autoAccidentals = #`(Staff
+                          ,(make-accidental-rule 'same-octave 0)
+                          ,(make-accidental-rule 'any-octave 0)
+                          ,(make-accidental-rule 'same-octave 1))
     \override VerticalAxisGroup #'minimum-Y-extent = #'(-4 . 5)
     \override VerticalAxisGroup #'keep-fixed-while-stretching = ##f
   }
