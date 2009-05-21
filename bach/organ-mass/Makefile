@@ -16,7 +16,7 @@ sources = \
 all: $(files)
 
 $(files): %.pdf: %.ly $(sources) setup.ly
-	lilypond -dno-point-and-click --pdf $<
+	lilypond -dno-point-and-click -ddelete-intermediate-files --pdf $<
 
 zip:
 	svn export . om
