@@ -58,7 +58,7 @@ graveMusic = {
           \voiceOne
           r2 r4 c~ |
           c2. des4~ |
-          <des~ f>
+          <des_~ f>
           \oneVoice
           <des ges~> <ges beses~> <beses~ des~ es> |
           <beses des~ ges>2. <as des~ f>4 |
