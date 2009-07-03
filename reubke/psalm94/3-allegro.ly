@@ -535,10 +535,13 @@ allegroMusic = {
     \context Staff = "rh" \context Voice = "rh" \relative c'' {
       \set doubleSlurs = ##t
       \override Script #'avoid-slur = #'around
+      \override Script #'extra-offset = #'(0 . 0.5) % BUG: collides w doubleSlur
       <as b f'>2(-^
       _\fff
       ^\markup Manualcoppel
-      <g c es>8)[-| r16 c]-| |
+      <g c es>8)[-|
+      \revert Script #'extra-offset
+      r16 c]-| |
       <a c es>8[-| r16 <fis a>]-| <fis a>2~ <fis a>8[-| r16 es]-| |
       <d g>4-| 
       \set tupletSpannerDuration = #(ly:make-moment 1 4)
@@ -546,7 +549,11 @@ allegroMusic = {
         r8 c <es a> r d <g b> r  es <g c> |
         r f <b d> r g <c es> r g <d' f> r g, <c es fis> |
       }
-      <c es g>8-| r <b f' as>2(-^ <c es g>8)[-| r16 c]-| |
+      <c es g>8-| r 
+      \override Script #'extra-offset = #'(0 . 0.5) % BUG: collides w doubleSlur
+      <b f' as>2(-^ <c es g>8)[-|
+      \revert Script #'extra-offset
+      r16 c]-| |
       \unset doubleSlurs
       <c fis>8[-| r16 <fis, a c>]-| <fis a c>2~ <fis a c>8[-| r16 <g b>]-| |
       <b d>4-| % -| is missing in 1871 print
@@ -559,7 +566,10 @@ allegroMusic = {
     \context Staff = "lh" \context Voice = "lh" \relative c' {
       \set doubleSlurs = ##t
       \override Script #'avoid-slur = #'around
-      <as b f'>2(-^ <g c es>8)[-| r16 c]-| |
+      \override Script #'extra-offset = #'(0 . 0.5) % BUG: collides w doubleSlur
+      <as b f'>2(-^ <g c es>8)[-|
+      \revert Script #'extra-offset
+      r16 c]-| |
       <c es fis>8[-| r16 <c es>]-| <c es>2~ <c es>8[-| r16 <fis, c'>]-| |
       \unset doubleSlurs
       <g b>4-| <c, es a>( <d g b> <es g c> |

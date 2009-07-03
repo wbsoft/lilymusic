@@ -94,7 +94,9 @@ graveMusic = {
   % bar 8 - 15
   <<
     \context Staff = "rh" \relative c' {
-      R1*3 r2 r4 s | s1 | s1\< | s1\! | s1 |
+      R1*3 r2 r4 s | s1 | 
+      \once \override DynamicLineSpanner #'staff-padding = #2.5
+      s1\< | s1\! | s1 |
     }
     \context Staff = "lh" \relative c' {
       R1 |
@@ -176,19 +178,25 @@ graveMusic = {
   % bar 16 - 52
   <<
     \context Staff = "rh" \relative c' {
-      r8. c16\f
+      r8.
+      \once \override DynamicLineSpanner #'staff-padding = #3
+      c16\f
       ^\markup { Man. II. }
       des2( <c f>8)[ r16 f]~ |
       <f c'>4~ <f c'>8[ r16 <c' f as c>]\ff
       ^\markup { Man. I. }
       <c f as c>2 |
-      r8. d,16\f
+      r8.
+      \once \override DynamicLineSpanner #'staff-padding = #3
+      d,16\f
       ^\markup { M. II. }
       es2( <d g>8)[ r16 g]~ |
       <g d'>4~ <g d'>8[ r16 <d' g bes d>]\ff
       ^\markup { M. I. }
       <d g bes d>2 |
-      r8. e,16\f
+      r8.
+      \once \override DynamicLineSpanner #'staff-padding = #3
+      e,16\f
       ^\markup { M. II. }
       f2( <e a>8)[ r16 a]~ |
       <a e'>4~ <a e'>8[ r16 <e' a c e>]\ff

@@ -1,5 +1,5 @@
 \version "2.13.1"
-%#(set-global-staff-size 16)
+% #(set-global-staff-size 16)
 
 % set the column width here (50 is good for global staff size 16)
 #(define psalm-column-width 50)
@@ -26,7 +26,7 @@
         \fontsize #4 \line { PSALM 94 }
       }
       
-      \strut
+      \strut \strut
       \italic \line { Grave, Larghetto (vs. 1, 2) }
       \fill-line {
         \override #psalm-column-width-override
@@ -43,7 +43,7 @@
         }
       }
       
-      \strut
+      \strut \strut
       \italic \line { Allegro con fuoco (vs. 3, 6, 7) }
       
       \fill-line {
@@ -64,7 +64,7 @@
         }
       }
       
-      \strut
+      \strut \strut
       \italic \line { Adagio (vs. 17, 19) }
       
       \fill-line {
@@ -84,7 +84,7 @@
         }
       }
       
-      \strut
+      \strut \strut
       \italic \line { Allegro (vs. 22, 23) }
       
       \fill-line {
@@ -101,89 +101,6 @@
           And he shall bring upon them their own iniquity,
           and shall cut them off in their own wickedness.
         }
-      }
-      
-      \strut \strut
-      
-      \fill-line {
-        \fontsize #4 \line { Notes }
-      }
-      
-      \strut
-      \justify {
-        
-        I created this score to deepen my understanding of, and as a tribute to,
-        both Reubke’s splendid Organ Sonata, and the LilyPond development
-        community’s truly amazing LilyPond music typesetter.
-
-        This edition exactly follows its source: the 1871 score from the
-        \with-url #"http://www.imslp.org/"
-        { International Music Score Library Project (http://imslp.org/); }
-        only where the original sometimes writes the music for both hands
-        in one staff, I use both staffs to improve readability.
-      }
-      
-      \strut
-      \justify {
-        The performer should have a thorough understanding of how the stops
-        sound on a typical German organ from the second half of the 19th century
-        and find matching registrations at the organ on which the piece is
-        performed.
-        The original score has a “Vorbemerkung” which notes that, if stops
-        are named without “allein” (only) appended, some other stops may be
-        added as well, to create a good balance with the foreground melody.
-        Some registrations possibly refer to the new Ladegast organ of Merseburg
-        Cathedral, where Reubke played the premiere of this piece on June 17th, 1857.
-        The Aeoline 16' on that organ was a soft free reed stop and the Posaune 32'
-        had a warm-round sound, not very loud.
-      }
-      
-      \strut
-      \justify {
-        Hairpins most times denote the use of a swell box, while
-        directions like \italic cresc. and \italic dim. in most cases
-        refer to the adding resp. removing of stops.
-        The \italic slanted hairpins that sometimes appear below ranges of 16th
-        notes do not refer to swell or adding stops, but rather mean that the
-        performer should \italic suggest an increasing tension by playing the notes
-        a little over-legato (tenuto).
-      }
-      
-      \strut
-      \fill-line { \null \line { Wilbert Berendsen, Easter 2009 } }
-      
-      \strut
-      \fill-line {
-        \fontsize #4 \line { Translations of German terms }
-      }
-      
-      \strut
-      \fill-line {
-        \column {
-          \line { \italic { alle Bässe } all bass stops }
-          \line { \italic allein only }
-          \line { \italic düster dark, gloomy }
-          \line { \italic { etwas belebter } more lively }
-          \line { \italic heller brighter }
-          \line { \italic hervortretend on the foreground }
-          \line { \italic { leiser werdend } becoming softer }
-        }
-        \column {
-          \line { \italic { nach und nach schneller } accellerate bit by bit }
-          \line { \italic { nicht schleppend } do not slow down }
-          \line { \italic oder or }
-          \line { \italic ohne without }
-          \line { \italic schwächer weaker }
-          \line { \italic { Trompete fort } remove Trumpet }
-          \line { \italic { (viel) stärker } (much) louder }
-        }
-      }
-      
-      \strut
-      \line {
-        \italic { \bold NB on page 8: }
-        Hold the notes from the broken
-        chords as long as possible
       }
     }
   }

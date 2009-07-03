@@ -545,12 +545,12 @@ fugaMusic = {
       <d f bes>1~ |
       <d f bes>8-| r16
       <f, bes>( \stemUp d' \rh f <bes d>)
-      \lh <bes, d>( f' \rh bes <d f>) \lh <d, f>( bes'[ \rh d %{ original: f'' %} <f bes>])
+      \lh <bes, d>( f' \rh bes <d f>) \lh <d, f>( bes'[ \rh f' %{ better: d? %} <f bes>])
       \lh <d, f as b> |
       <d f as b>1~ |
       <d f as b>8- | r16
       as( \stemUp <b d> \rh as' <b d>)
-      \lh <b, d>( as' \rh b <d as'>) \lh <d, as'>( b'[ \rh b %{ d''? %} <as' b>])
+      \lh <b, d>( as' \rh b <d as'>) \lh <d, as'>( b'[ \rh b %{ better: d? %} <as' b>])
       \lh <es, as c>16 |
     }
     \context Staff = "ped" \context Voice = "ped" \relative c, {

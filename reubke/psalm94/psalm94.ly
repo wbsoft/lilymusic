@@ -1,42 +1,15 @@
 \version "2.13.1"
 #(set-global-staff-size 16)
 
-\paper {
-  ragged-last-bottom = ##f
-  min-systems-per-page = #4
-  max-systems-per-page = #5
-  between-system-padding = 1\mm
-}
-
 \include "titlepage.ly"
-
+\bookpart { \markup \null } % blank page
+\include "psalmtext.ly"
 \include "1-grave.ly"
 \include "2-larghetto.ly"
 \include "3-allegro.ly"
 \include "4-adagio.ly"
 \include "5-fuga.ly"
 \include "6-piumosso.ly"
-
-\layout {
-  system-count = #129
-  \context {
-    \Score
-    \override BarNumber #'extra-offset = #'(1 . 0)
-    \override PaperColumn #'keep-inside-line = ##t 
-    \override SpacingSpanner #'common-shortest-duration = #(ly:make-moment 3 32)
-  }
-  \context {
-    \Staff
-    \override TextScript #'staff-padding = #1
-    \override BreathingSign #'text = #(make-musicglyph-markup "scripts.caesura.curved")
-  }
-  \context {
-    \Voice
-    \override DynamicTextSpanner #'dash-period = #6
-    \override DynamicTextSpanner #'dash-fraction = #0.08
-    \override DynamicTextSpanner #'font-size = #0
-  }
-}
 
 scoreSetup = <<
   \new PianoStaff <<
@@ -96,6 +69,11 @@ footnote = \context Staff = "ped" {
 
 \bookpart {
   \paper {
+    ragged-last-bottom = ##f
+    min-systems-per-page = #4
+    max-systems-per-page = #5
+    between-system-padding = 1\mm
+    
     oddFooterMarkup = \markup {
       \column {
         \fill-line {
@@ -145,7 +123,27 @@ footnote = \context Staff = "ped" {
       \breaks
       \footnote
     >>
+    \layout {
+      system-count = #129
+      \context {
+        \Score
+        \override BarNumber #'extra-offset = #'(1 . 0)
+        \override PaperColumn #'keep-inside-line = ##t 
+        \override SpacingSpanner #'common-shortest-duration = #(ly:make-moment 3 32)
+      }
+      \context {
+        \Staff
+        \override TextScript #'staff-padding = #1
+        \override BreathingSign #'text = #(make-musicglyph-markup "scripts.caesura.curved")
+      }
+      \context {
+        \Voice
+        \override DynamicTextSpanner #'dash-period = #6
+        \override DynamicTextSpanner #'dash-fraction = #0.08
+        \override DynamicTextSpanner #'font-size = #0
+      }
+    }
   }
 }
 
-\include "psalmtext.ly"
+\include "remarks.ly"
