@@ -2,40 +2,55 @@
 
 #(set-global-staff-size 18)
 
-\paper {
-  #(set-paper-size "a4")
-  ragged-last-bottom = ##f
-  bottom-margin = 10 \mm
-  line-width = 185 \mm
+\header {
+  dedication = "Dedicated to Roel Smit"
+  title = "Mouvement"
+  composer = "Wilbert Berendsen"
+  poet = \markup \column {
+    "Commissioned by"
+    "Stichting Kerkconcerten Achterhoek"
+  }
+  copyright = \markup \center-column {
+    \with-url #"http://www.wilbertberendsen.nl/mouvement"
+    \line {
+      Copyright © 2003 by Wilbert Berendsen (http://www.wilbertberendsen.nl/mouvement)
+    }
+    \line {
+      This edition may be freely copied, distributed,
+      performed and recorded under the provisions of the
+    }
+    \with-url #"http://creativecommons.org/licenses/by-nc-sa/3.0/nl/"
+    \line {
+      Creative Commons License \concat { ( \tiny BY-NC-SA , }
+      http://creativecommons.org/licenses/by-nc-sa/3.0/nl/)
+    }
+  }
+  tagline = \markup {
+    Engraved at
+    \simple #(strftime "%d-%m-%Y" (localtime (current-time)))
+    with \with-url #"http://lilypond.org/web/"
+    { LilyPond \simple #(lilypond-version) (http://lilypond.org/) }
+  }
+}
+
+tempoMark = {
+  \once \override Score.RehearsalMark #'self-alignment-X = #LEFT
+  \once \override Score.RehearsalMark #'break-align-symbols = #'(time-signature key-signature)
+  \once \override Staff.TimeSignature #'break-align-anchor-alignment = #LEFT
+  \once \override Score.RehearsalMark #'font-size = #1
+  \mark \markup \bold {
+    Allegretto \hspace #0
+    \fontsize #-2 \general-align #Y #DOWN \note #"4" #.8
+    = 108
+  }
 }
 
 \layout {
   \context {
     \Score
+    \override BarNumber #'extra-offset = #'(1 . 0)
     \override VerticalAlignment #'max-stretch = #3
     \override SpacingSpanner #'strict-grace-spacing = ##t
-  }
-}
-
-
-\header {
-  dedication = "Opgedragen aan Roel Smit"
-  title = "Mouvement"
-  composer = "Wilbert Berendsen"
-  poet = \markup \override #'(baseline-skip . 2.5) \column {
-    "Geschreven in opdracht van de"
-    "Stichting Kerkconcerten Achterhoek"
-  }
-  tagline = #(string-append "versie: "
-    (strftime "%d-%m-%Y" (localtime (current-time)))
-    " (LilyPond " (lilypond-version) ")")
-  copyright = \markup \override #'(baseline-skip . 2.5) \center-column {
-    \with-url #"http://www.wilbertberendsen.nl/mouvement"
-      "© 2003 Wilbert Berendsen (http://www.wilbertberendsen.nl/mouvement)"
-    "Deze muziek mag worden verspreid onder de voorwaarden van de Creative Commons Licentie"
-    \with-url #"http://creativecommons.org/licenses/by-nc-sa/3.0/nl/"
-      "(http://creativecommons.org/licenses/by-nc-sa/3.0/nl/)."
-    "Gelieve mij te contacteren als een openbare uitvoering wordt gepland."
   }
 }
 
@@ -54,18 +69,13 @@ lh = \change Staff = lh
 rightHand = \relative c' {
   \clef violin
   \global
-  \once \override Score.RehearsalMark #'self-alignment-X = #LEFT
-  \once \override Score.RehearsalMark #'break-align-symbols = #'(time-signature key-signature)
-  \once \override Staff.TimeSignature #'break-align-anchor-alignment = #LEFT
-  \once \override Score.RehearsalMark #'font-series = #'bold
-  \once \override Score.RehearsalMark #'font-size = #1
-  \mark \markup { "Allegretto " \fontsize #'-2 \general-align #Y #DOWN \note #"4" #.8 "= 108" }
+  \tempoMark
   R1*7 r4. r r8 g\mp |
   a2. b8 c | b4. a~ a4~ | a1~ | a4. r r8 g |
   \voiceTwo \stemUp \tieDown a2. b8 c | b4. \grace {c16[ b] } a4.~ a4~ |
   <<
-  \new Voice { \stemUp r4. r4. r8 c | d1 | }
-  {\voiceTwo \tieDown a1~ | a1 | }
+    \new Voice { \stemUp r4. r4. r8 c | d1 | }
+    {\voiceTwo \tieDown a1~ | a1 | }
   >>
   \oneVoice
   \once \override TextScript #'padding = #2
@@ -80,19 +90,19 @@ rightHand = \relative c' {
   r4 as8_\markup \italic "cresc."
   bes4.~ bes4~ | bes4. b4. cis8 d8 | cis4 \grace { d16[ cis16] } b8~ b4.~ b8 d |
   <<
-  {
-    e1~ | e~ | e |
-    cis8 d16 cis d8 cis d16 cis d8 cis e |
-    d e16 d e8 d e16 d e8 d e |
-  } \\
-  {
-    s1 |
-    fis,8 gis16 fis gis8 fis gis16 fis gis8 fis gis |
-    gis ais16 gis ais8 gis b16 gis b8 gis b |
-    gis b16_\markup \italic "decresc."
-    gis b8 gis b16 gis b8 ais cis |
-    b r4 r4. r4
-  }
+    {
+      e1~ | e~ | e |
+      cis8 d16 cis d8 cis d16 cis d8 cis e |
+      d e16 d e8 d e16 d e8 d e |
+    } \\
+    {
+      s1 |
+      fis,8 gis16 fis gis8 fis gis16 fis gis8 fis gis |
+      gis ais16 gis ais8 gis b16 gis b8 gis b |
+      gis b16_\markup \italic "decresc."
+      gis b8 gis b16 gis b8 ais cis |
+      b r4 r4. r4
+    }
   >>
   % maat 37
   d8 e16 d e8 d e16 d e8 d e | d8 e16 d e8 d e16 d e8 d e |
@@ -117,10 +127,10 @@ rightHand = \relative c' {
   <a, c>8 e'16 <a, c> e'8 <a, c>8 f'16 <a, c> g'8 <c, a'> bes' |
   % maat 57, 61
   \repeat unfold 2 {
-  d,8 <a' d>16 d, <a' d>8 d, <bes' d>16 d, <bes' d>8 d, <c' d>8 |
-  d,8 <c' d>16 d, <c' d>8 d, <a' d>16 d, <a' d>8 <d, g> <f d'>8 |
-  <a, c>8 a'16 <a, c> a'8 <a, c>8 g'16 <a, c> g'8 <a, c> f' |
-  <a, c>8 e'16 <a, c> e'8 <a, c>8 f'16 <a, c> g'8 <c, a'> bes' |
+    d,8 <a' d>16 d, <a' d>8 d, <bes' d>16 d, <bes' d>8 d, <c' d>8 |
+    d,8 <c' d>16 d, <c' d>8 d, <a' d>16 d, <a' d>8 <d, g> <f d'>8 |
+    <a, c>8 a'16 <a, c> a'8 <a, c>8 g'16 <a, c> g'8 <a, c> f' |
+    <a, c>8 e'16 <a, c> e'8 <a, c>8 f'16 <a, c> g'8 <c, a'> bes' |
   }
   % maat 65
   d,8 <a' d>16 d, <a' d>8 d, <bes' d>16 d, <bes' d>8 d, <c' d>8 |
@@ -134,8 +144,8 @@ rightHand = \relative c' {
   d2. e8 f | e4. d4.~ d4~ | d1~ | d4. r r8 c |
   d2. e8 f | e4 \grace { f16[ e16] } \voiceTwo d8~ d4.~ d4~ |
   <<
-  \new Voice { \voiceOne \stemUp b'4.\rest b4.\rest r8 f | g1 |}
-  {\voiceTwo \tieDown d1~ | d1 | }
+    \new Voice { \voiceOne \stemUp b'4.\rest b4.\rest r8 f | g1 |}
+    {\voiceTwo \tieDown d1~ | d1 | }
   >>
   \oneVoice
   \once \override TextScript #'padding = #3
@@ -147,15 +157,15 @@ rightHand = \relative c' {
   \stemNeutral
   r4. <d d'> <c c'>4 | <bes bes'>4. <a a'> <f f'>4 |
   <<
-  { g'1~ | g1 | } \\
-  { g,~ | g1 | } \\
-  { g8 a bes a g a g a | bes c a g f g~ g4 | }
+    { g'1~ | g1 | } \\
+    { g,~ | g1 | } \\
+    { g8 a bes a g a g a | bes c a g f g~ g4 | }
   >>
   r4. <d' d'> <cis cis'>4 | <b b'>4. <a a'> <fis fis'>4 |
   <<
-  { fisis'1( | gis1) | } \\
-  { fisis,1( | gis1) | } \\
-  { ais8 bis cis \stemDown bis dis cis bis cis | b cis d fis e d cis d | }
+    { fisis'1( | gis1) | } \\
+    { fisis,1( | gis1) | } \\
+    { ais8 bis cis \stemDown bis dis cis bis cis | b cis d fis e d cis d | }
   >>
   \once \override BreathingSign #'text = \markup \line {
     \musicglyph #"scripts.caesura.curved"
@@ -175,8 +185,8 @@ rightHand = \relative c' {
   <e, g>8 e'16 <e, g> e'8 <e, g> d'16 <e, g> d'8 <e, g> c' |
   << {s2. d16 e f g} \\ {g,8 <b g'>16\< g <b g'>8 g <b g'>16 g <c g'>8 g d'} >> |
   << {<a a'>2.^\markup \bold "Grandioso"
-  \stemDown <b b'>8 <c c'> | \stemUp <b b'>4. <a a'~> \stemDown <a a'>8 <g g'> \stemNeutral } \\
-     { c8\f a16 c a8 c a16 c a8 s4 | b8 c16 b c8 a c16 a c8 s4  } >> |
+      \stemDown <b b'>8 <c c'> | \stemUp <b b'>4. <a a'~> \stemDown <a a'>8 <g g'> \stemNeutral } \\
+    { c8\f a16 c a8 c a16 c a8 s4 | b8 c16 b c8 a c16 a c8 s4  } >> |
   <a a'>2. <c c'>4 | <d d'>2. r8_\markup { \italic "meno" \dynamic f }
   g,8 |
   % maat 121
@@ -192,42 +202,42 @@ leftHand = \relative c {
   \clef bass
   \global
   <<
-  {
-    s1*4^\pp
-    \repeat unfold 8 {
-      e8 g16 e g8 e g16 e g8 e g | e8 fis16 e fis8 e fis16 e fis8 e fis |
+    {
+      s1*4^\pp
+      \repeat unfold 8 {
+        e8 g16 e g8 e g16 e g8 e g | e8 fis16 e fis8 e fis16 e fis8 e fis |
+      }
+      \repeat unfold 2 { e8 g16 e g8 e g16 e g8 e g | }
+      <<
+        { fis8 a16 fis a8 fis a16 fis a8 fis a |
+          g8 a16 g a8 g a16 g a8 fis a | } \\
+        { d,1 | e }
+      >>
     }
-    \repeat unfold 2 { e8 g16 e g8 e g16 e g8 e g | }
-    <<
-      { fis8 a16 fis a8 fis a16 fis a8 fis a |
-      g8 a16 g a8 g a16 g a8 fis a | } \\
-      { d,1 | e }
-    >>
-  }
-  {
-    \repeat unfold 10 {
-      a,8 c16 a c8 a c16 a c8 a c | a8 d16 a d8 a d16 a d8 a d |
+    {
+      \repeat unfold 10 {
+        a,8 c16 a c8 a c16 a c8 a c | a8 d16 a d8 a d16 a d8 a d |
+      }
+      g,8 c16 g c8 g c16 g c8 g c | g8 c16 g c8 g c16 g c8 g c |
     }
-    g,8 c16 g c8 g c16 g c8 g c | g8 c16 g c8 g c16 g c8 b c |
-  }
   >>
   % maat 25
   <<
-  {
-    \repeat unfold 3 {
-      d'8 f16 d f8 d f16 d f8 d f | d8 e16 d e8 d e16 d e8 d e |
+    {
+      \repeat unfold 3 {
+        d'8 f16 d f8 d f16 d f8 d f | d8 e16 d e8 d e16 d e8 d e |
+      }
+      d8 f16 d f8 d f16 d f8 d f | d8 fis16 d fis8 d fis16 d fis8 d fis |
     }
-    d8 f16 d f8 d f16 d f8 d f | d8 fis16 d fis8 d fis16 d fis8 d fis |
-  }
-  {
-    \repeat unfold 2 {
-      a,8 c16 a c8 a c16 a c8 a c | a8 b16 a b8 a b16 a b8 a b |
+    {
+      \repeat unfold 2 {
+        a,8 c16 a c8 a c16 a c8 a c | a8 b16 a b8 a b16 a b8 a b |
+      }
+      \repeat unfold 2 {
+        as8 bes16 as bes8 as bes16 as bes8 as bes |
+        gis8 b16 gis b8 gis b16 gis b8 gis b |
+      }
     }
-    \repeat unfold 2 {
-      as8 bes16 as bes8 as bes16 as bes8 as bes |
-      gis8 b16 gis b8 gis b16 gis b8 gis b |
-    }
-  }
   >>
   % maat 33
   b8 d16 b d8 b d16 b d8 b d | cis d16 cis d8 d e16 d e8 e fis | s1 | s1 |
@@ -248,35 +258,35 @@ leftHand = \relative c {
   r4. f'8-. f,-. r8 r4 | r4. e'8-. e,-. r8 r4 |
   % maat 61, 65
   <<
-  {
-    r2 d'4 e | f e d e | d2 e4 f | g e d c |
-    d2 d4 e | f e d e | d2 e4 f | g e d c |
-  } \\
-  {
-    r4. bes'8-. bes,-. r8 r4 | r4. a'8-. a,-. r8 r4 |
-    r4. f'8-. f,-. r8 r4 | r4. a'8-. a,-. r8 r4 |
-    r4. bes'8-. bes,-. r8 r4 | r4. a'8-. a,-. r8 r4 |
-    r4. f'8-. f,-. r8 r4 | r4. e'8-. e,-. r8 r4 |
-  }
+    {
+      r2 d'4 e | f e d e | d2 e4 f | g e d c |
+      d2 d4 e | f e d e | d2 e4 f | g e d c |
+    } \\
+    {
+      r4. bes'8-. bes,-. r8 r4 | r4. a'8-. a,-. r8 r4 |
+      r4. f'8-. f,-. r8 r4 | r4. a'8-. a,-. r8 r4 |
+      r4. bes'8-. bes,-. r8 r4 | r4. a'8-. a,-. r8 r4 |
+      r4. f'8-. f,-. r8 r4 | r4. e'8-. e,-. r8 r4 |
+    }
   >>
   % maat 69
   \clef bass
   <<
-  {
-    d8 f16 d f8 d f16 d f8 d f | c8 d16 c d8 c d16 c d8 c d |
-    \repeat unfold 2 { a8 c16 a c8 a c16 a c8 a c | }
-    % maat 73
-    bes8 c16 bes c8 bes c16 bes c8 bes c |
-    \repeat unfold 3 { a8 c16 a c8 a c16 a c8 a c | }
-  }
-  {
-    a8 bes16 a bes8 a bes16 a bes8 a bes | f8 a16 f a8 f a16 f a8 f a |
-    \repeat unfold 2 { c,8 g'16 c, g'8 c, g'16 c, g'8 c, g' | }
-    % maat 73
-    d8 f16 d f8 d f16 d f8 d f |
-    \repeat unfold 2 { c8 f16 c f8 c f16 c f8 c f | }
-    c8 g'16 c, g'8 c, g'16 c, g'8 c, g' |
-  }
+    {
+      d8 f16 d f8 d f16 d f8 d f | c8 d16 c d8 c d16 c d8 c d |
+      \repeat unfold 2 { a8 c16 a c8 a c16 a c8 a c | }
+      % maat 73
+      bes8 c16 bes c8 bes c16 bes c8 bes c |
+      \repeat unfold 3 { a8 c16 a c8 a c16 a c8 a c | }
+    }
+    {
+      a8 bes16 a bes8 a bes16 a bes8 a bes | f8 a16 f a8 f a16 f a8 f a |
+      \repeat unfold 2 { c,8 g'16 c, g'8 c, g'16 c, g'8 c, g' | }
+      % maat 73
+      d8 f16 d f8 d f16 d f8 d f |
+      \repeat unfold 2 { c8 f16 c f8 c f16 c f8 c f | }
+      c8 g'16 c, g'8 c, g'16 c, g'8 c, g' |
+    }
   >>
   % maat 77
   \repeat unfold 7 <<
@@ -284,8 +294,8 @@ leftHand = \relative c {
     { d,8 f16 d f8 d f16 d f8 d f | d8 g16 d g8 d g16 d g8 d g | }
   >>
   <<
-  { a8 c16 a c8 a c16 a c8 a c | a8 b16 a b8 a b16 a b8 a c | }
-  { d,8 f16 d f8 d f16 d f8 d f | d8 g16 d g8 d g16 d g8 d a' | }
+    { a8 c16 a c8 a c16 a c8 a c | a8 b16 a b8 a b16 a b8 a c | }
+    { d,8 f16 d f8 d f16 d f8 d f | d8 g16 d g8 d g16 d g8 d a' | }
   >>
   % maat 93
   <a bes d f>8 \rh <bes' d f>16 \lh <a, bes d f> \rh <bes' d f>8
@@ -299,28 +309,28 @@ leftHand = \relative c {
   \lh <f, g bes f'> \rh <bes' f'> |
   \lh <g, c f>8 \rh <c' f>16 \lh <g, c f> \rh <c' f>8
   \lh <g, c e>8 \rh <c' e>16 \lh <g, c e> \rh <c' e>8
-  \lh <g, c e> \rh <c' e> |
+  \lh <g, c d> \rh <c' e> |
   \lh \clef treble
   <<
-  {
-    g8 bes16 g bes8 g bes16 g bes8 g bes |d,8 g16 d g8 d g16 d g8 d g |
-  }
-  {
-    bes,8 d16 bes d8 bes d16 bes d8 bes d | g,8 bes16 g bes8 g bes16 g bes8 g bes |
-  }
+    {
+      g8 bes16 g bes8 g bes16 g bes8 g bes |d,8 g16 d g8 d g16 d g8 d g |
+    }
+    {
+      bes,8 d16 bes d8 bes d16 bes d8 bes d | g,8 bes16 g bes8 g bes16 g bes8 g bes |
+    }
   >>
   \clef bass
   <<
-  {
-    g8 bes16 g bes8 g c16 g c8 g d' | bes8 es16 bes es8 bes d16 bes d8 c bes |
-    d8 fis16 d fis8 d fis16 d fis8 d fis | b,8 d16 b d8 b d16 b d8 b d |
-    ais8 cis16 ais cis8 ais cis16 ais cis8 ais cis | b8 d16 b d8 a d16 a d8 gis, d' |
-  }
-  {
-    d,8 f16 d f8 d f16 d f8 d f | f8 g16 f g8 f g16 f g8 d f |
-    fis8 a16 fis a8 fis a16 fis a8 fis a | d,8 fis16 d fis8 d fis16 d fis8 d fis |
-    e8 g16 e g8 e g16 e g8 e g | e8 fis16 e fis8 e fis16 e fis8 e fis |
-  }
+    {
+      g8 bes16 g bes8 g c16 g c8 g d' | bes8 es16 bes es8 bes d16 bes d8 c bes |
+      d8 fis16 d fis8 d fis16 d fis8 d fis | b,8 d16 b d8 b d16 b d8 b d |
+      ais8 cis16 ais cis8 ais cis16 ais cis8 ais cis | b8 d16 b d8 a d16 a d8 gis, d' |
+    }
+    {
+      d,8 f16 d f8 d f16 d f8 d f | f8 g16 f g8 f g16 f g8 d f |
+      fis8 a16 fis a8 fis a16 fis a8 fis a | d,8 fis16 d fis8 d fis16 d fis8 d fis |
+      e8 g16 e g8 e g16 e g8 e g | e8 fis16 e fis8 e fis16 e fis8 e fis |
+    }
   >>
   \once \override BreathingSign #'text = \markup \musicglyph #"scripts.caesura.curved"
   \breathe
@@ -336,41 +346,41 @@ leftHand = \relative c {
   % maat 121
   \clef bass
   <<
-  {
-    a8 c16 a c8 a c16 a c8 a c | a8 b16 a b8 a b16 a b8 a b |
-    a8 c16 a c8 a c16 a c8 a c | b8 d16 b d8 b d16 b d8 b d |
-    a8 c16 a c8 a c16 a c8 a c | c8 es16 c es8 c es16 c es8 c es |
-    cis8 e16 cis e8 cis e16 cis e8 cis e |  e8 f16 e f8 e f16 e f8 e f |
-    d8 e16 d e8 d e16 d e8 d e |
-  }
-  {
-    c,8 d16 c d8 c d16 c d8 c d | d8 g16 d g8 d g16 d g8 d g |
-    d8 f16 d f8 d f16 d f8 d f | d8 a'16 d, a'8 d, a'16 d, a'8 d, a' |
-    es8 g16 es g8 es g16 es g8 es g |
-    \repeat unfold 2 { g8 a16 g a8 g a16 g a8 g a | }
-    g8 cis16 g cis8 g cis16 g cis8 g cis |g8 bes16 g bes8 g bes16 g bes8 g bes |
-  }
+    {
+      a8 c16 a c8 a c16 a c8 a c | a8 b16 a b8 a b16 a b8 a b |
+      a8 c16 a c8 a c16 a c8 a c | b8 d16 b d8 b d16 b d8 b d |
+      a8 c16 a c8 a c16 a c8 a c | c8 es16 c es8 c es16 c es8 c es |
+      cis8 e16 cis e8 cis e16 cis e8 cis e |  e8 f16 e f8 e f16 e f8 e f |
+      d8 e16 d e8 d e16 d e8 d e |
+    }
+    {
+      c,8 d16 c d8 c d16 c d8 c d | d8 g16 d g8 d g16 d g8 d g |
+      d8 f16 d f8 d f16 d f8 d f | d8 a'16 d, a'8 d, a'16 d, a'8 d, a' |
+      es8 g16 es g8 es g16 es g8 es g |
+      \repeat unfold 2 { g8 a16 g a8 g a16 g a8 g a | }
+      g8 cis16 g cis8 g cis16 g cis8 g cis |g8 bes16 g bes8 g bes16 g bes8 g bes |
+    }
   >>
   \clef treble
   <<
-  {
-    \repeat unfold 4 { g'8 bes16 g bes8 g bes16 g bes8 g bes | }
-    \repeat unfold 3 { gis8 b16 gis b8 gis b16 gis b8 gis b | }
-    a8^\> c16 a c8 a c16 a c8 a c |
-    \repeat unfold 2 { a8 c16 a c8 a c16 a c8 a c | }
-    a8 c16 a c8 a c16 a c8 a^\pp c |
-  }
-  {
-    d,8 e16 d e8 d e16 d e8 d e | d8 f16 d f8 d f16 d f8 d f |
-    d8
-    \once \override TextScript #'extra-offset = #'(0 . 1)
-    fis16^\markup \italic "poco a poco decresc."
-    d fis8 d fis16 d fis8 d fis |
-    \repeat unfold 2 { dis8 fis16 dis fis8 dis fis16 dis fis8 dis fis | }
-    e8 fis16 e fis8 e fis16 e fis8 e fis |
-    e8 fisis16 e fisis8 e fisis16 e fisis8 e fisis |
-    \repeat unfold 4 { f8 g16 f g8 f g16 f g8 f g | }
-  }
+    {
+      \repeat unfold 4 { g'8 bes16 g bes8 g bes16 g bes8 g bes | }
+      \repeat unfold 3 { gis8 b16 gis b8 gis b16 gis b8 gis b | }
+      a8^\> c16 a c8 a c16 a c8 a c |
+      \repeat unfold 2 { a8 c16 a c8 a c16 a c8 a c | }
+      a8 c16 a c8 a c16 a c8 a^\pp c |
+    }
+    {
+      d,8 e16 d e8 d e16 d e8 d e | d8 f16 d f8 d f16 d f8 d f |
+      d8
+      \once \override TextScript #'extra-offset = #'(0 . 1)
+      fis16^\markup \italic "poco a poco decresc."
+      d fis8 d fis16 d fis8 d fis |
+      \repeat unfold 2 { dis8 fis16 dis fis8 dis fis16 dis fis8 dis fis | }
+      e8 fis16 e fis8 e fis16 e fis8 e fis |
+      e8 fisis16 e fisis8 e fisis16 e fisis8 e fisis |
+      \repeat unfold 4 { f8 g16 f g8 f g16 f g8 f g | }
+    }
   >>
   R1
 }
@@ -419,15 +429,15 @@ pedal = \relative c {
 }
 
 \score {
-<<
-  \new PianoStaff <<
-    \new Staff = "rh" \rightHand
-    \new Staff = "lh" \leftHand
+  <<
+    \new PianoStaff <<
+      \new Staff = "rh" \rightHand
+      \new Staff = "lh" \leftHand
+    >>
+    \new Staff = "ped" \with {
+      \override VerticalAxisGroup #'minimum-Y-extent = #'(-2 . 3)
+    } \pedal
   >>
-  \new Staff = "ped" \with {
-    \override VerticalAxisGroup #'minimum-Y-extent = #'(-2 . 3)
-  } \pedal
->>
 }
 % kate: space-indent on; indent-width 2; replace-tabs on; replace-tabs-save on;
 
