@@ -47,7 +47,7 @@ soprano = \relative c'' {
   a2 a4 a g fis2 fis\fermata \breathe
   fis4 f!2 f4 f f g f2 f4 f e f g f2 f\fermata \breathe \bar""\break
   bes2 a4 g f f g2 a g4 g2\fermata \breathe
-  g2 g4 a2 a4 a a bes2( a4) a2\fermata \breathe \bar""\break
+  g2 g4 a2 a4 a a bes2 a\fermata \breathe \bar""\break
   a2 g4 f g2 bes4 bes a2 g4 f e f2 f\fermata \breathe
   f4 f2 g4 fis2 f!4( g) a bes2 a\fermata \breathe 
   \once\override Staff.BarLine #'break-visibility = #end-of-line-invisible
@@ -65,7 +65,7 @@ alto = \relative c' {
   f2 f4 f d d2 d 
   d4 d2 d4 d d bes d2 d4 c c a d d2 d
   d2 d4 d d d e2 f d4 e2
-  e2 e4 f2 f4 f f d2( f4) f2
+  e2 e4 f2 f4 f f d2 f
   f2 e4 d e2 f4 f f2 e4 a, c c2 c
   c4 d2 bes4 d2 d f4 f2 f
   \repeat volta 2 {
@@ -81,7 +81,7 @@ tenor = \relative c' {
   c2 d4 d bes a2 a \breathe
   a4 a2 a4 bes bes g a2 a4 a g f bes a2 a \breathe
   g2 f4 bes a a c2 c b4 c2 \breathe
-  c2 c4 c2 d4 d d bes2( c4) c2 \breathe
+  c2 c4 c2 d4 d d bes2 c \breathe
   c2 c4 a c2 d4 d c2 c4 f, g a2 a \breathe
   a4 bes2 g4 a2 a4( bes) c d2 d\breathe
   \repeat volta 2 {
@@ -97,7 +97,7 @@ bass = \relative c {
   f2 d4 d g d2 d\fermata
   d4 d2 d4 bes bes es d2 d4 f c d bes d2 d\fermata 
   g2 d4 bes d d c2 f g4 c,2\fermata
-  c2 c4 f2 d4 d d g2( f4) f2\fermata
+  c2 c4 f2 d4 d d g2 f\fermata
   f2 c4 d c2 bes4 bes f'2 c4 d c f2 f\fermata
   f4 bes,2 es4 d2 d4( g) f bes,2 d\fermata
   \once\override Staff.BarLine #'break-visibility = #end-of-line-invisible
