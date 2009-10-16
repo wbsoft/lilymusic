@@ -63,7 +63,7 @@ alto = \relative c' {
   f4 f f2 f4 f e e f f f2
   f4 f2 f4 f d e2 e
   f2 f4 f d d2 d 
-  d4 d2 d4 d d bes d2 d4 c c a d d2 d
+  d4 d2 d4 d d bes d2 c4 c c a d d2 d
   d2 d4 d d d e2 f d4 e2
   e2 e4 f2 f4 f f d2 f
   f2 e4 d e2 f4 f f2 e4 a, c c2 c
@@ -95,7 +95,7 @@ bass = \relative c {
   f4 f f2 f4 f c c bes bes bes2\fermata
   f'4 f2 f4 f g c,2 c\fermata
   f2 d4 d g d2 d\fermata
-  d4 d2 d4 bes bes es d2 d4 f c d bes d2 d\fermata 
+  d4 d2 d4 bes bes es d2 f4 f c d bes d2 d\fermata 
   g2 d4 bes d d c2 f g4 c,2\fermata
   c2 c4 f2 d4 d d g2 f\fermata
   f2 c4 d c2 bes4 bes f'2 c4 d c f2 f\fermata
