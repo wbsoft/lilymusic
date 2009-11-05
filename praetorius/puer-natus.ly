@@ -3,6 +3,7 @@
 #(set-global-staff-size 18)
 
 \paper {
+  indent = 5\mm
   ragged-last-bottom = ##f
   between-system-padding = #0.1
 }
@@ -20,7 +21,7 @@
       }
     }
     \line {
-      Copyright © 2008
+      Copyright © 2009
       \with-url #"http://www.cpdl.org/"
       {
         The Choral Public Domain Library
