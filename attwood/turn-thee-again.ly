@@ -44,7 +44,7 @@ global = {
 }
 
 ic = \once\override
-  Staff.NoteColumn #'ignore-collision = ##t
+Staff.NoteColumn #'ignore-collision = ##t
 
 sop = \relative c'' {
   \global
@@ -77,7 +77,7 @@ sop = \relative c'' {
       r r r
       \tag #'choir \voiceTwo
       \once\override Staff.DynamicText
-        #'X-offset = #-5
+      #'X-offset = #-5
       d'2(\mf g,~ g1.) f2
       \tag #'choir \oneVoice
     }
@@ -180,23 +180,20 @@ organDynamics = {
   s1 s2\pp
 }
 
-#(define (filterOneEvent event)
-  (let ((eventname (ly:music-property  event 'name)))
-   (not
-    (or     ;; add here event name you do NOT want
-;     (eq? eventname 'MultiMeasureTextEvent)
-     (eq? eventname 'AbsoluteDynamicEvent)
-     (eq? eventname 'TextScriptEvent)
-;     (eq? eventname 'ArticulationEvent)
-     (eq? eventname 'SlurEvent)
-    )
-   )
-))
+%% This function accepts one argument: a list of symbols.
+%% It returns a music function that removes music events with that names
+%% from a music expression.
+#(define-public (define-music-event-filter names)
+  (define-music-function (parser location music) (ly:music?)
+    (music-filter
+      (lambda (event) (not (member (ly:music-property event 'name) names)))
+      music)))
 
-filtermusic = #(define-music-function
-  (parser location music) (ly:music?)
-  (music-filter filterOneEvent music)
-)
+filtermusic = #(define-music-event-filter '(
+    AbsoluteDynamicEvent
+    TextScriptEvent
+    SlurEvent
+))
 
 sopText = \lyricmode {
   Turn Thee a -- gain, O Lord, __ at the last,
@@ -206,7 +203,7 @@ sopText = \lyricmode {
   un -- to Thy ser -- vants,
   be gra -- cious,
   be gra -- cious un -- to Thy ser -- vants.
-
+  
   Turn Thee a -- gain, O Lord, at __ the last,
   turn Thee, turn Thee, turn Thee, turn Thee,
   turn Thee a -- gain, O Lord, at the last,
@@ -214,7 +211,7 @@ sopText = \lyricmode {
   be gra -- cious un -- to Thy ser -- vants,
   be gra -- cious,
   be gra -- cious un -- to Thy ser -- vants.
-
+  
   Turn Thee a -- gain, O Lord, __ at the last,
   turn Thee, turn Thee, O Lord, at __ the last, __
   and be gra -- cious,
@@ -222,7 +219,7 @@ sopText = \lyricmode {
   un -- to Thy ser -- vants,
   be gra -- cious,
   be gra -- cious un -- to Thy ser -- vants.
-
+  
   A -- men, A -- men, A -- men, A -- men. __
 }
 
@@ -231,18 +228,18 @@ altText = \lyricmode {
   turn Thee, turn Thee, O Lord, at the last,
   be gra -- cious un -- to Thy ser -- vants,
   Thy ser -- vants.
-
+  
   Turn Thee a -- gain, O Lord, at __ the last,
   turn Thee, turn Thee, turn Thee, turn Thee,
   turn Thee a -- gain, O Lord, at the last,
   and be gra -- cious un -- to Thy ser -- vants,
   be gra -- cious un -- to Thy ser -- vants.
-
+  
   Turn Thee a -- gain, O Lord, at the last,
   turn Thee, turn Thee, O Lord, at the last,
   be gra -- cious un -- to Thy ser -- vants,
   Thy ser -- vants.
-
+  
   A -- men, A -- men, A -- men,
   A -- men, A -- men, A -- men, A -- men.
 }
@@ -253,20 +250,20 @@ tenText = \lyricmode {
   and be gra -- cious un -- to Thy ser -- vants,
   be gra -- cious,
   be gra -- cious un -- to Thy ser -- vants.
-
+  
   Turn Thee a -- gain, O Lord, at the last,
   turn Thee, turn Thee, turn Thee,
   turn, turn Thee, turn Thee,
   turn Thee a -- gain, O Lord, at the last,
   and be gra -- cious un -- to Thy ser -- vants,
   be gra -- cious un -- to Thy ser -- vants.
-
+  
   Turn Thee a -- gain, O Lord, at the last,
   turn Thee, turn Thee, O Lord, at the last, __
   and be gra -- cious un -- to Thy ser -- vants,
   be gra -- cious,
   be gra -- cious un -- to Thy ser -- vants.
-
+  
   A -- men, A -- men, A -- men,
   A -- men, A -- men, A -- men.
 }
@@ -277,19 +274,19 @@ basText = \lyricmode {
   and be gra -- cious un -- to Thy ser -- vants,
   be gra -- cious,
   be gra -- cious un -- to Thy ser -- vants.
-
+  
   Turn Thee a -- gain, O Lord, at the last,
   turn Thee, turn Thee, turn Thee, turn Thee,
   O Lord, at the last,
   un -- to Thy ser -- vants,
   be gra -- cious un -- to Thy ser -- vants.
-
+  
   Turn Thee a -- gain, O Lord, at the last,
   O Lord, at the last,
   and be gra -- cious un -- to Thy ser -- vants,
   be gra -- cious,
   be gra -- cious un -- to Thy ser -- vants.
-
+  
   A -- men, A -- men,  A -- men, A -- men, A -- men.
 }
 
