@@ -88,7 +88,7 @@ mel = \relative c' {
   d4 fis( g) e d2 fis4 a2 b4 a2
   a4 d2 cis4 b2 a4 a( g) fis fis( e)
   e a2 b4 cis2 a4 d( fis,) gis a2
-  d,4 g2 fis4 e2 d4 d( fis) e d2\fermata
+  d,4 g2 fis4 e2~ e8 d d4( fis) e d2\fermata
 }
 
 % zetting 1
@@ -177,7 +177,7 @@ scoreTwo = \new ChoirStaff <<
   } { \mel } \addlyrics { \stanzaTwo }
   \new Staff \with {
     instrumentName = "A."
-  } { \alt } %\addlyrics { \stanzaTwo }
+  } { \alt } \addlyrics { \stanzaTwo }
 >>
 
 \score {
@@ -320,8 +320,8 @@ scoreFour =   <<
     \new Staff { \mel }
   >>
   \new PianoStaff <<
-    \new Staff { s1 }
-    \new Staff { \clef bass s1 }
+    \new Staff { s2.*16 }
+    \new Staff { \clef bass s2.*16 }
   >>
 >>
 
