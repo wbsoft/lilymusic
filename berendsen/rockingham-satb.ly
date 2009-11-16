@@ -2,16 +2,7 @@
 
 #(set-global-staff-size 18)
 
-\layout {
-  indent = #10
-  \context {
-    \Score
-    \remove "Bar_number_engraver"
-  }
-}
-
 \paper {
-%   between-system-padding = #0.1
   ragged-last-bottom = ##t
 }
 
@@ -52,6 +43,14 @@
   }
 }
 
+\layout {
+  indent = #10
+  \context {
+    \Score
+    \remove "Bar_number_engraver"
+  }
+}
+
 stanzaOne = \lyricmode {
   \set stanza = "1."
   Als ik het wond’ -- re kruis aan -- schouw,
@@ -64,7 +63,7 @@ stanzaTwo = \lyricmode {
   \set stanza = "2."
   Ver -- bied mij dan elk pra -- lend woord
   voor al wat niet uw kruis is Heer,
-  en laat mij, wat m’_op aard’ be -- koort,
+  en laat mij wat m’_op aard’ be -- koort,
   ten of -- fer leg -- gen voor U neer.
 }
 
@@ -88,10 +87,11 @@ mel = \relative c' {
   d4 fis( g) e d2 fis4 a2 b4 a2
   a4 d2 cis4 b2 a4 a( g) fis fis( e)
   e a2 b4 cis2 a4 d( fis,) gis a2
-  d,4 g2 fis4 e2~ e8 d d4( fis) e d2\fermata
+  d,4 g2 fis4 e2 d4 d( fis) e d2\fermata
 }
 
-% zetting 1
+
+% EEN
 sop = {
   \mel
   \bar "||"
@@ -128,7 +128,7 @@ scoreOne = \new ChoirStaff <<
     \new Voice = "sop" { \voiceOne \sop }
     \new Voice = "alt" { \voiceTwo \alt }
   >>
-  \new Lyrics \lyricsto "alt" \stanzaOne
+  \new Lyrics \lyricsto "sop" \stanzaOne
   \new Staff \with {
     instrumentName = \markup\center-column{ T. B. }
   } <<
@@ -138,9 +138,7 @@ scoreOne = \new ChoirStaff <<
   >>
 >>
 
-\score {
-  \scoreOne
-}
+\score { \scoreOne }
 
 % TWEE
 sopOne = \relative c' {
@@ -150,6 +148,14 @@ sopOne = \relative c' {
   cis8( d) e2.~ e4 d cis d2 d4 cis2
   d4 a2 a4 a( b) cis d( b) a8( g) fis2\fermata
   \bar "||"
+}
+
+sopTwo = \relative c' {
+  \global
+  d4 fis( g) e d2 fis4 a2 b4 a2
+  a4 d2 cis4 b2 a4 a( g) fis fis( e)
+  e a2 b4 cis2 a4 d( fis,) gis a2
+  d,4 g2 fis4 e2~ e8 d d4( fis) e d2\fermata
 }
 
 alt = \relative c' {
@@ -174,26 +180,17 @@ scoreTwo = \new ChoirStaff <<
   } { \sopOne } \addlyrics { \stanzaTwoSop }
   \new Staff \with {
     instrumentName = "S. II"
-  } { \mel } \addlyrics { \stanzaTwo }
+  } { \sopTwo } \addlyrics { \stanzaTwo }
   \new Staff \with {
     instrumentName = "A."
   } { \alt } \addlyrics { \stanzaTwo }
 >>
 
-\score {
-  \scoreTwo
-}
-
-
-
-
-
+\score { \scoreTwo }
 
 % DRIE
-
 soprano = \relative c'' {
   \global
-  % Muziek volgt hier.
   r4 R2. R2. r2
   a4 cis( d) b a2 cis4 e2 fis4 e2 \breathe
   a,4 d2 cis4 b2 a4 a( g) fis fis( e) r
@@ -207,12 +204,11 @@ soprano = \relative c'' {
   >> \breathe
   \oneVoice
   d4 g2 fis4 e2 d4 d( fis) e d2.~ <d a>2
-  \bar "|."
+  \bar "||"
 }
 
 alto = \relative c' {
   \global
-  % Muziek volgt hier.
   r4 R2. r2
   d4 fis( g) e a2 gis4 g2 g4 e2 \breathe
   g4 g2 e4 a2.~( a4 g) fis d2.( dis4 e) fis g2 \breathe
@@ -223,7 +219,6 @@ alto = \relative c' {
 
 tenor = \relative c' {
   \global
-  % Muziek volgt hier.
   r4 r2
   g4 b( c) a g( d') cis e( d2~ d4 cis b~ b a) d d( cis b a2) \breathe
   a4 d2 cis4 b2 a4 a( g) fis e2 \breathe
@@ -234,7 +229,6 @@ tenor = \relative c' {
 
 bass = \relative c {
   \global
-  % Muziek volgt hier.
   d4 fis( g) e d2 fis4 b2 g4 fis2( f4 e2) d4 cis2 b4~ b a g' fis2.( g2) \breathe
   a4 d2 cis4 b2 a4 a( g) d cis2 \breathe
   b4 a( a') g4 fis2. e d2 \breathe
@@ -242,7 +236,6 @@ bass = \relative c {
 }
 
 sopranoVerse = \lyricmode {
-  % Liedtekst volgt hier.
   \set stanza = "3."
   Te klein is ’t_of -- fer, dat ik bood,
   al waar’ al_’t goed der aard’ mijn deel.
@@ -251,7 +244,6 @@ sopranoVerse = \lyricmode {
 }
 
 altoVerse = \lyricmode {
-  % Liedtekst volgt hier.
   \set stanza = "3."
   Te klein is ’t_of -- fer, dat ik bood,
   al waar’ al ’t_goed __ der aard’ __ mijn deel.
@@ -260,7 +252,6 @@ altoVerse = \lyricmode {
 }
 
 tenorVerse = \lyricmode {
-  % Liedtekst volgt hier.
   \set stanza = "3."
   Te klein is ’t_of -- fer, dat __ ik bood, __
   al waar’ al_’t goed der aard’ mijn deel.
@@ -270,7 +261,6 @@ tenorVerse = \lyricmode {
 }
 
 bassVerse = \lyricmode {
-  % Liedtekst volgt hier.
   \set stanza = "3."
   Te klein is ’t_of -- fer, dat ik bood, __
   is ’t_of -- fer dat ik bood, __
@@ -298,10 +288,7 @@ scoreThree = \new ChoirStaff <<
   \addlyrics { \bassVerse }
 >>
 
-\score {
-  \scoreThree
-}
-
+\score { \scoreThree }
 
 % VIER
 
@@ -309,23 +296,127 @@ descant = \relative c' {
   \global
   d4 a'( b) cis d( cis) b a( d) g g( fis)
   e d( e) fis b,( cis) d e( a,8 b) cis( d) d4( cis)
-  cis8( d) e4( cis) b a2 b8( cis) d4( fis) e d( cis)
+  cis8( d) e4( cis) b b( ais) b8( cis) d4( fis) e d( cis)
   c b( cis) d g,( a) b e,8( fis g a) b( cis) d2\fermata
   \bar "|."
 }
 
+organRight = <<
+  \relative c' {
+    \global
+    \voiceOne
+    d4 |
+    a' b cis |
+    d cis b |
+    <a~ cis,> <d a d,> \oneVoice <g~ d g,> |
+    \voiceOne
+    g fis e |
+    d e fis |
+    b, cis d |
+    e a,8 b cis d |
+    <d fis,>4 <cis e,> cis8 d |
+    e4 cis b~ |
+    b ais b8 cis |
+    d4 fis e |
+    d cis c |
+    b cis d |
+    g2 e4 |
+    d b a'8 g |
+    <fis d>2\fermata
+  }
+  \\ \relative c' {
+    \voiceTwo
+    d4 |
+    d2 g4 |
+    fis2~ <fis d>4 |
+    s2. |
+    <d' a>2 a4 |
+    b2 a4 |
+    a g a |
+    a g fis |
+    s2 e4 |
+    e2 e4 |
+    fis2 g4 |
+    fis2 gis4 |
+    a2 a4 |
+    g2 fis4 |
+    g a b |
+    a~ <a fis> <g cis> |
+    fis2
+  }
+>>
+
+organLeft = \relative c {
+  \global
+  d4 |
+  fis g e |
+  d2 gis4 |
+  a2 b4 |
+  a2 <a e'>4 |
+  <<
+    { fis'2 cis4 | d2 a4 }
+    \\ { fis4 gis a | d, e fis }
+  >> |
+  <a e>2 <a d,>4 |
+  a2 e4 |
+  <a e>2 <b cis,>4 |
+  <cis fis,>2 <a e>4 |
+  << { b cis } \\ fis,2 >> <b d>4 |
+  <e e,>2 <d d,>4 |
+  << { d e d } \\ { g,2 fis4 } >> |
+  <e b' e>2 <e b' d>4 |
+  <fis a d> <d g> <e a cis e> |
+  <fis a d>2\fermata
+}
+
+organPedal = \relative c {
+  \global
+  d4 |
+  d g, a |
+  b2 b4 |
+  fis2 g4 |
+  d'2 cis4 |
+  b2 fis'4 |
+  g2 fis4 |
+  cis2 d4 |
+  a2 a4 |
+  g2 g4 |
+  fis2 e4 |
+  b' d e |
+  a g fis~ |
+  fis e b |
+  g2 gis4 |
+  a2. |
+  <d d,>2\fermata
+}
+
 scoreFour =   <<
   \new ChoirStaff <<
-    \new Staff { \descant } \addlyrics { \stanzaFour }
-    \new Staff { \mel }
+    \new Staff \with {
+      instrumentName = \markup \center-column {
+        Descant (Sopranos)
+      }
+    } { \descant } \addlyrics { \stanzaFour }
+    \new Staff \with {
+      instrumentName = \markup\center-column {
+        \line { All other } voices
+      }
+      \override VerticalAxisGroup #'minimum-Y-extent = #'(-7 . 4)
+    } { \mel }
   >>
-  \new PianoStaff <<
-    \new Staff { s2.*16 }
-    \new Staff { \clef bass s2.*16 }
+  \new PianoStaff \with {
+    instrumentName = #"Organ"
+  } <<
+    \new Staff { \organRight }
+    \new Staff { \clef bass \organLeft }
   >>
+  \new Staff { \clef bass \organPedal }
 >>
 
 \score {
   \scoreFour
+  \layout {
+    indent = #20
+  }
 }
 
