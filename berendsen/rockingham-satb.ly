@@ -4,11 +4,14 @@
 
 \paper {
   ragged-last-bottom = ##t
+  top-margin = 10\mm
+  bottom-margin = 10\mm
 }
 
 \header {
   title = "When I survey the wondrous cross"
   subtitle = "Gezang 48 Herv. Bundel: “Als ik het wond’re kruis aanschouw”"
+  subsubtitle = \markup \strut
   poet = "After Isaac Watts (1674-1748)"
   meter = \markup \tiny ROCKINGHAM
   composer = "Edward Miller (1731-1807), melody and first verse"
