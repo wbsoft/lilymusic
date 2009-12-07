@@ -1,4 +1,5 @@
 \version "2.12.0"
+
 #(set-global-staff-size 20)
 
 \header {
@@ -87,20 +88,22 @@ bas = \relative c {
   \arpeggioBracket < bes f' >\arpeggio < f f' >\arpeggio _\fermata
 }
 
-av = #(define-music-function (parser location voice) (string?)
-        #{ \set associatedVoice = $voice #})
 % switch associatedVoice now and then to get correct display of
 % melismas in different voices
+ava = \set associatedVoice = "a"
+avs = \set associatedVoice = "s"
+avt = \set associatedVoice = "t"
+
 text = \lyricmode {
   O Lord, my God, to thee do I lift up my soul.
   O Lord, __ in __ thee, in __ thee __ have I trust -- ed.
   Let me not be a -- sham -- ed,
-  Let not my foes tri -- \av "a" umph __ o -- ver me.
-  \av "s" O lead me in a plain path;
-  cast me not off, nei -- ther \av "t" for --  sake __ me.
+  Let not my foes tri -- \ava umph __ o -- ver me.
+  \avs O lead me in a plain path;
+  cast me not off, nei -- ther \avt for --  sake __ me.
   Teach me thy way, Lord, Lead me, lead me in a plain path. 
-  O hide not thy face, Hide not \av "s" thy face __ \av "t" far __ from __ me.
-  Lord __ God, Lord __ God, Hide not \av "s" thy face __ \av "t" far __ from __ me.
+  O hide not thy face, Hide not \avs thy face __ \avt far __ from __ me.
+  Lord __ God, Lord __ God, Hide not \avs thy face __ \avt far __ from __ me.
   A -- men.
 }
 
