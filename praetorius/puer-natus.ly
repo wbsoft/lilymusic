@@ -1,4 +1,5 @@
 \version "2.12.0"
+\include "nederlands.ly"
 
 #(set-global-staff-size 18)
 
@@ -78,7 +79,7 @@ bass = \relative c' {
   g4 g2 e4 d2 f4 g2 e4 d2
   \parenthesize d4 bes'4.( a8 g f es4 g) f bes,2.~ bes2
   bes'4 g2 d4 f4.( e8 d c bes4) c4 d bes g
-  c d2 g4 f4.( e8 d c bes c d e f) d g4( c,) d g,2.~g2
+  c d2 g4 f4.( e8 d c bes c d e) f( d) g4( c,) d g,2.~g2
   \bar "|."
 }
 

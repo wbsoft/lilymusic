@@ -206,7 +206,7 @@ soprano = \relative c'' {
     }
   >> \breathe
   \oneVoice
-  d4 g2 fis4 e2 d4 d( fis) e d2.~ <d a>2
+  d4 g2 fis4 e2 d4 d( fis) e d2.~ <d a>2\fermata
   \bar "||"
 }
 
@@ -217,7 +217,7 @@ alto = \relative c' {
   g4 g2 e4 a2.~( a4 g) fis d2.( dis4 e) fis g2 \breathe
   gis4 a2 d4 d( cis) b a2. g fis 
   R2. r2
-  fis4 b2 b4 a d c~( c b) g fis2
+  fis4 b2 b4 a d c~( c b) g fis2\fermata
 }
 
 tenor = \relative c' {
@@ -227,7 +227,7 @@ tenor = \relative c' {
   a4 d2 cis4 b2 a4 a( g) fis e2 \breathe
   e4 e'2.~( e4 b) cis d2. a2 \breathe
   a4 d2 cis4 b2 a4 g2 a4 b2 \breathe
-  e4 fis2.~( fis4 d) e a,2
+  e4 fis2.~( fis4 d) e a,2\fermata
 }
 
 bass = \relative c {
@@ -235,7 +235,7 @@ bass = \relative c {
   d4 fis( g) e d2 fis4 b2 g4 fis2( f4 e2) d4 cis2 b4~ b a g' fis2.( g2) \breathe
   a4 d2 cis4 b2 a4 a( g) d cis2 \breathe
   b4 a( a') g4 fis2. e d2 \breathe
-  d4 g2 fis4 e2 d4 g2( gis4 a2.~ a4 g) g, d'2
+  d4 g2 fis4 e2 d4 g2( gis4 a2.~ a4 g) g, d'2\fermata
 }
 
 sopranoVerse = \lyricmode {

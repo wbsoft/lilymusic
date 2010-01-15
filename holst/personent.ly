@@ -1,4 +1,4 @@
-\version "2.11.61"
+\version "2.13.1"
 #(set-global-staff-size 18)
 \header {
   title = "Personent Hodie"
@@ -302,12 +302,3 @@ left = \relative c' {
     }
   }
 }
-
-
-%{
-convert-ly (GNU LilyPond) 2.11.61
-Verwerken van `'...
-toepassen van conversie: 2.11.60, 2.11.61
-
-
-%}
