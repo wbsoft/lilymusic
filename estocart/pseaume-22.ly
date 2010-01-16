@@ -2,8 +2,39 @@
 
 \header {
   title = "Psalm 22"
-  composer = "Pascal de l‘Estocart (1539-na 1584)"
+  composer = "Paschal de l‘Estocart (1539-na 1584)"
+  poet = "Berijming 1773"
+  tagline = \markup {
+    Engraved at
+    \simple #(strftime "%Y-%m-%d" (localtime (current-time)))
+    with \with-url #"http://lilypond.org/web/"
+    { LilyPond \simple #(lilypond-version) (http://lilypond.org/) }
+  }
+  copyright = \markup \center-column {
+    \line {
+      Engraved by
+      \with-url #"http://www.wilbertberendsen.nl/" {
+        Wilbert Berendsen
+        (http://www.wilbertberendsen.nl/)
+      }
+    }
+    \line {
+      Copyright © 2010
+      \with-url #"http://www.cpdl.org/" {
+        The Choral Public Domain Library
+        (http://www.cpdl.org/)
+      }
+    }
+    \line {
+      This edition may be freely distributed,
+      edited, performed or recorded.
+    }
+  }
+  
+}
 
+\paper {
+  ragged-last-bottom = ##f
 }
 
 global = {
@@ -47,11 +78,11 @@ soprano = \relative c'' {
   g, d' |
   e e |
   f1 |
-  e |
-  d2 c~ |
+  es |
+  d2( c~ |
   c b |
   c1~ |
-  c |
+  c) |
   d2 r4 bes |
   bes bes a a |
   g1 |
@@ -70,8 +101,8 @@ soprano = \relative c'' {
   bes4 bes bes4. a8 |
   g4 f e2 |
   f r4 bes |
-  as2 g~ |
-  g fis |
+  as2( g~ |
+  g) fis |
   g\breve*1/2
   \bar "|."
 }
@@ -117,8 +148,8 @@ alto = \relative c' {
   f2 g es2. as4 |
   g( f2 e4) |
   f4 f f f |
-  g g, a2 |
-  bes c |
+  g g, a2( |
+  bes c) |
   d r4 f~ |
   f d es2 |
   f4 a a a |
@@ -220,6 +251,17 @@ bass = \relative c {
   \bar "|."
 }
 
+rehearsalMarks = {
+  s1*17
+  \mark\default % bar 18
+  s1*13
+  \mark\default % bar 31
+  s1*13
+  \mark\default % bar 44
+  s1*6
+  \mark\default % bar 50
+}
+
 sopranoVerseDutch = \lyricmode {
   Mijn God, mijn God, waar -- om ver -- laat Gij mij,
   en redt mij niet, ter -- wijl ik __ zwoeg en strij’,
@@ -230,6 +272,15 @@ sopranoVerseDutch = \lyricmode {
   in d’_ang -- sten die ik lij’,
   in d’_ang -- sten die ik lij’?
   Dus fel ge -- sla -- gen?
+  ’t_Zij ik, mijn God, bij dag moog’ bit -- ter kla -- gen,
+  bij dag moog’ bit -- ter kla -- gen.
+  Gij ant -- woordt niet;
+  ant -- woordt niet;
+  ’t_zij ik des nachts moog’ ker -- men,
+  ’t_zij ik des nachts moog’ ker -- men.
+  Ik heb geen rust, ook vind ik geen ont -- fer -- men,
+  ook vind ik geen ont -- fer -- men,
+  in mijn __ ver -- driet.
 }
 
 sopranoVerseFrench = \lyricmode {
@@ -247,7 +298,18 @@ altoVerseDutch = \lyricmode {
   en __ brul -- lend klaag,
   in d’_ang -- sten die ik lij’?
   Dus fel ge -- sla -- gen?
-  
+  ’t_Zij ik, mijn God,
+  ’t_zij ik, mijn God,
+  ’t_zij ik, mijn God, bij dag moog’ bit -- ter kla -- gen,
+  bij dag moog’ bit -- ter kla -- gen.
+  Gij __ ant -- woordt niet;
+  Gij ant -- woordt niet;
+  ’t_zij ik __ des nachts moog’ ker -- men.
+  Ik __ heb geen __ rust,
+  ik heb geen rust,
+  ik heb geen rust,
+  ook vind ik geen ont -- fer -- men,
+  in mijn ver -- driet.
 }
 
 altoVerseFrench = \lyricmode {
@@ -302,7 +364,7 @@ pianoReduction = \new PianoStaff \with {
   } {
     #(set-accidental-style 'piano)
     <<
-      \soprano \\
+      << \soprano \rehearsalMarks >> \\
       \alto
     >>
   }
@@ -324,7 +386,7 @@ pianoReduction = \new PianoStaff \with {
       \new Staff \with {
         midiInstrument = "choir aahs"
         instrumentName = "S."
-      } { \soprano }
+      } << \soprano \rehearsalMarks >>
       \addlyrics { \sopranoVerseDutch }
 %       \addlyrics { \sopranoVerseFrench }
       \new Staff \with {
@@ -349,7 +411,10 @@ pianoReduction = \new PianoStaff \with {
 %     \pianoReduction
   >>
   \layout {
-    
+    \context {
+      \Score
+      markFormatter = #format-mark-box-letters
+    }
   }
   \midi {
     \context {

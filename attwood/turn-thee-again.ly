@@ -9,16 +9,14 @@ organPartSize = #-1
   copyright = \markup \center-column {
     \line {
       Engraved by
-      \with-url #"http://www.wilbertberendsen.nl/"
-      {
+      \with-url #"http://www.wilbertberendsen.nl/" {
         Wilbert Berendsen
         (http://www.wilbertberendsen.nl/)
       }
     }
     \line {
       Copyright © 2008
-      \with-url #"http://www.cpdl.org/"
-      {
+      \with-url #"http://www.cpdl.org/" {
         The Choral Public Domain Library
         (http://www.cpdl.org/)
       }
