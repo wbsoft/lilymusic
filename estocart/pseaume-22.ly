@@ -274,7 +274,7 @@ sopranoVerseDutch = \lyricmode {
   Dus fel ge -- sla -- gen?
   ’t_Zij ik, mijn God, bij dag moog’ bit -- ter kla -- gen,
   bij dag moog’ bit -- ter kla -- gen.
-  Gij ant -- woordt niet;
+  Gij ant -- woordt niet,
   ant -- woordt niet;
   ’t_zij ik des nachts moog’ ker -- men,
   ’t_zij ik des nachts moog’ ker -- men.
@@ -302,7 +302,7 @@ altoVerseDutch = \lyricmode {
   ’t_zij ik, mijn God,
   ’t_zij ik, mijn God, bij dag moog’ bit -- ter kla -- gen,
   bij dag moog’ bit -- ter kla -- gen.
-  Gij __ ant -- woordt niet;
+  Gij __ ant -- woordt niet,
   Gij ant -- woordt niet;
   ’t_zij ik __ des nachts moog’ ker -- men.
   Ik __ heb geen __ rust,
@@ -384,25 +384,25 @@ pianoReduction = \new PianoStaff \with {
   <<
     \new ChoirStaff <<
       \new Staff \with {
-        midiInstrument = "choir aahs"
+%         midiInstrument = "choir aahs"
         instrumentName = "S."
       } << \soprano \rehearsalMarks >>
       \addlyrics { \sopranoVerseDutch }
 %       \addlyrics { \sopranoVerseFrench }
       \new Staff \with {
-        midiInstrument = "choir aahs"
+%         midiInstrument = "choir aahs"
         instrumentName = "A."
       } { \alto }
       \addlyrics { \altoVerseDutch }
 %       \addlyrics { \altoVerseFrench }
       \new Staff \with {
-        midiInstrument = "choir aahs"
+%         midiInstrument = "baritone sax"
         instrumentName = "T."
       } { \clef "treble_8" \tenor }
       \addlyrics { \tenorVerseDutch }
 %       \addlyrics { \tenorVerseFrench }
       \new Staff \with {
-        midiInstrument = "choir aahs"
+%         midiInstrument = "choir aahs"
         instrumentName = "B."
       } { \clef bass \bass }
       \addlyrics { \bassVerseDutch }
@@ -419,7 +419,7 @@ pianoReduction = \new PianoStaff \with {
   \midi {
     \context {
       \Score
-      tempoWholesPerMinute = #(ly:make-moment 100 4)
+      tempoWholesPerMinute = #(ly:make-moment 88 2)
     }
   }
 }
