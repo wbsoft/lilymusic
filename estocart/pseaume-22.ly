@@ -34,6 +34,7 @@
 }
 
 \paper {
+  indent = 8\mm
   ragged-last-bottom = ##f
 }
 
@@ -414,6 +415,10 @@ pianoReduction = \new PianoStaff \with {
     \context {
       \Score
       markFormatter = #format-mark-box-letters
+    }
+    \context {
+      \Staff
+      \consists "Ambitus_engraver"
     }
   }
   \midi {
