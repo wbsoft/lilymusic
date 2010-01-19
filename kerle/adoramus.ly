@@ -343,29 +343,26 @@ pianoReduction = \new PianoStaff \with {
   }
 }
 
-% Rehearsal MIDIs:
-loud = {
-  \set Staff.midiInstrument = #"soprano sax"
-  s1\ff
-}
-
-soft = {
-  \set Staff.midiInstrument = #"acoustic grand"
-  s1\p
-}
-  
+% Rehearsal MIDI files:
 #(define output-suffix "soprano")
 \book {
   \score {
-    \new ChoirStaff <<
-      \new Staff << \loud \soprano >> \addlyrics { \sopranoVerse }
-      \new Staff << \soft \alto >>
-      \new Staff << \soft \tenor >>
-      \new Staff << \soft \bass >>
+    \unfoldRepeats \new ChoirStaff <<
+      \new Staff \with {
+        midiInstrument = #"soprano sax"
+        midiMinimumVolume = #0.8
+        midiMaximumVolume = #1.0
+      } { s1*0\f \soprano }
+      \addlyrics { \sopranoVerse }
+      \new Staff { s1*0\f \alto }
+      \new Staff { s1*0\f \tenor }
+      \new Staff { s1*0\f \bass }
     >>
     \midi {
       \context {
         \Score
+        midiMinimumVolume = #0.5
+        midiMaximumVolume = #0.5
         tempoWholesPerMinute = #(ly:make-moment 100 4)
       }
     }
@@ -375,38 +372,47 @@ soft = {
 #(define output-suffix "alto")
 \book {
   \score {
-    \new ChoirStaff <<
-      \new Staff << \soft \soprano >>
-      \new Staff << \loud \alto >> \addlyrics { \altoVerse }
-      \new Staff << \soft \tenor >>
-      \new Staff << \soft \bass >>
+    \unfoldRepeats \new ChoirStaff <<
+      \new Staff { s1*0\f \soprano }
+      \new Staff \with {
+        midiInstrument = #"soprano sax"
+        midiMinimumVolume = #0.8
+        midiMaximumVolume = #1.0
+      } { s1*0\f \alto }
+      \addlyrics { \altoVerse }
+      \new Staff { s1*0\f \tenor }
+      \new Staff { s1*0\f \bass }
     >>
     \midi {
       \context {
         \Score
+        midiMinimumVolume = #0.5
+        midiMaximumVolume = #0.5
         tempoWholesPerMinute = #(ly:make-moment 100 4)
       }
     }
   }
 }
 
-loud = {
-  \set Staff.midiInstrument = #"tenor sax"
-  s1\ff
-}
-
 #(define output-suffix "tenor")
 \book {
   \score {
-    \new ChoirStaff <<
-      \new Staff << \soft \soprano >>
-      \new Staff << \soft \alto >>
-      \new Staff << \loud \tenor >> \addlyrics { \tenorVerse }
-      \new Staff << \soft \bass >>
+    \unfoldRepeats \new ChoirStaff <<
+      \new Staff { s1*0\f \soprano }
+      \new Staff { s1*0\f \alto }
+      \new Staff \with {
+        midiInstrument = #"tenor sax"
+        midiMinimumVolume = #0.8
+        midiMaximumVolume = #1.0
+      } { s1*0\f \tenor }
+      \addlyrics { \tenorVerse }
+      \new Staff { s1*0\f \bass }
     >>
     \midi {
       \context {
         \Score
+        midiMinimumVolume = #0.5
+        midiMaximumVolume = #0.5
         tempoWholesPerMinute = #(ly:make-moment 100 4)
       }
     }
@@ -416,18 +422,24 @@ loud = {
 #(define output-suffix "bass")
 \book {
   \score {
-    \new ChoirStaff <<
-      \new Staff << \soft \soprano >>
-      \new Staff << \soft \alto >>
-      \new Staff << \soft \tenor >>
-      \new Staff << \loud \bass >> \addlyrics { \bassVerse }
+    \unfoldRepeats \new ChoirStaff <<
+      \new Staff { s1*0\f \soprano }
+      \new Staff { s1*0\f \alto }
+      \new Staff { s1*0\f \tenor }
+      \new Staff \with {
+        midiInstrument = #"tenor sax"
+        midiMinimumVolume = #0.8
+        midiMaximumVolume = #1.0
+      } { s1*0\f \bass }
+      \addlyrics { \bassVerse }
     >>
     \midi {
       \context {
         \Score
+        midiMinimumVolume = #0.5
+        midiMaximumVolume = #0.5
         tempoWholesPerMinute = #(ly:make-moment 100 4)
       }
     }
   }
 }
-
