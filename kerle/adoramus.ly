@@ -1,6 +1,6 @@
 \version "2.13.10"
 
-#(set-global-staff-size 19)
+#(set-global-staff-size 18)
 
 \header {
   title = "Adoramus te"
@@ -307,46 +307,127 @@ pianoReduction = \new PianoStaff \with {
   }
 >>
 
-\score {
-  <<
-    \new ChoirStaff <<
-      \new Staff \with {
-%         midiInstrument = "choir aahs"
-        instrumentName = "S."
-        \consists "Ambitus_engraver"
-      } { \soprano }
-      \addlyrics { \sopranoVerse }
-      \new Staff \with {
-%         midiInstrument = "choir aahs"
-        instrumentName = "A."
-        \consists "Ambitus_engraver"
-      } { \alto }
-      \addlyrics { \altoVerse }
-      \new Staff \with {
-%         midiInstrument = "choir aahs"
-        instrumentName = "T."
-        \consists "Ambitus_engraver"
-      } { \clef "treble_8" \tenor }
-      \addlyrics { \tenorVerse }
-      \new Staff \with {
-%         midiInstrument = "choir aahs"
-        instrumentName = "B."
-        \consists "Ambitus_engraver"
-      } { \clef bass \bass }
-      \addlyrics { \bassVerse }
+\book {
+  \score {
+    <<
+      \new ChoirStaff <<
+        \new Staff \with {
+          instrumentName = "S."
+          \consists "Ambitus_engraver"
+        } { \soprano }
+        \addlyrics { \sopranoVerse }
+        \new Staff \with {
+          instrumentName = "A."
+          \consists "Ambitus_engraver"
+        } { \alto }
+        \addlyrics { \altoVerse }
+        \new Staff \with {
+          instrumentName = "T."
+          \consists "Ambitus_engraver"
+        } { \clef "treble_8" \tenor }
+        \addlyrics { \tenorVerse }
+        \new Staff \with {
+          instrumentName = "B."
+          \consists "Ambitus_engraver"
+        } { \clef bass \bass }
+        \addlyrics { \bassVerse }
+      >>
+  %     \pianoReduction
     >>
-%     \pianoReduction
-  >>
-  \layout { 
-    \context {
-      \Voice
-      \override Slur #'stencil = ##f
-    }
-  }
-  \midi {
-    \context {
-      \Score
-      tempoWholesPerMinute = #(ly:make-moment 100 4)
+    \layout { 
+      \context {
+        \Voice
+        \override Slur #'stencil = ##f
+      }
     }
   }
 }
+
+% Rehearsal MIDIs:
+loud = {
+  \set Staff.midiInstrument = #"soprano sax"
+  s1\ff
+}
+
+soft = {
+  \set Staff.midiInstrument = #"acoustic grand"
+  s1\p
+}
+  
+#(define output-suffix "soprano")
+\book {
+  \score {
+    \new ChoirStaff <<
+      \new Staff << \loud \soprano >> \addlyrics { \sopranoVerse }
+      \new Staff << \soft \alto >>
+      \new Staff << \soft \tenor >>
+      \new Staff << \soft \bass >>
+    >>
+    \midi {
+      \context {
+        \Score
+        tempoWholesPerMinute = #(ly:make-moment 100 4)
+      }
+    }
+  }
+}
+
+#(define output-suffix "alto")
+\book {
+  \score {
+    \new ChoirStaff <<
+      \new Staff << \soft \soprano >>
+      \new Staff << \loud \alto >> \addlyrics { \altoVerse }
+      \new Staff << \soft \tenor >>
+      \new Staff << \soft \bass >>
+    >>
+    \midi {
+      \context {
+        \Score
+        tempoWholesPerMinute = #(ly:make-moment 100 4)
+      }
+    }
+  }
+}
+
+loud = {
+  \set Staff.midiInstrument = #"tenor sax"
+  s1\ff
+}
+
+#(define output-suffix "tenor")
+\book {
+  \score {
+    \new ChoirStaff <<
+      \new Staff << \soft \soprano >>
+      \new Staff << \soft \alto >>
+      \new Staff << \loud \tenor >> \addlyrics { \tenorVerse }
+      \new Staff << \soft \bass >>
+    >>
+    \midi {
+      \context {
+        \Score
+        tempoWholesPerMinute = #(ly:make-moment 100 4)
+      }
+    }
+  }
+}
+
+#(define output-suffix "bass")
+\book {
+  \score {
+    \new ChoirStaff <<
+      \new Staff << \soft \soprano >>
+      \new Staff << \soft \alto >>
+      \new Staff << \soft \tenor >>
+      \new Staff << \loud \bass >> \addlyrics { \bassVerse }
+    >>
+    \midi {
+      \context {
+        \Score
+        tempoWholesPerMinute = #(ly:make-moment 100 4)
+      }
+    }
+  }
+}
+
