@@ -65,19 +65,10 @@ tenSS = \relative c' {
 
 breaks = {
   s1*9
-  \bar "" \break
+  %\bar "" \break
   s1*8 s2
-  \bar "" \break
+  %\bar "" \break
 }
 
-\score {
-  \makeTenorSetting #psalm \keySig \sop \alt \mel \bas \breaks
-  \layout {}
-  \midi {}
-}
-
-\score {
-  \makeSopranoSetting #psalm \keySig \mel \altSS \tenSS \bas \breaks
-  \layout {}
-  \midi {}
-}
+tenorSetting = \makeTenorSetting #psalm \keySig \sop \alt \mel \bas \breaks
+sopranoSetting = \makeSopranoSetting #psalm \keySig \mel \altSS \tenSS \bas \breaks

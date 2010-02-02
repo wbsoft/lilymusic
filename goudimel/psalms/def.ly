@@ -2,6 +2,7 @@
 
 \paper {
   ragged-last-bottom = ##f
+  #(define page-breaking ly:page-turn-breaking)
 }
 
 \header {
@@ -136,7 +137,10 @@ makeTenorSetting = #(define-music-function (parser location
     \new StaffGroup \with {
       instrumentName = $psalm
     } <<
-      \new Staff <<
+      \new Staff \with {
+        \consists "Page_turn_engraver"
+        minimumPageTurnLength = #(ly:make-moment 500 2)
+      } <<
         \timeSig
         $keySignature
         \set Score.tempoWholesPerMinute = #(ly:make-moment 72 2)
@@ -168,7 +172,10 @@ makeSopranoSetting = #(define-music-function (parser location
     \new StaffGroup \with {
       instrumentName = $psalm
     } <<
-      \new Staff <<
+      \new Staff \with {
+        \consists "Page_turn_engraver"
+        minimumPageTurnLength = #(ly:make-moment 500 2)
+      } <<
         \timeSig
         $keySignature
         \set Score.tempoWholesPerMinute = #(ly:make-moment 72 2)

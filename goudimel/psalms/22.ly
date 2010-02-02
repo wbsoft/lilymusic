@@ -76,15 +76,6 @@ tenSS = \relative c {
   d c b b1
 }
 
-\score {
-  \makeTenorSetting #psalm \keySig \sop \alt \mel \bas \breaks
-  \layout {}
-  \midi {}
-}
-
-\score {
-  \makeSopranoSetting #psalm \keySig \mel \altSS \tenSS \bas \breaks
-  \layout {}
-  \midi {}
-}
+tenorSetting = \makeTenorSetting #psalm \keySig \sop \alt \mel \bas \breaks
+sopranoSetting = \makeSopranoSetting #psalm \keySig \mel \altSS \tenSS \bas \breaks
 
