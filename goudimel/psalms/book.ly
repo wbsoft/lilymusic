@@ -24,6 +24,14 @@
 \score { \tenorSetting }
 \score { \sopranoSetting }
 
+\include "7.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "8.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
 \include "22.ly"
 \score { \tenorSetting }
 \score { \sopranoSetting }
