@@ -40,8 +40,28 @@
 \score { \tenorSetting }
 \score { \sopranoSetting }
 
+\include "11.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "12.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "13.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "14.ly"
+\score { \tenorSetting \header { piece = "Same as Psalm 53" } }
+\score { \sopranoSetting }
+
 \include "22.ly"
 \score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "53.ly"
+\score { \tenorSetting \header { piece = "Same as Psalm 14" } }
 \score { \sopranoSetting }
 
 \include "64.ly"
