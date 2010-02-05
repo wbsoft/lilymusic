@@ -78,7 +78,8 @@ tenSS = \relative c' {
 }
 
 breaks = {
-  
+  s2*13
+  \noBreak % avoid breaking just before rest before repeat
 }
 
 tenorSetting = \makeTenorSetting #psalm \keySig \sop \alt \mel \bas \breaks
