@@ -1,5 +1,15 @@
 \version "2.13.10"
 
+#(set-global-staff-size 18)
+
+\paper {
+  two-sided = ##t
+  inner-margin = 25\mm
+  outer-margin = 18\mm
+  top-margin = 12\mm
+  bottom-margin = 12\mm
+}
+
 \include "1.ly"
 \score { \tenorSetting }
 \score { \sopranoSetting }
