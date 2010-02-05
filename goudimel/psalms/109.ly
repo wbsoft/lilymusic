@@ -2,7 +2,7 @@
 
 \include "def.ly"
 
-psalm = 28
+psalm = 109
 
 keySig = {
   \key g \dorian
