@@ -25,7 +25,7 @@ timeSig = {
   \once \override Staff.TimeSignature #'stencil = #ly:text-interface::print
   \once \override Staff.TimeSignature #'text = \markup {
     \override #'(baseline-skip . 0.5)
-    \column { \number 1 \tiny \note #"2" #-.6 }
+    \center-column { \number 1 \tiny \note #"2" #-.6 }
   }
   \time 1/2
 }
