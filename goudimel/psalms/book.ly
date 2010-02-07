@@ -156,6 +156,26 @@
 \score { \tenorSetting \header { piece = "Same as Psalm 68" } }
 \score { \sopranoSetting }
 
+\include "37.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "38.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "39.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "40.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "44.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
 \include "53.ly"
 \score { \tenorSetting \header { piece = "Same as Psalm 14" } }
 \score { \sopranoSetting }
