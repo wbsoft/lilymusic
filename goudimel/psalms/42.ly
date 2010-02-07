@@ -83,4 +83,3 @@ breaks = {
 
 tenorSetting = \makeTenorSetting #psalm \keySig \sop \alt \mel \bas \breaks
 sopranoSetting = \makeSopranoSetting #psalm \keySig \mel \altSS \tenSS \bas \breaks
-\score { \sopranoSetting \midi {} \layout {} }
