@@ -8,6 +8,8 @@
   outer-margin = 18\mm
   top-margin = 12\mm
   bottom-margin = 12\mm
+  
+  before-title-spacing = #'((space . 10))
 }
 
 \include "1.ly"
@@ -142,6 +144,18 @@
 \score { \tenorSetting \header { piece = "Same as Psalm 67" } }
 \score { \sopranoSetting }
 
+\include "34.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "35.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "36.ly"
+\score { \tenorSetting \header { piece = "Same as Psalm 68" } }
+\score { \sopranoSetting }
+
 \include "53.ly"
 \score { \tenorSetting \header { piece = "Same as Psalm 14" } }
 \score { \sopranoSetting }
@@ -160,6 +174,10 @@
 
 \include "67.ly"
 \score { \tenorSetting \header { piece = "Same as Psalm 33" } }
+\score { \sopranoSetting }
+
+\include "68.ly"
+\score { \tenorSetting \header { piece = "Same as Psalm 36" } }
 \score { \sopranoSetting }
 
 \include "70.ly"
