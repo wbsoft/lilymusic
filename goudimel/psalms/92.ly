@@ -58,9 +58,9 @@ altSS = \relative c' {
   e4 e c e e e2 r
   f2 f4 f g( f2) e4 f \breathe
   a,4 c c a d2 cis4 d2 r
-  a2 a4 a d d c2 c4 \breathe
-  a4 gis a a gis a2 r
-  f2 f4 f e2 d c4 \breathe
+  d2 c4 a d d c2 c4 \breathe
+  e4 e e f e e2 r
+  d2 f4 f e2 d c4 \breathe
   f4 f e d d2 cis4 d1
 }
 
@@ -69,10 +69,10 @@ tenSS = \relative c {
   g4 g a b b cis2 r
   d2 c4 c d2 c a4 \breathe
   d,4 e e f a a2 a r
-  d2 c4 f a g e2 e4 \breathe
-  e4 e e f e e2 r
-  a,2 d4 c c2 a a4 \breathe
-  c4 c c a g a2 a1
+  a2 a4 f a g e2 e4 \breathe
+  a4 gis a a gis a2 r
+  a2 d4 c c2 a a4 \breathe
+  c4 c c a g e( a) a1
 }
 
 
@@ -82,4 +82,3 @@ breaks = {
 
 tenorSetting = \makeTenorSetting #psalm \keySig \sop \alt \mel \bas \breaks
 sopranoSetting = \makeSopranoSetting #psalm \keySig \mel \altSS \tenSS \bas \breaks
-\score { \sopranoSetting \midi {} \layout {} }
