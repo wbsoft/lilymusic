@@ -380,6 +380,14 @@
 \score { \tenorSetting }
 \score { \sopranoSetting }
 
+\include "93.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "94.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
 \include "95.ly"
 \score { \tenorSetting \header { piece = "Same as Psalm 24, 62 and 111" } }
 \score { \sopranoSetting }
