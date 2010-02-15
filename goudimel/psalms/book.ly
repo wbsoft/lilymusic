@@ -456,12 +456,36 @@
 \score { \tenorSetting }
 \score { \sopranoSetting }
 
+\include "113.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "114.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "115.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
 \include "116.ly"
 \score { \tenorSetting \header { piece = "Same as Psalm 74" } }
 \score { \sopranoSetting }
 
+\include "117.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
 \include "118.ly"
 \score { \tenorSetting \header { piece = "Same as Psalm 66 and 98" } }
+\score { \sopranoSetting }
+
+\include "119.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "120.ly"
+\score { \tenorSetting }
 \score { \sopranoSetting }
 
 \include "139.ly"
