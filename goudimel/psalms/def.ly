@@ -117,8 +117,8 @@ timeSig = {
     \remove "Bar_number_engraver"
   }
   \context {
-    \StaffGroup
-    \consists "Instrument_name_engraver"
+    \PianoStaff
+%     \consists "Instrument_name_engraver"
     \override InstrumentName #'font-series = #'bold
     \override InstrumentName #'font-size = #5
 %     \override InstrumentName #'self-alignment-X = #RIGHT
@@ -134,7 +134,7 @@ makeTenorSetting = #(define-music-function (parser location
   (number? ly:music? ly:music? ly:music? ly:music? ly:music? ly:music?)
   (let ((psalm (format "~d." number)))
   #{
-    \new StaffGroup \with {
+    \new PianoStaff \with {
       instrumentName = $psalm
     } <<
       \new Staff \with {
@@ -169,7 +169,7 @@ makeSopranoSetting = #(define-music-function (parser location
   (number? ly:music? ly:music? ly:music? ly:music? ly:music? ly:music?)
   (let ((psalm (format "~d." number)))
   #{
-    \new StaffGroup \with {
+    \new PianoStaff \with {
       instrumentName = $psalm
     } <<
       \new Staff \with {
