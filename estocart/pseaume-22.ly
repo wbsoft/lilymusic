@@ -381,50 +381,102 @@ pianoReduction = \new PianoStaff \with {
   }
 >>
 
-\score {
-  <<
-    \new ChoirStaff <<
-      \new Staff \with {
-%         midiInstrument = "choir aahs"
-        instrumentName = "S."
-      } << \soprano \rehearsalMarks >>
-      \addlyrics { \sopranoVerseDutch }
-%       \addlyrics { \sopranoVerseFrench }
-      \new Staff \with {
-%         midiInstrument = "choir aahs"
-        instrumentName = "A."
-      } { \alto }
-      \addlyrics { \altoVerseDutch }
-%       \addlyrics { \altoVerseFrench }
-      \new Staff \with {
-%         midiInstrument = "baritone sax"
-        instrumentName = "T."
-      } { \clef "treble_8" \tenor }
-      \addlyrics { \tenorVerseDutch }
-%       \addlyrics { \tenorVerseFrench }
-      \new Staff \with {
-%         midiInstrument = "choir aahs"
-        instrumentName = "B."
-      } { \clef bass \bass }
-      \addlyrics { \bassVerseDutch }
-%       \addlyrics { \bassVerseFrench }
+\book {
+  \score {
+    <<
+      \new ChoirStaff <<
+        \new Staff \with {
+          %         midiInstrument = "choir aahs"
+          instrumentName = "S."
+        } << \soprano \rehearsalMarks >>
+        \addlyrics { \sopranoVerseDutch }
+        %       \addlyrics { \sopranoVerseFrench }
+        \new Staff \with {
+          %         midiInstrument = "choir aahs"
+          instrumentName = "A."
+        } { \alto }
+        \addlyrics { \altoVerseDutch }
+        %       \addlyrics { \altoVerseFrench }
+        \new Staff \with {
+          %         midiInstrument = "baritone sax"
+          instrumentName = "T."
+        } { \clef "treble_8" \tenor }
+        \addlyrics { \tenorVerseDutch }
+        %       \addlyrics { \tenorVerseFrench }
+        \new Staff \with {
+          %         midiInstrument = "choir aahs"
+          instrumentName = "B."
+        } { \clef bass \bass }
+        \addlyrics { \bassVerseDutch }
+        %       \addlyrics { \bassVerseFrench }
+      >>
+      %     \pianoReduction
     >>
-%     \pianoReduction
-  >>
-  \layout {
-    \context {
-      \Score
-      markFormatter = #format-mark-box-letters
-    }
-    \context {
-      \Staff
-      \consists "Ambitus_engraver"
+    \layout {
+      \context {
+        \Score
+        markFormatter = #format-mark-box-letters
+      }
+      \context {
+        \Staff
+        \consists "Ambitus_engraver"
+      }
     }
   }
-  \midi {
-    \context {
-      \Score
-      tempoWholesPerMinute = #(ly:make-moment 88 2)
-    }
+}
+
+
+% MIDI-oefenbestanden:
+rehearsalMidi = #(define-music-function
+  (parser location name midiInstrument lyrics) (string? string? ly:music?)
+  #{
+    \unfoldRepeats <<
+      \new Staff = "soprano" \new Voice = "soprano" { s1*0\f \soprano }
+      \new Staff = "alto" \new Voice = "alto" { s1*0\f \alto }
+      \new Staff = "tenor" \new Voice = "tenor" { s1*0\f \tenor }
+      \new Staff = "bass" \new Voice = "bass" { s1*0\f \bass }
+      \context Staff = $name {
+        \set Score.midiMinimumVolume = #0.5
+        \set Score.midiMaximumVolume = #0.5
+        \set Score.tempoWholesPerMinute = #(ly:make-moment 66 2)
+        \set Staff.midiMinimumVolume = #0.8
+        \set Staff.midiMaximumVolume = #1.0
+        \set Staff.midiInstrument = $midiInstrument
+      }
+      \new Lyrics \with {
+        alignBelowContext = $name
+      } \lyricsto $name $lyrics
+    >>
+#})
+
+#(define output-suffix "soprano")
+\book {
+  \score {
+    \rehearsalMidi "soprano" "soprano sax" \sopranoVerseDutch
+    \midi { }
+  }
+}
+
+#(define output-suffix "alto")
+\book {
+  \score {
+    \rehearsalMidi "alto" "soprano sax" \altoVerseDutch
+    \midi { }
+  }
+}
+
+#(define output-suffix "tenor")
+\book {
+  \score {
+    \rehearsalMidi "tenor" "tenor sax" \tenorVerseDutch
+    \midi { }
+  }
+}
+
+#(define output-suffix "bass")
+\book {
+  \score {
+    \rehearsalMidi "bass" "tenor sax" \bassVerseDutch
+    \midi { }
   }
 }

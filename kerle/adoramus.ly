@@ -352,7 +352,7 @@ rehearsalMidi = #(define-music-function
       \new Staff = "alto" \new Voice = "alto" { s1*0\f \alto }
       \new Staff = "tenor" \new Voice = "tenor" { s1*0\f \tenor }
       \new Staff = "bass" \new Voice = "bass" { s1*0\f \bass }
-      \context Staff = $name \context Voice = $name {
+      \context Staff = $name {
         \set Score.midiMinimumVolume = #0.5
         \set Score.midiMaximumVolume = #0.5
         \set Score.tempoWholesPerMinute = #(ly:make-moment 100 4)
