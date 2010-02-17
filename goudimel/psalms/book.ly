@@ -409,7 +409,7 @@
 \score { \sopranoSetting }
 
 \include "100.ly"
-\score { \tenorSetting }
+\score { \tenorSetting \header { "Same as Psalm 131" } }
 \score { \sopranoSetting }
 
 \include "101.ly"
@@ -473,7 +473,7 @@
 \score { \sopranoSetting }
 
 \include "117.ly"
-\score { \tenorSetting }
+\score { \tenorSetting \header { "Same as Psalm 127" } }
 \score { \sopranoSetting }
 
 \include "118.ly"
@@ -497,6 +497,42 @@
 \score { \sopranoSetting }
 
 \include "123.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "124.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "125.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "126.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "127.ly"
+\score { \tenorSetting \header { piece = "Same as Psalm 117" } }
+\score { \sopranoSetting }
+
+\include "128.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "129.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "130.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "131.ly"
+\score { \tenorSetting \header { "Same as Psalm 100" } }
+\score { \sopranoSetting }
+
+\include "132.ly"
 \score { \tenorSetting }
 \score { \sopranoSetting }
 
