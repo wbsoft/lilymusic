@@ -60,7 +60,7 @@ alt = \relative c' {
   fis'2 e4 e cis fis e2 e cis r
   cis2 cis d d4 \breathe
   cis d b d( cis e2) cis r
-  a,2 b4 cis d a b2 b d r
+  a2 b4 cis d a b2 b d r
   cis2 a b a4 \breathe
   c4 c a a2 a1
 }
