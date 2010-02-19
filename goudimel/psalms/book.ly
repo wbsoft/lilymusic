@@ -592,3 +592,19 @@
 \score { \tenorSetting }
 \score { \sopranoSetting }
 
+\include "146.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "147.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "148.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
+\include "149.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
+
