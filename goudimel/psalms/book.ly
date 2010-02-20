@@ -608,3 +608,6 @@
 \score { \tenorSetting }
 \score { \sopranoSetting }
 
+\include "150.ly"
+\score { \tenorSetting }
+\score { \sopranoSetting }
