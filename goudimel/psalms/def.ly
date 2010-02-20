@@ -5,13 +5,6 @@
   #(define page-breaking ly:page-turn-breaking)
 }
 
-\header {
-  title = "The Genevan Psalter"
-  subtitle = "in four part settings"
-  composer = "tenor settings by Claude Goudimel 1565"
-  arranger = "soprano settings adapted by Wilbert Berendsen 2010"
-}
-
 % default: no line breaks specified
 breaks = { }
 
@@ -118,10 +111,12 @@ timeSig = {
   }
   \context {
     \PianoStaff
-%     \consists "Instrument_name_engraver"
     \override InstrumentName #'font-series = #'bold
     \override InstrumentName #'font-size = #5
-%     \override InstrumentName #'self-alignment-X = #RIGHT
+    \override StaffGrouper #'between-staff-spacing = #'(
+      (space . 12)
+      (stretchability . 0)
+    )
   }
   \context {
     \Staff

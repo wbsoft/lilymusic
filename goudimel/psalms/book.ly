@@ -4,13 +4,45 @@
 
 \paper {
   two-sided = ##t
-  inner-margin = 25\mm
-  outer-margin = 18\mm
+  inner-margin = 24\mm
+  outer-margin = 12\mm
   top-margin = 12\mm
   bottom-margin = 12\mm
   
   before-title-spacing = #'((space . 10))
+  min-systems-per-page = 6
+  max-systems-per-page = 7
 }
+
+\header {
+  title = "The Genevan Psalter"
+  subtitle = "in four part settings"
+  composer = "Tenor settings by Claude Goudimel 1565"
+  arranger = "Soprano settings adapted by Wilbert Berendsen 2010"
+  copyright = \markup \center-column {
+    \line {
+      Engraved by 
+      \with-url #"http://www.wilbertberendsen.nl/" {
+        Wilbert Berendsen (www.wilbertberendsen.nl).
+      }
+    }
+    \line {
+      The tenor settings of Claude Goudimel are in the public domain, as well as the
+    }
+    \line {
+      soprano settings, which I created based on the tenor settings.
+    }
+  }
+    
+  tagline = \markup {
+    Engraved at
+    \simple #(strftime "%Y-%m-%d" (localtime (current-time)))
+    with \with-url #"http://lilypond.org/web/"
+    { LilyPond \simple #(lilypond-version) (http://lilypond.org/) }
+  }
+    
+}
+
 
 \include "1.ly"
 \score { \tenorSetting }
