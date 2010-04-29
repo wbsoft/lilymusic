@@ -55,7 +55,7 @@ altSS = \relative c' {
   a2 d4 c bes a c f e d cis2 r
   c2 c4 d c c c c a d2 cis4 d2 r
   a2 d4 c bes a c f e d cis2 r
-  d2 d4 d d2 e g4 e e c bes d2( cis4) d2 r
+  d2 d4 d d2 e g4 e e c bes( d2 cis4) d2 r
   f2 f4 f e2 d e4 d d d c2 b r
   a2 a4 c c2 e2 e4 f e e e2 r
   f2 f4 f e2 d e4 d d d c2 b r
