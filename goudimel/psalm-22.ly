@@ -149,48 +149,100 @@ verseFourteen = \lyricmode {
   Tot Hem be -- keerd.
 }
 
+\book {
+  \score {
+    \transpose d g
+    \new ChoirStaff <<
+      \new Staff \with {
+  %       midiInstrument = "choir aahs"
+        instrumentName = \markup \center-column { "S." "A." }
+      } <<
+        \new Voice = "soprano" { \voiceOne \soprano }
+        \new Voice = "alto" { \voiceTwo \alto }
+      >>
+      \new Lyrics \lyricsto "alto" \verseOne
+      \new Lyrics \lyricsto "alto" \verseTwo
+      \new Lyrics \lyricsto "alto" \verseFourteen
+      \new Staff \with {
+  %       midiInstrument = "choir aahs"
+        instrumentName = \markup \center-column { "T." "B." }
+      } <<
+        \clef bass
+        \new Voice = "tenor" { \voiceOne \tenor }
+        \new Voice = "bass" { \voiceTwo \bass }
+      >>
+    >>
+    \layout {
+      
+    }
+  }
 
-\score {
-  \transpose d g
-  \new ChoirStaff <<
-    \new Staff \with {
-%       midiInstrument = "choir aahs"
-      instrumentName = \markup \center-column { "S." "A." }
-    } <<
-      \new Voice = "soprano" { \voiceOne \soprano }
-      \new Voice = "alto" { \voiceTwo \alto }
-    >>
-    \new Lyrics \lyricsto "alto" \verseOne
-    \new Lyrics \lyricsto "alto" \verseTwo
-    \new Lyrics \lyricsto "alto" \verseFourteen
-    \new Staff \with {
-%       midiInstrument = "choir aahs"
-      instrumentName = \markup \center-column { "T." "B." }
-    } <<
-      \clef bass
-      \new Voice = "tenor" { \voiceOne \tenor }
-      \new Voice = "bass" { \voiceTwo \bass }
-    >>
-  >>
-  \layout { }
-  \midi {
-    \context {
-      \Score
-      tempoWholesPerMinute = #(ly:make-moment 100 4)
+  \markup\vspace #1
+  \markup \fontsize #1 {
+    \line {
+      \hspace #10
+      \bold \small 16.
+      \override #'(baseline-skip . 2.8) \column {
+        \line { Zij komen \italic { aan, door godd’lijk } licht geleid, }
+        \line { Om \italic { ’t nakroost, } dat den \italic { \smallCaps Heer wordt } toebereid, }
+        \line { Te \italic { melden ’t heil van Zijn } \concat { \italic ge rechtigheid } }
+        \line { En \italic grote daden. }
+      }
     }
   }
 }
 
-\markup\vspace #1
-\markup \fontsize #1 {
-  \line {
-    \hspace #10
-    \bold \small 16.
-    \override #'(baseline-skip . 2.8) \column {
-      \line { Zij komen \italic { aan, door godd’lijk } licht geleid, }
-      \line { Om \italic { ’t nakroost, } dat den \italic { \smallCaps Heer wordt } toebereid, }
-      \line { Te \italic { melden ’t heil van Zijn } \concat { \italic ge rechtigheid } }
-      \line { En \italic grote daden. }
-    }
+% MIDI-oefenbestanden:
+rehearsalMidi = #(define-music-function
+  (parser location name midiInstrument lyrics) (string? string? ly:music?)
+  #{
+    \unfoldRepeats <<
+      \new Staff = "soprano" \new Voice = "soprano" { s1*0\f \soprano }
+      \new Staff = "alto" \new Voice = "alto" { s1*0\f \alto }
+      \new Staff = "tenor" \new Voice = "tenor" { s1*0\f \tenor }
+      \new Staff = "bass" \new Voice = "bass" { s1*0\f \bass }
+      \context Staff = $name {
+        \set Score.midiMinimumVolume = #0.5
+        \set Score.midiMaximumVolume = #0.5
+        \set Score.tempoWholesPerMinute = #(ly:make-moment 100 4)
+        \set Staff.midiMinimumVolume = #0.8
+        \set Staff.midiMaximumVolume = #1.0
+        \set Staff.midiInstrument = $midiInstrument
+      }
+      \new Lyrics \with {
+        alignBelowContext = $name
+      } \lyricsto $name $lyrics
+    >>
+#})
+
+#(define output-suffix "soprano")
+\book {
+  \score {
+    \rehearsalMidi "soprano" "soprano sax" \verseOne
+    \midi { }
+  }
+}
+
+#(define output-suffix "alto")
+\book {
+  \score {
+    \rehearsalMidi "alto" "soprano sax" \verseOne
+    \midi { }
+  }
+}
+
+#(define output-suffix "tenor")
+\book {
+  \score {
+    \rehearsalMidi "tenor" "tenor sax" \verseOne
+    \midi { }
+  }
+}
+
+#(define output-suffix "bass")
+\book {
+  \score {
+    \rehearsalMidi "bass" "tenor sax" \verseOne
+    \midi { }
   }
 }
