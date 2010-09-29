@@ -277,6 +277,12 @@ bassMusic = << \relative {
   \layout {
     %system-count = #1
   }
+  \midi {
+    \context {
+      \Score
+      tempoWholesPerMinute = #(ly:make-moment 100 4)
+    }
+  }
 }
 
 
@@ -321,6 +327,13 @@ bassMusic = << \relative {
   \SATB \sopMusic {\verseThree \omness} \altoMusic {\verseThree \omness}
   \tenorMusic {\verseThree \omnes \omness} \bassMusic {\verseThreeB \omness}
   \header { piece = "3." }
+  \layout { }
+  \midi {
+    \context {
+      \Score
+      tempoWholesPerMinute = #(ly:make-moment 100 4)
+    }
+  }
 }
 
 \score { 
@@ -359,6 +372,12 @@ tenorMusic = << \relative {
   \header { piece = "5. Cum tribus vocibus" }
   \layout {
     %           system-count = #4
+  }
+  \midi {
+    \context {
+      \Score
+      tempoWholesPerMinute = #(ly:make-moment 100 4)
+    }
   }
 }
 
@@ -407,6 +426,12 @@ bassMusic = << \relative {
   \SATB \sopMusic \verseSevenSop \altoMusic \verseSevenAlto
   \tenorMusic \verseSevenTenor \bassMusic \verseSevenBass
   \header { piece = "7." }
+  \midi {
+    \context {
+      \Score
+      tempoWholesPerMinute = #(ly:make-moment 100 4)
+    }
+  }
 }
 
 \score { 
@@ -446,6 +471,15 @@ bassMusic = << \relative {
   \ATB \altoMusic \verseNineAlto
   \tenorMusic \verseNineTenor \bassMusic \verseNineBass
   \header { piece = "9. Cum tribus vocibus" }
+  \layout {
+  
+  }
+  \midi {
+    \context {
+      \Score
+      tempoWholesPerMinute = #(ly:make-moment 100 4)
+    }
+  }
 }
 
 \score { 
@@ -487,6 +521,15 @@ bassMusic = << \relative {
   \SATB \sopMusic \verseElevenSop \altoMusic \verseElevenAlto
   \tenorMusic \verseElevenTenor \bassMusic \verseElevenBass
   \header { piece = "11." }
+  \layout {
+    
+  }
+  \midi {
+    \context {
+      \Score
+      tempoWholesPerMinute = #(ly:make-moment 100 4)
+    }
+  }
 }
 
 \score { 
