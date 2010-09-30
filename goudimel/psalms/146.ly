@@ -38,7 +38,7 @@ sop = \relative c'' {
 alt = \relative c' {
   e2 e e4 b d b b2 b r
   b2 e d4 b c b b2 r
-  c2 g c4 c b b e2 e r
+  c2 g c4 c b b e2 d r
   d2 e d4 cis d b a2 r
   c2 d c4 g c a a2 r
   b2 b a4 cis d b a1
@@ -57,7 +57,7 @@ altSS = \relative c'' {
 tenSS = \relative c' {
   e2 e e4 b d b b2 b r
   g2 c a4 gis a fis e2 r
-  c'2 g c4 c b b e2 e r
+  c'2 g c4 c b b e2 d r
   d2 e d4 cis d b a2 r
   c2 d c4 g c a a2 r
   b2 b a4 cis d b a1
