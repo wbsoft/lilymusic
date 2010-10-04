@@ -37,6 +37,8 @@ toPedal = {
   \oneVoice
 }
 
+icc = \once \override NoteColumn #'ignore-collision = ##t
+showSwitch = { \once \set followVoice = ##t }
 plusDown = #(define-music-function (parser location note) (ly:music?)
 	      #{ << $note \new Voice { \voiceTwo $note } >> #})
 plusUp = #(define-music-function (parser location note) (ly:music?)
@@ -62,7 +64,9 @@ upper = \relative c'' {
     fis4( c'2 b4) |
     bes4.( c16 \plusDown bes a4 g) |
     fis8( g \plusDown a bes \plusDown b c \plusDown cis d) |
-    d8( e16 d c8 b) b( a) r g |
+    d8( e16 \plusDown d c8 b) b( a) r g |
+    g8( a16 \plusDown g fis8 e) e( d) r c |
+    b8 g' \plusDown e a~a g4 fis8 |
     
   } 
   
@@ -85,28 +89,36 @@ middle = \relative c'' {
     <a c> << d \\ g, >> |
     <cis e>1 |
     d4 r r2 |
+    <e g>4. <d fis>8 <c e>4 <b d> |
+    <a c>4. <g b>8 <fis a>4 <dis fis> |
+    \icc g4 s <b d> <a c> |
     
     
   }
 }
 
 bass = \relative c' {
-  \showStaffSwitch
   \repeat volta 2 {
     \toManual
     c4( e g gis) |
     a2.( g4) |
-    \toPedal
+    \showSwitch \toPedal
     f4.( e8 d e f fis) |
     g2. r4 |
     
     \toManual
     c,4( e g gis) |
-    a2. \toPedal g4 |
+    a2. \showSwitch \toPedal g4 |
     f2 g |
     <c, g'>2~ <c g'>4 r |
   }
-  
+  \repeat volta 2 {
+    s1*6 |
+    \toManual
+    e4 \showSwitch \toPedal c d2 |
+    g2~ g4 r |
+    
+  }
 }
 
 \score {
