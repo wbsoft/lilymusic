@@ -17,8 +17,8 @@
 
 \paper {
   ragged-last-bottom = ##f
-  systems-per-page = #6
   indent = #0
+  systems-per-page = #6
 }
 
 \layout {
