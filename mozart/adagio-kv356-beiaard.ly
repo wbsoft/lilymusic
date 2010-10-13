@@ -23,7 +23,8 @@
 
 \layout {
   \context {
-    \RemoveEmptyStaffContext
+    \Staff
+    \RemoveEmptyStaves
   }
   \context {
     \Voice
