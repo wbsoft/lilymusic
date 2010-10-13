@@ -55,17 +55,17 @@ global = {
   #(set-accidental-style 'modern)
 }
 
-upper = \relative c'' {
+upper = \relative c''' {
   \tempo "Adagio"
   \global
   \voiceOne
   \repeat volta 2 {
-    <e g>2.( <d f>4) |
+    g2.( <d f>4) |
     <d f>2( <c e>4) r |
     f8( e f g a g f e) |
     e2( d8 e \plusDown f fis) |
     
-    <e g>2.( <d f>4) |
+    g2.( <d f>4) |
     <d f>2( e) |
     <%{\tweak #'duration-log #1%} d f>16( g f \plusDown e f g a f) e4 d |
     <b d>2( c4) r |
@@ -84,14 +84,14 @@ upper = \relative c'' {
     fis,1 |
     <f d>4. \stemDown cis8 \stemUp d e \plusDown f fis |
     
-    <e g>2.( <d f>4) |
+    g2.( <d f>4) |
     <d f>2( <c e>4) r |
     f8( e f g a g f e) |
     e4( \plusDown d16 e f e d8 e \plusDown f fis) |
     
     g8 b16 \plusDown a c \plusDown b d \plusDown c <e, g>4 <d f> |
     <d f>2 <cis e> |
-    <%{\tweak #'duration-log #1%} d f>16( g f \plusDown e f g a f) e( f \plusDown fis g) g( f e d) |
+    <%{\tweak #'duration-log #1%} d f>16( g f \plusDown e f \plusDown g a f) e( f \plusDown fis g) g( f e d) |
     <b d>4.(^\markup \italic { 2nd time: rit. } e16 d c4) r |
     
   } 
@@ -100,12 +100,13 @@ upper = \relative c'' {
 
 middle = \relative c'' {
   \repeat volta 2 {
-    s1*2
     \voiceTwo
+    e2. s4 |
+    s1 |
     d8 cis d e f e d c |
     c2 b4 r |
     
-    s1 |
+    e2. s4 |
     s2 c4 << cis \\ bes >> |
     a2 c4 b |
     f2( e4) r |
@@ -125,7 +126,8 @@ middle = \relative c'' {
       { c2 b4 a } >> |
     b4 r r2 |
     
-    s1*2
+    e2. s4 |
+    s1 |
     d8 cis d e f e d c |
     c2 b4 r |
     e4 r r2 |
@@ -137,15 +139,13 @@ middle = \relative c'' {
 
 bass = \relative c' {
   \repeat volta 2 {
-    \toManual
-    c4( e g gis) |
+    c4 e \showSwitch \toManual g gis |
     a2.( g4) |
     \showSwitch \toPedal
     f4.( e8 d e f fis) |
     g2. r4 |
     
-    \toManual
-    c,4( e g gis) |
+    c,4 e \showSwitch \toManual g gis |
     a2. \showSwitch \toPedal g4 |
     f2 g |
     <c, g'>2~ <c g'>4 r |
@@ -159,8 +159,7 @@ bass = \relative c' {
     g1 |
     g4 r r2 |
     
-    \toManual
-    c,4( e g gis) |
+    c,4 e \showSwitch \toManual g gis |
     a2.( g4) |
     \showSwitch \toPedal
     f4.( e8 d e f fis) |
