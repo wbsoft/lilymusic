@@ -1,6 +1,13 @@
-\version "2.12.0"
+\version "2.13.38"
 
 #(set-global-staff-size 18)
+
+\paper {
+  #(set-paper-size "a4")
+  ragged-last-bottom = ##f
+  bottom-margin = 12 \mm
+  line-width = 185 \mm
+}
 
 \header {
   dedication = "Voor Mirjam"
@@ -17,38 +24,30 @@
 }
 
 \layout {
-  \context {\RemoveEmptyStaffContext}
-}
-
-\paper {
-  #(set-paper-size "a4")
-  ragged-last-bottom = ##f
-  bottom-margin = 12 \mm
-  line-width = 185 \mm
-}
-
-tempoMark = {
-  \once \override Score.RehearsalMark #'self-alignment-X = #LEFT
-  \once \override Score.RehearsalMark #'break-align-symbols = #'(time-signature key-signature)
-  \once \override Staff.TimeSignature #'break-align-anchor-alignment = #LEFT
-  \mark \markup \bold {
-    Allegro non troppo ( \small \general-align #Y #DOWN \note #"2" #.8 ± 54 )
+  \context {
+    \Staff
+    \RemoveEmptyStaves
   }
 }
 
+global = {
+  #(set-accidental-style 'modern)
+  \numericTimeSignature
+  \time 2/2
+  \set Timing.beamExceptions = #'((end . (((1 . 16) . (4 4 4 4)))))
+}  
+
 haak = {
-  \set PianoStaff.connectArpeggios = ##t
-  \once \override PianoStaff.Arpeggio #'extra-offset = #'(0.5 . 0)
-  \once \override PianoStaff.Arpeggio #'stencil = #ly:arpeggio::brew-chord-bracket
+  \set GrandStaff.connectArpeggios = ##t
+  \once \override GrandStaff.Arpeggio #'extra-offset = #'(0.5 . 0)
+  \once \override GrandStaff.Arpeggio #'stencil = #ly:arpeggio::brew-chord-bracket
 }
 
 rh = \relative c' {
-  #(set-accidental-style 'modern)
-  \clef violin
-  \override Score.TimeSignature #'style = #'()
-  \time 2/2
-  \tempoMark
-  \set Score.beatLength = #(ly:make-moment 1 4)
+  \global
+  \tempo \markup \bold {
+    Allegro non troppo ( \small \general-align #Y #DOWN \note #"2" #.8 ± 54 )
+  }
   d16^"II fluit 8'"_\markup {\dynamic p \italic leggiero}
   d' a c d g, a c f, a c e, g a e f |
   \repeat unfold 5 { d d' a c d g, a c f, a c e, g a e f | }
@@ -85,7 +84,7 @@ rh = \relative c' {
   <bes a'>2 <des g> <es a>
   \time 2/2
   f4 d a' bes <dis,~ a'>2 <dis f g> |
-  \set Score.beatLength = #(ly:make-moment 1 4)
+  \set Timing.beamExceptions = #'((end . (((1 . 16) . (4 4 4 4)))))
   r16 d''^\markup \italic "leggiero, poco martellato" a c d g, a c f, a c e, g a e f |
   d d' a c d g, a c f, a c e, g a e f |
   d^"+mixturen"_\markup \italic "molto crescendo" d' a c d g, a c
@@ -102,8 +101,7 @@ rh = \relative c' {
 }
 
 lh = \relative c' {
-  #(set-accidental-style 'modern)
-  \clef bass
+  \global
   R1*4 a2^"I of Ped. fluit 4'" a d1 R1*2 a2 a d c4 a c c b a gis2 a~ a4 r4 r2 R1*2
   a2 f4 d a'2 a c4 b a d~d cis d2~d4 r4 r2 R1
   a2 bes4 g a2 f g4 a d, f e2 d2~d4 r4 r2 R1*2 \bar ":|" R1
@@ -122,8 +120,7 @@ lh = \relative c' {
 }
 
 ped = \relative c {
-  #(set-accidental-style 'modern)
-  \clef bass
+  \global
   R1*33 bes1~^"Ped. 16' + I" bes2. r4 |
   \time 3/2 R1. \time 2/2 R1*6
   bes1\ff f r2 g r a R1*2 r16 d' a c d g, a c f, a c e, g a e f | d8-> r16 <d d,>-> r4 r2 | R1*9 |
@@ -131,10 +128,10 @@ ped = \relative c {
 
 \score {
   <<
-    \new PianoStaff <<
-      \new Staff = "rh" \rh
-      \new Staff = "lh" \lh
+    \new GrandStaff <<
+      \new Staff = "rh" { \clef treble \rh }
+      \new Staff = "lh" { \clef bass \lh }
     >>
-    \new Staff = "ped" \ped
+    \new Staff = "ped" { \clef bass \ped }
   >>
 }
