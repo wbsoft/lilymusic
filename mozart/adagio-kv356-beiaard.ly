@@ -92,7 +92,7 @@ upper = \relative c''' {
     g8 b16 \plusDown a c \plusDown b d \plusDown c <e, g>4 <d f> |
     <d f>2 <cis e> |
     <%{\tweak #'duration-log #1%} d f>16( g f \plusDown e f \plusDown g a f) e( f \plusDown fis g) g( f e d) |
-    d4.(^\markup \italic { 2nd time: rit. } e16 \plusDown d c4) r |
+    <d b>4.(^\markup \italic { 2nd time: rit. } e16 \plusDown d c4) r |
     
   } 
   
@@ -133,7 +133,7 @@ middle = \relative c'' {
     e4 r s2 |
     s1 |
     a,2 c4 b |
-    b4. s8 s4 r |
+    f2( e4) r |
   }
 }
 
@@ -148,13 +148,13 @@ bass = \relative c' {
     c,4 e g \showSwitch \toManual gis |
     a2. \showSwitch \toPedal g4 |
     f2 g |
-    c,2~ c4 r |
+    c,2. r4 |
   }
   \repeat volta 2 {
     s1*6 |
     \toManual
     e4 \showSwitch \toPedal c d2 |
-    g2~ g4 r |
+    g2. r4 |
     s1*2 |
     g1 |
     g4 r r2 |
@@ -170,7 +170,7 @@ bass = \relative c' {
     a4( bes2 a8 g) |
     \showSwitch \toPedal
     f2 g |
-    <c,_~ f>2( <c e>4) r |
+    c2. r4 |
     
     
   }
