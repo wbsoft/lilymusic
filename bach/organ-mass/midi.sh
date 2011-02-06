@@ -1,8 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
 prefix=""
 html=index.html
 
+LILYPOND=/usr/bin/lilypond
 
 midi()
 {
@@ -10,10 +11,10 @@ midi()
 	local tempo=$2
 	# local transpose=${3:-c c}
 	(
-		echo "pieceTempo = \tempo $tempo"
+		echo "pieceTempo = \\tempo $tempo"
 		cat $file.ly midi.ly
 	) |
-	lilypond -o $file -
+	$LILYPOND -o $file -
 	title=$(sed -nr 's/^\s*pieceTitle\s*=\s*"([^"]+)"\s*$/\1/p' $file.ly)
 	echo -n "<tr><td>${title}</td><td><a href=\"${prefix}${file}.midi\">tutti</a></td>" >> $html
 	n=1
