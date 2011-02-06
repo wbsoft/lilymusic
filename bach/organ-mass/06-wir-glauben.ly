@@ -86,11 +86,11 @@ Schöp -- fer Him -- mels und der Er -- den,
 der sich zum Va -- ter ge -- ben hat,
 dass wir sei -- ne Kin -- der wer -- den.
 Er will uns all -- zeit er -- näh -- ren,
-Seel und leib auch wohl be -- wah -- ren,
+Seel und Leib auch wohl be -- wah -- ren,
 al -- lem Un -- fall will er weh -- ren,
 kein __ Leid soll uns wi -- der -- fah -- ren,
 er sor -- get für uns, hüt __ und wacht, __
-es steht Al -- les in sei -- ner Macht.
+es steht al -- les in sei -- ner Macht.
 }
 
 altText = \lyricmode {
@@ -99,11 +99,11 @@ Schöp -- fer Him -- mels und der Er -- den,
 der sich zum Va -- ter ge -- ben hat,
 dass wir sei -- ne Kin -- der wer -- den.
 Er will uns all -- zeit er -- näh -- ren,
-Seel und leib auch wohl be -- wah -- ren,
+Seel und Leib auch wohl be -- wah -- ren,
 al -- lem Un -- fall will er weh -- ren,
 kein __ Leid soll uns wi -- der -- fah -- ren,
 er __ sor -- get für uns, hüt __ und __ wacht, __
-es steht __ Al -- les in sei -- ner Macht.
+es steht __ al -- les in sei -- ner Macht.
 }
 
 tenText = \lyricmode {
@@ -112,11 +112,11 @@ Schöp -- fer __ Him -- mels und der Er -- den,
 der sich zum Va -- ter ge -- ben hat,
 dass wir sei -- ne Kin -- der wer -- den.
 Er will uns all -- zeit er -- näh -- ren,
-Seel und leib auch wohl be -- wah -- ren,
+Seel und Leib auch wohl be -- wah -- ren,
 al -- lem Un -- fall will er __ weh -- ren,
 kein __ Leid soll uns wi -- der -- fah -- ren,
 er __ sor -- get für uns, __ hüt __ und __ wacht, __
-es steht Al -- les in sei -- ner Macht.
+es steht al -- les in sei -- ner Macht.
 }
 
 basText = \lyricmode {
@@ -125,10 +125,10 @@ Schöp -- fer Him -- mels und der Er -- den,
 der sich zum Va -- ter ge -- ben hat,
 dass wir sei -- ne Kin -- der wer -- den.
 Er will uns all -- zeit er -- näh -- ren,
-Seel und leib __ auch wohl be -- wah -- ren,
+Seel und Leib __ auch wohl be -- wah -- ren,
 al -- lem Un -- fall __ will er weh -- ren,
 kein __ Leid soll uns wi -- der -- fah -- ren,
 er __ sor -- get für uns, hüt __ und wacht, __
-es __ steht Al -- les in sei -- ner Macht.
+es __ steht al -- les in sei -- ner Macht.
 }
 

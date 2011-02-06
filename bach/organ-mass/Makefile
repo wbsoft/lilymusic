@@ -1,5 +1,7 @@
 files = om-great-acc.pdf  om-great.pdf  om-small-acc.pdf  om-small.pdf
 
+LILYPOND = /usr/bin/lilypond
+
 sources = \
 01-kyrie-gott-vater.ly \
 02-christe-aller-welt.ly \
@@ -16,7 +18,7 @@ sources = \
 all: $(files)
 
 $(files): %.pdf: %.ly $(sources) setup.ly
-	lilypond -dno-point-and-click -ddelete-intermediate-files --pdf $<
+	$(LILYPOND) -dno-point-and-click -ddelete-intermediate-files --pdf $<
 
 zip:
 	svn export . om

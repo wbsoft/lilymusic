@@ -65,7 +65,7 @@ sein Werk und Amt zu ’rfül -- len;
 da wollt’ er stif -- ten uns ein Bad,
 zu wa -- schen uns von Sün -- den,
 er -- säu -- fen auch den bit -- tern Tod
-durch sein selbs Blut und Wun -- den.
+durch sein selbst Blut und Wun -- den.
 Es galt ein neu -- es Le -- ben.
 }
 
@@ -77,7 +77,7 @@ sein Werk und Amt zu ’rfül -- len;
 da wollt’ er stif -- ten uns ein Bad,
 zu wa -- schen uns von Sün -- den,
 er -- säu -- fen auch den bit -- tern Tod
-durch sein selbs Blut und Wun -- den.
+durch sein selbst Blut und Wun -- den.
 Es galt ein neu -- es Le -- ben.
 }
 
@@ -89,7 +89,7 @@ sein Werk und Amt zu ’rfül -- len;
 da wollt’ er stif -- ten uns ein Bad,
 zu wa -- schen uns von Sün -- den,
 er -- säu -- fen auch den bit -- tern Tod
-durch sein selbs Blut und Wun -- den.
+durch sein selbst Blut und Wun -- den.
 Es galt ein neu -- es Le -- ben.
 }
 
@@ -101,7 +101,7 @@ sein Werk und Amt zu ’rfül -- len;
 da wollt’ er stif -- ten uns ein Bad,
 zu wa -- schen uns von Sün -- den,
 er -- säu -- fen auch den bit -- tern Tod
-durch sein selbs Blut und Wun -- den.
+durch sein selbst Blut und Wun -- den.
 Es galt ein neu -- es Le -- ben.
 }
 

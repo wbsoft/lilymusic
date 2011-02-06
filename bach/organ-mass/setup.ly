@@ -2,14 +2,14 @@
 
 \header {
   title = "The Chorals of the Clavierübung III"
-  composer = "Johann Sebastian Bach (1865-1750)"
+  composer = "Johann Sebastian Bach (1685-1750)"
   poet = "Martin Luther (1483-1546)"
   copyright = \markup \center-column {
     \line { Typeset by
       \with-url #"http://www.wilbertberendsen.nl/"
       {Wilbert Berendsen (http://www.wilbertberendsen.nl/)}
     }
-    \line { Copyright © 2007
+    \line { Copyright © 2011
       \with-url #"http://www.cpdl.org/"
       {The Choral Public Domain Library (http://www.cpdl.org/)}
     }
