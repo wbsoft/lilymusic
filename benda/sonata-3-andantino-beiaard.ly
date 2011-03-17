@@ -41,10 +41,8 @@
     \Voice
     \override DynamicLineSpanner #'staff-padding = #2.5
     \override DynamicLineSpanner #'Y-extent = #'(-.4 . .6)
-
   }
 }
-
 
 global = {
   \key a \minor
@@ -114,8 +112,9 @@ rh = \relative c'' {
   | r16
     \once \override Beam #'positions = #'(6 . 5.5)
     f \slurDown \acciaccatura g8 f16^( e) \acciaccatura f8 e16^( d) d4.
-  
-  | fis8. g16 fis8 fis \acciaccatura a8 g8 fis16 e
+  | fis8. g16 fis8
+    \once \override Beam #'positions = #'(5.25 . 5.5)
+    fis[ \acciaccatura a8 g8] fis16 e
   | \acciaccatura e8 dis8. fis16 e8 \oneVoice r16 c' a e f a
   | \acciaccatura e8 \voiceOne dis8. c'16 b8 r16 a a( g) g( fis)
   | fis4( g8)\prall fis4 e8
