@@ -26,7 +26,7 @@
   >>
  
 %}
-\version "2.12.3"
+\version "2.13.50"
 
 
 #(define (rest-score r)
@@ -124,11 +124,9 @@ mergeRestsOff = {
   \revert Staff.MultiMeasureRest #'Y-offset
 }
 
-mergeRests = \layout {
-  \context {
-    \Staff
-    \override RestCollision #'positioning-done = #merge-rests-on-positioning
-    \override MultiMeasureRest #'Y-offset = #merge-multi-measure-rests-on-Y-offset
-  }
+mergeRests = \with {
+  \override RestCollision #'positioning-done = #merge-rests-on-positioning
+  \override MultiMeasureRest #'Y-offset = #merge-multi-measure-rests-on-Y-offset
 }
+
 
