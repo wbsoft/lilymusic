@@ -1,4 +1,4 @@
-\version "2.12.0"
+\version "2.13.56"
 
 #(set-global-staff-size 18)
 
@@ -33,33 +33,34 @@
   }
 }
 
-tempoMark = {
-  \once \override Score.RehearsalMark #'self-alignment-X = #LEFT
-  \once \override Score.RehearsalMark #'break-align-symbols = #'(time-signature key-signature)
-  \once \override Staff.TimeSignature #'break-align-anchor-alignment = #LEFT
-  \once \override Score.RehearsalMark #'font-size = #1
-  \mark \markup \bold {
-    Allegretto \hspace #0
-    \fontsize #-2 \general-align #Y #DOWN \note #"4" #.8
-    = 108
-  }
+\paper {
+  ragged-last-bottom = ##f
 }
 
 \layout {
   \context {
     \Score
     \override BarNumber #'extra-offset = #'(1 . 0)
-    \override VerticalAlignment #'max-stretch = #3
     \override SpacingSpanner #'strict-grace-spacing = ##t
+  }
+  \context {
+    \PianoStaff
+    \override StaffGrouper #'staffgroup-staff-spacing = #
+    '((basic-distance . 8)
+      (minimum-distance . 7)
+      (padding . 1)
+      (stretchability . 1))
+    \override StaffGrouper #'staff-staff-spacing = #
+    '((basic-distance . 10)
+      (minimum-distance . 8)
+      (padding . 1)
+      (stretchability . 1))
   }
 }
 
 global = {
   \time 8/8
-  #(override-auto-beam-setting '(end * * * *) 3 8 'Staff)
-  #(override-auto-beam-setting '(end * * * *) 6 8 'Staff)
-  #(override-auto-beam-setting '(end * * * *) 8 8 'Staff)
-  #(set-accidental-style 'modern)
+  \set Timing.beatStructure = #'(3 3 2)
   \key a \minor
 }
 
@@ -69,7 +70,7 @@ lh = \change Staff = lh
 rightHand = \relative c' {
   \clef violin
   \global
-  \tempoMark
+  \tempo "Allegretto" 4=108
   R1*7 r4. r r8 g\mp |
   a2. b8 c | b4. a~ a4~ | a1~ | a4. r r8 g |
   \voiceTwo \stemUp \tieDown a2. b8 c | b4. \grace {c16[ b] } a4.~ a4~ |
@@ -434,9 +435,7 @@ pedal = \relative c {
       \new Staff = "rh" \rightHand
       \new Staff = "lh" \leftHand
     >>
-    \new Staff = "ped" \with {
-      \override VerticalAxisGroup #'minimum-Y-extent = #'(-2 . 3)
-    } \pedal
+    \new Staff = "ped" \pedal
   >>
 }
 % kate: space-indent on; indent-width 2; replace-tabs on; replace-tabs-save on;
