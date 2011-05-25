@@ -28,8 +28,8 @@
   tagline = \markup {
     Engraved at
     \simple #(strftime "%d-%m-%Y" (localtime (current-time)))
-    with \with-url #"http://lilypond.org/web/"
-    { LilyPond \simple #(lilypond-version) (http://lilypond.org/) }
+    with \with-url #"http://lilypond.org/"
+    \line { LilyPond \simple #(lilypond-version) (http://lilypond.org/) }
   }
 }
 
