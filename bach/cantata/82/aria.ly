@@ -814,10 +814,10 @@ organoPart = \new PianoStaff \with {
 }
 
 
-% \book { \score { \continuoPart } }
-% \book { \score { \violinoOnePart } }
-% \book { \score { \violinoTwoPart } }
-% \book { \score { \violaPart } }
+\book { \score { \continuoPart } }
+\book { \score { \violinoOnePart } }
+\book { \score { \violinoTwoPart } }
+\book { \score { \violaPart } }
 #(set-global-staff-size 18)
 \paper { between-system-padding = #0 }
 \layout { system-count = #20 }
