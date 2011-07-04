@@ -30,6 +30,20 @@
   }
 }
 
+\paper {
+  ragged-last-bottom = ##f
+  top-margin = 15\mm
+  bottom-margin = 15\mm
+  line-width = 180\mm
+}
+
+\layout {
+  \context {
+    \Voice
+    \override DynamicLineSpanner #'staff-padding = #1.5
+  }
+}
+
 global = {
   \key b \minor
   \time 2/4
@@ -255,9 +269,46 @@ lower = \relative c' {
   \bar "|."
 }
 
+dyn = {
+  s4\mf
+  s2*3
+  s4 s4\p
+  s2*3
+  s4 s4\p
+  s2*3
+  s4 s4\f
+  s2*3
+  s4 s4\p
+  s2*3
+  s4 s4\mf
+  s2*3
+  s4 s4\p
+  s2
+  s4 s4\mf
+  s2
+  s4 s4\p
+  s2*3
+  s4 s4\p
+  s2*3
+  s4 s4\f
+  s2*3
+  s4 s4\p
+  s2*3
+  s4 s4\pp
+  s2
+  s4 s4\mf
+  s2*5
+  s4 s4\pp
+  s2*3
+  s4 s4\mf
+  s2*3
+  s4 s4\p
+  s2*5
+  s4 s4\pp
+}
   
 \new PianoStaff <<
-  \new Staff = "upper" { \upper }
+  \new Staff = "upper" { << \upper \dyn >> }
   \new Staff = "lower" { \clef bass \lower }
 >>
 
