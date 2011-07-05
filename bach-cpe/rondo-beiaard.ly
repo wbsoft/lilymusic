@@ -166,8 +166,8 @@ upper = \relative c'' {
   | fis16 eis d' cis) r16 e,( g fis
   | e16 cis e d) cis(\prall b fis' a,)
   | a16( fis g g' fis e d cis
-  | b16 ais gis\prall fis d') d'( cis b
-  | bis16 cis eis, fis) r fis( a c
+  | b16 ais gis\prall fis) d' d'( cis b
+  | bis16 cis eis,%{orig: e%} fis) r fis( a c
   | ais16 b dis, e) r16 e,( e' ais,
   | cis16 b g' e d8 cis\prall\turn
   | b4)
