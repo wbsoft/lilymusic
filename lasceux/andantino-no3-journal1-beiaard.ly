@@ -56,6 +56,16 @@ pat = #(define-music-function (parser location n1 n2 n3)
  >>
 #})
 
+man = {
+  \change Staff = "upper"
+  \voiceTwo
+}
+
+ped = {
+  \change Staff = "lower"
+  \oneVoice
+}
+
 global = {
   \key d \minor
   \time 2/4
@@ -69,18 +79,20 @@ global = {
      
 }
 
-right = \relative c'' {
+upper = \relative c'' {
   \global
   
   a8
   | d4~ d8 a'16 f
-  | f16 e e4 bes'16 g
-  | g16 f f e e d d cis
+  | \voiceOne f16 e e4 \oneVoice bes'16 g
+  | g16 f f e \voiceOne e d d cis
+  \oneVoice
   | d16 e f g a b cis d
+  \voiceOne
   | bes4~ bes16 d g, bes
   | a4~ a16 d f, a
   | g16 bes e, g f d a' f
-  | f8\prall e r c
+  | f8\prall e \oneVoice r c
   % 9
   | f8. a16 g f e d 
   | c16 bes bes4 bes8
@@ -122,19 +134,19 @@ right = \relative c'' {
     | \pat a,16 c e \pat e, gis e' \pat fis, a e' \pat gis, b e
     | \pat a,16 cis a' \pat a, cis a' \pat b, d a' \pat cis, e a
     | \pat d,16 f a \pat a, cis a' \pat b, d a' \pat cis, e a
-    | r16 f a a g a bes a bes d c bes
+    | \voiceOne r16 f a \oneVoice a g a bes a bes d c bes
     | a16 d, d d f a bes a g f e d
   }
   | \grace e8 d8 cis r a
   | d4~ d8 a'16 f
-  | f16 e e4 bes'16 g
+  | \voiceOne f16 e e4 bes'16 g
   | g16 f f e e d d cis
-  | d16 e f g a f e d
+  | \oneVoice d16 e f g a f e d
   | cis16 d e f g e d cis
   \revert TupletNumber #'stencil
   \revert TupletBracket #'stencil
   \times 2/3 { 
-    | d f e d cis d
+    | \voiceOne d f e d cis d
     \override TupletNumber #'stencil = ##f
     \override TupletBracket #'stencil = ##f
     e g f e d e
@@ -143,25 +155,68 @@ right = \relative c'' {
   | a16 d, es g fis a g bes
   | a16 d, cis e d f bes g
   | f16. a32 g f e d \afterGrace e4\prall { d16[ e] }
+  \oneVoice
   | d8. cis'16 d8. cis,16
   | \grace cis8 d4.
   \bar "|."
 }
 
 
-left = \relative c' {
+lower = \relative c' {
   \global
   r8
-  \clef treble
   | r8 <d f> <d f> r
-  | r8 <cis a'> <cis a'> r
-  | d8 g a a,
+  | r8 << 
+    { cis cis }
+    \new Voice {
+      \man
+      a' a
+    }
+  >>
+  r
+  | d,8 g
+  \man
+  a
+  \ped
+  a,
   | <d f>4 r
-  | r8 <g bes> <g bes> r
-  | r8 <f d'> <f d'> r
-  | <e cis'>8 r <d d'> r
-  | r16 a' gis a a,8 r
-  \clef bass
+  | r8 <<
+    { g g }
+    \new Voice {
+      \man
+      bes bes
+    }
+  >>
+  r
+  | r8 
+  <<
+    { f f }
+    \new Voice {
+      \man
+      d' d
+    }
+  >>
+  r
+  <<
+    | e,
+    \new Voice {
+      \man
+      cis'
+    }
+  >>
+  r
+  <<
+    d,
+    \new Voice {
+      \man
+      d'
+    }
+  >>
+  r
+  \man
+  | r16 a gis a
+  \ped
+  a,8 r
   | r8 <f a> <f a> r
   | r8 <f g> <f g> r
   | r8 <e c'> <e c'> r
@@ -177,20 +232,50 @@ left = \relative c' {
   | f'8 e16 d cis8 cis
   | d4 d8 dis
   | \skip2*4
-  \clef treble
-  | d'8 fis, g e
-  | f8 f g gis
+  \man
+  | d'8
+  \ped
+  fis, g e
+  | f8 f, g gis
   | a8. bes16 a g f e
-  | r8 <d f> <d f> r
-  | r8 <cis a'> <cis a'> r
-  | <d a'>8 <g bes> a a,
+  | d8 <d' f> <d f> r
+  | r8 <<
+    { cis cis }
+    \new Voice {
+      \man
+      a' a
+    }
+  >>
+  r
+  | <<
+    { d, g }
+    \new Voice {
+      \man
+      a bes a
+      \ped
+      a,
+    }
+  >>
   | <d f>4 r
   | <e g>4 r
-  | <f a>4 <cis a'>
-  | <d a'>4 <e cis'>
-  | <f d'>8 <g bes> <a c> <bes d>
-  | <f d'>8 <e g> <f a> <g bes>
-  | a8 d <g, cis>4
+  <<
+    {
+      | f4 cis
+      | d4 e
+      | f8 g s4
+      | f8 e f g
+    }
+    \new Voice {
+      \man
+      | a4 a
+      | a4 cis
+      | d8 bes <a c> <bes d>
+      | d8 g, a bes
+      | a8 d <g, cis>
+      \ped
+      a,
+    }
+  >>
   | d8 <a e'> <d f> <a e'>
   | <d f>8 \clef bass a d,
   \bar"|."
@@ -198,7 +283,7 @@ left = \relative c' {
 
 
 \new PianoStaff <<
-  \new Staff = "right" \right
-  \new Staff = "left" { \clef bass \left }
+  \new Staff = "upper" \upper
+  \new Staff = "lower" { \clef bass \lower }
 >>
 

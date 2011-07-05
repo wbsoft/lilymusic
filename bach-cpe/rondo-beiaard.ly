@@ -89,7 +89,7 @@ upper = \relative c'' {
   | ais16 b dis, e) r16 e,( e' ais,
   | cis16 b g' e d8 cis\prall\turn
   | b4)
-  d16( fis, a gis
+  d'16( fis, a gis
   | b8 a16 
   \once \override TextScript #'script-priority = #-100
   \once \override TextScript #'Y-extent = #'(-.6 . .6)
@@ -97,9 +97,12 @@ upper = \relative c'' {
   | a8 g16\prall\turn d') g,8( fis16\prall\turn d')
   | fis,8( e16\prall\turn b') b b,( cis d)
   | d16( cis b\prall a)
-  fis''16( g b a)
+  \voiceOne
+  fis'16( g b a)
   | a16( e) e8~ e16 fis( a g)
-  | g16( d) d8~ d16 d'( b g)
+  | g16( d) d8~ 
+  \oneVoice
+  d16 d'( b g)
   | g16( fis e b' d,8 cis\prall\turn
   | d4)
   a'16( fis cis d)
@@ -118,11 +121,11 @@ upper = \relative c'' {
   \once \override Script #'avoid-slur = #'outside
   cis\prall\turn
   | b4)
-  b,16( c e d)
+  b16( c e d)
   | d16( b') b8~ b16 g( d b)
   | \appoggiatura d16 c8(\prall b) g16( a c b)
   | b16( g') g8~ g16 e( b g)
-  | \appoggiatura b16 a8(\prall g) c'16 c'( b a
+  | \appoggiatura b16 a8(\prall g) c16 c'( b a
   | g16 fis a c, b) b'( a g
   | fis16 e g b, a) a'( g fis
   | e16 dis fis a,) a8( g)\prall\turn
@@ -142,9 +145,12 @@ upper = \relative c'' {
   | \times 2/3 { fis16 g a) } g4.(
   \once \override Script #'avoid-slur = #'outside
   | fis8)(\prall\turn g16 e)
+  \voiceOne
   d16( e g fis)
   | fis16( cis) cis8~ cis16 dis( fis e)
-  | e16( b) b8~ b16 cis( e d)
+  | e16( b) b8~ 
+  \oneVoice
+  b16 cis( e d)
   | d16( b' b, cis) <<
     { \voiceOne cis8( e32 d cis b) }
     \new Voice {
@@ -154,6 +160,7 @@ upper = \relative c'' {
   >>
   \oneVoice
   | b16( ais gis\prall fis)
+  \oneVoice
   d'( e g fis)
   | fis16( cis) cis8~ cis16 dis( fis e)
   | e16( e') e8~ e16 cis( b\prall ais)
@@ -162,9 +169,12 @@ upper = \relative c'' {
   \once \override Script #'staff-padding = #1.5
   cis)\prall\turn
   | b4\)
+  \voiceOne
   d'16( b a\prall g
   | fis16 eis d' cis) r16 e,( g fis
-  | e16 cis e d) cis(\prall b fis' a,)
+  | e16 cis e d) 
+  \oneVoice
+  cis(\prall b fis' a,)
   | a16( fis g g' fis e d cis
   | b16 ais gis\prall fis) d' d'( cis b
   | bis16 cis eis,%{orig: e%} fis) r fis( a c
@@ -186,28 +196,33 @@ lower = \relative c' {
   | ais4 a
   | gis4 g
   | fis8 e fis4
-  | b8 b,
+  | b8 \parenthesize b,
   b'4
   | cis4 ais
-  | b4 d,8 dis
+  | b4 d8 dis
   | e4. eis8
   | fis4
-  b4
+  b,4
   | ais4 a
   | gis4 g
   | fis8 e fis4
-  | b8 b,
+  | b8 \parenthesize b,
   b'4
   | c4 a
   | b4 a
   | g4 gis
   | a4
-  d4
+  \change Staff = "upper"
+  \voiceTwo
+  d'4
   | cis4 c
-  | b4 b,
+  | b4
+  \change Staff = "lower"
+  \oneVoice
+  b,
   | a8 g a4
   | d8 d,
-  d''4
+  d'4
   | cis4 ais
   | b4 d,
   | e2
@@ -218,7 +233,7 @@ lower = \relative c' {
   | fis8 e fis4
   | b8 b,
   r4
-  | r4 g'
+  | r4 g''
   | fis8 g r4
   | r4 e
   | dis8( e)
@@ -227,45 +242,55 @@ lower = \relative c' {
   | c4 fis,
   | b4 ais
   | b4
-  e'4
+  e4
   | dis4 d
   | cis4 c
   | a4 b
-  | e,8 e,
+  | e8 e,
   r4
 %  \change Staff = "upper"
 %  \voiceTwo
-  | <d'' f>4 r
+  | <d' f>4 r
   | <c e>4
 %  \change Staff = "lower"
 %  \oneVoice
-  c,4
+  c4
   | d4 g,
   | gis4 a
   | ais2~
   | ais2~
   | ais2~
   | ais4
+  \change Staff = "upper"
+  \voiceTwo
   b'4
   | ais4 a
-  | gis4 g
+  | gis4 
+  \change Staff = "lower"
+  \oneVoice
+  g
   | fis4 eis
   | fis4
-  b4
+  b,4
   | ais4 a
   | gis4 g
   | fis8 e fis4
-  | b8 b,
-  b'4
+  | b8 \parenthesize b,
+  \change Staff = "upper"
+  \voiceTwo
+  b''4
   | cis4 ais
-  | b4 d,8 dis
+  | b4 
+  \change Staff = "lower"
+  \oneVoice
+  d,8 dis
   | e4. eis8
   | fis4
-  b4
+  b,4
   | ais4 a
   | gis4 g
   | fis8 e fis4
-  | b8 b,
+  | b8 \parenthesize b,
   \bar "|."
 }
 
