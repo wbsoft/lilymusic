@@ -155,7 +155,6 @@ upper = \relative c'' {
   | a16 d, es g fis a g bes
   | a16 d, cis e d f bes g
   | f16. a32 g f e d \afterGrace e4\prall { d16[ e] }
-  \oneVoice
   | d8. cis'16 d8. cis,16
   | \grace cis8 d4.
   \bar "|."
@@ -273,11 +272,21 @@ lower = \relative c' {
       | d8 g, a bes
       | a8 d <g, cis>
       \ped
-      a,
+      a,8
     }
   >>
-  | d8 <a e'> <d f> <a e'>
-  | <d f>8 \clef bass a d,
+  <<
+    {
+      | d8 a d a
+      | d8 a d,
+
+    }
+    \new Voice {
+      \man
+      | r8 e' f e
+      | f4.
+    }
+  >>
   \bar"|."
 }
 
