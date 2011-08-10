@@ -20,7 +20,7 @@
     \line {
       Engraved by
       \with-url #"http://www.wilbertberendsen.nl/"
-      {
+      \line {
         Wilbert Berendsen
         (http://www.wilbertberendsen.nl/)
       }
@@ -28,7 +28,7 @@
     \line {
       Copyright © 2009
       \with-url #"http://www.cpdl.org/"
-      {
+      \line {
         The Choral Public Domain Library
         (http://www.cpdl.org/)
       }
@@ -41,8 +41,8 @@
   tagline = \markup {
     Engraved at
     \simple #(strftime "%d-%m-%Y" (localtime (current-time)))
-    with \with-url #"http://lilypond.org/web/"
-    { LilyPond \simple #(lilypond-version) (http://lilypond.org/) }
+    with \with-url #"http://lilypond.org/"
+    \line { LilyPond \simple #(lilypond-version) (http://lilypond.org/) }
   }
 }
 
