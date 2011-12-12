@@ -2,6 +2,7 @@
 
 \header {
   title = "RONDO"
+  subtitle = "from Sonata in B minor, Wq.55/3 (H.245)"
   composer = "Carl Philipp Emanuel Bach (1714-1788)"
   arranger = "Carillon arrangement by Wilbert Berendsen (*1971)"
   tagline = \markup {
@@ -231,7 +232,7 @@ lower = \relative c' {
   | ais4 a
   | gis4 g
   | fis8 e fis4
-  | b8 b,
+  | b8 \parenthesize b,
   r4
   | r4 g''
   | fis8 g r4
@@ -266,6 +267,7 @@ lower = \relative c' {
   b'4
   | ais4 a
   | gis4 
+  \once \set followVoice = ##t
   \change Staff = "lower"
   \oneVoice
   g
@@ -281,6 +283,7 @@ lower = \relative c' {
   b''4
   | cis4 ais
   | b4 
+  \once \set followVoice = ##t
   \change Staff = "lower"
   \oneVoice
   d,8 dis

@@ -83,8 +83,8 @@ upper = \relative c'' {
   \global
   
   a8
-  | d4~ d8 a'16 f
-  | \voiceOne f16 e e4 \oneVoice bes'16 g
+  | \voiceOne d4~ d8 a'16 f
+  | f16 e e4 \oneVoice bes'16 g
   | g16 f f e \voiceOne e d d cis
   \oneVoice
   | d16 e f g a b cis d
@@ -138,8 +138,8 @@ upper = \relative c'' {
     | a16 d, d d f a bes a g f e d
   }
   | \grace e8 d8 cis r a
-  | d4~ d8 a'16 f
-  | \voiceOne f16 e e4 bes'16 g
+  | \voiceOne d4~ d8 a'16 f
+  | f16 e e4 bes'16 g
   | g16 f f e e d d cis
   | \oneVoice d16 e f g a f e d
   | cis16 d e f g e d cis
@@ -156,7 +156,7 @@ upper = \relative c'' {
   | a16 d, cis e d f bes g
   | f16. a32 g f e d \afterGrace e4\prall { d16[ e] }
   | d8. cis'16 d8. cis,16
-  | \grace cis8 d4.
+  | \slurDown\appoggiatura cis8 d4.
   \bar "|."
 }
 
@@ -164,7 +164,14 @@ upper = \relative c'' {
 lower = \relative c' {
   \global
   r8
-  | r8 <d f> <d f> r
+  | r8 <<
+    { d d }
+    \new Voice {
+      \man
+      f f 
+    }
+  >>
+  r
   | r8 << 
     { cis cis }
     \new Voice {
@@ -237,7 +244,14 @@ lower = \relative c' {
   fis, g e
   | f8 f, g gis
   | a8. bes16 a g f e
-  | d8 <d' f> <d f> r
+  | d8 <<
+    { d' d }
+    \new Voice {
+      \man
+      f f
+    }
+  >>
+  r
   | r8 <<
     { cis cis }
     \new Voice {

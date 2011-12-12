@@ -11,7 +11,7 @@
     Engraved at
     \simple #(strftime "%Y-%m-%d" (localtime (current-time)))
     with \with-url #"http://lilypond.org/web/"
-    { LilyPond \simple #(lilypond-version) (http://lilypond.org/) }
+    \line { LilyPond \simple #(lilypond-version) (http://lilypond.org/) }
   }  
 }
 

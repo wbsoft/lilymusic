@@ -1,4 +1,4 @@
-\version "2.13.50"
+\version "2.14.0"
 
 \include "merge-rests.ily"
 \include "carillon.ily"
@@ -119,7 +119,7 @@ rh = \relative c'' {
   | \acciaccatura e8 \voiceOne dis8. c'16 b8 r16 a a( g) g( fis)
   | fis4( g8)\prall fis4 e8
   | <e f>8. g16 <e f>8 <d f> a' g16 f
-  | f8 dis <c e> <c e>8. f16 <c e>8
+  | f8 dis e e8. f16 e8
   | <cis e>8. fis16 <cis e>8 e fis dis
   | <b~ dis>4.( <b e>8) r r
   | \grace { e,32[ c a' e] } e'8. f16 e8 
@@ -149,6 +149,7 @@ rh = \relative c'' {
     c16 e,8 \stich #1 a'8. c16 e,8
   | \set tupletSpannerDuration = #(ly:make-moment 1 8)
     \set subdivideBeams = ##t
+    \tupletUp
     \times 2/3 { r16 f-. gis-.
       \override TupletBracket #'stencil = ##f
       \override TupletNumber #'stencil = ##f
@@ -209,21 +210,21 @@ ped = \relative c' {
   \global
   
   | a4 a8 gis4 gis8
-  | a4 a,8 s4.
+  | a4 \parenthesize a,8 s4.
   | r8 f'' e r d g
   | c,8. d16 c8 d,4.
   | r8 d'8 c b e e,
   | a4 r8 r4 r8
   | e4 e8 e4 e8
-  | f4 f,8 r8 r f'
+  | f4 \parenthesize f,8 r8 r f'
   | fis4 fis8 fis4 fis8
-  | g4( g,8) g'4 g8-_
+  | g4( \parenthesize g,8) g'4 g8-_
   | g4. r4 r8
   | g4. r4 r8
   | c4 e,8 f4 g8
   | a4 e8 r4 r8
-  | f4 f8 g4 g,8
-  | c8.( g'16 e8) c8 r r
+  | f4 f8 g4 g8
+  | c,8.( g'16 e8) c8 r r
   | bes'4 bes8 bes4 bes8
   | a4 bes8 g4.
   | r8 g f e a a
@@ -237,7 +238,7 @@ ped = \relative c' {
   | ais4 ais8 b4 b8
   | e,8. f16 e8 e f e16 d
   | c4 c'8 gis4 gis8
-  | a4 a,8 s4.
+  | a4 \parenthesize a,8 s4.
   | r8 f'' e r d g
   | c,8. d16 c8 d,4.
   | r8 d'8 c gis a e'
@@ -291,6 +292,7 @@ dyn = {
   | s4.\f s
   | s4. s\pp
   | s4.\f s
+  \once \override DynamicLineSpanner #'Y-extent = #'(0 . 0)
   | s4.\> s\!
 }
   
