@@ -78,7 +78,7 @@ soprano = \relative c' {
   f2.\! e4
   \dalign
   f2\psost f
-  f1~
+  f1
   f2 \tempo "ritard." f
   f1\fermata
   \bar "|."  
@@ -117,9 +117,9 @@ alto = \relative c' {
   e4( f) g a
   d,2 d4 e
   f4 g a bes
-  e,2 d4 cis
+  e,2 d4 cis\cresc
   a'1(
-  g4 f) e d
+  g4\! f) e d
   g1(
   f1
   b,2 c\dim
@@ -132,11 +132,11 @@ alto = \relative c' {
   e4(\< g) f(\> es)
   d2\! r
   r4 a\dim d bes
-  a4\!( bes8 a) g2
+  a4\! bes8( a) g2
   \dalign
   a2\psost cis
-  d1(\<
-  es2)\> es4( d)
+  d1\<
+  es2\> es4( d)
   c1\!\fermata
   \bar "|."
 }
@@ -184,9 +184,9 @@ tenorOne = \relative c' {
   c2 c4 c
   c4( b8 c) d4 a
   d8 d4. d d8
-  d4( cis) d e
+  d4( cis) d e\cresc
   d4( g f e
-  d4 b) c d
+  d4\! b) c d
   c4( f e d
   c4 e d) c
   b2( bes~\dim
@@ -200,11 +200,11 @@ tenorOne = \relative c' {
   bes2) a4( f)
   d'2 e4(\< d)
   cis2\! d\dim
-  c4( d8 c) bes2
+  c4 d8( c) bes2
   \dalign
   a2\psost a
   a2( g~
-  g4 a) bes2
+  g4) a bes2
   a1\fermata
   \bar "|."
 }
@@ -252,9 +252,9 @@ tenorTwo = \relative c' {
   c,4( d) e f
   g4.( a8) b4 cis
   d8 d4. d d8
-  a2 b4 cis
+  a2 b4 cis\cresc
   d4( a2 f4
-  d4 g) a b
+  d4\! g) a b
   c4( g2 e4
   c4 c' b) a
   g1~
@@ -268,11 +268,11 @@ tenorTwo = \relative c' {
   g4( c,2) f4
   f4(\< a) g(\> f)
   e2(\! g\dim
-  c,2) c
+  c,8) c4. c2
   \dalign
   f2\psost a
-  d1(~\<
-  d4\> c) f,( g)
+  d1~\<
+  d4\> c f,( g)
   a1\!\fermata
   \bar "|."  
 }
@@ -320,9 +320,9 @@ bass = \relative c {
   R1
   r2 r4 a\mf
   d,4( e) f g
-  a4 a r g
+  a4 a r g\cresc
   f4 e d c
-  b4( d g f 
+  b4(\! d g f 
   e4 d c b
   a2) d4. d8
   e2( c\dim
@@ -336,11 +336,11 @@ bass = \relative c {
   a2 a
   bes2 g\<
   a2\! bes\dim
-  c2 c
+  c8 c4. c2
   \dalign
   f,2\psost f
   bes1~
-  bes2 bes
+  bes4 bes bes2
   <f f'>1\fermata
   \bar "|."
 }
@@ -363,7 +363,7 @@ sopranoVerse = \lyricmode {
   
   Thou wilt keep him in per -- fect peace,
   whose mind is stay -- ed on Thee,
-  on Thee, is stayed __ on Thee.
+  on Thee, is stay -- ed on Thee.
 }
 
 altoVerse = \lyricmode {
@@ -383,8 +383,8 @@ altoVerse = \lyricmode {
   for ev -- er, for ev -- er -- more. __
   
   Thou wilt keep __ him in per -- fect peace,
-  whose mind is stayed on Thee,
-  is stayed __ on Thee.
+  whose mind is stay -- ed on Thee,
+  is stay -- ed on Thee.
 }
 
 tenorOneVerse = \lyricmode {
@@ -407,8 +407,8 @@ tenorOneVerse = \lyricmode {
   
   
   Thou wilt keep him in per -- fect peace,
-  whose mind is stayed on Thee,
-  is stayed __ on Thee.
+  whose mind is stay -- ed on Thee,
+  is stay -- ed on Thee.
 }
 
 tenorTwoVerse = \lyricmode {
@@ -431,8 +431,8 @@ tenorTwoVerse = \lyricmode {
   ev -- er -- more.
   
   Thou wilt keep him in per -- fect peace,
-  whose mind is stayed __ on Thee,
-  is stayed __ on Thee.
+  whose mind is stay -- ed on Thee,
+  is stay -- ed on Thee.
 }
 
 bassVerse = \lyricmode {
@@ -454,8 +454,8 @@ bassVerse = \lyricmode {
   for ev -- er -- more.
   
   Thou wilt keep him in per -- fect peace,
-  whose mind is stayed on Thee,
-  is stayed __ on Thee.
+  whose mind is stay -- ed on Thee,
+  is stay -- ed on Thee.
 }
 
 \score {
