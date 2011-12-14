@@ -39,9 +39,10 @@ soprano = \relative c' {
   c2\! c
   c4 f, bes2~(\<
   bes4\! a)\dim g d
-  f2.\! e4 f2 r
+  f2.\! e4
+  f2 \tempo "Un poco accelerato" r
   R1*20
-  
+  \tempo "Tempo I"
   f2\p g
   a4 g8 f c'4 c
   d4(\< f e\> d)
@@ -55,6 +56,7 @@ soprano = \relative c' {
   c4 a\cresc bes2
   bes4\! g4 a f'
   d1
+  \tempo "Un poco accelerato"
   c2 r
   R1*3
   r2 r4 a\f
@@ -66,7 +68,7 @@ soprano = \relative c' {
   e2(\! d4 c~
   c2\p) b
   c2 r
-  
+  \tempo "Tempo I"
   f2\p g
   a4( g8 f) c'4 c\<
   d4( f) e(\> d)
@@ -76,8 +78,8 @@ soprano = \relative c' {
   f2.\! e4
   \dalign
   f2\psost f
-  f1
-  f2 f
+  f1~
+  f2 \tempo "ritard." f
   f1\fermata
   \bar "|."  
 }
@@ -117,8 +119,8 @@ alto = \relative c' {
   f4 g a bes
   e,2 d4 cis
   a'1(
-  g4 f e d
-  g1
+  g4 f) e d
+  g1(
   f1
   b,2 c\dim
   cis2\! d4) as
@@ -130,11 +132,11 @@ alto = \relative c' {
   e4(\< g) f(\> es)
   d2\! r
   r4 a\dim d bes
-  a4\! bes8( a) g2
+  a4\!( bes8 a) g2
   \dalign
   a2\psost cis
-  d1\<
-  es2\> es4( d)
+  d1(\<
+  es2)\> es4( d)
   c1\!\fermata
   \bar "|."
 }
@@ -182,27 +184,27 @@ tenorOne = \relative c' {
   c2 c4 c
   c4( b8 c) d4 a
   d8 d4. d d8
-  d4( cis d e
-  d4 g f e
-  d4 b c d
-  c4 f e d
-  c4 e d c
-  b2 bes~\dim
-  bes2) a4 as
-  d4\p( e) f2
+  d4( cis) d e
+  d4( g f e
+  d4 b) c d
+  c4( f e d
+  c4 e d) c
+  b2( bes~\dim
+  bes2) a4( as
+  d,4\p e) f2
   e2 r
   
-  r4 c(\p d) c
-  c2 c~
-  c2 bes
-  bes2( a4) f
+  r4 c'(\p d) c
+  c2 c4 c
+  c2( bes~
+  bes2) a4( f)
   d'2 e4(\< d)
   cis2\! d\dim
-  c4 d8( c) bes2
+  c4( d8 c) bes2
   \dalign
   a2\psost a
   a2( g~
-  g4) a bes2
+  g4 a) bes2
   a1\fermata
   \bar "|."
 }
@@ -252,8 +254,8 @@ tenorTwo = \relative c' {
   d8 d4. d d8
   a2 b4 cis
   d4( a2 f4
-  d4 g a b
-  c4 g2 e4
+  d4 g) a b
+  c4( g2 e4
   c4 c' b) a
   g1~
   g2\dim f~(
@@ -261,16 +263,16 @@ tenorTwo = \relative c' {
   c2 r
   
   r4 a'(\p bes) c
-  c4( bes8 a g2)
+  c4( bes8 a) g4 g
   a4( f) d2
   g4( c,2) f4
   f4(\< a) g(\> f)
-  e2\! g\dim
-  c,8 c4. c2
+  e2(\! g\dim
+  c,2) c
   \dalign
   f2\psost a
-  d1~\<
-  d4\> c f,( g)
+  d1(~\<
+  d4\> c) f,( g)
   a1\!\fermata
   \bar "|."  
 }
@@ -334,11 +336,11 @@ bass = \relative c {
   a2 a
   bes2 g\<
   a2\! bes\dim
-  c8 c4. c2
+  c2 c
   \dalign
   f,2\psost f
   bes1~
-  bes4 bes bes2
+  bes2 bes
   <f f'>1\fermata
   \bar "|."
 }
@@ -361,8 +363,7 @@ sopranoVerse = \lyricmode {
   
   Thou wilt keep him in per -- fect peace,
   whose mind is stay -- ed on Thee,
-  on Thee,
-  is stay -- ed on Thee.
+  on Thee, is stayed __ on Thee.
 }
 
 altoVerse = \lyricmode {
@@ -379,11 +380,11 @@ altoVerse = \lyricmode {
   for Thine,
   Thine is the king -- dom, the
   pow -- er and the glo -- ry
-  for ev -- er -- more. __
+  for ev -- er, for ev -- er -- more. __
   
   Thou wilt keep __ him in per -- fect peace,
-  whose mind is stay -- ed on Thee,
-  is stay -- ed on Thee.
+  whose mind is stayed on Thee,
+  is stayed __ on Thee.
 }
 
 tenorOneVerse = \lyricmode {
@@ -401,11 +402,13 @@ tenorOneVerse = \lyricmode {
   and it shall praise __ Thee,
   for __ Thine is the king -- dom, the
   pow -- er and the glo -- ry
-  for ev -- er -- more.
+  for ev -- er, for ev -- er -- more, __
+  ev -- er more.
   
-  Thou wilt keep him __ in per -- fect peace,
-  whose mind is stay -- ed on Thee,
-  is stay -- ed on Thee.
+  
+  Thou wilt keep him in per -- fect peace,
+  whose mind is stayed on Thee,
+  is stayed __ on Thee.
 }
 
 tenorTwoVerse = \lyricmode {
@@ -424,12 +427,12 @@ tenorTwoVerse = \lyricmode {
   shall praise __ Thee,
   for Thine is the king -- dom,
   the pow -- er and the glo -- ry
-  for ev -- er -- more, __
+  for ev -- er, for ev -- er -- more, __
   ev -- er -- more.
   
-  Thou wilt keep __ him in per -- fect peace,
-  whose mind is stay -- ed on Thee,
-  is stay -- ed on Thee.
+  Thou wilt keep him in per -- fect peace,
+  whose mind is stayed __ on Thee,
+  is stayed __ on Thee.
 }
 
 bassVerse = \lyricmode {
@@ -451,8 +454,8 @@ bassVerse = \lyricmode {
   for ev -- er -- more.
   
   Thou wilt keep him in per -- fect peace,
-  whose mind is stay -- ed on Thee,
-  is stay -- ed on Thee.
+  whose mind is stayed on Thee,
+  is stayed __ on Thee.
 }
 
 \score {
