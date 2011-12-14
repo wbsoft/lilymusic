@@ -5,6 +5,10 @@
 \header {
   title = "Thou wilt keep him in perfect peace"
   composer = "Samuel Sebastian Wesley (1810-1876)"
+  poet = \markup \column {
+    \line { Isaiah 26, 3; Psalms 139, 12; 1 John 1, 5; }
+    \line { Psalms 119, 175; Matthew 6, 13 }
+  }
 }
 
 \layout {
@@ -469,8 +473,8 @@ right = {
   <<
     \relative c'' {
       s2 \voiceOne g
-      a4 g8 f \oneVoice c'4 c(
-      \voiceOne d4 f e d)
+      a4 g8 f \oneVoice c'4 c
+      \voiceOne d4( f e d)
       c1~
       c4 f, bes2~
       bes4 a g d
