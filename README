@@ -1,0 +1,6 @@
+A project to collect and maintain beautiful LilyPond music scores, and
+to document LilyPond engraving styles, Scheme programs and templates.
+
+You can use LilyPond to print the music. Ready-to-print scores will
+be made available on sites like CPDL, IMSLP or Mutopia. 
+
