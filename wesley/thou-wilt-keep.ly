@@ -9,6 +9,23 @@
     \line { Isaiah 26, 3; Psalms 139, 12; 1 John 1, 5; }
     \line { Psalms 119, 175; Matthew 6, 13 }
   }
+  copyright = \markup \center-column {
+    \line {
+      Engraved by
+      \with-url #"http://www.wilbertberendsen.nl/" {
+        Wilbert Berendsen (http://www.wilbertberendsen.nl/)
+      }
+    }
+    \line {
+      Copyright © 2011
+      \with-url #"http://www.cpdl.org/" {
+        The Choral Public Domain Library (http://www.cpdl.org/)
+      }
+    }
+    \line {
+      This edition may be freely distributed, edited, performed or recorded.
+    }
+  }
 }
 
 \layout {
