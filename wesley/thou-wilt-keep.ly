@@ -496,6 +496,15 @@ right = {
       c4 f, bes2~
       bes4 a g d
       f2. e4
+      f2 s
+      d1
+      f2 d
+      c2 <b d>
+      s1
+      d2 e
+      f4 g a2
+      a1~
+      a1
     }
     \new Voice \relative c' {
       f2~ \voiceTwo f4 e
@@ -505,34 +514,85 @@ right = {
       d2 e4 d
       cis2 d
       c4 d8 c bes2
+      s2 \oneVoice c~
+      \voiceTwo
+      c2 s
+      c2 s
+      s1
+      c1~
+      c2 s
+      s2 e4 d~
+      d2 cis
+      d1
     }
-    
+    \new Voice \relative c' {
+      \voiceThree
+      s1*12
+      \once \override NoteColumn #'force-hshift = #1.7
+      d1_~
+      \voiceTwo
+      d2
+    }
   >>
+  \oneVoice
+  R1*5
+  
 }
 
-left = \relative c' {
+left = {
   \global
-  r4 <a c>( <bes d> c)
   <<
-    { 
+    \relative c' { 
+      r4 <a c>( <bes d> c)
       c4 bes8 a g4 g
       \voiceThree a4 \voiceOne f2 bes4~
       bes2 a4 f~
       f2 g4 f
       e2 g
       a4 bes8 a g2
+      a2 a
+      s2 bes~
+      bes2 a
+      g1~
+      <e g>2 <es f~>
+      <d f>2 bes'
+      a2 g4 f
+      <e g a~>1
+      <fis a>1
     }
-    \new Voice {
+    \new Voice \relative c' {
+      s1
+      \once \override Tie #'staff-position = #6
       \voiceThree c1~
       \voiceOne c2 \icc <bes d,>
-      \voiceTwo g4 c,2 f4
+      \voiceFour g4 \voiceTwo c,2 f4
+      \voiceFour s1*3
+      c2 s
+      s1*2
+      e2 f
+      s1*2
+      \voiceThree a1
     }
-    \new Voice {
-      s1
+    \new Voice \relative c {
+      s1*2
       \voiceOne \icc
       \hideNotes d2_~ d
+      \unHideNotes
+      s1*4
+      \voiceThree
+      \once \override NoteColumn #'force-hshift = #0
+      f1_~
+      f1_~
+      \once \override NoteColumn #'force-hshift = #0
+      f1
     }
   >>
+  \voiceOne
+  <f a>1
+  <e a>1
+  <d~ f~ a>1
+  <d f bes>1
+  
   
   
 }
@@ -542,14 +602,32 @@ pedal = \relative c {
   R1
   f2. e4
   d2 g,
-  \icc
-  \once \override NoteHead #'extra-offset = #'(.5 . 0)
   a1
   bes2 g
   a2 bes
   c1
   f,1~
+  f1~
   f1
+  g1
+  c2 a
+  bes2 g
+  a1
+  a1
+  d1
+  d1
+  cis1
+  d1
+  bes1
+  es,2 c
+  d1~
+  d1
+  g2 e
+  f2 d
+  e1~
+  e1
+  a2
+  
   
 }
       
