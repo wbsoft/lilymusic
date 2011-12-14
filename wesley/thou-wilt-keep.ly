@@ -1,5 +1,7 @@
 \version "2.14.1"
 
+#(set-global-staff-size 18)
+
 \header {
   title = "Thou wilt keep him in perfect peace"
   composer = "Samuel Sebastian Wesley (1810-1876)"
@@ -21,6 +23,10 @@ psost = #(make-dynamic-script psostmkup)
 
 dalign = {
   \once \override DynamicText #'self-alignment-X = #LEFT
+}
+
+icc = {
+  \once \override NoteColumn #'ignore-collision = ##t
 }
 
 global = {
@@ -458,36 +464,116 @@ bassVerse = \lyricmode {
   is stay -- ed on Thee.
 }
 
+right = {
+  \global
+  <<
+    \relative c'' {
+      s2 \voiceOne g
+      a4 g8 f \oneVoice c'4 c(
+      \voiceOne d4 f e d)
+      c1~
+      c4 f, bes2~
+      bes4 a g d
+      f2. e4
+    }
+    \new Voice \relative c' {
+      f2~ \voiceTwo f4 e
+      f2 s
+      f1
+      e2 f4 es
+      d2 e4 d
+      cis2 d
+      c4 d8 c bes2
+    }
+    
+  >>
+}
+
+left = \relative c' {
+  \global
+  r4 <a c>( <bes d> c)
+  <<
+    { 
+      c4 bes8 a g4 g
+      \voiceThree a4 \voiceOne f2 bes4~
+      bes2 a4 f~
+      f2 g4 f
+      e2 g
+      a4 bes8 a g2
+    }
+    \new Voice {
+      \voiceThree c1~
+      \voiceOne c2 \icc <bes d,>
+      \voiceTwo g4 c,2 f4
+    }
+    \new Voice {
+      s1
+      \voiceOne \icc
+      \hideNotes d2_~ d
+    }
+  >>
+  
+  
+}
+
+pedal = \relative c {
+  \global
+  R1
+  f2. e4
+  d2 g,
+  \icc
+  \once \override NoteHead #'extra-offset = #'(.5 . 0)
+  a1
+  bes2 g
+  a2 bes
+  c1
+  f,1~
+  f1
+  
+}
+      
+
 \score {
-  \new ChoirStaff \with {
-    systemStartDelimiterHierarchy = #'
-    (SystemStartBracket a b (SystemStartSquare c d) e)
-  } <<
-    \new Staff \with {
-      instrumentName = "S."
-      \consists "Ambitus_engraver"
-    } { \soprano }
-    \addlyrics { \sopranoVerse }
-    \new Staff \with {
-      instrumentName = "A."
-      \consists "Ambitus_engraver"
-    } { \alto }
-    \addlyrics { \altoVerse }
-    \new Staff \with {
-      instrumentName = "T. I"
-      \consists "Ambitus_engraver"
-    } { \clef "treble_8" \tenorOne }
-    \addlyrics { \tenorOneVerse }
-    \new Staff \with {
-      instrumentName = "T. II"
-      \consists "Ambitus_engraver"
-    } { \clef "treble_8" \tenorTwo }
-    \addlyrics { \tenorTwoVerse }
-    \new Staff \with {
-      instrumentName = "B."
-      \consists "Ambitus_engraver"
-    } { \clef bass \bass }
-    \addlyrics { \bassVerse }
+  <<
+    \new ChoirStaff \with {
+      systemStartDelimiterHierarchy = #'
+      (SystemStartBracket a b (SystemStartSquare c d) e)
+    } <<
+      \new Staff \with {
+        instrumentName = "S."
+        \consists "Ambitus_engraver"
+      } { \soprano }
+      \addlyrics { \sopranoVerse }
+      \new Staff \with {
+        instrumentName = "A."
+        \consists "Ambitus_engraver"
+      } { \alto }
+      \addlyrics { \altoVerse }
+      \new Staff \with {
+        instrumentName = "T. I"
+        \consists "Ambitus_engraver"
+      } { \clef "treble_8" \tenorOne }
+      \addlyrics { \tenorOneVerse }
+      \new Staff \with {
+        instrumentName = "T. II"
+        \consists "Ambitus_engraver"
+      } { \clef "treble_8" \tenorTwo }
+      \addlyrics { \tenorTwoVerse }
+      \new Staff \with {
+        instrumentName = "B."
+        \consists "Ambitus_engraver"
+      } { \clef bass \bass }
+      \addlyrics { \bassVerse }
+    >>
+    \new PianoStaff \with {
+      instrumentName = "Org."
+    } <<
+      \new Staff { \right }
+      \new Staff {
+        \clef bass
+        << \left \\ \pedal >>
+      }
+    >>
   >>
   \layout { }
   \midi {
