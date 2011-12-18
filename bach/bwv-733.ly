@@ -167,7 +167,7 @@ alt = \relative c' {
   | c2. b4
   | c8 e d c b d c b
   | a4 gis8 fis gis a b4~
-  | b4 a8 gis a2
+  | b4 a8 gis a2~
   | a2 g~
   | g2 f~
   | f8 c' bes a g f e g
@@ -175,8 +175,9 @@ alt = \relative c' {
   | d2 c~
   | c2 bes
   | a2 a~
+  | a1
   | a2 r
-  | R1*13
+  | R1*12
   | a,2 c
   | a2 a
   | bes2 a
@@ -281,7 +282,7 @@ ten = \relative c' {
   | f8 e d c b c d b
   | c8 b c d e f g e
   | a2. gis4
-  | a4 b~ b a8 g
+  | a4 b2 a8 g
   | f8 e d c d4 gis,
   | a8 b c d e f g e
   | f1
@@ -388,7 +389,7 @@ bas = \relative c' {
   | a4 d gis, c~
   | c4 b8 a b4 e,
   | a1~
-  | a8 d, e f g a bes a
+  | a8 d, e f g a bes g
   | c8 c, d e f g a f
   | bes1
   | a1
@@ -535,21 +536,110 @@ pedal = \relative c {
   d,1
 }
 
+hideMMrests = {
+  \override MultiMeasureRest #'stencil = #empty-stencil
+}
+
+showMMRests = {
+  \revert MultiMeasureRest #'stencil
+}
+
+toUpper = {
+  \change Staff = "upper"
+}
+
+toLower = {
+  \change Staff = "lower"
+}
+
 sopVoicing = {
+  \hideMMrests
+  s1*8
+  \showMMRests
   \voiceOne
+  s1*9
+  s2 \oneVoice s2
+  s1*4
+  \hideMMrests
+  s1*6
+  \voiceOne
+  \showMMRests
+  
 }
 
 altVoicing = {
+  \oneVoice
+  s1*8
   \voiceTwo
+  s1*9
+  s4 \toLower \voiceOne s2.
+  s1*4
+  \toUpper
+  \oneVoice
+  s1*6
+  \voiceTwo
+  s1*2
+  \voiceThree
+  s1*2
+  \voiceTwo
+  s1
+  s2 \once \override Tie #'direction = #UP s2
+  \voiceThree
+  s1*4
+  s2 \voiceTwo s2
+  s2 \voiceThree s2
+  s1
+  \once \override NoteColumn #'force-hshift = #0
+  s1
+  s2 \once \override Rest #'staff-position = #0 s2
+  \hideMMrests
+  s1*11
+  \showMMRests
+  
 }
 
 tenVoicing = {
+  \oneVoice
+  s1*17
+  \voiceTwo
+  s1*5
+  \oneVoice
+  s1*8
+  \toUpper
+  \voiceTwo
+  s1*2
+  \toLower
   \voiceOne
+  s1*2
+  \toUpper
+  \voiceTwo
+  s1*2
+  \toLower
+  \voiceOne
+  s1
+  s2 s8 \toUpper \voiceTwo s4.
+  s4. \toLower \voiceOne s8 s2
+  s2. \toUpper \voiceTwo s4
+  
 }
 
 basVoicing = {
+  \oneVoice
+  \hideMMrests
+  s1*30
+  \showMMRests
+  s1
   \voiceTwo
+  s1*3
+  \oneVoice
+  s1*8
+  \voiceOne
+  s1*2
+  \oneVoice
+  
 }
+
+showFirstLength = R1*51
 
 quintaVoicing = {
   \voiceTwo
@@ -563,7 +653,7 @@ pedalVoicing = {
 \score {
   <<
     \new PianoStaff <<
-      \new Staff = "right" <<
+      \new Staff = "upper" <<
         \new Voice = "sop" <<
           \sop
           \sopVoicing
@@ -573,7 +663,7 @@ pedalVoicing = {
           \altVoicing
         >>
       >>
-      \new Staff = "left" <<
+      \new Staff = "lower" <<
         \clef bass
         \new Voice = "ten" <<
           \ten
