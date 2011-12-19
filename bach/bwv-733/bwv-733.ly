@@ -35,39 +35,16 @@
 }
 
 \score {
-  <<
-    \new PianoStaff <<
-      \new Staff = "upper" <<
-        \new Voice = "sop" <<
-          { \sop \bar "|." }
-          \sopVoicing
-        >>
-        \new Voice = "alt" <<
-          \alt
-          \altVoicing
-        >>
-      >>
-      \new Staff = "lower" <<
-        \clef bass
-        \new Voice = "ten" <<
-          \ten
-          \tenVoicing
-        >>
-        \new Voice = "bas" <<
-          \bas
-          \basVoicing
-        >>
-        \new Voice = "quinta" <<
-          \quinta
-          \quintaVoicing
-        >>
-      >>
-    >>
-    \new Staff = "pedal" <<
-      \clef bass
-      \pedal
-      \pedalVoicing
-    >>
-  >>
+  \music
+}
+
+\score {
+  \midiMusic
+  \midi {
+    \context {
+      \Score
+      tempoWholesPerMinute = #(ly:make-moment 100 4)
+    }
+  }
 }
 

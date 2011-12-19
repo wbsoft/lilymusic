@@ -211,3 +211,45 @@ pedalVoicing = {
   
 }
 
+music = <<
+  \new PianoStaff <<
+    \new Staff = "upper" <<
+      \new Voice = "sop" <<
+        { \sop \bar "|." }
+        \sopVoicing
+      >>
+      \new Voice = "alt" <<
+        \alt
+        \altVoicing
+      >>
+    >>
+    \new Staff = "lower" <<
+      \clef bass
+      \new Voice = "ten" <<
+        \ten
+        \tenVoicing
+      >>
+      \new Voice = "bas" <<
+        \bas
+        \basVoicing
+      >>
+      \new Voice = "quinta" <<
+        \quinta
+        \quintaVoicing
+      >>
+    >>
+  >>
+  \new Staff = "pedal" <<
+    \clef bass
+    \pedal
+    \pedalVoicing
+  >>
+>>
+
+midiMusic = <<
+  \new Staff = "soprano" \sop
+  \new Staff = "alto" \alt
+  \new Staff = "tenor" \ten
+  \new Staff = "bas" << \bas \\ \quinta >>
+  \new Staff = "pedal" \pedal
+>>
