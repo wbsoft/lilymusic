@@ -12,13 +12,13 @@
   copyright = \markup \center-column {
     \line {
       Engraved by
-      \with-url #"http://www.wilbertberendsen.nl/" {
+      \with-url #"http://www.wilbertberendsen.nl/" \line {
         Wilbert Berendsen (http://www.wilbertberendsen.nl/)
       }
     }
     \line {
       Copyright © 2011
-      \with-url #"http://www.cpdl.org/" {
+      \with-url #"http://www.cpdl.org/" \line {
         The Choral Public Domain Library (http://www.cpdl.org/)
       }
     }
@@ -536,6 +536,35 @@ right = {
   >>
   \oneVoice
   R1*5
+  \relative c' {
+    r2 d~
+    d1~
+    d2 r
+  }
+  R1
+  <<
+    \relative c' {
+      c4 d e2^~
+      e1^~
+      \voiceOne
+      e2
+      \change Staff = "lower"
+      a,4_(
+      \change Staff = "upper"
+      e')
+      
+      
+      
+    }
+    \new Voice \relative c' {
+      s1
+      \voiceTwo
+      b1
+      cis2
+      
+    }
+    
+  >>
   
 }
 
@@ -588,11 +617,45 @@ left = {
     }
   >>
   \voiceOne
-  <f a>1
-  <e a>1
-  <d~ f~ a>1
-  <d f bes>1
-  
+  \relative c {
+    <f a>1
+    <e a>1
+    <d~ f~ a>1
+    <d f bes>1
+  }
+  <<
+    \relative c' {
+      \voiceOne
+      g2 a
+      bes4 c bes2
+      <a a,>1
+      s1
+      a2 b
+      \voiceFour
+      e,2 d4 c
+      \once \override NoteColumn #'force-hshift = #0
+      b1
+      \voiceOne
+      a'2
+    }
+    \new Voice \relative c' {
+      \voiceThree
+      g1_~
+      \voiceFour
+      \once \override NoteColumn #'force-hshift = #0
+      g2 a4 g
+      g2 fis
+      \voiceOne
+      <g_~ b>2 g_~
+      \voiceFour
+      g2 <f a~>
+      \voiceOne
+      a2. a4~
+      a2 gis
+      
+    }
+    
+  >>
   
   
 }
@@ -626,7 +689,7 @@ pedal = \relative c {
   f2 d
   e1~
   e1
-  a2
+  a2 r
   
   
 }
@@ -667,8 +730,8 @@ pedal = \relative c {
     \new PianoStaff \with {
       instrumentName = "Org."
     } <<
-      \new Staff { \right }
-      \new Staff {
+      \new Staff = "upper" { \right }
+      \new Staff = "lower" {
         \clef bass
         << \left \\ \pedal >>
       }

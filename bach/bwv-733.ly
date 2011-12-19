@@ -585,9 +585,15 @@ altVoicing = {
   s1
   s2 \once \override Tie #'direction = #UP s2
   \voiceThree
-  s1*4
+  s1
+  s2 \once \override Tie #'direction = #DOWN s2
+  \voiceTwo
+  s1
+  \voiceThree
+  s1
   s2 \voiceTwo s2
-  s2 \voiceThree s2
+  s1
+  \voiceThree
   s1
   \once \override NoteColumn #'force-hshift = #0
   s1
@@ -595,6 +601,12 @@ altVoicing = {
   \hideMMrests
   s1*11
   \showMMRests
+  \toLower
+  \voiceOne
+  \once \override MultiMeasureRest #'staff-position = #8
+  s1*6
+  s4 \toUpper \voiceTwo s2.
+  s2 \toLower \voiceOne s2
   
 }
 
@@ -619,7 +631,18 @@ tenVoicing = {
   s1
   s2 s8 \toUpper \voiceTwo s4.
   s4. \toLower \voiceOne s8 s2
-  s2. \toUpper \voiceTwo s4
+  s1
+  \toUpper
+  \voiceTwo
+  s1*4
+  \toLower
+  \voiceOne
+  s1*2
+  s2 \toUpper \voiceTwo s2
+  s1*4
+  s2 \toLower \voiceOne s2
+  s1
+  s4 \toUpper \voiceTwo s2.
   
 }
 
@@ -632,14 +655,20 @@ basVoicing = {
   \voiceTwo
   s1*3
   \oneVoice
-  s1*8
+  s1*2
+  \voiceTwo
+  s1*5
   \voiceOne
   s1*2
   \oneVoice
+  s1
+  \voiceTwo
+  s1*3
+  \oneVoice
+  s1*4
+  \voiceTwo
   
 }
-
-showFirstLength = R1*51
 
 quintaVoicing = {
   \voiceTwo
