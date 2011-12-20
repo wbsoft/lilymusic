@@ -36,6 +36,11 @@
 
 \score {
   \music
+  \layout {
+    \context {
+      \Staff \RemoveEmptyStaves
+    }
+  }
 }
 
 \score {
