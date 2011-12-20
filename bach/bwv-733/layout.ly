@@ -5,14 +5,13 @@
 \layout {
   \context {
     \PianoStaff
-    \override StaffGrouper #'staff-staff-spacing = 
+    \remove "Vertical_align_engraver"
+  }
+  \context {
+    \Staff
+    \override VerticalAxisGroup #'staff-staff-spacing =
     #'((basic-distance . 9)
        (minimum-distance . 8)
        (padding . 0.5))
-    \override StaffGrouper #'staffgroup-staff-spacing =
-    #'((basic-distance . 9)
-       (minimum-distance . 8)
-       (padding . 0.5))
-    
   }
 }
