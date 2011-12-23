@@ -6,7 +6,7 @@ organPartSize = #-1
 \header {
   title = "Hallelujah"
   subtitle = "from Messiah, 1741"
-  poet = "Revelation 11:15b, 19:6b"
+  poet = "Revelation 11:15b, 19:6b, 16b"
   composer = "Georg Friedrich Händel (1685-1759)"
   copyright = \markup
   \fontsize #-1
@@ -28,6 +28,12 @@ organPartSize = #-1
       Creative Commons License \concat {( \tiny BY-NC-SA , }
       http://creativecommons.org/licenses/by-nc-sa/3.0/nl/).
     }
+  }
+  tagline = \markup {
+    Engraved at
+    \simple #(strftime "%d-%m-%Y" (localtime (current-time)))
+    with \with-url #"http://lilypond.org/"
+    \line { LilyPond \simple #(lilypond-version) (http://lilypond.org/) }
   }
 }
 
@@ -827,7 +833,7 @@ keyboardLower = \relative c {
 choir = \new ChoirStaff <<
   \new Staff = "sop" \with {
     instrumentName = #"Soprano"
-  } { \soprano \bar "." } \addlyrics { \sopranoLyrics }
+  } { \soprano \bar "|." } \addlyrics { \sopranoLyrics }
   \new Staff = "alt" \with {
     instrumentName = #"Alto"
   } { \alto } \addlyrics { \altoLyrics }
@@ -868,3 +874,9 @@ keyboard = \new PianoStaff <<
     \keyboard
   >>
 }
+
+%\markup \italic \wordwrap {
+%  Halleluja! De Heer, onze God, de Almachtige, heeft het koningschap op zich genomen.
+%  Nu begint de heerschappij van onze Heer over de wereld, en die van zijn messias.
+%  Koning der koningen en Here der heren, hij zal heersen tot in eeuwigheid.
+%}
