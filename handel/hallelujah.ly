@@ -606,28 +606,28 @@ keyboardUpper = \relative c'' {
   | d8 d, d'2 cis4
   | b2 a4 r8 <a' e>16 <a e>
   | <d fis, a>8 <cis e, a> r <a e>16 <a e>
-  | <d fis, a>8 <cis e, a> r <a e>16 <a e>
+  <d fis, a>8 <cis e, a> r <a e>16 <a e>
   | <d fis, a>8 <cis e, a>16 <cis e, a> <cis e, a>8 <a e>16 <a e>
-  | <d fis, a>8 <cis e, a> r4
+  <d fis, a>8 <cis e, a> r4
   | d,,2 e4 fis
   | g8 g, g'2 fis4
   | e2 d4 r8 <a'' d,>16 <a d,>
   | <b g d>8 <a fis d> r <d a d,>16 <a d,>
-  | <b g d>8 <a fis d> r <d a d,>16 <a d,>
+  <b g d>8 <a fis d> r <d a d,>16 <a d,>
   | <b g d>8 <d fis, a>16 <d fis, a> <d fis, a>8 <d a d,>16 <a d,>
-  | <b g d>8 <a fis>16 <a fis> <fis, a>8 <fis a>16 <fis a>
+  <b g d>8 <a fis>16 <a fis> <fis, a>8 <fis a>16 <fis a>
   | << { d'2 e4 fis } \\ { <fis, d>4 r r8 a16 a fis4 } >>
   | g'8 g, << { g'2 fis4 } \\ { b,4 a r8 a16 a } >>
   | << e'2 \\ { g,8 e a a } >>
-  | d8 <a' fis>16 <a fis> << { a8 d16 d } \\ { fis,8 <d fis> } >>
+  d8 <a' fis>16 <a fis> << { a8 d16 d } \\ { fis,8 <d fis> } >>
   | cis'8 <a e>16 <a e> <cis, e a>8 <fis cis'>16 <e cis' a>
-  | <d d' fis,>8 <g d>16 <fis d> <e a, cis>8 <a e cis>16 <g e cis>
+  <d d' fis,>8 <g d>16 <fis d> <e a, cis>8 <a e cis>16 <g e cis>
   | <a, fis'>8 <a' fis>16 <g e> <fis d>8 <d' b>16 <cis a>
-  | <b gis e>8 <gis e>16 fis
+  <b gis e>8 <gis e>16 fis
   << { a4~ a gis } \\ { <e cis>8[ fis16 e] <d fis>8[ <cis fis>8] d e16 d } >>
   <cis a'>8 <e cis a>16 <e cis a> <a e cis>8 <e cis a>
   | <a d,> <a fis>16 <a fis> <d a fis>8 <a fis d>
-  | <e a> <a cis, e>16 <a cis, e> <a e cis>8 <e cis a>
+  <e a> <a cis, e>16 <a cis, e> <a e cis>8 <e cis a>
   <<
     { | d2 e4 fis g g2 \voiceTwo fis4 e4 } \\
     {
@@ -638,11 +638,10 @@ keyboardUpper = \relative c'' {
       | <d b>8[ <d g,>8]
     }
   >> <cis e,>8. <cis e,>16
-  | <d a d,>8 <a d, fis>16 <a d, fis> <fis a, d>8 <d fis a,>16 <d fis a,>
+  <d a d,>8 <a d, fis>16 <a d, fis> <fis a, d>8 <d fis a,>16 <d fis a,>
   | << { g8 <b g> <b g> <b g> } \\ { d,8 d16 d d8 e } >>
-  | <a fis>8 <a fis a,>16 <a fis a,> <fis d a>8 <d a fis>
-  | <g d g,> <g d g,>16 <g d g,> <b g d>8 <b g d>
-  | <a fis d>4 <a, fis>
+  <a fis>8 <a fis a,>16 <a fis a,> <fis d a>8 <d a fis>
+  | <g d g,> <g d g,>16 <g d g,> <b g d>8 <b g d> <a fis d>4 <a, fis>
   | << { a4 g fis e8. d16 } \\ { e4 d2 cis4 } >>
   | d2. <a' fis>4
   | << { a g fis e8. d16 } \\ { e4 d2 cis8. d16 } >>
@@ -662,24 +661,21 @@ keyboardUpper = \relative c'' {
   | << { d <cis a>8 b <cis a>4 b8. a16 } \\ { fis8 b e, <fis a> e4 <e gis> } >>
   | << { a2 } \\ { e4 <cis e> } >> r2
   | r4 r8 <a'' e> <d fis, a> <cis e, a> r <a e>
-  | <d fis, a> <cis e, a> r <a e>16 <a e>
-  | <d fis, a>8 <cis e, a> r <a e>16 <a e>
+  | <d fis, a> <cis e, a> r <a e>16 <a e> <d fis, a>8 <cis e, a> r <a e>16 <a e>
   | <d fis, a>8 <cis e, a> r4 r2
   | r4 a8 <a e> <d fis, a> <cis e, a> r <a e>
-  | <d fis, a> <cis e, a> r <a e>16 <a e>
-  | <d fis, a>8 <cis e, a> r <a e>16 <a e>
+  | <d fis, a> <cis e, a> r <a e>16 <a e> <d fis, a>8 <cis e, a> r <a e>16 <a e>
   | <d fis, a>8 <cis e, a> a16 g fis e d4 d
   | d4. <a' d,>8 <b g d> <a fis d> <d a fis> <a fis d>
-  | <b d,> <a fis d> r <a d,>16 <a d,>
-  | <b g d>8 <a fis d> r <a d,>16 <a d,>
+  | <b d,> <a fis d> r <a d,>16 <a d,> <b g d>8 <a fis d> r <a d,>16 <a d,>
   | <b g d>8 <a fis d> d,4 e e
   | e4. <b' e,>8 <cis a e> <b gis e> <e, b gis'> <b' gis e>
   | <cis a e> <b gis e> <e, gis,> <b' gis e>16 <b gis e>
-  | <cis a e>8 <b gis e> r <b gis e>16 <b gis e>
+  <cis a e>8 <b gis e> r <b gis e>16 <b gis e>
   | <cis a e>8 <b gis e>~ e,4 fis fis
   | fis4. <cis' fis,>8 <d b fis> <cis ais fis> <fis, cis ais'> <cis' fis,>
   | <d b fis> <cis ais fis> <fis, cis ais> <cis' fis,>16 <cis fis,>
-  | <d b fis>8 <cis ais fis> r <cis fis,>16 <cis fis,>
+  <d b fis>8 <cis ais fis> r <cis fis,>16 <cis fis,>
   | <d b fis>4 <d, fis>8 fis g4 g
   | g2 <d' d, g>4 <d d, g>
   | <a e>8 <e a,> <e a,> <g e a,> <fis d a> <e cis a> <fis d a> <g e a,>
@@ -699,15 +695,15 @@ keyboardUpper = \relative c'' {
   | << { d'4 fis, b d, } \\ { d16 cis d e d cis b a b a b g a8 a' } >>
   | <g cis e,>4 <fis d' a>8 <e d' a> << { d'4 cis } \\ { <e, a>4. <a d,>8 } >>
   | << { d8 fis,16 g } \\ { fis16 e d e } >> <a fis> <g e> <fis d> <e cis>
-  | <d fis>8 <d a fis'>16 <d a fis'> <fis d a>8 <fis d a>16 <g e a,>
+  <d fis>8 <d a fis'>16 <d a fis'> <fis d a>8 <fis d a>16 <g e a,>
   | <a fis>8 <fis d>16 <g e> <a fis>8 <b g>16 <cis e,>
-  | <d fis, d>8 <d, fis>16 <e g> <fis a d,>8 <fis d>16 <g e>
+  <d fis, d>8 <d, fis>16 <e g> <fis a d,>8 <fis d>16 <g e>
   | <a fis d>8 <fis d>16 <g e> <a fis>8 <b g>16 <cis e,>
-  | <d fis, d a'>8 <d, fis>16 <e g> <fis a d,>8 <fis d>16 <g e>
+  <d fis, d a'>8 <d, fis>16 <e g> <fis a d,>8 <fis d>16 <g e>
   | <a fis d>8 <fis d>16 <g e> <a fis>8 <b g>16 <cis e,>
-  | <d fis, a d,>8 <d, fis>16 <e g> <fis a d,>8 <fis d>16 <g e>
+  <d fis, a d,>8 <d, fis>16 <e g> <fis a d,>8 <fis d>16 <g e>
   | <a fis>8 <fis d>16 <g e> <a fis>8 <b g>16 <cis e,>
-  | d8 fis,16 g << a4 \\ { d,16 g fis e } >>
+  d8 fis,16 g << a4 \\ { d,16 g fis e } >>
   <<
     { | d'4 fis, b d, } \\
     { | d16 cis d e d cis b a <d b> a b g a8 a' }
@@ -717,13 +713,12 @@ keyboardUpper = \relative c'' {
     { | <cis e>4 <a d>8 <a d> <d a>8 a16 a <cis a>8 a }
   >>
   | << { d4 r8 <a' d,> } \\ { fis,8 d16 d fis8 a16 a } >>
-  | <b' g d>8 <a fis d> d, <a' d,>
-  | <b g d> <a fis d> <a fis> <a d, fis>
-  | <b g d> <a fis d> d, <a' d,>
+  <b' g d>8 <a fis d> d, <a' d,>
+  | <b g d> <a fis d> <a fis> <a d, fis> <b g d> <a fis d> d, <a' d,>
   | <b g d> <a fis d>16 <a fis d> <d fis, a>8 <a d, fis>16 <a d, fis>
+  <b g d>8 <a fis d>16 <a fis d> <d fis, a>8 <a d, fis>16 <a d, fis>
   | <b g d>8 <a fis d>16 <a fis d> <d fis, a>8 <a d, fis>16 <a d, fis>
-  | <b g d>8 <a fis d>16 <a fis d> <d fis, a>8 <a d, fis>16 <a d, fis>
-  | <b g d>8 <a fis d>16 <a fis d> <d fis, a>8 <a d, fis>16 <a d, fis>
+  <b g d>8 <a fis d>16 <a fis d> <d fis, a>8 <a d, fis>16 <a d, fis>
   | <b g d>8 <a fis d> r4 r <a fis d>
   | <b g d>2. <b g d>4
   | <a fis d>1
