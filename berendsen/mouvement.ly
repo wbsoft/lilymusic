@@ -1,4 +1,4 @@
-\version "2.13.56"
+\version "2.14.0"
 
 #(set-global-staff-size 18)
 
@@ -45,16 +45,7 @@
   }
   \context {
     \PianoStaff
-    \override StaffGrouper #'staffgroup-staff-spacing = #
-    '((basic-distance . 8)
-      (minimum-distance . 7)
-      (padding . 1)
-      (stretchability . 1))
-    \override StaffGrouper #'staff-staff-spacing = #
-    '((basic-distance . 10)
-      (minimum-distance . 8)
-      (padding . 1)
-      (stretchability . 1))
+    \remove "Vertical_align_engraver"
   }
 }
 
@@ -64,8 +55,8 @@ global = {
   \key a \minor
 }
 
-rh = \change Staff = rh
-lh = \change Staff = lh
+rh = \change Staff = "rh"
+lh = \change Staff = "lh"
 
 rightHand = \relative c' {
   \clef violin
@@ -698,5 +689,4 @@ pedal = \relative c {
     \new Staff = "ped" \pedal
   >>
 }
-% kate: space-indent on; indent-width 2; replace-tabs on; replace-tabs-save on;
 
