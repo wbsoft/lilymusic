@@ -106,7 +106,7 @@ basT = \relative c' {
   | c8 g c  
 }
 
-%\score { \mkscore \upperT \lowerT \basT }
+\score { \mkscore \upperT \lowerT \basT }
 
 %%% var 1
 
@@ -178,19 +178,22 @@ basI = \relative c' {
   | c16 g a b c8
 }
 
-%\score { \mkscore \upperI \lowerI \basI }
+\score { \mkscore \upperI \lowerI \basI }
 
 %%%%% var 2
 
 pn = #
-(define-music-function (parser location note)
-  (ly:music?)
+(define-music-function (parser location n1 n2 n3)
+  (ly:music? ly:music? ly:music?)
   #{
     \ped
     \voiceOne
-    $note
+    $n1
     \man
     \voiceTwo
+    $n2
+    $n3
+    \oneVoice
   #})
 
 globalII = {
@@ -203,7 +206,7 @@ globalII = {
 
 varII = \relative c'' {
   \globalII
-  g8
+  g8_\f
   \set tupletSpannerDuration = #(ly:make-moment 1 8)
   \set Timing.baseMoment = #(ly:make-moment 1 8)
   \set Timing.beatStructure = #'(1 1 1 1)
@@ -233,10 +236,10 @@ varII = \relative c'' {
     |
     \pn c,
     e' g g g g
-    \pn gis,
+    gis,
     d' f f f f
     |
-    \pn a,
+    a,
     c e e e e
     \pn f,,
     a' d d d d
@@ -253,9 +256,58 @@ varII = \relative c'' {
     <c g e>8
     \\
     { \ped c,8 }
+  >> \breathe
+  g'8
+  |
+  \times 2/3 {
+    \pn g,16
+    d'' f f f f
+    \pn g,,
+    c' e e e e
+    |
+    \pn g,,
+    b' d d d d
+    \pn b,
+    d g g g g
+    |
+    as c es es es es
+    g,\< c es
+    fis,\! c' es
+    |
+    g, c es es es es
+  }
+  <<
+    <d b g>8
+    \\
+    { \ped g,,8 }
+  >> \breathe
+  g'8
+  |
+  \times 2/3 {
+    \pn c,16
+    g' e' e e e
+    \pn b,
+    gis' d' d d d
+    |
+    \pn a,
+    a' c c c c
+    \pn f,,
+    a' d d d d
+    |
+    \pn g,,
+    c' e e e e
+    \pn g,,
+    b' d d d d
+    |
+    \pn c,
+    g' c c c c
+  }
+  <<
+    <c g e>8
+    \\
+    { \ped c,8 }
   >>
-  
-  
+  \bar "||"
 }
 
 \score { \mkscore \varII {\skip2*16} {\skip2*16} }
