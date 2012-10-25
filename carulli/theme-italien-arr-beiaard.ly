@@ -198,7 +198,7 @@ pn = #
 
 globalII = {
   \mark "2. Var."
-  \tempo "Più Mosso."
+  \tempo "Più mosso."
   \key c \major
   \time 2/4
   \partial 8
