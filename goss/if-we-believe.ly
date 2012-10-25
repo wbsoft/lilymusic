@@ -634,7 +634,7 @@ lhB = \relative c {
   \midi {
     \context {
       \Score
-      tempoWholesPerMinute = #(ly:make-moment 60 2)
+      tempoWholesPerMinute = #(ly:make-moment 66 2)
     }
   }
   \layout { }
