@@ -2,6 +2,10 @@
 
 #(set-global-staff-size 18)
 
+\paper {
+  indent = 10\mm
+}
+
 \header {
   title = "Thême italien"
   subtitle = "varie pour la guitare"
@@ -385,4 +389,75 @@ basIII = \relative c' {
 
 
 \score { \mkscore \upperIII \lowerIII \basIII }
+
+globalIV = {
+  \mark "4. Var."
+  
+  \key c \major
+  \time 2/4
+  \partial 8
+}
+
+upperIV = \relative c'' {
+  \globalIV
+  g8\f
+  | <c e>16 g'32 g g16 g <d b> g32 g g16 g
+  | <c, g> g'32 g g16 g g,8 r
+  | <b d>16 g'32 g g16 g <c, e> g'32 g g16 g
+  | <b, d> g'32 g g16 g g,8 r
+  | <g' e>16 g32 g g16 g \voiceOne <f d> f32 f f16 f
+  | <e c>16 e32 e e16 e d d32 d d16 d
+  | c16 c32 c c16 c b g'32 g g16 g
+  | c,4~ c8
+  \breathe
+  \oneVoice g8
+  | <f' d>16 g32 g g16 g <e c> g32 g g16 g
+  | <d b> g32 g g16 g g,8 r
+  | \voiceOne <c es>16 es32 es <c es>16 es <c es>16 es32 es <c es>16 es
+  | <d b>16 g32 g g16 g g,8 \oneVoice r
+  | <c e>16 g'32 g g16 g <gis, d'> f'32 f f16 f
+  | <a, c> e'32 e e16 e <f, a> d'32 d d16 d
+  | \voiceOne c16 g'32 g g16 g g b32 b b16 b
+  | c4 c,8
+  \bar "|."
+}
+
+lowerIV = \relative c' {
+  \globalIV
+  \voiceTwo
+  s8
+  | s2*5
+  | s4 <f a>
+  | <e g>4 <d f>
+  | <e g>4~ <e g>8 s8
+  | s2*6
+  | <e g>4 <g b>8 <d' f>16 <d f>
+  | <c e>4 <e, g>8
+}
+
+basIV = \relative c' {
+  \globalIV
+  \showStaffSwitch
+  r8
+  | c4 g 
+  | e'4 r16 c32( d e16) c-.
+  | g4 c
+  | g4 r16 g32( a b16) g
+  | c4 \man \voiceTwo gis' 
+  | a4 \ped \oneVoice f,
+  | g4 g
+  | r16 c32 g c16 e c8 r
+  | g4 g
+  | g4 r16 g32( a b16) g
+  \hideStaffSwitch
+  | c8 \man \voiceTwo as' g fis 
+  | g4 \ped \oneVoice r16 g,32( a b16) g
+  | c4 b 
+  | a4 f
+  | g4 g8 g
+  | r16 c32 g c16 \man \voiceTwo e \ped \oneVoice c8
+}
+
+
+\score { \mkscore \upperIV \lowerIV \basIV }
 
