@@ -461,3 +461,81 @@ basIV = \relative c' {
 
 \score { \mkscore \upperIV \lowerIV \basIV }
 
+
+%%% var 5
+globalV = {
+  \mark "Mineur. 5. Var."
+  \tempo "Adagio."
+  \time 2/4
+  \partial 8
+  \key d \minor
+}
+
+upperV = \relative c'' {
+  \globalV
+  a8\p
+  | \voiceOne f'8. g16 e8. f16
+  | d8 \oneVoice r16\f \voiceOne a' a8\noBeam \oneVoice a,\p
+  | \voiceOne g'8. a16 f8. g16 
+  | e8 \oneVoice r16\f \voiceOne a, a8\noBeam \oneVoice c\p
+  | \voiceOne r16 f f f r g g g
+  | \oneVoice r32\f a16[ gis a g32] f32 e d c bes a g f
+  | r16 d g bes \voiceOne a c32 c c16 c
+  | g'4( f8) 
+  \breathe
+  \oneVoice a,8
+  | \voiceOne <g' e>8. a16 <d, f>8. g16 
+  | <e cis>4 a,16 a8 a16
+  | <d f>16 <d f>8 <d f> <d f> <d f>16
+  | <d f>4( <e cis>8)\noBeam
+  \oneVoice a,8\p
+  | r32 f' a f a f a f r e g e g e g e
+  | r d f d f d f d r bes es bes es bes es bes
+  | <f d'>16 r32 \voiceOne a d16. f32 a16 a32 a a16 a
+  | <e cis>4( d8)
+  \bar "|."
+}
+
+lowerV = \relative c'' {
+  \globalV
+  \voiceTwo
+  s8
+  | a4 <g cis>
+  | <d a'>8 s16 a' a8 s
+  | cis4 d
+  | <a cis>8 s16 a, a8 s
+  | r32 c'16[ c a c] c[ c bes c32]
+  | s2
+  | s4 f,8 e
+  | <bes' c>4( a8) s
+  | r16 a a a r a a a
+  | r16 a a a s4
+  | s2*4
+  | s4 s8 <a cis>
+  | g4( f8)  
+}
+
+basV = \relative c' {
+  \globalV
+  s8
+  | d4 a
+  | <f a>8 r r4
+  | a4 a
+  | a8 r r4
+  | f'4 e
+  | f16 e f e d8 r 
+  | bes4 c8 c
+  | f8 c f, r
+  | a4 r
+  | r4 a8 a
+  | d8 \man \voiceTwo bes' a gis
+  | a8 \ped \oneVoice d, a r
+  | d8 d a a
+  | d8 d g, g
+  | a16 r32 a d16. \man \voiceTwo f32 a8 \ped \oneVoice a,
+  | d8 a d,  
+}
+
+
+\score { \mkscore \upperV \lowerV \basV }
+
