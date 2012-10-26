@@ -1,5 +1,7 @@
 \version "2.14.2"
 
+#(set-global-staff-size 18)
+
 \header {
   title = "Thême italien"
   subtitle = "varie pour la guitare"
@@ -311,3 +313,76 @@ varII = \relative c'' {
 }
 
 \score { \mkscore \varII {\skip2*16} {\skip2*16} }
+
+globalIII = {
+  \mark "3. Var."
+  \tempo "Tempo I."
+  \key c \major
+  \time 2/4
+  \partial 8
+}
+
+upperIII = \relative c'' {
+  \globalIII
+  r8
+  \once \override DynamicText #'X-offset = #-1
+  \once \override DynamicLineSpanner #'Y-extent = #'(.5 . .5)
+  | c16^\p g c g b g b g
+  | c16 g e g c g c e
+  | b16 d b d c g c g
+  | b16 g' d b d g, b g'
+  | \voiceOne e16 g, c a \oneVoice b g b d
+  | c16 b a g g a d f
+  | e16 c' g e g g, g' g,
+  | \voiceOne b16 g a b c8 \oneVoice r
+  | b16 g b g c g c g
+  | b16 g' d b g d g b
+  | c16 es as g fis g as fis
+  | g16 d b d g, b d g
+  | c,16 g c g b gis e' gis
+  | a16 e c a f a d f
+  | c16 g g' c, b g g' b,
+  | \voiceOne g'16 g, a b c8
+  \bar "|."  
+}
+
+
+lowerIII = \relative c' {
+  \globalIII
+  \voiceTwo
+  s8
+  s2*7
+  s8 f e s
+  s2*7
+  s8 f e
+}
+
+basIII = \relative c' {
+  \globalIII
+  g8^\mf
+  | e'8. f16 d8. e16
+  | c4 g8[ r16 g]
+  | f'8. g16 e8. f16
+  | d4 g,8[ r16 g]
+  | g'8. \man \voiceTwo a16 \ped \oneVoice f8. g16 
+  | e8. f16 d8. e16
+  | c8. d16 e8 d
+  | d4( c8)
+  \breathe
+  g8
+  | f'8. g16 e8. f16
+  | d4 g,8[ r16 g]
+  | es'8 es es es
+  | d8 g,4 r16 g
+  | e'8. f16 d8. e16
+  | c8. c16 << { a8. d16 } \\ { r8 f, } >>
+  | << { e'8. e16 } \\ { r8 g, } >> d'8. d16
+  | d8 g, c
+}
+
+  
+  
+
+
+\score { \mkscore \upperIII \lowerIII \basIII }
+
