@@ -9,7 +9,7 @@
 \header {
   title = "Thême italien"
   subtitle = "varie pour la guitare"
-  composer = "G. Carulli"
+  composer = "Ferdinando Carulli (1770 – 1841)"
   arranger = "Beiaardbewerking: Wilbert Berendsen 2012"
 }
 
@@ -336,8 +336,8 @@ upperIII = \relative c'' {
   | b16 d b d c g c g
   | b16 g' d b d g, b g'
   | \voiceOne e16 g, c a \oneVoice b g b d
-  | c16 b a g g a d f
-  | e16 c' g e g g, g' g,
+  | c16 b a g f a d f
+  | e16 c' g c, g' g, g' g,
   | \voiceOne b16 g a b c8 \oneVoice r
   | b16 g b g c g c g
   | b16 g' d b g d g b
@@ -347,7 +347,7 @@ upperIII = \relative c'' {
   | a16 e c a f a d f
   | c16 g g' c, b g g' b,
   | \voiceOne g'16 g, a b c8
-  \bar "|."  
+  \bar "||"  
 }
 
 
@@ -419,7 +419,7 @@ upperIV = \relative c'' {
   | <a, c> e'32 e e16 e <f, a> d'32 d d16 d
   | \voiceOne c16 g'32 g g16 g g b32 b b16 b
   | c4 c,8
-  \bar "|."
+  \bar "||"
 }
 
 lowerIV = \relative c' {
@@ -493,7 +493,7 @@ upperV = \relative c'' {
   | r c es c es c es c r as des as des as des as
   | <es c'>16 r32 \voiceOne g c16. es32 g16 g32 g g16 g
   | <d b>4( c8)
-  \bar "|."
+  \bar "||"
 }
 
 lowerV = \relative c'' {
