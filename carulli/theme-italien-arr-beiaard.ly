@@ -4,6 +4,7 @@
 
 \paper {
   indent = 10\mm
+  ragged-last-bottom = ##f
 }
 
 \header {
@@ -22,11 +23,13 @@ mkscore = #
   #{
     \new PianoStaff <<
       \new Staff = "man" <<
+        #(set-accidental-style 'modern)
         $upper
         $lower
       >>
       \new Staff = "ped" <<
         \clef bass
+        #(set-accidental-style 'modern)
         $pedal
       >>
     >>
@@ -539,3 +542,179 @@ basV = \relative c' {
 
 \score { \mkscore \upperV \lowerV \basV }
 
+
+%%%%%% var 6
+
+globalVI = {
+  \mark "CODA. 6. Var."
+  \tempo "Allegro."
+  \time 3/8
+  \partial 8
+  \key c \major
+}
+
+upperVI = \relative c'' {
+  \globalVI
+  g8
+  | \voiceOne e'8 e16( f) d( e)
+  | c8 g \oneVoice g\noBeam
+  | <f' d>8 f16( g) <e c>( f)
+  | <d b>8 g, g\noBeam
+  | g'16 e a( g) \voiceOne gis,[ <d' f>]
+  | e16 c f( e) r d
+  | c16 g e g <e' b>[( d])
+  | c4 \oneVoice g8\noBeam
+  | <f' d>8 f16( g) <e c>( f)
+  | <d b>8 g, r
+  | \voiceOne r16 c es c es c
+  | d16 g fis g f d
+  | \oneVoice r16\f g, e' g, r\voiceOne <d' b>
+  | c4 g16 c
+  | \oneVoice r16 d f d r \voiceOne <c e>
+  | <b d>8 r b16 d
+  | \oneVoice r16 c8 g c16
+  | r16 e8 c e16
+  | \voiceOne g8 g g
+  | <c, e>4 r8
+  | f16(\p d) d8 g16( d)
+  | <c e>4\f r8
+  | f16(\p d) d8 g16( d)
+  | <c e>4 r8
+  | d4 r8
+  | c4 r8
+  | b4 r8
+  | c4 r8
+  | f16(\p d) d8 g16( d)
+  | <c e>4\f r8
+  | f16(\p d) d8 g16( d)
+  | <c e>4 r8
+  | d4 r8
+  | c4 r8_\>
+  | b4\! r8_\>
+  | e8\! e16( f) d( e)
+  | c8 c d
+  | <c e>8 <c e> <b d>
+  | \oneVoice r16 c g' c, g' c,
+  | r16 c gis' c, gis' c,
+  | r16 c a' c, a' c,
+  | \voiceOne a'8 a a
+  | c8 c c
+  | b8 b b
+  | c8\noBeam c,,16 c' e, e'
+  | g8 g g
+  | <e c>8\noBeam e,16 e' c, c'
+  | g8 b b
+  | c8 \oneVoice r4 \voiceOne
+  | c'4 \oneVoice r8
+  | c,,4 r8\fermata
+  \bar "|."  
+}
+
+lowerVI = \relative c'' {
+  \globalVI
+  \voiceTwo
+  s8
+  | g4 f8
+  | g8 s4
+  | s4.*3
+  | s4 s16 <f a>
+  | s4 f8
+  | <e g>4 s8
+  | s4.*3
+  | b'4 s8
+  | s4 s16 f
+  | <e g>4 g8
+  | s4 s16 g
+  | g8 s b
+  | s4.*2
+  | <g b>8 <g b> <g b>
+  | g4 s8
+  | b8 as16 f b8
+  | g4 s8
+  | g8 as16 f b8
+  | g4 s8
+  | <f a>4 s8
+  | <e g>4 s8
+  | <d f>4 s8
+  | g4 s8
+  | b8 as16 f b8
+  | g4 s8
+  | b8 as16 f b8
+  | g4 s8
+  | <f a>4 s8
+  | <e g>4 s8
+  | <d f>4 s8
+  | c'4 gis8
+  | a8 a <f a>
+  | g8 g g
+  | s4.*3
+  | <c es>8 <c es> <c es>
+  | <c e>8 <c e> <c e>
+  | <d f>8 <d f> <d f>
+  | <c e>8\noBeam c, e
+  | g8 <b d> <b d>
+  | g8\noBeam e8 c
+  | s8 <d f> <d f>
+  | <e g>8 s4
+  | <c' e>4 s8
+}
+
+basVI = \relative c' {
+  \globalVI
+  r8
+  | c4 g8
+  | e'4 r8
+  | g,4 g8
+  | g4 r8
+  \showStaffSwitch
+  | c4 \man \voiceTwo gis'8
+  | a4 \ped \oneVoice f,8
+  | g4 g8
+  | c4 r8
+  | g4 g8
+  | g8 g g
+  | c4 \man \voiceTwo as'8
+  | \ped \oneVoice g4 r8
+  | c,4 g8
+  \hideStaffSwitch
+  | c16 g c \man \voiceTwo e \ped \oneVoice s8
+  | g,4 g8
+  | g16 b \man \voiceTwo d g \ped \oneVoice s8
+  | c,8 g c
+  | e8 c e
+  | g,8 g g
+  | c16 e,32 g \man \voiceTwo c16[ g' c e]
+  | \ped \oneVoice g,,4 g8
+  | c16 e,32 g \man \voiceTwo c16[ g' c e]
+  | \ped \oneVoice g,,4 g8
+  | c16 e,32 g \man \voiceTwo c16[ g' c e]
+  | \ped \oneVoice r16 f,,32 a \man \voiceTwo d16[ f a d]
+  | \ped \oneVoice r16 g,,32 e' \man \voiceTwo g16[ c e g]
+  | \ped \oneVoice r16 g,,32 d' \man \voiceTwo f16[ b d g]
+  | \ped \oneVoice c,,16 e,32 g \man \voiceTwo c16[ g' c e]
+  | \ped \oneVoice g,,4 g8
+  | c16 e,32 g \man \voiceTwo c16[ g' c e]
+  | \ped \oneVoice g,,4 g8
+  | c16 e,32 g \man \voiceTwo c16[ g' c e]
+  | \ped \oneVoice r16 f,,32 a \man \voiceTwo d16[ f a d]
+  | \ped \oneVoice r16 g,,32 e' \man \voiceTwo g16[ c e g]
+  | \ped \oneVoice r16 g,,32 d' \man \voiceTwo f16[ b d g]
+  | \ped \oneVoice c,,4 b8 
+  | a8 a f
+  | g8 g g
+  | e'4.
+  | e4.
+  | f4.
+  | fis8 fis fis
+  | g,4 g8 
+  | g8 g g
+  | c8 r4
+  | r8 g g
+  | c4 r8
+  | g8 g g
+  | c8 r4
+  | c4 r8
+  | c,4 r8_\fermata
+}
+
+\score { \mkscore \upperVI \lowerVI \basVI }
