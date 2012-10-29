@@ -57,10 +57,9 @@ upperT = \relative c'' {
   | <d b>4( c8)
   \oneVoice r16 g\p
   | \voiceOne f'8. g16 e8. f16
-  | d4 g,8 r16 g
-  | <es' c>8. <es c>16 <es c>8. <es c>16
-  | <es c>4(\cresc <d b>8)
-  r16 g,\f
+  | d4 \oneVoice g,8 r16 g
+  | \voiceOne <es' c>8. <es c>16 <es c>8. <es c>16
+  | <es c>4(\cresc <d b>8) \oneVoice r16 g,\f \voiceOne
   | e'8. f16 d8. e16
   | c8. b16 a16. b32 c16. d32
   | <e c>4 <e c>8 <d b>
