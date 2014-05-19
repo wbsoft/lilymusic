@@ -1,5 +1,5 @@
 \version "2.13.10"
-
+% -*- output: book;
 #(set-global-staff-size 18)
 
 \paper {
