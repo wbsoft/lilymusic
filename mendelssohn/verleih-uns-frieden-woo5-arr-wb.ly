@@ -1180,3 +1180,71 @@ basTextDE = \lyricmode {
     }
   }
 }
+
+\book {
+  \bookOutputSuffix "vocalscore"
+  \paper {
+    #(layout-set-staff-size 18)
+    line-width = 185\mm
+    page-count = 2
+    ragged-last-bottom = ##f
+  }
+  \score {
+    \new ChoirStaff <<
+      \new Staff \with {
+        instrumentName = "Soprano"
+        shortInstrumentName = "S"
+      } <<
+        \letters
+        { \skip2.*69 \pageBreak }
+        \new Voice = "sopraan" <<
+          \dynamicUp
+          \sopraan
+        >>
+      >>
+      \new Lyrics \lyricsto "sopraan" { \sopraanTextDE }
+      \new Staff \with {
+        instrumentName = "Alto"
+        shortInstrumentName = "A"
+      } <<
+        \new Voice = "alt" <<
+          \dynamicUp
+          \alt
+        >>
+      >>
+      \new Lyrics \lyricsto "alt" { \altTextDE }
+      \new Staff \with {
+        instrumentName = "Tenor"
+        shortInstrumentName = "T"
+      } <<
+        \clef "treble_8"
+        \new Voice = "tenor" <<
+          \dynamicUp
+          \tenor
+        >>
+      >>
+      \new Lyrics \lyricsto "tenor" { \tenorTextDE }
+      \new Staff \with {
+        instrumentName = "Bass"
+        shortInstrumentName = "B"
+      } <<
+        \clef bass
+        \dynamicUp
+        \new Voice = "bas" <<
+          \dynamicUp
+          \bas
+        >>
+      >>
+      \new Lyrics \lyricsto "bas" { \basTextDE }
+    >>
+    \layout {
+      \context {
+        \ChoirStaff
+        \RemoveEmptyStaves
+      }
+    }
+    \header {
+      instrument = "Vocal Score"
+    }
+  }
+}
