@@ -7,8 +7,9 @@
   composer = "Felix Mendelssohn Bartholdy (1908-1847)"
   arranger = "arr. 2vl, vc, org: Wilbert Berendsen (*1971)"
   copyright = \markup \center-column {
+    \with-url #"http://wilbertberendsen.nl/mendelssohn/verleih-uns-frieden"
     \line {
-      Copyright © 2014 by Wilbert Berendsen (http://www.wilbertberendsen.nl/mouvement)
+      Copyright © 2014 by Wilbert Berendsen (http://www.wilbertberendsen.nl/mendelssohn/verleih-uns-frieden)
     }
     \line {
       This edition may be freely copied, distributed,
