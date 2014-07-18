@@ -1,4 +1,4 @@
-\version "2.14.0"
+\version "2.18.0"
 
 #(set-global-staff-size 18)
 
@@ -63,7 +63,13 @@ rightHand = \relative c' {
   \global
   \tempo "Allegretto" 4=108
   | R1*7
-  | r4. r r8 g\mp
+  | r4. r r8 g\mp^\markup {
+    \combine \line { Man. I }
+    \with-dimensions #'(0 . 0) #'(0 . 0)
+    \general-align #Y #UP
+    \translate #'(-1 . 0)
+    \override #'(font-encoding . fetaBraces) \lookup #"brace100"
+  }
   | a2. b8 c
   | b4. a~ a4~
   | a1~
@@ -118,7 +124,15 @@ rightHand = \relative c' {
       | e1~
       | e~
       | e
-      | cis8 d16 cis d8 cis d16 cis d8 cis e
+      | cis8^\markup {
+        \translate #'(-1.8 . 0)
+        \combine \line { Man. II }
+        \with-dimensions #'(0 . 0) #'(0 . 0)
+        \general-align #Y #UP
+        \translate #'(-1 . 0)
+        \override #'(font-encoding . fetaBraces) \lookup #"brace100"
+      }
+      d16 cis d8 cis d16 cis d8 cis e
       | d e16 d e8 d e16 d e8 d e
     }
     \\ {
@@ -170,7 +184,7 @@ rightHand = \relative c' {
   | <a, c>8 a'16 <a, c> a'8 <a, c>8 g'16 <a, c> g'8 <a, c> f'
   | <a, c>8 e'16 <a, c> e'8 <a, c>8 e'16 <a, c> f'8 <e a,> c
   % maat 69
-  | d1~
+  | d1~^\markup { Man. I }
   | d2. r8 c,
   | d1~
   | d4. r r4
@@ -206,7 +220,14 @@ rightHand = \relative c' {
   <f a> <g c>4
   | <a d>2. <d, g>4
   | <f c'>4. <g d'>\< \clef treble <c f>4
-  | <d g>2. r8 <f f'>\ff
+  | <d g>2. r8 <f f'>\ff^\markup {
+    \combine \line { Man. I }
+    \with-dimensions #'(0 . 0) #'(0 . 0)
+    \general-align #Y #UP
+    \translate #'(-1 . 0)
+    \override #'(font-encoding . fetaBraces) \lookup #"brace200"
+  }
+
   % maat 93
   \stemUp
   | <g g'>2. <a a'>8 <bes bes'>
@@ -233,9 +254,9 @@ rightHand = \relative c' {
   | r4. <d' d'> <cis cis'>4
   | <b b'>4. <a a'> <fis fis'>4
   <<
-    { 
+    {
       | fisis'1(
-      | gis1) 
+      | gis1)
     }
     \\ {
       | fisis,1(
@@ -251,9 +272,18 @@ rightHand = \relative c' {
     \translate #'(-1.75 . 1.7) \musicglyph #"scripts.ufermata"
   }
   \breathe
+  \noBreak
   % maat 105
   \ottava #1
-  | a'8\p a'16 ^\markup \italic "(of met 4')" a, a'8 a, a'16 a, a'8 a, a'
+  | a'8\p^\markup {
+    \translate #'(-1.8 . 0)
+    \combine \line { Man. II }
+    \with-dimensions #'(0 . 0) #'(0 . 0)
+    \general-align #Y #UP
+    \translate #'(-1 . 0)
+    \override #'(font-encoding . fetaBraces) \lookup #"brace100"
+  }
+  a'16 a, a'8 ^\markup \italic "(or with 4')" a, a'16 a, a'8 a, a'
   \repeat unfold 3 {
     | a,8 a'16 a, a'8 a, a'16 a, a'8 a, a'
   }
@@ -268,7 +298,14 @@ rightHand = \relative c' {
   | <e, g>8 e'16 <e, g> e'8 <e, g> d'16 <e, g> d'8 <e, g> c'
   <<
     {
-      | s2. d16 e f g
+      | s2. d16^\markup {
+        \combine \line { Man. I }
+        \with-dimensions #'(0 . 0) #'(0 . 0)
+        \general-align #Y #UP
+        \translate #'(-1 . 0)
+        \override #'(font-encoding . fetaBraces) \lookup #"brace240"
+      }
+      e f g
     }
     \\ {
       | g,8 <b g'>16\< g <b g'>8 g <b g'>16 g <c g'>8 g d'
@@ -291,11 +328,18 @@ rightHand = \relative c' {
   g,8
   % maat 121
   | \repeat unfold 10 a1~
-  | \repeat unfold 4 <a c>1~
+  | <a c>1~^\markup {
+    \combine \line { Man. II (or III) }
+    \with-dimensions #'(0 . 0) #'(0 . 0)
+    \general-align #Y #UP
+    \translate #'(-0.2 . 0)
+    \override #'(font-encoding . fetaBraces) \lookup #"brace60"
+  }
+  | \repeat unfold 3 <a c>1~
   | \repeat unfold 2 <c, a' c>1~
   | \repeat unfold 2 <c a' c d>1~
   | \repeat unfold 2 <c f a c d>1~
-  | <c f a c d>8\fermata r4 r4. r4
+  | <c f a c d>2.~ <c f a c d>8 \fermata r8
   \bar "|."
 }
 
@@ -304,7 +348,13 @@ leftHand = \relative c {
   \global
   <<
     {
-      | s1*4^\pp
+      | s1*4^\pp^\markup {
+        \combine \line { Man. II }
+        \with-dimensions #'(0 . 0) #'(0 . 0)
+        \general-align #Y #UP
+        \translate #'(-1 . 0)
+        \override #'(font-encoding . fetaBraces) \lookup #"brace100"
+      }
       \repeat unfold 8 {
         | e8 g16 e g8 e g16 e g8 e g
         | e8 fis16 e fis8 e fis16 e fis8 e fis
@@ -316,7 +366,7 @@ leftHand = \relative c {
         {
           | fis8 a16 fis a8 fis a16 fis a8 fis a
           | g8 a16 g a8 g a16 g a8 fis a
-        } 
+        }
         \\ {
           | d,1
           | e
@@ -361,7 +411,15 @@ leftHand = \relative c {
   | R1 * 4
   % maat 41
   \clef treble
-  | r4. bes'8-.\p bes,-. r8 r4
+  | r4. bes'8-.\p^\markup {
+    \translate #'(-1.8 . 0)
+    \combine \line { Man. I }
+    \with-dimensions #'(0 . 0) #'(0 . 0)
+    \general-align #Y #UP
+    \translate #'(-1 . 0)
+    \override #'(font-encoding . fetaBraces) \lookup #"brace100"
+  }
+  bes,-. r8 r4
   | r4. a'8-. a,-. r8 r4
   | r4. f'8-. f,-. r8 r4
   | r4. e'8-. e,-. r8 r4
@@ -410,7 +468,7 @@ leftHand = \relative c {
   \clef bass
   <<
     {
-      | d8 f16 d f8 d f16 d f8 d f
+      | d8^\markup { Man. II } f16 d f8 d f16 d f8 d f
       | c8 d16 c d8 c d16 c d8 c d
       \repeat unfold 2 {
         | a8 c16 a c8 a c16 a c8 a c
@@ -505,7 +563,14 @@ leftHand = \relative c {
   \clef treble
   % maat 105
   | R1*2
-  | f''8-. r4 e8-. r4 r
+  | f''8-.^\markup {
+    \combine \line { Man. I }
+    \with-dimensions #'(0 . 0) #'(0 . 0)
+    \general-align #Y #UP
+    \translate #'(-0.5 . 0)
+    \override #'(font-encoding . fetaBraces) \lookup #"brace40"
+  }
+  r4 e8-. r4 r
   | c8-. r4 b8-. r4 r
   | r4. f'8-. f,-. r r4
   | r4. e'8-. e,-. r r4
@@ -523,7 +588,14 @@ leftHand = \relative c {
   \clef bass
   <<
     {
-      | a8 c16 a c8 a c16 a c8 a c
+      | a8^\markup {
+        \combine \line { Man. II }
+        \with-dimensions #'(0 . 0) #'(0 . 0)
+        \general-align #Y #UP
+        \translate #'(-1 . 0)
+        \override #'(font-encoding . fetaBraces) \lookup #"brace100"
+      }
+      c16 a c8 a c16 a c8 a c
       | a8 b16 a b8 a b16 a b8 a b
       | a8 c16 a c8 a c16 a c8 a c
       | b8 d16 b d8 b d16 b d8 b d
@@ -559,7 +631,8 @@ leftHand = \relative c {
       \repeat unfold 2 {
         | a8 c16 a c8 a c16 a c8 a c
       }
-      | a8 c16 a c8 a c16 a c8 a^\pp c
+      | a8 c16 a c8 a c16 a c8 a c
+      | s2. s4\pp
     }
     {
       | d,8 e16 d e8 d e16 d e8 d e
@@ -576,9 +649,9 @@ leftHand = \relative c {
       \repeat unfold 4 {
         | f8 g16 f g8 f g16 f g8 f g
       }
+      | R1
     }
   >>
-  | R1
 }
 
 pedal = \relative c {
