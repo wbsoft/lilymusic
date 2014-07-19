@@ -124,16 +124,8 @@ rightHand = \relative c' {
       | e1~
       | e~
       | e
-      | cis8^\markup {
-        \translate #'(-1.8 . 0)
-        \combine \line { Man. II }
-        \with-dimensions #'(0 . 0) #'(0 . 0)
-        \general-align #Y #UP
-        \translate #'(-1 . 0)
-        \override #'(font-encoding . fetaBraces) \lookup #"brace100"
-      }
-      d16 cis d8 cis d16 cis d8 cis e
-      | d e16 d e8 d e16 d e8 d e
+      | cis8 d16 cis d8 cis d16 cis d8 cis e
+      | d e16^\markup { Man. II } d e8 d e16 d e8 d e
     }
     \\ {
       | s1
@@ -267,9 +259,10 @@ rightHand = \relative c' {
       | b cis d fis e d cis d
     }
   >>
-  \once \override BreathingSign #'text = \markup \line {
+  \once \override BreathingSign #'text = \markup {
+    \combine
     \musicglyph #"scripts.caesura.curved"
-    \translate #'(-1.75 . 1.7) \musicglyph #"scripts.ufermata"
+    \translate #'(0.75 . 1.7) \musicglyph #"scripts.ufermata"
   }
   \breathe
   \noBreak
