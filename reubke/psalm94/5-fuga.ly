@@ -1,4 +1,4 @@
-\version "2.12.0"
+\version "2.18.0"
 
 \include "definitions.ly"
 
@@ -16,7 +16,7 @@ fugaMusic = {
       R1*7 |
       r4 g-. fis4.. d16 |
       f2.( e8. c16) |
-      es8[-| r16 a,]-| a2-^ bes4 |
+      es8[-! r16 a,]-! a2-^ bes4 |
       fis( g a bes |
       b c d es) |
       bes'2( cis,4.. d16) |
@@ -39,7 +39,7 @@ fugaMusic = {
       r4^\markup { \dynamic f \hspace #1 M. II. }
       c4-. b4..( g16 |
       bes2. a8. f16) |
-      as8[-| r16 d,]-| d2(-^ es4) |
+      as8[-! r16 d,]-! d2(-^ es4) |
       b( c d es |
       e f g as) |
       es'2( fis,4.. g16) |
@@ -59,8 +59,8 @@ fugaMusic = {
       b,8( d16 g r8 g16 b \oneVoice r8 b16 d r8 \change Staff = "rh" \voiceTwo d16 g |
       r8 g16 b r8 d,16 g r8 g16 b r8 b16 d) |
       \override Script #'avoid-slur = #'around
-      r8. bes16[( a8)-| r16 as]( g8)[-| r16 fis( f8)-| r16 d]( |
-      es8)[-| b16\rest d( c8)-| \change Staff = "lh" \oneVoice f,16\rest b]( c8)[-| r16 bes( as8)-| r16 g16]( |
+      r8. bes16[( a8)-! r16 as]( g8)[-! r16 fis( f8)-! r16 d]( |
+      es8)[-! b16\rest d( c8)-! \change Staff = "lh" \oneVoice f,16\rest b]( c8)[-! r16 bes( as8)-! r16 g16]( |
       \revert Script #'avoid-slur
     }
     \context Staff = "ped" \context Voice = "ped" \relative c {
@@ -73,13 +73,13 @@ fugaMusic = {
     \context Staff = "rh" <<
       \context Voice = "rh" \relative c'' {
         \voiceOne
-        r4 c-| b4..( g16) |
+        r4 c-! b4..( g16) |
         bes2.( a8. f16) |
-        as8[-| r16 d,16]-| d2(-^ es4) |
+        as8[-! r16 d,16]-! d2(-^ es4) |
         b4. c8 d4. es8 |
         e4. f8 g4. as8 |
-        <as es'>2-| <es fis>4.-| <es g>8-| |
-        <f as>2-| b,4.( c16 d) |
+        <as es'>2-! <es fis>4.-! <es g>8-! |
+        <f as>2-! b,4.( c16 d) |
         \oneVoice
         <fis, es'>4~ <fis es'>16 c'( a g fis a es' fis g g, b d) |
         <gis, f'>4~ <gis f'>16 d'( b a gis b f' gis a a, cis e) |
@@ -122,9 +122,9 @@ fugaMusic = {
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c'' {
       \oneVoice
-      <cis e bes'>4-| r r <c es a>8[-| r16 d]-| |
-      <b d as'>4-| r r <bes des g>8[-| r16 c]-| |
-      <a c fis>4-| r r <g d' g>-| |
+      <cis e bes'>4-! r r <c es a>8[-! r16 d]-! |
+      <b d as'>4-! r r <bes des g>8[-! r16 c]-! |
+      <a c fis>4-! r r <g d' g>-! |
       a16( es d c bes d g bes) c( ges f es d f bes c) |
       d( as g f es g c es) f( ces bes as g bes es f) |
     }
@@ -141,7 +141,7 @@ fugaMusic = {
     \context Staff = "ped" \context Voice = "ped" \relative c' {
       g2(\f fis4.. d16) |
       f2( e4.. c16) |
-      es8[-| r16 a,]-| a2( bes4) |
+      es8[-! r16 a,]-! a2( bes4) |
       fis( g a bes b c d es) |
     }
   >>
@@ -217,16 +217,16 @@ fugaMusic = {
       }
     >>
     \context Staff = "lh" \context Voice = "lh" \relative c' {
-      <des g bes>8-| r <c f as>-| r <b d g>-| r <a c fis>-| r |
+      <des g bes>8-! r <c f as>-! r <b d g>-! r <a c fis>-! r |
       \clef bass
-      <as d f>-| r <g c es>-| r <f b d>-| r <es g c>-| r |
+      <as d f>-! r <g c es>-! r <f b d>-! r <es g c>-! r |
       \clef treble
       g16( a b c d es f g as4 g) |
       \clef bass
       r16 c,,( f as c4)~ c16( d, f c' b g f d) |
       des( f bes des f4)~ f16( g, bes f' e c bes g) |
-      <ges c es>8-| r <f bes des>-| r <e g c>-| r <d f b>-| r |
-      <des g bes>-| r <c f as>-| r bes'4( as) |
+      <ges c es>8-! r <f bes des>-! r <e g c>-! r <d f b>-! r |
+      <des g bes>-! r <c f as>-! r bes'4( as) |
     }
     \context Staff = "ped" \context Voice = "ped" \relative c, {
       e4( f g a) |
@@ -341,41 +341,41 @@ fugaMusic = {
     \context Staff = "rh" \context Voice = "rh" \relative c''' {
       <g c g'>8.[ <c, g'>16]
       _\markup \whiteout { Manualcoppel fort! }
-      <c fis>8[-| r16 <c f>] <bes e>8[-| r16 <as des>] <g c>8[-| r16 <f b>] |
-      <e bes'>8[-| r16 <e as>] <des g>8[-| r16 <c f>] <bes e>8[-| r16 \clef bass <as des>] <g c>8[ r16 <f b>] |
+      <c fis>8[-! r16 <c f>] <bes e>8[-! r16 <as des>] <g c>8[-! r16 <f b>] |
+      <e bes'>8[-! r16 <e as>] <des g>8[-! r16 <c f>] <bes e>8[-! r16 \clef bass <as des>] <g c>8[ r16 <f b>] |
       bes( g c e, des' bes es g, \clef treble e' des f bes, g' e as des,) |
       bes'( g c e, des' bes es g, e' c f g, g' e gis c,) |
-      <cis a'>8[-| r16 <a e'>] <a dis>8[ r16 <a d>] <g cis>8[-| r16 <f bes>] <e a>8[-| r16 <d gis>] |
-      <cis g'>8[-| r16 <cis f>] <bes e>8[ r16 \clef bass <a d>] <g cis>8[-| r16 <f bes>] <e a>8[-| r16 <d gis>] |
+      <cis a'>8[-! r16 <a e'>] <a dis>8[ r16 <a d>] <g cis>8[-! r16 <f bes>] <e a>8[-! r16 <d gis>] |
+      <cis g'>8[-! r16 <cis f>] <bes e>8[ r16 \clef bass <a d>] <g cis>8[-! r16 <f bes>] <e a>8[-! r16 <d gis>] |
       g( e a cis, bes' g c e, cis' bes d g, \clef treble e' cis f bes,) |
       g'( e a cis, bes' g c e, cis' a d e, e' cis eis a,~ |
     }
     \context Staff = "lh" \context Voice = "lh" \relative c'' {
-      <g c e>8.[ bes16] a8[-| r16 as] g8[-| r16 f] e8[-| r16 d] |
+      <g c e>8.[ bes16] a8[-! r16 as] g8[-! r16 f] e8[-! r16 d] |
       \clef bass
-      des8[-| r16 c] bes8[-| r16 as] g8[ r16 f] e8[ r16 d] |
+      des8[-! r16 c] bes8[-! r16 as] g8[ r16 f] e8[ r16 d] |
       <c e>8[ r16 e,~] <e g bes des>4~ <e g bes des>8. bes'16~ <bes des e g>4~ |
-      <bes des e g>8. e16~ <e g bes des>8-| r <e g c>-| r <bes' c e>-| r |
-      <a cis e>8[-| r16 g'] fis8[-| r16 f] e8[-| r16 d] cis8[-| r16 b] |
-      bes8[-| r16 a] g8[-| r16 f] e8[-| r16 d] cis8[-| r16 b] |
+      <bes des e g>8. e16~ <e g bes des>8-! r <e g c>-! r <bes' c e>-! r |
+      <a cis e>8[-! r16 g'] fis8[-! r16 f] e8[-! r16 d] cis8[-! r16 b] |
+      bes8[-! r16 a] g8[-! r16 f] e8[-! r16 d] cis8[-! r16 b] |
       <a cis>8[ r16 e]~ <e g bes cis>4~ <e g bes cis>8. g16~ <g bes cis e>4~ |
-      <g bes cis e>8. cis16~ <cis e g bes>8-| r <e a cis>-| r <a cis>-| r |
+      <g bes cis e>8. cis16~ <cis e g bes>8-! r <e a cis>-! r <a cis>-! r |
     }
     \context Staff = "ped" \context Voice = "ped" \relative c {
       c4 r r r8. g16 |
-      c4-| r r r8. g16 |
+      c4-! r r r8. g16 |
       c8. g16 bes4~ bes8. e,16 g4~ |
-      g8. c,16 des'8-| r c-| r bes-| r |
-      a4-| r r r8. e'16 |
-      a4-| r r r8. e16 |
+      g8. c,16 des'8-! r c-! r bes-! r |
+      a4-! r r r8. e'16 |
+      a4-! r r r8. e16 |
       a8. e16 g4~ g8. cis,16 e4~ |
-      e8. a,16 bes'8-| r a-| r g-| r |
+      e8. a,16 bes'8-! r a-! r g-! r |
     }
   >>
   % bar 391 - 394
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c'' {
-      <a d fis>4)-| s2. |
+      <a d fis>4)-! s2. |
       s1*3 |
     }
     \context Staff = "lh" <<
@@ -437,19 +437,19 @@ fugaMusic = {
   % bar 395 - 398
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c'' {
-      <e g e'>8-|\fff
+      <e g e'>8-!\fff
       -\tweak #'X-offset #4 _\markup { Manualcoppel! }
-      r <es fis es'>-| r <d f d'>-| r <c e c'>-| r |
-      <b dis b'>-| r <ais cis ais'>-| r <a c a'>-| r <b e g>-| r |
-      <ais cis fis>-| r <gis cis eis>-| r <g cis e>-| r <fis b d>-| r |
-      <e g cis>-| r <d fis b>-| r <eis b' d>-| r <fis cis'>-| r |
+      r <es fis es'>-! r <d f d'>-! r <c e c'>-! r |
+      <b dis b'>-! r <ais cis ais'>-! r <a c a'>-! r <b e g>-! r |
+      <ais cis fis>-! r <gis cis eis>-! r <g cis e>-! r <fis b d>-! r |
+      <e g cis>-! r <d fis b>-! r <eis b' d>-! r <fis cis'>-! r |
     }
     \context Staff = "lh" \context Voice = "lh" \relative c' {
-      <e g c>8-| r <es fis>-| r <d f>-| r <c e>-| r |
-      <b dis fis>-| r <ais cis fis>-| r <a c fis>-| r <b e g>-| r |
+      <e g c>8-! r <es fis>-! r <d f>-! r <c e>-! r |
+      <b dis fis>-! r <ais cis fis>-! r <a c fis>-! r <b e g>-! r |
       \clef bass
-      <ais cis fis>-| r <gis cis eis>-| r <g cis e>-| r <fis b d>-| r |
-      <e g cis>-| r <d fis b>-| r <eis b' d>-| r <fis cis'>-| r |
+      <ais cis fis>-! r <gis cis eis>-! r <g cis e>-! r <fis b d>-! r |
+      <e g cis>-! r <d fis b>-! r <eis b' d>-! r <fis cis'>-! r |
     }
     \context Staff = "ped" \context Voice = "ped" \relative c' {
       g8( fis, g gis a gis a ais |
@@ -521,34 +521,34 @@ fugaMusic = {
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c'' {
       <d f a>1~ |
-      <d f a>8-| r s2 s8. <d f a>16 |
+      <d f a>8-! r s2 s8. <d f a>16 |
       <cis f a>1~ |
-      <cis f a>8-| r s2 s8. <d f bes>16 |
+      <cis f a>8-! r s2 s8. <d f bes>16 |
       <d f bes>1~ |
-      <d f bes>8-| r s2 s8. <d f as b>16 |
+      <d f bes>8-! r s2 s8. <d f as b>16 |
       <d f as b>1~ |
-      <d f as b>8-| r s2 s8. <es as c>16 |
+      <d f as b>8-! r s2 s8. <es as c>16 |
     }
     \context Staff = "lh" \context Voice = "lh" \relative c' {
       \oneVoice
       <d f a>1~ |
-      <d f a>8-| r16
+      <d f a>8-! r16
       \clef bass
       <d, f>( \stemUp a' \rh d <f a>)
       \lh <f, a>( d' \rh f <a d>) \lh <a, d>( f'[ \rh a <d f>]) 
       \lh \clef treble <d, f a> |
       <cis f a>1~ |
-      <cis f a>8-| r16
+      <cis f a>8-! r16
       <f, a>16( \stemUp cis' \rh f <a cis>)
       \lh <a, cis>( f' \rh a <cis f>) \lh <cis, f>( a'[ \rh cis <f a>])
       \lh <d, f bes> |
       <d f bes>1~ |
-      <d f bes>8-| r16
+      <d f bes>8-! r16
       <f, bes>( \stemUp d' \rh f <bes d>)
       \lh <bes, d>( f' \rh bes <d f>) \lh <d, f>( bes'[ \rh f' %{ better: d? %} <f bes>])
       \lh <d, f as b> |
       <d f as b>1~ |
-      <d f as b>8- | r16
+      <d f as b>8-! r16
       as( \stemUp <b d> \rh as' <b d>)
       \lh <b, d>( as' \rh b <d as'>) \lh <d, as'>( b'[ \rh b %{ better: d? %} <as' b>])
       \lh <es, as c>16 |
@@ -602,7 +602,7 @@ fugaMusic = {
         \once \override Hairpin #'extra-offset = #'(0 . -2.5)
         g^\< fes g bes des fes g\! |
         \oneVoice 
-        <c, es as>4)-|
+        <c, es as>4)-!
         \voiceOne
         g16( as g as f as f as e as e as |
         \set tieWaitForNote = ##t
@@ -611,7 +611,7 @@ fugaMusic = {
         \once \override Hairpin #'extra-offset = #'(0 . -2.5)
         as'^\< f as b~ d~ f~ as~\! |
         \oneVoice
-        <b, d f as b>4)-|
+        <b, d f as b>4)-!
         as16 b as b g b g b fis b fis b |
         f b f b b d b d bes d bes d a d a d |
         as d as d c f c f b, f' b, f' es as es as |
@@ -636,11 +636,11 @@ fugaMusic = {
         \voiceTwo
         fis16( es' g, es' f, d' g, d' e, cis' g cis |
         es, c' g c d, b' g b \oneVoice <des, bes'>4) <fes g des'>( |
-        <es as c>)-|
+        <es as c>)-!
         \voiceTwo
         g16( es' as, es' f, d' as d e, cis' as cis |
         f, d' as d es, c' as c \oneVoice <d, b'>4 <f as b d>~ |
-        <f as b d>)-|
+        <f as b d>)-!
         \voiceTwo
         as16 d b d g, d' b d fis, d' b d |
         f, d' b d b f' d f bes, f' d f a, f' d f |

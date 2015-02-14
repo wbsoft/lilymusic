@@ -1,4 +1,4 @@
-\version "2.13.1"
+\version "2.18.0"
 % #(set-global-staff-size 16)
 % Some suggestions to the performance of Reubke's Der 94ste Psalm
 
@@ -31,7 +31,7 @@ fragmentA = \relative c' {
   \partial 4.
   \clef bass
   \hideNotes b,8_( \unHideNotes
-  des'!16 fes c!^\arrow fes)( | <e! b!>4)-|
+  des'!16 fes c!^\arrow fes)( | <e! b!>4)-!
 }
 
 fragmentBText = \markup \justify {
@@ -45,24 +45,24 @@ fragmentBText = \markup \justify {
 fragmentB = \new PianoStaff <<
   \new Staff = "rh" \relative c'' {
     \notesGlobal
-    <c es g!>8-| r8
+    <c es g!>8-! r8
     \set doubleSlurs = ##t
     \override Script #'extra-offset = #'(0 . 0.5)
-    <as b f'>2-^(_\fff <g c e>8[)-|^\arrow
+    <as b f'>2-^(_\fff <g c e>8[)-!^\arrow
     \revert Script #'extra-offset
-    r16 c]-| |
-    <a c es!>8[-| r16 <fis a>]-|
+    r16 c]-! |
+    <a c es!>8[-! r16 <fis a>]-!
   }
   \new Staff = "lh" \relative c' {
     \notesGlobal
     \clef bass
-    <g c es>8-| r8
+    <g c es>8-! r8
     \set doubleSlurs = ##t
     \override Script #'extra-offset = #'(0 . 0.5)
-    <as b f'>2-^( <g c e>8[)-|
+    <as b f'>2-^( <g c e>8[)-!
     \revert Script #'extra-offset
-    r16 c]-|
-    <c es! fis>8[-| r16 <c es>]-|
+    r16 c]-!
+    <c es! fis>8[-! r16 <c es>]-!
   }
 >>
 

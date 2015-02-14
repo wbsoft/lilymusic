@@ -1,4 +1,4 @@
-\version "2.12.0"
+\version "2.18.0"
 
 \include "definitions.ly"
 
@@ -229,12 +229,12 @@ graveMusic = {
       <des f as des>4-. r r <c f as c>-. |
       <es fis as es'> r r <d fis c' d>-. |
       <es fis as es'> r r <d fis c' d> |
-      g8-| r <as b f'>2( <g c e>8[-|) r16 c] |
-      <a c es>8[-| r16 <es fis a>] <es fis a>2~ <es fis a>8. <d g>16( |
-      <f b>8)-| r <b f' as>2( <c e g>8[)-| r16 c] |
-      <a c fis>8-|[ r16 <fis a c>] <fis a c>2~ <fis a c>8. <g b>16( |
-      <as b d>8)-| r <f' as b d>2( <e g cis>8[)-| r16 g] |
-      <es fis c'>8-|[ r16 <c es fis>] <c es fis>2.~ |
+      g8-! r <as b f'>2( <g c e>8[-!) r16 c] |
+      <a c es>8[-! r16 <es fis a>] <es fis a>2~ <es fis a>8. <d g>16( |
+      <f b>8)-! r <b f' as>2( <c e g>8[)-! r16 c] |
+      <a c fis>8-![ r16 <fis a c>] <fis a c>2~ <fis a c>8. <g b>16( |
+      <as b d>8)-! r <f' as b d>2( <e g cis>8[)-! r16 g] |
+      <es fis c'>8-![ r16 <c es fis>] <c es fis>2.~ |
       <c es fis>4 
       \set decrescendoSpanner = #'text
       \set decrescendoText = "poco "
@@ -304,12 +304,12 @@ graveMusic = {
       r8. <c f as c>16 <c f as c>2 r4 |
       r8. <c fis as c>16 <c fis as c>2 r4 |
       r8. <c fis as c>16 <c fis as c>2 r4 |
-      <g' g'>8-| r <as' b f'>2( <g c e>8[-|) r16 c] |
-      <c es fis>8[-| r16 <a c>] <a c>2~ <a c>8. <g b>16( |
-      <b d>8)-| r \clef treble <b f' as>2( <c e g>8[)-| r16 c] |
-      <es fis>8-|[ r16 <c es>] <c es>2~ <c es>8. <b d>16( |
-      <d f>8)-| r <f as b d>2( <e g cis>8[)-| r16 g] |
-      <es fis c'>8-|[ r16 <es fis a>] <es fis a>2.~ |
+      <g' g'>8-! r <as' b f'>2( <g c e>8[-!) r16 c] |
+      <c es fis>8[-! r16 <a c>] <a c>2~ <a c>8. <g b>16( |
+      <b d>8)-! r \clef treble <b f' as>2( <c e g>8[)-! r16 c] |
+      <es fis>8-![ r16 <c es>] <c es>2~ <c es>8. <b d>16( |
+      <d f>8)-! r <f as b d>2( <e g cis>8[)-! r16 g] |
+      <es fis c'>8-![ r16 <es fis a>] <es fis a>2.~ |
       <es fis a>4 fis\( f e8. es16 d4 es cis c\) |
       \clef bass
       <b d>_\( <a c> <as ces> <g bes> |
@@ -392,7 +392,7 @@ graveMusic = {
       <g g'>4~ |
       <g g'~>2.
       \times 2/3 {
-        g'8\p b, c | d es g,~
+        g'8\p b, c | d es g,
       }
       g'2 \times 2/3 { c,,8(\pp d es) }
       g4 r r2 |

@@ -1,4 +1,4 @@
-\version "2.12.0"
+\version "2.18.0"
 
 \include "definitions.ly"
 
@@ -64,7 +64,7 @@ larghettoMusic = {
         \\ {
           c,1~\p
           ^\markup \whiteout { M. II. Salicional und Gedackt 16'. u. 8'. }
-          c1~ |
+          c1 |
           as'4_( es f fis |
           g2) fis |
           f2. fes4~ |
@@ -471,7 +471,7 @@ larghettoMusic = {
   % bar 94 - 107
   <<
     \context Staff = "rh" \context Voice = "rh" \relative c'' {
-      <fis c'>16-|
+      <fis c'>16-!
       \breathe
       \clef bass
       es,,[(\f
@@ -513,7 +513,7 @@ larghettoMusic = {
     }
     \context Staff = "lh" \context Voice = "lh" \relative c' {
       \oneVoice
-      <c fis a>16-|
+      <c fis a>16-!
       \breathe
       r r8
       \clef bass

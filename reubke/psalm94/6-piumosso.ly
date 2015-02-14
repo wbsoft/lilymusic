@@ -1,4 +1,4 @@
-\version "2.12.0"
+\version "2.18.0"
 
 \include "definitions.ly"
 
@@ -9,7 +9,7 @@ piumossoMusic = {
       \oneVoice
       \tempoMark #"Più mosso."
       \clef bass
-      r4 c-| b4..( g16) |
+      r4 c-! b4..( g16) |
       bes2.( a8. f16) |
       as4..( d,16 d4 es) |
       b( c d es |
@@ -35,28 +35,28 @@ piumossoMusic = {
         d( g d bes' g d' g, d' bes g' bes, es) |
       }
       <<
-        { r4 <es g>-| <d fis>4..( d16) }
+        { r4 <es g>-! <d fis>4..( d16) }
         \\ a1_\markup\italic { poco cresc. }
       >> |
-      <as d f>2-| \sas <g c e>4..(-| c16) |
-      \sas <fis, c' es>4..(-| <es a>16) <es a>4-| <d bes'>-| |
-      <c fis>-| <bes g'>-| <es fis a>-| <d g bes>-| |
-      <f as b>-| <es g c>-| <f b d>-| <g c es>-| |
+      <as d f>2-! \sas <g c e>4..(-! c16) |
+      \sas <fis, c' es>4..(-! <es a>16) <es a>4-! <d bes'>-! |
+      <c fis>-! <bes g'>-! <es fis a>-! <d g bes>-! |
+      <f as b>-! <es g c>-! <f b d>-! <g c es>-! |
       \set crescendoSpanner = #'text
       \set crescendoText = #"poco "
-      <bes d g bes>2-|\< << { cis4.( d8) } \\ <g, bes>2 >> |
+      <bes d g bes>2-!\< << { cis4.( d8) } \\ <g, bes>2 >> |
       \set crescendoText = #"a "
-      <g a es'>2-|\< fis4( \times 2/3 { g4 a8 } |
+      <g a es'>2-!\< fis4( \times 2/3 { g4 a8 } |
       \set crescendoText = #"poco "
-      \sas <cis, e bes'>2)-|\< <cis e a>4.-| e8 |
+      \sas <cis, e bes'>2)-!\< <cis e a>4.-! e8 |
       \set crescendoText = #"più "
-      <c es g>2.^(\< <c es fis>4)-| |
+      <c es g>2.^(\< <c es fis>4)-! |
       \set crescendoText = #"cre "
-      <fis a es'>2-|\< <fis a d>4.-| a8 |
-      <f as c>2.^( <f as b>4)-| |
+      <fis a es'>2-!\< <fis a d>4.-! a8 |
+      <f as c>2.^( <f as b>4)-! |
       \set crescendoText = #"scen "
-      <b d as'>2-|\< r4 <b d g>-| |
-      <cis e bes'>2-| r4 <cis e a>-| |
+      <b d as'>2-!\< r4 <b d g>-! |
+      <cis e bes'>2-! r4 <cis e a>-! |
       \set crescendoText = #"do "
       <es fis c'>1~\< |
       <es fis c'>2 r |
@@ -77,9 +77,9 @@ piumossoMusic = {
         fis( a b c cis d es d c b d es) |
         f( g f es d c b as g f es d) |
       }
-      c8-| r as'2(-- g4 |
-      f8)-| r es'2(-- d4 |
-      \sas des8)-| r des'2(-- c4~-- |
+      c8-! r as'2(-- g4 |
+      f8)-! r es'2(-- d4 |
+      \sas des8)-! r des'2(-- c4~-- |
       c bes2-- as4~-- |
       as) g-. fis4..( d16) |
       f2.( e8. c16) |
@@ -150,7 +150,7 @@ piumossoMusic = {
         r c( a es' c g' es a g c a g) |
       }
       <g a es'>2( <fis a d>4. a8) |
-      <f gis d'>4-| s2. |
+      <f gis d'>4-! s2. |
       s1*3 |
     }
     \context Staff = "lh" \context Voice = "lh" \relative c {
@@ -161,8 +161,8 @@ piumossoMusic = {
       d,2_( cis4. a8) |
       << { r4 es'2*1/2( fis4 \sas <d g>)-. } \\ { c2.( b4) } \\ { s4 c'\rest } >> |
       as2( g4. es8) |
-      << { r4 beses'2*1/2( c4 \sas <as des>)-| } \\ { ges2.( f4) } \\ { s4 f'\rest } >> |
-      << { r4 ges,2*1/2( a4 \sas <f bes>)-| } \\ { es2.( des4) } \\ { s4 d'\rest } >> |
+      << { r4 beses'2*1/2( c4 \sas <as des>)-! } \\ { ges2.( f4) } \\ { s4 f'\rest } >> |
+      << { r4 ges,2*1/2( a4 \sas <f bes>)-! } \\ { es2.( des4) } \\ { s4 d'\rest } >> |
       <<
         { r4 des,^(_~ <des f>2) | r4 des^(_~ <des f>2) | }
         \\ { c2.( bes4) | a2.( as4) | }
@@ -328,7 +328,7 @@ piumossoMusic = {
       }
     }
     \context Staff = "ped" \context Voice = "ped" \relative c {
-      g4-| r r2 |
+      g4-! r r2 |
       r r4 g~ |
       <g g'>-. r r2 |
       r r4 g |
@@ -346,11 +346,11 @@ piumossoMusic = {
       <c es g>1~ |
       <c es g>2.. <d f c'>8 |
       <es g c>4-. r <as, es' g as>2~-^ |
-      <as es' g as>4-. <as es' g as>2-^ <as b f' as>4-| |
-      <as c es as>-| r <bes des g>-| r |
-      <as c f>-| r <a c es>-| r8 c-| |
-      <g c es g>4-| r r2 |
-      <b f' g b>4-| r r r8 <c es g c> |
+      <as es' g as>4-. <as es' g as>2-^ <as b f' as>4-! |
+      <as c es as>-! r <bes des g>-! r |
+      <as c f>-! r <a c es>-! r8 c-! |
+      <g c es g>4-! r r2 |
+      <b f' g b>4-! r r r8 <c es g c> |
       <c es g c>1\fermata
       \bar "|."
     }
@@ -364,11 +364,11 @@ piumossoMusic = {
       <c es g>1~ |
       <c es g>2.. <d f c'>8 |
       <es g c>4-. r <as, c es g>2~-^ |
-      <as c es g>4-. <as es' g>2-^ <as b f'>4-| |
-      <as c es>-| r <bes des g>-| r |
-      <as c f>-| r \clef bass <a c es>-| r8 c-| |
-      <g c es>4-| r r2 |
-      <g b d f g>4-| r r r8 <g c es g> |
+      <as c es g>4-. <as es' g>2-^ <as b f'>4-! |
+      <as c es>-! r <bes des g>-! r |
+      <as c f>-! r \clef bass <a c es>-! r8 c-! |
+      <g c es>4-! r r2 |
+      <g b d f g>4-! r r r8 <g c es g> |
       <g c es g>1\fermata
     }
     \context Staff = "ped" \context Voice = "ped" \relative c' {
@@ -385,10 +385,10 @@ piumossoMusic = {
       }
       g4-. r c2~-^ |
       c4-. \sas b(-^ c) d |
-      es-| r <e, e'>-| r 
-      <f f'>-| r <fis fis'>-| r |
-      <g g'>-| r r2 |
-      <g g'>4-| r r r8 c,~ |
+      es-! r <e, e'>-! r 
+      <f f'>-! r <fis fis'>-! r |
+      <g g'>-! r r2 |
+      <g g'>4-! r r r8 c,~ |
       <c c'>1\fermata
     }
   >>
