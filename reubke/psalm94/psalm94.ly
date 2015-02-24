@@ -12,7 +12,9 @@
 \include "6-piumosso.ly"
 
 scoreSetup = <<
-  \new PianoStaff <<
+  \new PianoStaff \with {
+    \remove "Vertical_align_engraver"
+  } <<
     \new Staff = "rh" \with {
       \override VerticalAxisGroup #'minimum-Y-extent = #'(-3 . 3)
     } \new Voice = "rh" {
