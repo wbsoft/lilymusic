@@ -214,7 +214,7 @@ pedalVoicing = {
 music = <<
   \new PianoStaff <<
     \new Staff = "upper" <<
-      #(set-accidental-style 'voice)
+      #(set-accidental-style 'modern-voice 'Staff)
       \new Voice = "sop" <<
         { \sop \bar "|." }
         \sopVoicing
@@ -225,7 +225,7 @@ music = <<
       >>
     >>
     \new Staff = "lower" <<
-      #(set-accidental-style 'voice)
+      #(set-accidental-style 'modern-voice 'Staff)
       \clef bass
       \new Voice = "ten" <<
         \ten
