@@ -94,7 +94,7 @@
 \score {
   \transpose f d
   <<
-    \fourStaffsTwoLyrics
+    \fourStaffs
     \piano 
   >>
 }
