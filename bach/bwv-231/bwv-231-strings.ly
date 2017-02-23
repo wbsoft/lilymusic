@@ -46,9 +46,12 @@ stringstruct = {
 
 \book {
   \bookOutputSuffix "violino-I"
+  \header {
+    instrument = "Violino I"
+  }
   \score {
     \new Staff <<
-      \set Staff.instrumentName = "Violin I"
+      \set Staff.instrumentName = "Violino I"
       \stringstruct
       \sop
     >>
@@ -57,9 +60,12 @@ stringstruct = {
 
 \book {
   \bookOutputSuffix "violino-II"
+  \header {
+    instrument = "Violino II"
+  }
   \score {
     \new Staff <<
-      \set Staff.instrumentName = "Violin II"
+      \set Staff.instrumentName = "Violino II"
       \stringstruct
       \alt
     >>
@@ -67,10 +73,13 @@ stringstruct = {
 }
 
 \book {
-  \bookOutputSuffix "violino-alto"
+  \bookOutputSuffix "viola"
+  \header {
+    instrument = "Viola"
+  }
   \score {
     \new Staff <<
-      \set Staff.instrumentName = "Violin I"
+      \set Staff.instrumentName = "Viola"
       \stringstruct
       \ten
       \clef alto
@@ -80,6 +89,9 @@ stringstruct = {
 
 \book {
   \bookOutputSuffix "violoncello"
+  \header {
+    instrument = "Cello/Bc"
+  }
   \score {
     \new Staff <<
       \set Staff.instrumentName = "Cello/Bc"
