@@ -44,17 +44,55 @@ stringstruct = {
   \structure
 }
 
+
+violonoIPartij =
+\new Staff <<
+  \set Staff.instrumentName = "Violino I"
+  \stringstruct
+  \sop
+>>
+
+violonoIIPartij =
+\new Staff <<
+  \set Staff.instrumentName = "Violino II"
+  \stringstruct
+  \alt
+>>
+
+violaPartij =
+\new Staff <<
+  \set Staff.instrumentName = "Viola"
+  \stringstruct
+  \ten
+  \clef alto
+>>
+
+celloPartij =
+\new Staff <<
+  \set Staff.instrumentName = "Cello/Bc"
+  \stringstruct
+  \bas
+  \clef bass
+>>
+
+\book {
+  \score {
+    \new StaffGroup <<
+      \violonoIPartij
+      \violonoIIPartij
+      \violaPartij
+      \celloPartij
+    >>
+  }
+}
+
 \book {
   \bookOutputSuffix "violino-I"
   \header {
     instrument = "Violino I"
   }
   \score {
-    \new Staff <<
-      \set Staff.instrumentName = "Violino I"
-      \stringstruct
-      \sop
-    >>
+    \violonoIPartij
   }
 }
 
@@ -64,11 +102,7 @@ stringstruct = {
     instrument = "Violino II"
   }
   \score {
-    \new Staff <<
-      \set Staff.instrumentName = "Violino II"
-      \stringstruct
-      \alt
-    >>
+    \violonoIIPartij
   }
 }
 
@@ -78,12 +112,7 @@ stringstruct = {
     instrument = "Viola"
   }
   \score {
-    \new Staff <<
-      \set Staff.instrumentName = "Viola"
-      \stringstruct
-      \ten
-      \clef alto
-    >>
+    \violaPartij
   }
 }
 
@@ -93,12 +122,7 @@ stringstruct = {
     instrument = "Cello/Bc"
   }
   \score {
-    \new Staff <<
-      \set Staff.instrumentName = "Cello/Bc"
-      \stringstruct
-      \bas
-      \clef bass
-    >>
+    \celloPartij
   }
 }
 
