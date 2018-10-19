@@ -179,7 +179,7 @@ right = \relative c' {
         g4 as bes2 as4 bes c2
       }
       {
-        es,4 f g2 g g
+        es,4_\ff f g2 g g
         f4 g as2 as as
         es4 f g2 f4 g as2
       }
@@ -192,7 +192,7 @@ right = \relative c' {
 left = \relative c' {
   \global
   % Muziek volgt hier.
-  r4
+  r4^\f
   <<
     {
       f es d c bes as g |
@@ -230,8 +230,8 @@ left = \relative c' {
     \addlyrics { \verseFour }
     \new PianoStaff \with {
       instrumentName = "Accompt."
-      fontSize = #-1
-      \override StaffSymbol #'staff-space = #(magstep -1)
+      % fontSize = #-1
+      % \override StaffSymbol #'staff-space = #(magstep -1)
     } <<
       \new Staff = "right" \right
       \new Staff = "left" {
