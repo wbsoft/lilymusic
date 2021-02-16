@@ -12,7 +12,7 @@ organPartSize = #-1
   \fontsize #-1
   \override #'(baseline-skip . 2.2)
   \center-column {
-    \with-url #"http://www.wilbertberendsen.nl/mouvement"
+    \with-url #"http://www.wilbertberendsen.nl/"
     \line {
       Copyright © 2011 by Wilbert Berendsen(http://www.wilbertberendsen.nl/)
     }
