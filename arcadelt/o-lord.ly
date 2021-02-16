@@ -1,4 +1,4 @@
-\version "2.12.0"
+\version "2.18.2"
 
 #(set-global-staff-size 20)
 
@@ -101,7 +101,7 @@ text = \lyricmode {
   Let not my foes tri -- \ava umph __ o -- ver me.
   \avs O lead me in a plain path;
   cast me not off, nei -- ther \avt for --  sake __ me.
-  Teach me thy way, Lord, Lead me, lead me in a plain path. 
+  Teach me thy way, Lord, Lead me, lead me in a plain path.
   O hide not thy face, Hide not \avs thy face __ \avt far __ from __ me.
   Lord __ God, Lord __ God, Hide not \avs thy face __ \avt far __ from __ me.
   A -- men.
@@ -126,3 +126,88 @@ text = \lyricmode {
     } \lyricsto "s" \text
   >>
 }
+
+
+midiMusic = <<
+  \new Staff = "sopraan" \sop
+  \new Staff = "alt" \alt
+  \new Staff = "tenor" \ten
+  \new Staff = "bas" \bas
+>>
+
+\book {
+  \bookOutputSuffix "sopraan"
+  \score {
+    <<
+      \midiMusic
+      \context Staff = "sopraan" {
+        \set Staff.midiMaximumVolume = #1
+      }
+    >>
+    \midi {
+      \tempo 4=104
+      \context {
+        \Staff
+        midiMaximumVolume = #.2
+      }
+    }
+  }
+}
+
+\book {
+  \bookOutputSuffix "alt"
+  \score {
+    <<
+      \midiMusic
+      \context Staff = "alt" {
+        \set Staff.midiMaximumVolume = #1
+      }
+    >>
+    \midi {
+      \tempo 4=104
+      \context {
+        \Staff
+        midiMaximumVolume = #.2
+      }
+    }
+  }
+}
+
+\book {
+  \bookOutputSuffix "tenor"
+  \score {
+    <<
+      \midiMusic
+      \context Staff = "tenor" {
+        \set Staff.midiMaximumVolume = #1
+      }
+    >>
+    \midi {
+      \tempo 4=104
+      \context {
+        \Staff
+        midiMaximumVolume = #.2
+      }
+    }
+  }
+}
+
+\book {
+  \bookOutputSuffix "bas"
+  \score {
+    <<
+      \midiMusic
+      \context Staff = "bas" {
+        \set Staff.midiMaximumVolume = #1
+      }
+    >>
+    \midi {
+      \tempo 4=104
+      \context {
+        \Staff
+        midiMaximumVolume = #.2
+      }
+    }
+  }
+}
+
