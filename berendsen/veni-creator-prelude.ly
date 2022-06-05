@@ -103,7 +103,7 @@ upper = \change Staff = "upper"
 lower = \change Staff = "lower"
 
 upperA = \relative {
-  R1
+  R1\fermata
   r16 f^\markup { Gt. Found. 8, 4 + Sw. } bes f' r g, bes g' r f, bes f' r es, bes' es
   r16 f, bes f' r g, bes g' r f, bes f' r bes, f' bes
   r16 es, bes' es r d, bes' d r c, es c' r bes, es bes'
@@ -297,6 +297,7 @@ lowerA = \relative {
   <f, f'>1~ ^\markup {
     \whiteout \line { Sw. Foundations & Reeds 8, 4 }
   }
+  -\tweak outside-staff-priority #0 ^\fermata
   <f f'>1~
   <f f'~>2. <f' bes~>4
   <g bes~ es>4 <f bes~ d> <g~ bes~ c> <g~ bes~>
@@ -400,8 +401,9 @@ lowerA = \relative {
   <g~ cis~ fis>) <g cis e> <fis bis dis> <g cis e>
   \voiceOne
   a'!8(^\markup { Sw. +Reeds 8, gradually add more stops } g4 fis8) eis4 e~
-  e4 dis d <c es>^~
+  e4 dis d <c es>
   \voiceTwo
+  \clef treble
   <c es>2~ <as c>
   \voiceThree
   des2 c4 b
@@ -461,7 +463,7 @@ lowerB = \relative {
   <fis' ais>4 \skip 4 ais2
   e'2 dis4 cis~
   \oneVoice
-  <cis fis>4 r \skip 2
+  <cis fis>8 r r4 \skip 2
   \voiceOne
   <a gis'~>4 <gis' b~> \voiceTwo b8 ais4 gis8~
   gis8 fis4 e8 dis cis b ais
@@ -478,7 +480,7 @@ lowerB = \relative {
   \voiceTwo
   \skip 2. g'8 f
   \skip 1*3
-  bes,,2. f'4
+  bes,,2 r4 f'
   \skip 1*2
   \voiceOne
   bes1(
@@ -488,15 +490,14 @@ lowerB = \relative {
   <ais~ cis>2 <fis~ ais>
   <fis a!>2 <f as>4 ges
   \voiceOne
-  beses' as g ges~
+  ces'8 beses4 as8 g4 ges~
   ges4 f2.
-  \clef treble
   \oneVoice
   <g, c e>2.^\markup { Sw. +Reeds 4, Mixtures } \voiceTwo <c e>4~^\markup { Gt. }
   <c e>2 <bes es>~
   <bes es>4 <es g>2.^\markup { Gt. }
   \oneVoice
-  <d g bes>4~^\markup { +Ch. Reeds 8, 4 } <d e g bes> <d g bes>~ <d e g bes>
+  <d g bes>4~^\markup { +Ch. Reeds 8, 4, (Sw. +Found. 16) } <d e g bes> <d g bes>~ <d e g bes>
   <d f bes>4~ <d f gis bes> \voiceTwo <d f>~ <d f gis>
   \skip 1*4
   <g, bes!~>2 <e bes'>
@@ -543,7 +544,7 @@ lowerC = \relative {
 }
 
 pedalA = \relative {
-  R1
+  R1\fermata
   d,4_\markup { Found. 16, 8 +Sw. } es f g
   d4 c d d'
   c4 d es g
@@ -585,13 +586,13 @@ pedalA = \relative {
   c4 c d ces
   beses4 as bes2)
   \oneVoice
-  r8 f,-. r ges-. r d-. r d'-.
+  r8 f,-- r ges-. r d-. r d'-.
   r8 c-. r d-. r es-. r g-.
   r8 f-. r f,-. r g'-. f-. es-.
   d8-. d,-. es'-. es,-. f'-. f,-. g'-. g,-.
   d'8-. d,-. cis'-. cis,-. d'-. d,-. des''-. des,-.
   c'8-. c,-. d'-. d,-. es'-. es,-. des'-. ges,-.
-  a8-. a,-. r e'-. a( a,) r g-.
+  a8( a,) r e'-. a-. a,-. r g-.
   fis-. ais'-. e-. g-. r cis,-. fis-. fis,-.
   b8-. b'-. fis-. a-. f-. as-. ces,( beses)
   as-- c'-. ges-. beses-. es,-. ges-. as,-. c-.
